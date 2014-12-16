@@ -2,11 +2,12 @@
     tinymce.create('tinymce.plugins.bctt_clicktotweet', {
         init: function(ed, url) {
             ed.addButton('bctt_clicktotweet', {
-                title: 'Add Tweetable Text',
+                title: 'Test Title',
                 image: url.replace("/js", "") + '/img/birdy_button.png',
                 onclick: function() {
-                    var m = prompt("Add your quote below for readers to tweet.", "Enter the text for readers to tweet");
-                    if (m != null && m != 'undefined' && m != 'Enter your tweets' && m != '') ed.execCommand('mceInsertContent', false, '[bctt tweet="' + m + '"]');
+                    var outerPrompt = ed.getLang('extrastrings.title');
+                    var m = prompt( ( "Tweety" , "Enter the text for readers to tweet");
+                    if (m != null && m != 'undefined' && m != 'Enter the text for readers to tweet' && m != '') ed.execCommand('mceInsertContent', false, '[bctt tweet="' + m + '"]');
                 }
             });
         },
@@ -15,10 +16,10 @@
         },
         getInfo: function() {
             return {
-                longname: "Click To Tweet by BenUNC",
+                longname: "Bettter Click To Tweet by Ben Meredith",
                 author: 'Ben Meredith',
                 authorurl: 'http://benandjacq.com/',
-                infourl: 'http://benandjacq.com/better-click-to-tweet',
+                infourl: 'http://wordpress.org/plugins/better-click-to-tweet',
                 version: "1.0"
             };
         }
