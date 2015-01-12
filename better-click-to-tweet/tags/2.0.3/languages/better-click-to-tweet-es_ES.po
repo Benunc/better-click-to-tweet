@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Better Click To Tweet\n"
-"POT-Creation-Date: 2015-01-12 14:27-0500\n"
-"PO-Revision-Date: 2015-01-12 14:41-0500\n"
+"POT-Creation-Date: 2014-12-17 10:04-0500\n"
+"PO-Revision-Date: 2014-12-17 10:38-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -18,16 +18,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: bctt_options.php:60
+#: bctt_options.php:52
 msgid "You do not have sufficient permissions to access this page."
 msgstr "﻿Usted no tiene los permisos necesarios para acceder a esta página."
 
-#: bctt_options.php:70
+#: bctt_options.php:62
 msgid "Instructions"
 msgstr "﻿Instrucciones"
 
 #. translators: Treat "Better Click To Tweet" as a brand name, don't translate it
-#: bctt_options.php:72
+#: bctt_options.php:64
 msgid ""
 "To add styled click-to-tweet quote boxes include the Better Click To Tweet "
 "shortcode in your post."
@@ -35,17 +35,17 @@ msgstr ""
 "Para añadir casillas de texto de estilo \"click to tweet\" incluya el "
 "shortcode \"Better Click To Tweet\" en su mensaje."
 
-#: bctt_options.php:73
+#: bctt_options.php:65
 msgid "Here's how you format the shortcode:"
 msgstr "Aquí está cómo formatear el shortcode:"
 
 #. translators: This text shows up as a sample tweet in the instructions for how to use the plugin.
-#: bctt_options.php:73
+#: bctt_options.php:65
 msgid "Meaningful, tweetable quote."
 msgstr "Algo significativo para Twittear."
 
 #. translators: Also, treat "BCTT" as a brand name, don't translate it
-#: bctt_options.php:74
+#: bctt_options.php:66
 msgid ""
 "If you are using the visual editor, click the BCTT birdie in the toolbar to "
 "add a pre-formatted shortcode to your post."
@@ -54,7 +54,7 @@ msgstr ""
 "barra de herramientas para añadir un shortcode formateado previamente a su "
 "mensaje."
 
-#: bctt_options.php:75
+#: bctt_options.php:67
 msgid ""
 "Tweet length is automatically shortened to 117 characters minus the length "
 "of your twitter name, to leave room for it and a link back to the post."
@@ -63,11 +63,11 @@ msgstr ""
 "longitud de su nombre de Twitter, para dejar espacio para ella y un enlace "
 "de vuelta al tweet."
 
-#: bctt_options.php:78 better-click-to-tweet.php:83
+#: bctt_options.php:70 better-click-to-tweet.php:75
 msgid "Settings"
 msgstr "﻿Ajustes"
 
-#: bctt_options.php:80
+#: bctt_options.php:72
 msgid ""
 "Enter your Twitter handle to add \"via @yourhandle\" to your tweets. Do not "
 "include the @ symbol."
@@ -75,32 +75,16 @@ msgstr ""
 "Ingrese su nombre identificador de Twitter para agregar \"via "
 "@nombreIdentificador\" a sus tweets. No incluya el símbolo @."
 
-#: bctt_options.php:81
-msgid ""
-"Checking the box below will force the plugin to show the WordPress shortlink "
-"in place of the full URL. While this does not impact tweet character length, "
-"it is useful alongside plugins that customize the WordPress shortlink using "
-"services like bit.ly or yourls.org for tracking"
-msgstr ""
-"Marca la casilla siguiente para mostrar la shortlink WordPress en lugar de "
-"la dirección URL completa. Mientras que esto no afecte la longitud de tweet, "
-"es útil junto con plugins que personalizar el shortlink WordPress usando "
-"servicios como bit.ly o yourls.org para el seguimiento"
-
-#: bctt_options.php:87
+#: bctt_options.php:78
 msgid "Your Twitter Handle"
 msgstr "Su Identificador de Twitter"
 
-#: bctt_options.php:90
-msgid "Use Short URL?"
-msgstr "﻿¿Usa URL corta?"
-
-#: bctt_options.php:100
+#: bctt_options.php:88
 #, php-format
 msgid "An open source plugin by <a href=%s>Ben Meredith</a>"
 msgstr "Un plugin de código abierto por <a href=%s>Ben Meredith</a>"
 
-#: bctt_options.php:101
+#: bctt_options.php:89
 #, php-format
 msgid ""
 "Are you a developer? I would love your help making this plugin better. Check "
@@ -109,7 +93,7 @@ msgstr ""
 "﻿¿Eres desarrollador? Me encantaría su ayuda para hacer mejor este plugin. "
 "Echa un vistazo al <a href=%s>plugin en Github.</a>"
 
-#: bctt_options.php:102
+#: bctt_options.php:90
 #, php-format
 msgid ""
 "The best way you can support this and other plugins is to <a href=%s>donate</"
@@ -118,19 +102,19 @@ msgstr ""
 "La mejor manera en que usted puede apoyar este y otros plugins es <a href="
 "%s>donar</a>"
 
-#: bctt_options.php:102
+#: bctt_options.php:90
 #, php-format
 msgid "The second best way is to <a href=%s>leave an honest review.</a>"
 msgstr "﻿La segunda mejor manera es <a href=%s>dejar una revisión honesta.</a>"
 
-#: bctt_options.php:103
+#: bctt_options.php:91
 msgid "Did this plugin save you enough time to be worth some money?"
 msgstr "¿Este plugin le ahorra suficiente tiempo para valer algo de dinero?"
 
-#: bctt_options.php:104
+#: bctt_options.php:92
 msgid "Click here to buy me a Coke to say thanks."
 msgstr "Haga clic aquí y compre una Coca-Cola para decir gracias."
 
-#: better-click-to-tweet.php:49
+#: better-click-to-tweet.php:44
 msgid "Click To Tweet"
 msgstr "﻿Click Para Twittear"

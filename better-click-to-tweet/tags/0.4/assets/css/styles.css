@@ -29,14 +29,12 @@
   text-decoration: none !important;
   text-transform: none !important;
   word-wrap:break-word;
-  border-bottom: none !important;
 }
 .bctt-ctt-text a:hover {
   text-decoration: none;
   color: #999 !important;
 }
 a.bctt-ctt-btn {
-  border-bottom: none !important;
   margin: 0;
   padding: 11px 24px 0 0;
   position: relative;

@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: Better Click To Tweet
-Description: The only Click To Tweet plugin to add translation support. The only Click To Tweet plugin to take into account your Twitter username's length in truncating long tweets, or to correctly take into account non-Roman characters. Simply put, as Click To Tweet plugins go, this one is, well, BETTER. 
-Version: 2.0.3
+Description: Add click to tweet boxes to your WordPress posts, easily. This is a new, fully renovated version of the late "Click to Tweet" plugin by Todaymade. I overhauled the plugin using the shortcode API, and (perhaps most importantly) removed the "powered by" link.
+Version: 2.0
 Author: Ben Meredith
 Author URI: http://benandjacq.com
 Plugin URI: https://wordpress.org/plugins/better-click-to-tweet/
@@ -36,23 +36,15 @@ function bctt_shortcode( $atts, $content ) {
 		    } else {
 		    	$handle_code = $handle;
 		    }
- 		    extract( shortcode_atts( array(
-					'tweet' 	=> '$content'
+ 			extract( shortcode_atts( array(
+					'tweet' 	=> '$content',
+					'handle'	=> '$handle_code'	
    				 ), $atts ) );
 		    $text = $tweet;
-                    if ( get_option('bctt-short-url') != false ) { 
-                        $bcttURL = wp_get_shortlink();
-                        }
-                    else { 
-                        $bcttURL = get_permalink(); 
-                        }
                     $bcttBttn = sprintf( __( 'Click To Tweet', 'better-click-to-tweet' ) );
 		    $short = bctt_shorten( $text, ( 117 - mb_strlen( $handle ) ) );
-                    if ( !is_feed() ) {
-                        return "<div class='bctt-click-to-tweet'><span class='bctt-ctt-text'><a href='https://twitter.com/intent/tweet?text=".urlencode($short).$handle_code."&url=".$bcttURL."' target='_blank'>".$short."</a></span><a href='https://twitter.com/intent/tweet?text=".urlencode($short).$handle_code."&url=".$bcttURL."' target='_blank' class='bctt-ctt-btn'>".$bcttBttn."</a></div>";} else {
-                        return "<hr /><p><em>".$short."</em><br /><a href='https://twitter.com/intent/tweet?text=".urlencode($short).$handle_code."&url=".$bcttURL."' target='_blank' class='bctt-ctt-btn'>".$bcttBttn."</a><br /><hr />";
-	        	};
-              }
+                    return "<div class='bctt-click-to-tweet'><span class='bctt-ctt-text'><a href='https://twitter.com/intent/tweet?text=".urlencode($short).$handle_code."&url=".get_permalink()."' target='_blank'>".$short."</a></span><a href='https://twitter.com/intent/tweet?text=".urlencode($short).$handle_code."&url=".get_permalink()."' target='_blank' class='bctt-ctt-btn'>".$bcttBttn."</a></div>";
+		}
 
 add_shortcode('bctt', 'bctt_shortcode');
 	
@@ -68,14 +60,12 @@ function bctt_scripts () {
 add_action('wp_enqueue_scripts', 'bctt_scripts');	
 	
 	/*
-	 * Delete options and shortcode on uninstall
+	 * Delete options on uninstall
 	*/
 	
 function bctt_on_uninstall(){
 
 	delete_option( 'bctt-twitter-handle' );
-        delete_option( 'bctt-short-url');
-        remove_shortcode( 'bctt' );
 
 };
 

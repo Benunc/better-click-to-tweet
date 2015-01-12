@@ -4,15 +4,13 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: click to tweet, twitter, tweet, twitter plugin, Twitter boxes, share, social media, post, posts, plugin, auto post
 Requires at least: 3.8
 Tested up to: 4.1
-Stable tag: 2.0.3
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Insert click to tweet boxes into your posts, simply and securely. This plugin is regularly updated, translation-ready, and secure.
+Correctly counts characters, taking into account username length and non-Roman characters. Simply put: as Click to Tweet plugins go, this one's BETTER. Also: translation ready, as of version 2.0!
 
 == Description ==
-
-= The Best Click To Tweet Plugin on the Market, FREE! =
 
 This plugin allows you to easily create tweetable content for your readers. Using a simple shortcode, your selected text is highlighted and made tweetable. 
 ><strong> Why Better?</strong><br>
@@ -74,16 +72,9 @@ I want to maximize the usefulness of this plugin by translating it into multiple
 
 == Changelog ==
 
-= 2.0.3 =
-* updated CSS to remove underline on "Click to Tweet" on Twenty Fifteen theme (and others!)
-
-= 2.0.2 =
-* fixed bug introduced in 2.0 related to javascript.
-
 = 2.0.1 =
 * added in support for RSS feeds: when outputting to an RSS feed, the click-to-tweet text will be smartly formatted.
 * added css declarations to deal with issues in the Twenty Fifteen theme.
-* readme enhancements for better user experience.
 
 = 2.0 = 
 * Major version release for internationalization: added Spanish (ES) translation, and updated code throughout for internationalization. Still to-do: add translation support for the tinymce plugin on the visual editor.
@@ -107,13 +98,7 @@ I want to maximize the usefulness of this plugin by translating it into multiple
 
 == Upgrade Notice ==
 
-= 2.0.3 =
-* CSS update for "Click to Tweet" text being underlined in some themes.
-
-= 2.0.2 =
-* Fixes bug that was causing the visual editor to not show the BCTT button.
-
 = 2.0 =
-* Adds internationalization, and out of the box support for Spanish (ES) language.
+Adds internationalization, and out of the box support for Spanish (ES) language.
 
 

@@ -29,31 +29,23 @@ function bctt_tinymce_register_button($buttons) {
 		}
 
 function bctt_tinymce_register_plugin($plugin_array) {
-		   $plugin_array['bctt_clicktotweet'] = plugins_url( '/assets/js/bctt_clicktotweet_plugin.js', __FILE__);
+		   $plugin_array['better_click_to_tweet'] = plugins_url( '/assets/js/bctt_clicktotweet_plugin.js', __FILE__);
 		   return $plugin_array;
 		}
 
 
 function bctt_admin_menu() {
-			add_action('admin_init', 'bctt_register_settings', 100, 1 );
+			add_action('admin_init', 'bctt_register_settings');
 			add_options_page('Better Click To Tweet Options', 'Better Click To Tweet', 'manage_options', 'better-click-to-tweet', 'bctt_settings_page');
 		}
 
 function bctt_register_settings() {
 			register_setting('bctt_clicktotweet-options', 'bctt-twitter-handle', 'bctt_validate_settings');
-                        register_setting('bctt_clicktotweet-options', 'bctt-short-url', 'bctt_validate_checkbox' );
 		}
 
 function bctt_validate_settings($input) {	
                       return str_replace('@', '', strip_tags(stripslashes($input)));
 		}
-
-function bctt_validate_checkbox( $input) {
-                      if ( ! isset( $input ) || $input != '1' )
-                        return 0;
-                      else
-                        return 1;
-                }
 
 function bctt_settings_page() {
 			if ( !current_user_can( 'manage_options' ) )  {
@@ -78,7 +70,6 @@ function bctt_settings_page() {
 				<h2><?php _e( 'Settings', 'better-click-to-tweet' ); ?></h2>
 
 				<p><?php _e( 'Enter your Twitter handle to add "via @yourhandle" to your tweets. Do not include the @ symbol.', 'better-click-to-tweet' ); ?></p>
-				<p><?php _e('Checking the box below will force the plugin to show the WordPress shortlink in place of the full URL. While this does not impact tweet character length, it is useful alongside plugins which customize the WordPress shortlink using services like bit.ly or yourls.org for tracking', 'better-click-to-tweet')?> </p>	
 				<form method="post" action="options.php" style="display: inline-block;">
 					<?php settings_fields( 'bctt_clicktotweet-options' ); ?>
 
@@ -86,11 +77,8 @@ function bctt_settings_page() {
 		        		<tr valign="top">
 		        			<th style="width: 200px;"><label><?php _e('Your Twitter Handle', 'better-click-to-tweet'); ?></label></th>
 							<td><input type="text" name="bctt-twitter-handle" value="<?php echo get_option('bctt-twitter-handle'); ?>" /></td>
-                                        </tr><tr valign="top">        
-                                                <th style="width: 200px;"><label><?php _e('Use Short URL?', 'better-click-to-tweet'); ?></label></th><td><input type="checkbox" name="bctt-short-url" value="1" <?php if ( 1 == get_option( 'bctt-short-url') ) echo 'checked="checked"'; ?>" /></td>	
-                                        </tr>
-					<tr>
-                                        
+						</tr>
+						<tr>
 							<td></td>
 							<td><?php submit_button(); ?></td>
 					</table>
