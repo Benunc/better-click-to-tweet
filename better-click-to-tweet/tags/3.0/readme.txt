@@ -1,7 +1,7 @@
 === Better Click To Tweet ===
 Contributors: ben.meredith@gmail.com
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HDSGWRJYFQQNJ
-Tags: click to tweet, twitter, tweet, twitter plugin, Twitter boxes, share, social media, post, posts, plugin, auto post
+Tags: click to tweet, twitter, tweet, twitter plugin, Twitter boxes, share, social media, post, posts, plugin, auto post, bitly, bit.ly, yourls, yourls.org 
 Requires at least: 3.8
 Tested up to: 4.1
 Stable tag: 3.0
@@ -67,6 +67,7 @@ On the settings page for Better Click To Tweet, simply check the box indicating 
 
 * [WP Bitly](https://wordpress.org/plugins/wp-bitly/ "WP Bit.ly")
 * [YOURLS Link Creator](https://wordpress.org/support/plugin/yourls-link-creator "YOURLS Link Creator")
+* [Goo.gl](https://wordpress.org/plugins/googl/ "Goo.gl")
 
 If you run into any issues with my plugin not working alongside a certain link shortener, start a [support thread](https://wordpress.org/support/plugin/better-click-to-tweet "support forum") and include a link to the other plugin. I'll see what I can do to work with the other developer.
 

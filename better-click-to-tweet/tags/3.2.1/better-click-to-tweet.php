@@ -2,7 +2,7 @@
 /*
 Plugin Name: Better Click To Tweet
 Description: The only Click To Tweet plugin to add translation support. The only Click To Tweet plugin to take into account your Twitter username's length in truncating long tweets, or to correctly take into account non-Roman characters. Simply put, as Click To Tweet plugins go, this one is, well, BETTER. 
-Version: 3.2.2
+Version: 3.2.1
 Author: Ben Meredith
 Author URI: http://benandjacq.com
 Plugin URI: https://wordpress.org/plugins/better-click-to-tweet/
@@ -69,7 +69,7 @@ function bctt_shortcode( $atts ) {
 		    	$short = bctt_shorten( $text, ( 140 - ( $handle_length ) ) );
 		    	}
                     if ( !is_feed() ) {
-                        return "<div class='bctt-click-to-tweet'><span class='bctt-ctt-text'><a href='https://twitter.com/intent/tweet?text=" . urlencode($short) . $handle_code . $bcttURL."' target='_blank'>".$short."</a></span><a href='https://twitter.com/intent/tweet?text=" . urlencode($short) . $handle_code . $bcttURL . "' target='_blank' class='bctt-ctt-btn'>" . $bcttBttn . "</a></div>";} else {
+                        return "<div class='bctt-click-to-tweet'><span class='bctt-ctt-text'><a href='https://twitter.com/intent/tweet?text=" . urlencode($short) . $handle_code . $bcttURL."' target='_blank'>".$short."</a></span><a href='https://twitter.com/intent/tweet?text=" . urlencode($short) . $handle_code . "&url=" . $bcttURL . "' target='_blank' class='bctt-ctt-btn'>" . $bcttBttn . "</a></div>";} else {
                         return "<hr /><p><em>" . $short . "</em><br /><a href='https://twitter.com/intent/tweet?text=" . urlencode($short) . $handle_code . $bcttURL . "' target='_blank' class='bctt-ctt-btn'>" . $bcttBttn . "</a><br /><hr />";
 	        	};
               }

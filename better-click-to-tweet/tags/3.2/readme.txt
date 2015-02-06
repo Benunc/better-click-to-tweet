@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: click to tweet, twitter, tweet, twitter plugin, Twitter boxes, share, social media, post, posts, plugin, auto post, bitly, bit.ly, yourls, yourls.org 
 Requires at least: 3.8
 Tested up to: 4.1
-Stable tag: 3.2.2
+Stable tag: 3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -97,12 +97,6 @@ I want to maximize the usefulness of this plugin by translating it into multiple
 
 == Changelog ==
 
-= 3.2.2 =
-* fixed bug that was causing the URL not to display on certain clicks after the 3.2 update (thanks @aa_stardust for the heads up!)
-
-= 3.2.1 =
-* fixed the truncation math given the new options to remove the url (as of 3.2) and via (as of 3.1), to correctly get back all those lost characters.
-
 = 3.2 =
 * added the ability to leave off the url on a tweet-by-tweet basis (handwritten shortcodes only, the visual editor will not show it as an option on the popup window)
 * code modifications for clarity.
@@ -147,12 +141,6 @@ I want to maximize the usefulness of this plugin by translating it into multiple
 * Initial release. 
 
 == Upgrade Notice ==
-
-= 3.2.2 =
-* fixed bug that was causing the URL not to display on certain clicks after the 3.2 update (thanks @aa_stardust for the heads up!)
-
-= 3.2.1 =
-* fixed the truncation math given the new options to remove the url (as of 3.2) and via (as of 3.1), to correctly get back all those lost characters.
 
 = 3.2 =
 * added the ability to leave off the url on a tweet-by-tweet basis (handwritten shortcodes only, the visual editor will not show it as an option on the popup window)
