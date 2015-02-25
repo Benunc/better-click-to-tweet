@@ -1,18 +1,13 @@
 <?php
 /*
 Plugin Name: Better Click To Tweet
-<<<<<<< HEAD
 Description: The only Click To Tweet plugin to add translation support. The only Click To Tweet plugin to take into account your Twitter username's length in truncating long tweets, or to correctly take into account non-Roman characters. Simply put, as Click To Tweet plugins go, this one is, well, BETTER. 
 Version: 3.4
-=======
-Description: The only Click To Tweet plugin to add translation support. The only Click To Tweet plugin to take into account your Twitter username's length in truncating long tweets, or to correctly take into account non-Roman characters. Simply put, as Click To Tweet plugins go, this one is, well, BETTER.
-Version: 3.2.2
->>>>>>> FETCH_HEAD
 Author: Ben Meredith
 Author URI: http://benandjacq.com
 Plugin URI: https://wordpress.org/plugins/better-click-to-tweet/
 License: GPL2
-Text Domain: better-click-to-tweet
+Text Domain: better-click-to-tweet 
 */
 include 'bctt_options.php';
 include 'bctt-i18n.php';
@@ -72,7 +67,6 @@ function bctt_shorten( $input, $length, $ellipsis = true, $strip_html = true ) {
 		    	return $trimmed_text;
 		    	}
 		};
-<<<<<<< HEAD
 		
 /*
 * 	Creates the bctt shortcode
@@ -82,9 +76,6 @@ function bctt_shorten( $input, $length, $ellipsis = true, $strip_html = true ) {
 *	
 */
 		
-=======
-
->>>>>>> FETCH_HEAD
 function bctt_shortcode( $atts ) {
  			
  			extract( shortcode_atts( array(
@@ -94,7 +85,6 @@ function bctt_shortcode( $atts ) {
    				 ), $atts ) );
 		    	
 		    	$handle = get_option( 'bctt-twitter-handle' );
-<<<<<<< HEAD
 		    	
 		    	if ( function_exists( 'mb_internal_encoding' ) ) { 
 		    		
@@ -110,35 +100,23 @@ function bctt_shortcode( $atts ) {
 		        
 		        $handle_code = "&amp;via=" . $handle . "&amp;related=" . $handle;
 		    
-=======
-		    	$handle_length = ( 6 + mb_strlen($handle));
-
-		    if ( !empty( $handle ) && $via != 'no' ) {
-		        $handle_code = "&amp;via=" . $handle . "&amp;related=" . $handle;
->>>>>>> FETCH_HEAD
 		    } else {
 		    
 		    	$handle_code = '';
 		    
 		    }
-<<<<<<< HEAD
 		    
 		    if( $via != 'yes') { 
 		    
-=======
-
-		    if( $via != 'yes') {
->>>>>>> FETCH_HEAD
 		    		$handle = '';
 		    		$handle_code = '';
 		    		$handle_length = 0;
 		    
 		    		}
-
+		    	
 		    $text = $tweet;
             
                     if( $url != 'no' ){
-<<<<<<< HEAD
             
                     	if ( get_option('bctt-short-url') != false ) { 
             
@@ -148,13 +126,6 @@ function bctt_shortcode( $atts ) {
                         	
                         	$bcttURL = '&amp;url=' . get_permalink(); 
                         	
-=======
-                    	if ( get_option('bctt-short-url') != false ) {
-                        	$bcttURL = '&amp;url=' . wp_get_shortlink();
-                        	}
-                    	else {
-                        	$bcttURL = '&amp;url=' . get_permalink();
->>>>>>> FETCH_HEAD
                         	}
                         	
                     } else {
@@ -186,14 +157,14 @@ function bctt_shortcode( $atts ) {
 }
 
 add_shortcode('bctt', 'bctt_shortcode');
-
-	/*
+	
+	/* 
 	 * Load the stylesheet to style the output
 	 *
 	 * @since 0.1
 	 * 
 	*/
-
+	
 function bctt_scripts () {
 
 	wp_register_style( 'bcct_style', plugins_url( 'assets/css/styles.css', __FILE__ ), false, '1.0', 'all' );
@@ -201,15 +172,15 @@ function bctt_scripts () {
 	wp_enqueue_style('bcct_style');
 
 	};
-
-add_action('wp_enqueue_scripts', 'bctt_scripts');
-
+	
+add_action('wp_enqueue_scripts', 'bctt_scripts');	
+	
 	/*
 	 * Delete options and shortcode on uninstall
 	 * 
 	 * @since 0.1
 	*/
-
+	
 function bctt_on_uninstall(){
 
 		delete_option( 'bctt-twitter-handle' );
@@ -223,7 +194,6 @@ function bctt_on_uninstall(){
 register_uninstall_hook(    __FILE__, 'bctt_on_uninstall' );
 
 function bctt_options_link($links) {
-<<<<<<< HEAD
 
   $settingsText = sprintf( __( 'Settings', 'better-click-to-tweet')); 
 
@@ -236,13 +206,5 @@ function bctt_options_link($links) {
 }
 
 $bcttlink = plugin_basename(__FILE__); 
-=======
-  $settingsText = sprintf( __( 'Settings', 'better-click-to-tweet'));
-  $settings_link = '<a href="options-general.php?page=better-click-to-tweet">'.$settingsText.'</a>';
-  array_unshift( $links, $settings_link );
-  return $links;
-}
-$bcttlink = plugin_basename(__FILE__);
->>>>>>> FETCH_HEAD
 add_filter("plugin_action_links_$bcttlink", 'bctt_options_link' );
 
