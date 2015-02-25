@@ -3,8 +3,8 @@ Contributors: ben.meredith@gmail.com
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HDSGWRJYFQQNJ
 Tags: click to tweet, twitter, tweet, twitter plugin, Twitter boxes, share, social media, post, posts, plugin, auto post, bitly, bit.ly, yourls, yourls.org 
 Requires at least: 3.8
-Tested up to: 4.1.1
-Stable tag: 3.4
+Tested up to: 4.1
+Stable tag: 3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -97,9 +97,6 @@ I want to maximize the usefulness of this plugin by translating it into multiple
 
 == Changelog ==
 
-= 3.4 =
-* small change to the outputted URL for vc3 compliance. Thanks to @tomazzaman on Github for the fix!
-
 = 3.3 =
 * fixed a bug that was creating (rare, server-configuration-related) "Fatal Error" notices for `mb_strlen()` and related multibyte functions.
 * various code tweaks for readability and compliance with WordPress standards.
@@ -154,9 +151,6 @@ I want to maximize the usefulness of this plugin by translating it into multiple
 * Initial release. 
 
 == Upgrade Notice ==
-
-= 3.4 =
-* small change to the outputted URL for vc3 compliance. Thanks to @tomazzaman on Github for the fix!
 
 = 3.3 =
 * fixed a bug for users experiencing Fatal Errors related to multibyte string functions.
