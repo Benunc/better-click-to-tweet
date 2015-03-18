@@ -32,7 +32,7 @@ jQuery(function(){
 		var form = jQuery('<div id="bctt-form"><table id="bctt-table" class="form-table">\
 			<tr>\
 				<th><label for="bctt-tweet">Tweetable Quote</label></th>\
-				<td><p><textarea cols="70" id="bctt-tweet" name="tweet" /></p>\
+				<td><p><textarea cols="70" id="bctt-tweet" name="tweet" /><br /><span id="bctt-counter"></span></p>\
 				<small>Enter the Tweet. Text will be automatically truncated to provide space for the link back to the post and (optional) your Twitter user name. </small></td>\
 			</tr>\
 			<tr>\
@@ -49,6 +49,14 @@ jQuery(function(){
 		
 		var table = form.find('table');
 		form.appendTo('body').hide();
+		
+		table.find('#bctt-tweet').keyup(function () {
+    		var left = 200 - $(this).val().length;
+    		if (left < 0) {
+        	left = 0;
+    		}
+    		table.find('#bctt-counter').echo('Characters left: ' + left);
+		});
 		
 		// handles the click event of the submit button
 		form.find('#bctt-submit').click(function(){
