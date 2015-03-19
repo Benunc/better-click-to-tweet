@@ -55,7 +55,7 @@ jQuery(function(){
     		if (left < 0) {
         	left = 0;
     		}
-    		table.find('#bctt-counter').echo('Characters left: ' + left);
+    		table.find('#bctt-counter').text('Characters left: ' + left);
 		});
 		
 		// handles the click event of the submit button
