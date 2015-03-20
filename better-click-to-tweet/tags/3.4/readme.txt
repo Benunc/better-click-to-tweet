@@ -1,10 +1,10 @@
 === Better Click To Tweet ===
 Contributors: ben.meredith@gmail.com
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HDSGWRJYFQQNJ
-Tags: click to tweet, twitter, tweet, twitter plugin, Twitter boxes, share, social media, post, posts, plugin, auto post, bitly, bit.ly, yourls, yourls.org, translation-ready 
+Tags: click to tweet, twitter, tweet, twitter plugin, Twitter boxes, share, social media, post, posts, plugin, auto post, bitly, bit.ly, yourls, yourls.org 
 Requires at least: 3.8
 Tested up to: 4.1.1
-Stable tag: 3.4.1
+Stable tag: 3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,8 +26,7 @@ Also, developers, please hop in and suggest improvements. You can submit pull re
 
 Translators:
 
-* Español (es_ES): Jordi Rosalez 
-* Serbian (sr_RS): [Borisa Djuraskovic](http://www.webhostinghub.com/ "Web Hosting Hub") 
+Español (es): Jordi Rosalez
 
 == Installation ==
 
@@ -98,9 +97,6 @@ I want to maximize the usefulness of this plugin by translating it into multiple
 
 == Changelog ==
 
-= 3.4.1 =
-* added Serbian translation courtesy of [Borisa Djuraskovic](http://www.webhostinghub.com/ "Web Hosting Hub")
-
 = 3.4 =
 * small change to the outputted URL for vc3 compliance. Thanks to @tomazzaman on Github for the fix!
 
@@ -158,9 +154,6 @@ I want to maximize the usefulness of this plugin by translating it into multiple
 * Initial release. 
 
 == Upgrade Notice ==
-
-= 3.4.1 =
-* added Serbian language files.
 
 = 3.4 =
 * small change to the outputted URL for vc3 compliance. Thanks to @tomazzaman on Github for the fix!

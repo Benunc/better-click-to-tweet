@@ -5,13 +5,33 @@ defined('ABSPATH') or die("No script kiddies please!");
 // Cache bust tinymce
 add_filter('tiny_mce_version', 'refresh_mce');
 
-// Add button to visual editor
-include dirname(__FILE__).'/assets/tinymce/bctt-tinymce.php';
-
 // Add Settings Link
 add_action('admin_menu', 'bctt_admin_menu');
 
+// Add settings link to plugins listing page
 			
+// Add button plugin to TinyMCE
+add_action('init', 'bctt_tinymce_button');
+	
+function bctt_tinymce_button() {
+			if ( !current_user_can( 'edit_posts' ) && !current_user_can( 'edit_pages' ) ) {
+				return;
+			}
+
+			if ( get_user_option( 'rich_editing' ) == 'true' ) {
+				add_filter( 'mce_external_plugins', 'bctt_tinymce_register_plugin' );
+				add_filter( 'mce_buttons', 'bctt_tinymce_register_button' );
+			}
+		}
+function bctt_tinymce_register_button($buttons) {
+		   array_push($buttons, "|", "bctt_clicktotweet");
+		   return $buttons;
+		}
+
+function bctt_tinymce_register_plugin($plugin_array) {
+		   $plugin_array['bctt_clicktotweet'] = plugins_url( '/assets/js/bctt_clicktotweet_plugin.js', __FILE__);
+		   return $plugin_array;
+		}
 
 
 function bctt_admin_menu() {

@@ -1,0 +1,155 @@
+# Copyright (C) 2015 Better Click To Tweet
+# This file is distributed under the same license as the Better Click To Tweet package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Better Click To Tweet 3.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/better-click-to-tweet\n"
+"POT-Creation-Date: 2015-01-15 17:21:50+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-03-10 15:56+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.7.4\n"
+"Language: sr_RS\n"
+
+#: bctt_options.php:60
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Nemate odgovarajuće dozvole za pristup ovoj stranici"
+
+#: bctt_options.php:70
+msgid "Instructions"
+msgstr "Uputstva"
+
+#. translators: Treat "Better Click To Tweet" as a brand name, don't translate
+#. it
+#: bctt_options.php:72
+msgid ""
+"To add styled click-to-tweet quote boxes include the Better Click To Tweet shortcode "
+"in your post."
+msgstr ""
+"Da biste dodali stilizovane click-to-tweet okvire za citate, unesite Better Click To "
+"Tweet shortcode u svoj post."
+
+#: bctt_options.php:73
+msgid "Here's how you format the shortcode:"
+msgstr "Ovako treba da formatirate shortcode:"
+
+#. translators: This text shows up as a sample tweet in the instructions for
+#. how to use the plugin.
+#: bctt_options.php:73
+msgid "Meaningful, tweetable quote."
+msgstr "Značajan citat na koji se može odgovoriti putem twitter-a."
+
+#. translators: Also, treat "BCTT" as a brand name, don't translate it
+#: bctt_options.php:74
+msgid ""
+"If you are using the visual editor, click the BCTT birdie in the toolbar to add a "
+"pre-formatted shortcode to your post."
+msgstr ""
+"Ako koristite vizuelni uređivač, kliknite na BCTT ptičicu na traci sa alatima da "
+"biste dodali unapred formatirani shortcode svom postu."
+
+#: bctt_options.php:75
+msgid ""
+"Tweet length is automatically shortened to 117 characters minus the length of your "
+"twitter name, to leave room for it and a link back to the post."
+msgstr ""
+"Dužina tweet-a automatski se skraćuje na 117 karaktera, minus dužina vašeg twitter "
+"imena, kako bi ostalo dovoljno mesta za ime i za link posta."
+
+#: bctt_options.php:78 better-click-to-tweet.php:85
+msgid "Settings"
+msgstr "Podešavanja"
+
+#: bctt_options.php:80
+msgid ""
+"Enter your Twitter handle to add \"via @yourhandle\" to your tweets. Do not include "
+"the @ symbol."
+msgstr ""
+"Unesite svoje twitter korisničko ime da dodate \"via @vašeime\" svojim tweet-ovima. "
+"Nemojte pisati simbol ‘@’. "
+
+#: bctt_options.php:81
+msgid ""
+"Checking the box below will force the plugin to show the WordPress shortlink in "
+"place of the full URL. While this does not impact tweet character length, it is "
+"useful alongside plugins which customize the WordPress shortlink using services like "
+"bit.ly or yourls.org for tracking"
+msgstr ""
+"Ako štiklirate sledeći okvir, plugin će prikazati WordPress shortlink umesto punog "
+"URL-a. Iako ne utiče na dužinu tweet-a u karakterima, može vam koristiti za razne "
+"dodatke koji prilagođavaju WordPress shortlink uz pomoć usluga za praćenje kao što "
+"su bit.ly ili yourls.org."
+
+#: bctt_options.php:87
+msgid "Your Twitter Handle"
+msgstr "Vaše twitter ime"
+
+#: bctt_options.php:90
+msgid "Use Short URL?"
+msgstr "Koristi skraćeni URL?"
+
+#: bctt_options.php:100
+msgid "An open source plugin by <a href=%s>Ben Meredith</a>"
+msgstr "Plugin otvorenog izvora od autora <a href=%s>Ben Meredith</a>"
+
+#: bctt_options.php:101
+msgid ""
+"Are you a developer? I would love your help making this plugin better. Check out the "
+"<a href=%s>plugin on Github.</a>"
+msgstr ""
+"Jeste li programer? Bilo bi mi drago kad biste mi pomogli da unapredim ovaj plugin. "
+"Pogledajte <a href=%s>plugin na Github-u.</a>"
+
+#: bctt_options.php:102
+msgid "The best way you can support this and other plugins is to <a href=%s>donate</a>"
+msgstr ""
+"Najbolji način da podržite ovaj plugin, ali i druge dodatke, jeste da <a href="
+"%s>donirate</a>"
+
+#: bctt_options.php:102
+msgid "The second best way is to <a href=%s>leave an honest review.</a>"
+msgstr "Drugi najbolji način je da <a href=%s>napišete iskreni  komentar.</a>"
+
+#: bctt_options.php:103
+msgid "Did this plugin save you enough time to be worth some money?"
+msgstr ""
+"Da li vam je ovaj plugin uštedeo dovoljno vremena da bi zaslužio određenu sumu novca?"
+
+#: bctt_options.php:104
+msgid "Click here to buy me a Coke to say thanks."
+msgstr "Kliknite ovde da biste mi kupili koka-kolu u znak zahvalnosti."
+
+#: better-click-to-tweet.php:49
+msgid "Click To Tweet"
+msgstr "Kliknite za Tweet"
+
+#. Plugin Name of the plugin/theme
+msgid "Better Click To Tweet"
+msgstr "Better Click To Tweet"
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/better-click-to-tweet/"
+msgstr "https://wordpress.org/plugins/better-click-to-tweet/"
+
+#. Description of the plugin/theme
+msgid ""
+"The only Click To Tweet plugin to add translation support. The only Click To Tweet "
+"plugin to take into account your Twitter username's length in truncating long "
+"tweets, or to correctly take into account non-Roman characters. Simply put, as Click "
+"To Tweet plugins go, this one is, well, BETTER."
+msgstr ""
+"Jedini Click To Tweet plugin sa podrškom za prevod. Jedini Click To Tweet plugin "
+"koji uzima u obzir dužinu  vašeg korisničkog imena prilikom skraćenja dugačkih tweet-"
+"ova i koji ispravno prihvata ne-latinične slovne znake. Jednostavno rečeno, u "
+"razvojnom nizu Click To Tweet plugin-ova, ovaj je BOLJI."
+
+#. Author of the plugin/theme
+msgid "Ben Meredith"
+msgstr "Ben Meredith"
+
+#. Author URI of the plugin/theme
+msgid "http://benandjacq.com"
+msgstr "http://benandjacq.com"
