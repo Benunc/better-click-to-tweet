@@ -28,11 +28,11 @@
 
 
 jQuery(function(){
-		// creates a form to be displayed everytime the button is clicked
+		// creates a form to be displayed in a pop up when the blue birdy is clicked
 		var form = jQuery('<div id="bctt-form"><table id="bctt-table" class="form-table">\
 			<tr>\
 				<th><label for="bctt-tweet">Tweetable Quote</label></th>\
-				<td><p><textarea cols="70" id="bctt-tweet" name="tweet" /><br /><span id="bctt-counter"></span></p>\
+				<td><p><textarea cols="70" id="bctt-tweet" name="tweet" /></p><p id="bctt-counter"></p>\
 				<small>Enter the Tweet. Text will be automatically truncated to provide space for the link back to the post and (optional) your Twitter user name. </small></td>\
 			</tr>\
 			<tr>\
@@ -47,16 +47,16 @@ jQuery(function(){
 			</p>\
 			</div>');
 		
-		var table = form.find('table');
-		form.appendTo('body').hide();
+		form.find('#bctt-tweet').on('input propertychange', function() {
+	 				var numChar = 3;
+	 				
+	 				form.find('#bctt-counter').text('Characters remaining: ' + numChar);						
+					}
+				);
 		
-		table.find('#bctt-tweet').keyup(function () {
-    		var left = 200 - $(this).val().length;
-    		if (left < 0) {
-        	left = 0;
-    		}
-    		table.find('#bctt-counter').text('Characters left: ' + left);
-		});
+
+		var table = form.find('#bctt-table');
+		form.appendTo('body').hide();
 		
 		// handles the click event of the submit button
 		form.find('#bctt-submit').click(function(){
