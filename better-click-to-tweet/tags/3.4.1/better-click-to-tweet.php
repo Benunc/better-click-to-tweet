@@ -2,7 +2,7 @@
 /*
 Plugin Name: Better Click To Tweet
 Description: The only Click To Tweet plugin to add translation support. The only Click To Tweet plugin to take into account your Twitter username's length in truncating long tweets, or to correctly take into account non-Roman characters. Simply put, as Click To Tweet plugins go, this one is, well, BETTER. 
-Version: 4.0
+Version: 3.4.1
 Author: Ben Meredith
 Author URI: http://benandjacq.com
 Plugin URI: https://wordpress.org/plugins/better-click-to-tweet/
@@ -82,7 +82,6 @@ function bctt_shortcode( $atts ) {
 					'tweet' 	=> '',
 					'via'		=> 'yes',
 					'url'		=> 'yes',
-					'nofollow'	=> 'no',
    				 ), $atts ) );
 		    	
 		    	$handle = get_option( 'bctt-twitter-handle' );
@@ -135,7 +134,7 @@ function bctt_shortcode( $atts ) {
 
                     }
 
-                    $bcttBttn = sprintf( _x( 'Click To Tweet', 'Text for the box on the reader-facing box', 'better-click-to-tweet' ) );
+                    $bcttBttn = sprintf( __( 'Click To Tweet', 'better-click-to-tweet' ) );
 
 		    if( $url != 'no'){
 
@@ -146,23 +145,13 @@ function bctt_shortcode( $atts ) {
 		    	$short = bctt_shorten( $text, ( 140 - ( $handle_length ) ) );
 		    	
 		    	}
-            
-            if( $nofollow != 'no') {
-            	
-            	$rel = "rel='nofollow'";
-            	
-            	} else {
-            	
-            	$rel = '';
-            	
-            	}
-            	    
+                
                     if ( !is_feed() ) {
                 
-                        return "<div class='bctt-click-to-tweet'><span class='bctt-ctt-text'><a href='https://twitter.com/intent/tweet?text=" . urlencode($short) . $handle_code . $bcttURL."' target='_blank'" . $rel . ">".$short." </a></span><a href='https://twitter.com/intent/tweet?text=" . urlencode($short) . $handle_code . $bcttURL . "' target='_blank' class='bctt-ctt-btn'" . $rel . ">" . $bcttBttn . "</a></div>";
+                        return "<div class='bctt-click-to-tweet'><span class='bctt-ctt-text'><a href='https://twitter.com/intent/tweet?text=" . urlencode($short) . $handle_code . $bcttURL."' target='_blank'>".$short."</a></span><a href='https://twitter.com/intent/tweet?text=" . urlencode($short) . $handle_code . $bcttURL . "' target='_blank' class='bctt-ctt-btn'>" . $bcttBttn . "</a></div>";
                     } else {
                         
-                        return "<hr /><p><em>" . $short . "</em><br /><a href='https://twitter.com/intent/tweet?text=" . urlencode($short) . $handle_code . $bcttURL . "' target='_blank' class='bctt-ctt-btn'" . $rel . ">" . $bcttBttn . "</a><br /><hr />";
+                        return "<hr /><p><em>" . $short . "</em><br /><a href='https://twitter.com/intent/tweet?text=" . urlencode($short) . $handle_code . $bcttURL . "' target='_blank' class='bctt-ctt-btn'>" . $bcttBttn . "</a><br /><hr />";
 	        	
 	        		};
 }
@@ -206,7 +195,7 @@ register_uninstall_hook(    __FILE__, 'bctt_on_uninstall' );
 
 function bctt_options_link($links) {
 
-  $settingsText = sprintf( _x( 'Settings', 'text for the link on the plugins page', 'better-click-to-tweet')); 
+  $settingsText = sprintf( __( 'Settings', 'better-click-to-tweet')); 
 
   $settings_link = '<a href="options-general.php?page=better-click-to-tweet">'.$settingsText.'</a>'; 
 

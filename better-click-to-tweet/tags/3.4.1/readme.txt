@@ -3,8 +3,8 @@ Contributors: ben.meredith@gmail.com
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HDSGWRJYFQQNJ
 Tags: click to tweet, twitter, tweet, twitter plugin, Twitter boxes, share, social media, post, posts, plugin, auto post, bitly, bit.ly, yourls, yourls.org, translation-ready 
 Requires at least: 3.8
-Tested up to: 4.2
-Stable tag: 4.0
+Tested up to: 4.1.1
+Stable tag: 3.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,8 +23,6 @@ Version 3.0 adds an option to enable WordPress shortlinks instead of the full UR
 Don't be scared to donate, if this plugin makes your blogging life any better.
 
 Also, developers, please hop in and suggest improvements. You can submit pull requests at the [github repo](https://github.com/Benunc/better-click-to-tweet "plugin github repo") for this plugin, or go through the official svn repo here. I'm also actively seeking translators to bring the usefulness of this plugin to non-English speakers. Please message me in the forums. 
-
-Huge thanks to Andrew Norcross @norcross for the help with making the plugin even better as of v4.0 with enhancements to the Visual Editor's button. But you can't blame him for any of the other code!
 
 Translators:
 
@@ -51,7 +49,7 @@ Translators:
 = How Does Better Click To Tweet Work? =
 Better Click To Tweet enables you to create beautiful Click To Tweet boxes in your blog posts. Once you've installed and activated the plugin, click on the settings link to put in your Twitter username, and save the settings. 
 
-Then, wherever you want to insert a Click to Tweet quote, use a shortcode in the format `[bctt tweet="xxxxxxxxxxxx"]` replacing the `xxxxxxx` with your tweetable quote. 
+Then, wherever you want to insert a Click to Tweet quote, use a shortcode in the format `[bctt tweet="xxxxxxxxxxxx"]` replacing the xxxxxxx with your tweetable quote. 
 
 As of version 3.1, you can leave off the "via @YourHandle" on a tweet-by-tweet basis by including using a shortcode in the format of `[bctt tweet="xxxxxxxxxxx" via="no"]` 
 
@@ -78,9 +76,6 @@ If you run into any issues with my plugin not working alongside a certain link s
 
 I've also written a tutorial at http://benlikes.us/79 for how to set up the shortlinks with bit.ly and yourls.org.
 
-= Are there any other hidden tricks? =
-Yes! Because I want the majority of users (who aren't as concerned with options like nofollow links and getting rid of the URL in the tweet) to be happy, most options are hidden. I've written a tutorial for using those advanced options over at http://benlikes.us/7r 
-
 = What do I do if it's not working right? =
 I am active in [the support forums](https://wordpress.org/support/plugin/better-click-to-tweet "Better CTT Support"), and in patching the plugin. Start a thread there, and I will gladly help you out. Most of the time you can expect a few hours before a response. I'm in the eastern US, and I like playing with my kids at night, so you might not hear back immediately. Don't panic. 
 
@@ -94,7 +89,7 @@ The bottom line for an end user is that both plugins are great, with the main di
 Also from an end user perspective, I am more active in the support forums than Justin (who has a paid product to support, which justifiably takes more of his time and energy), and you can count on my response and resolution to your issues! 
 
 = How can I help? =
-I want to maximize the usefulness of this plugin by translating it into multiple languages. So far I have included Spanish and Serbian. If you have experience translating .po files, please consider helping in that way. To include those translations in the official plugin, email me, or submit pull requests at Github.
+I want to maximize the usefulness of this plugin by translating it into multiple languages. So far I have included Spanish. If you have experience translating .po files, please consider helping in that way. To include those translations in the official plugin, email me, or submit pull requests at Github.
 
 == Screenshots ==
 
@@ -102,11 +97,6 @@ I want to maximize the usefulness of this plugin by translating it into multiple
 1. Becomes this in your blog post!
 
 == Changelog ==
-
-= 4.0 = 
-* complete overhaul of the visual editor button courtesy @norcross 
-* added the ability to make all links "nofollow" by adding the parameter `nofollow="yes"` to the shortcode.
-* complete overhaul of the settings page for better readability.
 
 = 3.4.1 =
 * added Serbian translation courtesy of [Borisa Djuraskovic](http://www.webhostinghub.com/ "Web Hosting Hub")
@@ -168,11 +158,6 @@ I want to maximize the usefulness of this plugin by translating it into multiple
 * Initial release. 
 
 == Upgrade Notice ==
-
-= 4.0 = 
-* complete overhaul of the visual editor button courtesy @norcross 
-* added the ability to make all links "nofollow" by adding the parameter `nofollow="yes"` to the shortcode.
-* complete overhaul of the settings page for better readability.
 
 = 3.4.1 =
 * added Serbian language files.
