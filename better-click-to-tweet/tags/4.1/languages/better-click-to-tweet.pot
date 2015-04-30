@@ -1,0 +1,167 @@
+# Copyright (C) 2015 Better Click To Tweet
+# This file is distributed under the same license as the Better Click To Tweet package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Better Click To Tweet 4.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/better-click-to-"
+"tweet\n"
+"POT-Creation-Date: 2015-03-27 20:56:20+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: bctt_options.php:40
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#. translators: Treat "Better Click To Tweet" as a brand name, don't translate
+#. it
+#: bctt_options.php:45
+msgid "Better Click To Tweet — a plugin by Ben Meredith"
+msgstr ""
+
+#: bctt_options.php:53
+msgid "About the Author"
+msgstr ""
+
+#: bctt_options.php:57
+msgid ""
+"This plugin is developed by <a href=\"%s\">Ben Meredith</a>. I am a "
+"freelance developer specializing in <a href=\"%s\">outrunning and "
+"outsmarting hackers</a>."
+msgstr ""
+
+#: bctt_options.php:58
+msgid "Sign up to receive my FREE web strategy guide"
+msgstr ""
+
+#: bctt_options.php:59
+msgctxt "placeholder text for input field"
+msgid "Your Email Address"
+msgstr ""
+
+#: bctt_options.php:60
+msgid "No Spam. One-click unsubscribe in every message"
+msgstr ""
+
+#: bctt_options.php:74
+msgid ""
+"Are you a developer? I would love your help making this plugin better. Check "
+"out the <a href=%s>plugin on Github.</a>"
+msgstr ""
+
+#: bctt_options.php:75
+msgid ""
+"The best way you can support this and other plugins is to <a href=%s>donate</"
+"a>"
+msgstr ""
+
+#: bctt_options.php:75
+msgid "The second best way is to <a href=%s>leave an honest review.</a>"
+msgstr ""
+
+#: bctt_options.php:76
+msgid "Did this plugin save you enough time to be worth some money?"
+msgstr ""
+
+#: bctt_options.php:77
+msgid "Click here to buy me a Coke to say thanks."
+msgstr ""
+
+#: bctt_options.php:87
+msgid "Instructions"
+msgstr ""
+
+#. translators: Treat "Better Click To Tweet" as a brand name, don't translate
+#. it
+#: bctt_options.php:88
+msgid ""
+"To add styled click-to-tweet quote boxes include the Better Click To Tweet "
+"shortcode in your post."
+msgstr ""
+
+#: bctt_options.php:89
+msgid "Here's how you format the shortcode:"
+msgstr ""
+
+#. translators: This text shows up as a sample tweet in the instructions for
+#. how to use the plugin.
+#: bctt_options.php:89
+msgid "Meaningful, tweetable quote."
+msgstr ""
+
+#. translators: Also, treat "BCTT" as a brand name, don't translate it
+#: bctt_options.php:90
+msgid ""
+"If you are using the visual editor, click the BCTT birdie in the toolbar to "
+"add a pre-formatted shortcode to your post."
+msgstr ""
+
+#: bctt_options.php:91
+msgid ""
+"Tweet length is automatically shortened to 117 characters minus the length "
+"of your twitter name, to leave room for it and a link back to the post."
+msgstr ""
+
+#: bctt_options.php:96
+msgid "Settings"
+msgstr ""
+
+#: bctt_options.php:97
+msgid ""
+"Enter your Twitter handle to add \"via @yourhandle\" to your tweets. Do not "
+"include the @ symbol."
+msgstr ""
+
+#: bctt_options.php:98
+msgid ""
+"Checking the box below will force the plugin to show the WordPress shortlink "
+"in place of the full URL. While this does not impact tweet character length, "
+"it is useful alongside plugins which customize the WordPress shortlink using "
+"services like bit.ly or yourls.org for tracking"
+msgstr ""
+
+#: bctt_options.php:104
+msgctxt "label for text input on settings screen"
+msgid "Your Twitter Handle"
+msgstr ""
+
+#: bctt_options.php:107
+msgctxt "label for checkbox on settings screen"
+msgid "Use Short URL?"
+msgstr ""
+
+#: bctt_options.php:112
+msgid "Save Changes"
+msgstr ""
+
+#: bctt_options.php:114
+msgid "An open source plugin by <a href=%s>Ben Meredith</a>"
+msgstr ""
+
+#: better-click-to-tweet.php:138
+msgctxt "Text for the box on the reader-facing box"
+msgid "Click To Tweet"
+msgstr ""
+
+#: better-click-to-tweet.php:209
+msgctxt "text for the link on the plugins page"
+msgid "Settings"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Better Click To Tweet"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"The only Click To Tweet plugin to add translation support. The only Click To "
+"Tweet plugin to take into account your Twitter username's length in "
+"truncating long tweets, or to correctly take into account non-Roman "
+"characters. Simply put, as Click To Tweet plugins go, this one is, well, "
+"BETTER."
+msgstr ""
+
