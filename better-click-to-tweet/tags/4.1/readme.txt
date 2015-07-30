@@ -15,14 +15,17 @@ Insert click to tweet boxes into your posts, simply and securely. This plugin is
 = The Best Click To Tweet Plugin on the Market, FREE! =
 
 This plugin allows you to easily create tweetable content for your readers. Using a simple shortcode, your selected text is highlighted and made tweetable. 
+
+* Now [fully customizable](http://benlikes.us/bcttcustom "power user guide customization instructions") if you know CSS.
+* Easily [remove the "via"](http://benlikes.us/7m "how to customize the better click to tweet plugin")
+* Selectively [remove the URL](http://benlikes.us/7r "power user guide") from the resulting Tweet
+* For the SEO-conscious: [make links nofollow.](http://benlikes.us/7r "power user guide")
+
 ><strong> Why Better?</strong><br>
->This plugin started as a complete retool of the "Click To Tweet" plugin by Todaymade. There are a number of improvements under the hood, namely correct character counting when dealing with non-Roman characters, providing multi-language support, and use of the official shortcode API (which means security and forward-compatibility)
+>This plugin started as a complete retool of the "Click To Tweet" plugin by Todaymade. In addition to the user-focused changes above, the under-the-hood changes include correct character counting when dealing with non-Roman characters, translation-readiness, and use of the official shortcode API (which means security and forward-compatibility)
 
-Version 3.0 adds an option to enable WordPress shortlinks instead of the full URL in the tweet. While this doesn't allow for any advantage in terms of number of characters, it does allow you to use this plugin in conjunction with a plugin like the [WP Bitly Plugin](https://wordpress.org/plugins/wp-bitly/ "WP Bit.ly") to track link clicks and status.
 
-Don't be scared to donate, if this plugin makes your blogging life any better.
-
-Also, developers, please hop in and suggest improvements. You can submit pull requests at the [github repo](https://github.com/Benunc/better-click-to-tweet "plugin github repo") for this plugin, or go through the official svn repo here. I'm also actively seeking translators to bring the usefulness of this plugin to non-English speakers. Please message me in the forums. 
+**Speaking of the area under the hood:** developers, please hop in and suggest improvements. You can submit pull requests at the [github repo](https://github.com/Benunc/better-click-to-tweet "plugin github repo") for this plugin. I'm also actively seeking translators to bring the usefulness of this plugin to non-English speakers. Please message me in the forums. 
 
 Huge thanks to Andrew Norcross @norcross for the help with making the plugin even better as of v4.0 with enhancements to the Visual Editor's button. But you can't blame him for any of the other code!
 
@@ -212,5 +215,3 @@ I want to maximize the usefulness of this plugin by translating it into multiple
 
 = 2.0 =
 * Adds internationalization, and out of the box support for Spanish (ES) language.
-
-
