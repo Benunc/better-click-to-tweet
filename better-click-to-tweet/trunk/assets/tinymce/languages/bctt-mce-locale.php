@@ -9,6 +9,7 @@
 * @deprecated wp_tiny_mce() at wp-admin/includes/post.php (for versions prior WP 3.3)
 * @see _WP_Editors::editor_settings in wp-includes/class-wp-editor.php
 */
+$countremaining = 140 - strlen( get_option( 'bctt-twitter-handle' ));
 $strings =
 	'tinyMCE.addI18n( 
 		"' . $mce_locale .'.bctt", 
@@ -18,6 +19,8 @@ $strings =
 			tweetableQuote : "' . esc_js( _x( 'Tweetable Quote', 'Text for label on input box on popup box in visual editor', 'better-click-to-tweet' ) ) . '",
 			viaExplainer : "' . esc_js( _x( 'Add via @YourTwitterName to this tweet', 'Text explaining the checkbox on the visual editor', 'better-click-to-tweet' ) ) . '",
 			viaPrompt : "' . esc_js( _x( 'Include via?', 'Checkbox label in visual editor', 'better-click-to-tweet' ) ) . '",
+			charactersRemaining : "' .esc_js( _x( 'Characters remaining', 'label for how many characters are remaining on visual editor popup', 'better-click-to-tweet' ) ) . '",
+			charCount: "' . esc_js( $countremaining) . '",
 			} 
   		);
   	';

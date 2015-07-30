@@ -1,6 +1,6 @@
 ( function() {
 	tinymce.PluginManager.add( 'bctt', function( editor, url ) {
-
+	
 		// Add a button that opens a window
 		editor.addButton( 'bctt', {
 
@@ -9,6 +9,11 @@
 			icon: 'bctt-tweet',
 			onclick: function() {
 				// Open window
+				function countTweetLength(){
+					var tweetText = document.getElementsByClassName("tweet");
+					var tweetLength = str.length( tweetText );
+					return tweetLength;
+				}
 				editor.windowManager.open( {
 					title: editor.getLang( 'bctt.windowTitle', 'Better Click To Tweet Shortcode Generator' ),
 					body: [
@@ -17,7 +22,11 @@
 							name: 'tweet',
 							label: editor.getLang( 'bctt.tweetableQuote', 'Tweetable Quote' ),
 							multiline : true,
-							minHeight : 60
+							minHeight : 60,
+							classes : 'tweet',
+							onchange: function() {
+						              countTweetLength();
+          								},
 						},
 						{
 							type: 'checkbox',
@@ -26,6 +35,11 @@
 							value: true,
 							text: editor.getLang( 'bctt.viaExplainer', 'Add via @YourTwitterName to this tweet'),
 							label: editor.getLang( 'bctt.viaPrompt', 'Include "via"?'),
+						},
+						{
+							type:  'container',
+							html: String( parseInt(editor.getLang( 'bctt.charCount', 'Not Sure')) - this.tweetLength ),
+							label: editor.getLang( 'bctt.charactersRemaining', 'Characters Remaining'),
 						}
 					],
 					width: 800,
