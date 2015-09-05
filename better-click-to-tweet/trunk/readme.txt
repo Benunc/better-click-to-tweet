@@ -1,10 +1,10 @@
 === Better Click To Tweet ===
 Contributors: ben.meredith@gmail.com
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HDSGWRJYFQQNJ
-Tags: click to tweet, twitter, tweet, twitter plugin, Twitter boxes, share, social media, post, posts, plugin, auto post, bitly, bit.ly, yourls, yourls.org, translation-me, español, deutsch, Russian, Finnish, Svenska, Suomi,
+Tags: click to tweet, twitter, tweet, twitter plugin, Twitter boxes, share, social media, post, posts, plugin, auto post, bitly, bit.ly, yourls, yourls.org, translate-me, Español, Deutsch, Russian, Finnish, Svenska, Suomi, Italiano, 
 Requires at least: 3.8
 Tested up to: 4.3
-Stable tag: 4.3
+Stable tag: 4.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,7 @@ Translators:
 * Russian (ru_RU): webbolt 
 * Swedish (sv_SE): [Stefan Nilsson](http://www.stefannilsson.nu/ "Stefannilsson.nu")
 * German (de_DE): [Christian Zumbrunnen](http://chruezundquer.ch/ "chruezundquer.ch")
+* Italian (it_IT): [Luca at MoweCode](http://www.mowecode.com/ "www.mowecode.com")
 
 == Installation ==
 
@@ -109,6 +110,12 @@ I want to maximize the usefulness of this plugin by translating it into multiple
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 4.4 =
+* Twitter now opens in a new modal box instead of a new tab, (developers: this is done using a call to platform.twitter.com/widgets.js within the code of the output from the shortcode. This means that the script won't be loaded on pages or posts where it's not needed.)
+
+= 4.3.1 =
+* added Italian language
 
 = 4.3 =
 * added translation support (internationalization or i18n) to the button on the visual editor. Now the entire plugin is translatable!

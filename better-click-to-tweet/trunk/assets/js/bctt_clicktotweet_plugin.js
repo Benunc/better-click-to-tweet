@@ -1,20 +1,20 @@
-(function() {
+(function () {
     tinymce.create('tinymce.plugins.bctt_clicktotweet', {
-        init: function(ed, url) {
+        init: function (ed, url) {
             ed.addButton('bctt_clicktotweet', {
                 title: 'Add Tweetable Text',
                 image: url.replace("/js", "") + '/img/birdy_button.png',
-                onclick: function() {
-                	var width = jQuery(window).width(), H = jQuery(window).height(), W = ( 720 < width ) ? 720 : width;
-                		W = W - 10;
-					tb_show( 'Better Click To Tweet Shortcode Generator', '#TB_inline?width=' + W + '&height=auto' + '&inlineId=bctt-form' );
+                onclick: function () {
+                    var width = jQuery(window).width(), H = jQuery(window).height(), W = ( 720 < width ) ? 720 : width;
+                    W = W - 10;
+                    tb_show('Better Click To Tweet Shortcode Generator', '#TB_inline?width=' + W + '&height=auto' + '&inlineId=bctt-form');
                 }
             });
         },
-        createControl: function(n, cm) {
+        createControl: function (n, cm) {
             return null;
         },
-        getInfo: function() {
+        getInfo: function () {
             return {
                 longname: "Click To Tweet by BenUNC",
                 author: 'Ben Meredith',
@@ -27,9 +27,9 @@
     tinymce.PluginManager.add('bctt_clicktotweet', tinymce.plugins.bctt_clicktotweet);
 
 
-jQuery(function(){
-		// creates a form to be displayed everytime the button is clicked
-		var form = jQuery('<div id="bctt-form"><table id="bctt-table" class="form-table">\
+    jQuery(function () {
+        // creates a form to be displayed everytime the button is clicked
+        var form = jQuery('<div id="bctt-form"><table id="bctt-table" class="form-table">\
 			<tr>\
 				<th><label for="bctt-tweet">Tweetable Quote</label></th>\
 				<td><p><textarea cols="70" id="bctt-tweet" name="tweet" /></p>\
@@ -46,35 +46,35 @@ jQuery(function(){
 			<input type="button" id="bctt-submit" class="button-primary" value="Insert Tweet" name="submit" />\
 			</p>\
 			</div>');
-		
-		var table = form.find('table');
-		form.appendTo('body').hide();
-		
-		// handles the click event of the submit button
-		form.find('#bctt-submit').click(function(){
-			// defines the options and their default values
-			
-			var shortcode = '[bctt';
-			
-			var value = table.find('#bctt-tweet').val();
-			
-			if ( value != '' ) {
-				shortcode += ' tweet="' + value + '"';
-				}
-			
-			var viaChoice = table.find('input[name="viamark"]:checked').val();
-			
-			if ( viaChoice == "no" ) {
-				shortcode += ' via="no"';
-				}
-				
-			shortcode += ']';
-			
-			// inserts the shortcode into the active editor
-			tinyMCE.activeEditor.execCommand('mceInsertContent', 0, shortcode);
-			
-			// closes Thickbox
-			tb_remove();
-		});
-	});
+
+        var table = form.find('table');
+        form.appendTo('body').hide();
+
+        // handles the click event of the submit button
+        form.find('#bctt-submit').click(function () {
+            // defines the options and their default values
+
+            var shortcode = '[bctt';
+
+            var value = table.find('#bctt-tweet').val();
+
+            if (value != '') {
+                shortcode += ' tweet="' + value + '"';
+            }
+
+            var viaChoice = table.find('input[name="viamark"]:checked').val();
+
+            if (viaChoice == "no") {
+                shortcode += ' via="no"';
+            }
+
+            shortcode += ']';
+
+            // inserts the shortcode into the active editor
+            tinyMCE.activeEditor.execCommand('mceInsertContent', 0, shortcode);
+
+            // closes Thickbox
+            tb_remove();
+        });
+    });
 })();
