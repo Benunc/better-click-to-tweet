@@ -1,0 +1,226 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Better Click To Tweet\n"
+"POT-Creation-Date: 2015-07-14 09:18+0300\n"
+"PO-Revision-Date: 2015-07-14 09:26+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: better-click-to-tweet.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: fi_FI\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: assets/tinymce/languages/bctt-mce-locale.php:12
+msgctxt "Text that shows on mouseover for visual editor button"
+msgid "Better Click To Tweet Shortcode Generator"
+msgstr "Parempi Klikkaa ja Twiittaa - Lyhytkoodigeneraattori"
+
+#: assets/tinymce/languages/bctt-mce-locale.php:13
+msgctxt ""
+"Text for title of the popup box when creating tweetable quote in the visual "
+"editor"
+msgid "Better Click To Tweet Shortcode Generator"
+msgstr "Parempi Klikkaa ja Twiittaa - Lyhytkoodigeneraattori"
+
+#: assets/tinymce/languages/bctt-mce-locale.php:14
+msgctxt "Text for label on input box on popup box in visual editor"
+msgid "Tweetable Quote"
+msgstr "Tärkeä, twiitin arvoinen lainaus tekstistäsi"
+
+#: assets/tinymce/languages/bctt-mce-locale.php:15
+msgctxt "Text explaining the checkbox on the visual editor"
+msgid "Add via @YourTwitterName to this tweet"
+msgstr "lisää “via @SinunTwitterHandle” twiittiin"
+
+#: assets/tinymce/languages/bctt-mce-locale.php:16
+msgctxt "Checkbox label in visual editor"
+msgid "Include via?"
+msgstr "Lisätäänkö “via @SinunTwitterHandle” twiittiin"
+
+#: bctt_options.php:40
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Sinulla ei ole tarvittavia oikeuksia tälle sivulle."
+
+#. translators: Treat "Better Click To Tweet" as a brand name, don't translate it
+#: bctt_options.php:45
+msgid "Better Click To Tweet — a plugin by Ben Meredith"
+msgstr "Better Click To Tweet - Lisäosan tekijä: Ben Meredith"
+
+#: bctt_options.php:53
+msgid "About the Author"
+msgstr "Lisätietoa tekijästä"
+
+#: bctt_options.php:57
+#, php-format
+msgid ""
+"This plugin is developed by <a href=\"%s\">Ben Meredith</a>. I am a "
+"freelance developer specializing in <a href=\"%s\">outrunning and "
+"outsmarting hackers</a>."
+msgstr ""
+"Tämän lisäosan on kehittänyt <a href=“%s”>Ben Meredith</a>. Olen freelancer "
+"kehittäjä joka on erikoistunut olemaan<a href=“%s”>nopeampi ja älykkäämpi "
+"kuin hakkerit</a>."
+
+#: bctt_options.php:58
+msgid "Sign up to receive my FREE web strategy guide"
+msgstr "Tilaa tästä ILMAINEN verkkostrategiaoppaani"
+
+#: bctt_options.php:59
+msgctxt "placeholder text for input field"
+msgid "Your Email Address"
+msgstr "Sähköpostiosoitteesi"
+
+#: bctt_options.php:60
+msgid "No Spam. One-click unsubscribe in every message"
+msgstr "Ei Spammia. Voit lopettaa tilauksen yhdellä hiiren klikkauksella"
+
+#: bctt_options.php:74
+#, php-format
+msgid ""
+"Are you a developer? I would love your help making this plugin better. Check "
+"out the <a href=%s>plugin on Github.</a>"
+msgstr ""
+"Oletko kehittäjä? Olisi hienoa jos voisit ottaa osaa tämän lisäosan "
+"jatkokehitykseen. Käy katsomassa lisäosan tiedot <a href=%s>GitHub:sta.</a>"
+
+#: bctt_options.php:75
+#, php-format
+msgid ""
+"The best way you can support this and other plugins is to <a href=%s>donate</"
+"a>"
+msgstr ""
+"Paras tapa osoittaa kiitollisuutta lisäosalle on <a href=%s>lahjoittaa</a>"
+
+#: bctt_options.php:75
+#, php-format
+msgid "The second best way is to <a href=%s>leave an honest review.</a>"
+msgstr "Toiseksi paras tapa on <a href=%s>jättää rehellinen arvostelu</a>"
+
+#: bctt_options.php:76
+msgid "Did this plugin save you enough time to be worth some money?"
+msgstr "Auttoiko tämä lisäosa säästämään tarpeeksi aikaa lahjoittaaksesi?"
+
+#: bctt_options.php:77
+msgid "Click here to buy me a Coke to say thanks."
+msgstr "Klikkaa tästä tarjotaksesi minulle kokiksen kiitokseksi."
+
+#: bctt_options.php:87
+msgid "Instructions"
+msgstr "Ohjeet"
+
+#. translators: Treat "Better Click To Tweet" as a brand name, don't translate it
+#: bctt_options.php:88
+msgid ""
+"To add styled click-to-tweet quote boxes include the Better Click To Tweet "
+"shortcode in your post."
+msgstr ""
+"Lisätäksesi click-to-tweet lainauslaatikon sisällytä Klikkaa ja Twiittaa "
+"lyhytkoodi tekstiisi."
+
+#: bctt_options.php:89
+msgid "Here's how you format the shortcode:"
+msgstr "Näin muokaat lyhytkoodia:"
+
+#. translators: This text shows up as a sample tweet in the instructions for how to use the plugin.
+#: bctt_options.php:89
+msgid "Meaningful, tweetable quote."
+msgstr "Tärkeä, twiitin arvoinen lainaus tekstistäsi"
+
+#. translators: Also, treat "BCTT" as a brand name, don't translate it
+#: bctt_options.php:90
+msgid ""
+"If you are using the visual editor, click the BCTT birdie in the toolbar to "
+"add a pre-formatted shortcode to your post."
+msgstr ""
+"Jos käytät visuaalista tekstieditoria, klikkaa BCTT-lintua työkalurivillä "
+"lisätäksesi valmiiksi muotoillun lyhtykoodin tekstiisi."
+
+#: bctt_options.php:91
+msgid ""
+"Tweet length is automatically shortened to 117 characters minus the length "
+"of your twitter name, to leave room for it and a link back to the post."
+msgstr ""
+"Twiitti on automaattisesti lyhennetty 117 merkkiin miinus Twitter-tunnuksesi "
+"pituus. Tämä jättää tilaa Twitter tunnuksellesi kuten myös linkille takaisin "
+"tekstiisi."
+
+#: bctt_options.php:96
+msgid "Settings"
+msgstr "Asetukset"
+
+#: bctt_options.php:97
+msgid ""
+"Enter your Twitter handle to add \"via @yourhandle\" to your tweets. Do not "
+"include the @ symbol."
+msgstr ""
+"Syötä Twitter-tunnuksesi lisätäksesi “via @SinunTwitterHandle” twiittiisi. "
+"Älä lisää @ merkkiä."
+
+#: bctt_options.php:98
+msgid ""
+"Checking the box below will force the plugin to show the WordPress shortlink "
+"in place of the full URL. While this does not impact tweet character length, "
+"it is useful alongside plugins which customize the WordPress shortlink using "
+"services like bit.ly or yourls.org for tracking"
+msgstr ""
+"Allaolevan laatikon merkkaamalla lisäosa pakottaa twiittiin lyhytlinkin "
+"kokonaisen URL:n sijasta. Vaikka tämä ei vaikuta merkkimäärään, on se "
+"käytännölinen ominaisuus sellaisten lisäosien kanssa, jotka käyttävät "
+"palveluja kuten bit.ly tai yourls.org analytiikkaan"
+
+#: bctt_options.php:104
+msgctxt "label for text input on settings screen"
+msgid "Your Twitter Handle"
+msgstr "Twitter-tunnuksesi"
+
+#: bctt_options.php:107
+msgctxt "label for checkbox on settings screen"
+msgid "Use Short URL?"
+msgstr "Käytä lyhyttä URL-osoitetta?"
+
+#: bctt_options.php:112
+msgid "Save Changes"
+msgstr "Tallenna muutokset"
+
+#: bctt_options.php:114
+#, php-format
+msgid "An open source plugin by <a href=%s>Ben Meredith</a>"
+msgstr "Avoimen lähdekoodin lisäosa. Tekijä: <a href=%s>Ben Meredith</a>"
+
+#: better-click-to-tweet.php:142
+msgctxt "Text for the box on the reader-facing box"
+msgid "Click To Tweet"
+msgstr "Klikkaa ja Twiittaa"
+
+#: better-click-to-tweet.php:231
+msgctxt "text for the link on the plugins page"
+msgid "Settings"
+msgstr "Asetukset"
+
+#. Plugin Name of the plugin/theme
+msgid "Better Click To Tweet"
+msgstr "Parempi Klikkaa ja Twiittaa"
+
+#. Description of the plugin/theme
+msgid ""
+"The only Click To Tweet plugin to add translation support. The only Click To "
+"Tweet plugin to take into account your Twitter username's length in "
+"truncating long tweets, or to correctly take into account non-Roman "
+"characters. Simply put, as Click To Tweet plugins go, this one is, well, "
+"BETTER."
+msgstr ""
+"Ainoa Klikkaa ja Twiittaa-lisäosa joka tarjoaa käännöksen tuen. Ainoa "
+"Klikkaa ja Twiittaa-lisäosa joka ottaa huomioon sinun Twitter-tunnuksesi "
+"pituuden pitkien twiittien katkaisussa, sekä ainoa lisäosa joka ottaa "
+"huomioon ei-roomalaiset merkit. Yksinkertaisesti Klikkaa ja Twiittaa-"
+"lisäosat huomioiden, PAREMPI."

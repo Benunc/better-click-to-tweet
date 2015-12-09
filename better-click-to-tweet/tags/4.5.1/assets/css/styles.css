@@ -32,7 +32,6 @@
     text-transform: none !important;
     word-wrap: break-word;
     border-bottom: none !important;
-    box-shadow: none !important;
 }
 
 .bctt-ctt-text a:hover {
@@ -54,7 +53,6 @@ a.bctt-ctt-btn {
     float: right;
     text-decoration: none !important;
     background: transparent url(../img/birdy.png) no-repeat right top 10px;
-    box-shadow: none !important;
 }
 
 .bctt-ctt-btn:hover {

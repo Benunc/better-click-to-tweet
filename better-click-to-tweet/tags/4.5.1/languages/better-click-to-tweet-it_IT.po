@@ -1,0 +1,230 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Better Click To Tweet\n"
+"POT-Creation-Date: 2015-07-13 14:15-0400\n"
+"PO-Revision-Date: 2015-07-24 10:54+0100\n"
+"Last-Translator: Luca <barbi.luca@gmail.com>\n"
+"Language-Team: MoweCode <info@mowecode.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: better-click-to-tweet.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: it_IT\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: assets/tinymce/languages/bctt-mce-locale.php:12
+msgctxt "Text that shows on mouseover for visual editor button"
+msgid "Better Click To Tweet Shortcode Generator"
+msgstr "Better Click To Tweet, generatore Shortcode"
+
+#: assets/tinymce/languages/bctt-mce-locale.php:13
+msgctxt ""
+"Text for title of the popup box when creating tweetable quote in the visual "
+"editor"
+msgid "Better Click To Tweet Shortcode Generator"
+msgstr "Better Click To Tweet, generatore Shortcode"
+
+#: assets/tinymce/languages/bctt-mce-locale.php:14
+msgctxt "Text for label on input box on popup box in visual editor"
+msgid "Tweetable Quote"
+msgstr "Citazione tweettabile"
+
+#: assets/tinymce/languages/bctt-mce-locale.php:15
+msgctxt "Text explaining the checkbox on the visual editor"
+msgid "Add via @YourTwitterName to this tweet"
+msgstr "Aggiungi via @NomeUtente a questo tweet"
+
+#: assets/tinymce/languages/bctt-mce-locale.php:16
+msgctxt "Checkbox label in visual editor"
+msgid "Include via?"
+msgstr "Aggiungi via?"
+
+#: bctt_options.php:40
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Non hai permessi sufficienti per accedere a questa pagina."
+
+#. translators: Treat "Better Click To Tweet" as a brand name, don't translate it
+#: bctt_options.php:45
+msgid "Better Click To Tweet — a plugin by Ben Meredith"
+msgstr "Better Click To Tweet — un plugin di Ben Meredith"
+
+#: bctt_options.php:53
+msgid "About the Author"
+msgstr "Sull'autore"
+
+#: bctt_options.php:57
+#, php-format
+msgid ""
+"This plugin is developed by <a href=\"%s\">Ben Meredith</a>. I am a "
+"freelance developer specializing in <a href=\"%s\">outrunning and "
+"outsmarting hackers</a>."
+msgstr ""
+"Questo plugin è stato sviluppato da <a href=\"%s\">Ben Meredith</a>. Sono "
+"uno sviluppatore freelance specializzato in <a href=\"%s\">outrunning e "
+"outsmarting hacker</a>."
+
+#: bctt_options.php:58
+msgid "Sign up to receive my FREE web strategy guide"
+msgstr "Iscriviti per ricevere la mia guida GRATUITA sulle strategie web."
+
+#: bctt_options.php:59
+msgctxt "placeholder text for input field"
+msgid "Your Email Address"
+msgstr "Il tuo indirizzo Email"
+
+#: bctt_options.php:60
+msgid "No Spam. One-click unsubscribe in every message"
+msgstr "Niente Spam. Potrai annullare l'iscrizione con un click da ogni mail."
+
+#: bctt_options.php:74
+#, php-format
+msgid ""
+"Are you a developer? I would love your help making this plugin better. Check "
+"out the <a href=%s>plugin on Github.</a>"
+msgstr ""
+"Sei uno sviluppatore? Mi piacerebbe collaborare con te per rendere questo "
+"plugin migliore. Guarda il <a href=%s>plugin su Github.</a>"
+
+#: bctt_options.php:75
+#, php-format
+msgid ""
+"The best way you can support this and other plugins is to <a href=%s>donate</"
+"a>"
+msgstr ""
+"Il modo migliore per supportare questo e altri plugin è fare una <a href="
+"%s>donazione</a>"
+
+#: bctt_options.php:75
+#, php-format
+msgid "The second best way is to <a href=%s>leave an honest review.</a>"
+msgstr ""
+"Il secondo modo migliore è <a href=%s>scrivere un'onesta recensione.</a>"
+
+#: bctt_options.php:76
+msgid "Did this plugin save you enough time to be worth some money?"
+msgstr ""
+"Questo plugin ti ha permesso di risparmiare abbastanza tempo da meritare una "
+"piccola spesa?"
+
+#: bctt_options.php:77
+msgid "Click here to buy me a Coke to say thanks."
+msgstr "Clicca qui per regalarmi una Coca Cola e dirmi grazie."
+
+#: bctt_options.php:87
+msgid "Instructions"
+msgstr "Istruzioni"
+
+#. translators: Treat "Better Click To Tweet" as a brand name, don't translate it
+#: bctt_options.php:88
+msgid ""
+"To add styled click-to-tweet quote boxes include the Better Click To Tweet "
+"shortcode in your post."
+msgstr ""
+"Per aggiungere citazioni Tweettabili al tuo post, aggiungi lo shortcode di "
+"Better Click to Tweet al tuo post. "
+
+#: bctt_options.php:89
+msgid "Here's how you format the shortcode:"
+msgstr "Ecco il format dello shortcode:"
+
+#. translators: This text shows up as a sample tweet in the instructions for how to use the plugin.
+#: bctt_options.php:89
+msgid "Meaningful, tweetable quote."
+msgstr "Una significativa e tweettabile citazione."
+
+#. translators: Also, treat "BCTT" as a brand name, don't translate it
+#: bctt_options.php:90
+msgid ""
+"If you are using the visual editor, click the BCTT birdie in the toolbar to "
+"add a pre-formatted shortcode to your post."
+msgstr ""
+"Se stai utilizzando l'editor visuale, clicca l'icona BCTT nella toolbar per "
+"aggiungere uno shortcode preformattato al tuo post."
+
+#: bctt_options.php:91
+msgid ""
+"Tweet length is automatically shortened to 117 characters minus the length "
+"of your twitter name, to leave room for it and a link back to the post."
+msgstr ""
+"La lunghezza del tweet è automaticamente abbreviata a 117 caratteri meno la "
+"lunghezza del tuo nome Twitter, per lasciare spazio per il nome e per il "
+"link al post."
+
+#: bctt_options.php:96
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: bctt_options.php:97
+msgid ""
+"Enter your Twitter handle to add \"via @yourhandle\" to your tweets. Do not "
+"include the @ symbol."
+msgstr ""
+"Inserisci il tuo nome Twitter per aggiungere \"via @tuonome\" ai tuoi tweet. "
+"Non includere il simbolo @."
+
+#: bctt_options.php:98
+msgid ""
+"Checking the box below will force the plugin to show the WordPress shortlink "
+"in place of the full URL. While this does not impact tweet character length, "
+"it is useful alongside plugins which customize the WordPress shortlink using "
+"services like bit.ly or yourls.org for tracking"
+msgstr ""
+"Spuntando l'opzione sottostante forzerai il plugin a mostrare lo shortlink "
+"WordPress al posto dell'URL completa. Anche se ciò non influisce sul numero "
+"dei caratteri del tweet, può essere utile se utilizzato insieme a servizi "
+"come bit.ly o yourls.org per il tracking."
+
+#: bctt_options.php:104
+msgctxt "label for text input on settings screen"
+msgid "Your Twitter Handle"
+msgstr "Il tuo nome utente Twitter"
+
+#: bctt_options.php:107
+msgctxt "label for checkbox on settings screen"
+msgid "Use Short URL?"
+msgstr "Vuoi usare l'URL abbreviata?"
+
+#: bctt_options.php:112
+msgid "Save Changes"
+msgstr "Salva le modifiche"
+
+#: bctt_options.php:114
+#, php-format
+msgid "An open source plugin by <a href=%s>Ben Meredith</a>"
+msgstr "Un plugin Open Source di <a href=%s>Ben Meredith</a>"
+
+#: better-click-to-tweet.php:142
+msgctxt "Text for the box on the reader-facing box"
+msgid "Click To Tweet"
+msgstr "Condividi il Tweet"
+
+#: better-click-to-tweet.php:231
+msgctxt "text for the link on the plugins page"
+msgid "Settings"
+msgstr "Impostazioni"
+
+#. Plugin Name of the plugin/theme
+msgid "Better Click To Tweet"
+msgstr "Better Click To Tweet"
+
+#. Description of the plugin/theme
+msgid ""
+"The only Click To Tweet plugin to add translation support. The only Click To "
+"Tweet plugin to take into account your Twitter username's length in "
+"truncating long tweets, or to correctly take into account non-Roman "
+"characters. Simply put, as Click To Tweet plugins go, this one is, well, "
+"BETTER."
+msgstr ""
+"Il solo plugin plugin Click To Tweet che supporti la localizzazione. L'unico "
+"Click To Tweet che tiene conto della lunghezza del tuo nome utente per "
+"troncare la lunghezza dei tweet o che prenda in considerazione i caratteri "
+"non romani. In poche parole, è il solo plugin Click To Click che funziona "
+"bene. Anzi, MEGLIO."

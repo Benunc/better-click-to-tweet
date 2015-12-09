@@ -2,7 +2,7 @@
 /*
 Plugin Name: Better Click To Tweet
 Description: The only Click To Tweet plugin to add translation support. The only Click To Tweet plugin to take into account your Twitter username's length in truncating long tweets, or to correctly take into account non-Roman characters. Simply put, as Click To Tweet plugins go, this one is, well, BETTER. 
-Version: 4.5.3
+Version: 4.5.1
 Author: Ben Meredith
 Author URI: http://benandjacq.com
 Plugin URI: https://wordpress.org/plugins/better-click-to-tweet/
@@ -194,7 +194,7 @@ function bctt_scripts() {
 
 	if ( $custom != 'true' ) {
 
-		wp_register_style( 'bcct_style', plugins_url( 'assets/css/styles.css', __FILE__ ), false, '2.0', 'all' );
+		wp_register_style( 'bcct_style', plugins_url( 'assets/css/styles.css', __FILE__ ), false, '1.0', 'all' );
 
 		wp_enqueue_style( 'bcct_style' );
 
