@@ -194,7 +194,7 @@ function bctt_scripts() {
 
 	if ( $custom != 'true' ) {
 
-		wp_register_style( 'bcct_style', plugins_url( 'assets/css/styles.css', __FILE__ ), false, '2.0', 'all' );
+		wp_register_style( 'bcct_style', plugins_url( 'assets/css/styles.css', __FILE__ ), false, '3.0', 'all' );
 
 		wp_enqueue_style( 'bcct_style' );
 
