@@ -109,6 +109,10 @@ I want to maximize the usefulness of this plugin by translating it into multiple
 
 == Changelog ==
 
+= 4.8 =
+* made span classes filterable, so that other developers don't hate me when they try to do things.
+
+
 = 4.7.1 =
 * updated links throughout the back end of the plugin to send me money, for people who are into that sort of thing. Shoutout to https://givewp.com for the SWEET donation integration on my site.
 

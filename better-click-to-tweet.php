@@ -174,7 +174,7 @@ function bctt_shortcode( $atts ) {
 		$rel = '';
 
 	}
-	
+
 	$bctt_span_class =  apply_filters( 'bctt_span_class', 'bctt-click-to-tweet' );
 	$bctt_text_span_class = apply_filters( 'bctt_text_span_class', 'bctt-ctt-text');
 	$bctt_button_span_class = apply_filters('bctt_button_span_class', 'bctt-ctt-btn');
