@@ -174,10 +174,14 @@ function bctt_shortcode( $atts ) {
 		$rel = '';
 
 	}
+	
+	$bctt_span_class =  apply_filters( 'bctt_span_class', 'bctt-click-to-tweet' );
+	$bctt_text_span_class = apply_filters( 'bctt_text_span_class', 'bctt-ctt-text');
+	$bctt_button_span_class = apply_filters('bctt_button_span_class', 'bctt-ctt-btn');
 
 	if ( ! is_feed() ) {
 
-		return "<span class='bctt-click-to-tweet'><span class='bctt-ctt-text'><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank'" . $rel . ">" . $short . " </a></span><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='bctt-ctt-btn'" . $rel . ">" . $bcttBttn . "</a></span>";
+		return "<span class='" . $bctt_span_class . "'><span class='" . $bctt_text_span_class . "'><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank'" . $rel . ">" . $short . " </a></span><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='" . $bctt_button_span_class ."'" . $rel . ">" . $bcttBttn . "</a></span>";
 	} else {
 
 		return "<hr /><p><em>" . $short . "</em><br /><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='bctt-ctt-btn'" . $rel . ">" . $bcttBttn . "</a><br /><hr />";
