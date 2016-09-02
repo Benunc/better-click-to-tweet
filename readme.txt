@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 4.6
-Stable tag: 4.7.1
+Stable tag: 4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,19 +25,11 @@ This plugin allows you to easily create tweetable content for your readers. Usin
 >This plugin started as a complete retool of the "Click To Tweet" plugin by Todaymade. In addition to the user-focused changes above, the under-the-hood changes include correct character counting when dealing with non-Roman characters, translation-readiness, and use of the official shortcode API (which means security and forward-compatibility)
 
 
-**Speaking of the area under the hood:** developers, please hop in and suggest improvements. You can submit pull requests at the [github repo](https://github.com/Benunc/better-click-to-tweet "plugin github repo") for this plugin. I'm also actively seeking translators to bring the usefulness of this plugin to non-English speakers. Please message me in the forums. 
+**Speaking of the area under the hood:** developers, please hop in and suggest improvements. You can submit pull requests at the [github repo](https://github.com/Benunc/better-click-to-tweet "plugin github repo") for this plugin.
 
 Huge thanks to Andrew Norcross @norcross for the help with making the plugin even better as of v4.0 with enhancements to the Visual Editor's button. But you can't blame him for any of the other code!
 
-Translators:
-
-* Español (es_ES): Jordi Rosalez 
-* Serbian (sr_RS): [Borisa Djuraskovic](http://www.webhostinghub.com/ "Web Hosting Hub")
-* Finnish/Suomi (fi): [Sampsa Daavitsainen](http://www.calltoaction.fi/ "CallToAction.fi")
-* Russian (ru_RU): webbolt 
-* Swedish (sv_SE): [Stefan Nilsson](http://www.stefannilsson.nu/ "Stefannilsson.nu")
-* German (de_DE): [Christian Zumbrunnen](http://chruezundquer.ch/ "chruezundquer.ch")
-* Italian (it_IT): [Luca at MoweCode](http://www.mowecode.com/ "www.mowecode.com")
+Translation is now managed at [the official WordPress translation page](https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet "WordPress translation"). Thanks to the folks who helped translate in the past.
 
 == Installation ==
 
