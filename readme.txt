@@ -102,8 +102,9 @@ I want to maximize the usefulness of this plugin by translating it into multiple
 == Changelog ==
 
 = 4.8 =
-* made span classes filterable, so that other developers don't hate me when they try to do things.
-
+* made span classes filterable, so that other developers don't hate me when they try to extend the plugin.
+* I know that first point doesn't sound like much, but it's huge for developer geeks. You're just gonna have to trust me.
+* removed the names of translators from the "description" since they are now being handled by official language packs, and giving credit where it is due was getting complicated.
 
 = 4.7.1 =
 * updated links throughout the back end of the plugin to send me money, for people who are into that sort of thing. Shoutout to https://givewp.com for the SWEET donation integration on my site.
