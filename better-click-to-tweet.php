@@ -226,7 +226,7 @@ function bctt_scripts() {
 
 ;
 
-add_action( 'wp_enqueue_scripts', 'bctt_scripts' );
+add_action( 'wp_enqueue_scripts', apply_filters( 'bctt_script_change', 'bctt_scripts' ) );
 
 /*
  * Delete options and shortcode on uninstall
