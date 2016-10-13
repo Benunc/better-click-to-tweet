@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 4.6
-Stable tag: 4.8
+Stable tag: 4.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -82,17 +82,19 @@ I've also written a tutorial at http://benlikes.us/79 for how to set up the shor
 Yes! Because I want the majority of users (who aren't as concerned with options like nofollow links and getting rid of the URL in the tweet) to be happy, most options are hidden. I've written a tutorial for using those advanced options over at http://benlikes.us/7r 
 
 = What do I do if it's not working right? =
-I am active in [the support forums](https://wordpress.org/support/plugin/better-click-to-tweet "Better CTT Support"), and in patching the plugin. Start a thread there, and I will gladly help you out. Most of the time you can expect a few hours before a response. I'm in the eastern US, and I like playing with my kids at night, so you might not hear back immediately. Don't panic. 
+I am active in [the support forums](https://wordpress.org/support/plugin/better-click-to-tweet "BCTT Support"), and in patching the plugin. Start a thread there, and I will gladly help you out. Most of the time you can expect a day or two before a response. I'm in the eastern US, and I like playing with my kids at night, so you might not hear back immediately. Don't panic.
 
 = What are the differences between this plugin and Click To Tweet by Todaymade? =
 I originally was planning on contacting Justin at Todaymade to suggest some improvements to the code on his plugin, and in the midst of that, his plugin was unexpectedly pulled from the official repository, for having a (frowned upon) "Powered By" link. So, I set about fully overhauling the plugin. 
 
 Since that time Justin and the team over at Todaymade have rereleased a version of their plugin without the "Powered By" link. His plugin (which was originally released before the advent of the shortcode API) still doesn't use it, and for that reason is less secure than mine. For him to change to support the shortcode API is a more complicated issue, as he'll need to still provide support for how his plugin currently handles the pseudo-shortcode system, or risk breaking every current user's website.
 
-I've pushed out over 25 releases with bug fixes, improvements, and additional functionality, while the other plugin remains unchanged. There's no way in which my plugin doesn't live up to it's name.
+I've pushed out many releases with bug fixes, improvements, and additional functionality, while the other plugin remains unchanged. There's no way in which my plugin doesn't live up to it's name.
 
 = How can I help? =
-I want to maximize the usefulness of this plugin by translating it into multiple languages. So far I have included Spanish and Serbian. If you have experience translating .po files, please consider helping in that way. To include those translations in the official plugin, email me, or submit pull requests at Github.
+Translations: https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet
+Pull Requests: https://github.com/Benunc/better-click-to-tweet
+Donations: http://benlikes.us/donate
 
 == Screenshots ==
 
@@ -100,6 +102,11 @@ I want to maximize the usefulness of this plugin by translating it into multiple
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 4.9 =
+* enhancement - Made the function that registers and enqueues the scripts filterable, so that developers who want to put all styles for Better Click To Tweet boxes in their theme files are able to do so using this snippet: https://gist.github.com/Benunc/533985231bbfde551d019620f628a921
+* two updates in a row with no love for the non developer, but MUCH love for the developer. Trust me, this one is big time for CSS developers to be able to add styles to themes.
+* changed
 
 = 4.8 =
 * made span classes filterable, so that other developers don't hate me when they try to extend the plugin.

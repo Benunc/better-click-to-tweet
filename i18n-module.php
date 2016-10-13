@@ -195,7 +195,7 @@ class yoast_i18n {
 				echo '<a href="https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet/"><img style="float: right;margin: 15px 5px 5px 5px;padding: 0 1em;width: 200px;" src="' . $this->glotpress_logo . '" alt="' . $this->glotpress_name . '"/></a>';
 			}
 			echo '<h2>' . sprintf( __( 'Translation of %s', 'better-click-to-tweet' ), $this->plugin_name ) . '</h2>';
-			
+
 			echo '<p>' . $message . '</p>';
 			echo '<p><a href="https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet/">' . __( 'Register now &raquo;', 'better-click-to-tweet' ) . '</a></p>';
 			echo '</div>';
