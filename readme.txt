@@ -106,7 +106,7 @@ Donations: http://benlikes.us/donate
 = 4.9 =
 * enhancement - Made the function that registers and enqueues the scripts filterable, so that developers who want to put all styles for Better Click To Tweet boxes in their theme files are able to do so using this snippet: https://gist.github.com/Benunc/533985231bbfde551d019620f628a921
 * two updates in a row with no love for the non developer, but MUCH love for the developer. Trust me, this one is big time for CSS developers to be able to add styles to themes.
-* changed
+* changed some specifics in the FAQ, and the Readme in general. Encouraged people to donate at http://benlikes.us/donate
 
 = 4.8 =
 * made span classes filterable, so that other developers don't hate me when they try to extend the plugin.
