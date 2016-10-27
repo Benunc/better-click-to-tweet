@@ -82,18 +82,19 @@ function bctt_shorten( $input, $length, $ellipsis = true, $strip_html = true ) {
 
 function bctt_shortcode( $atts ) {
 
-	extract( shortcode_atts( array(
+	$atts = shortcode_atts( array(
 		'tweet'    => '',
 		'via'      => 'yes',
 		'username' => 'not-a-real-user',
 		'url'      => 'yes',
 		'nofollow' => 'no',
-	), $atts ) );
+		'prompt'   => sprintf( _x( 'Click To Tweet', 'Text for the box on the reader-facing box', 'better-click-to-tweet' ) )
+	), $atts, 'bctt'  );
 	
 	//since 4.7: adds option to add in a per-box username to the tweet
-	if ( $username != 'not-a-real-user' ) {
+	if ( $atts['username'] != 'not-a-real-user' ) {
 	
-		$handle = $username;
+		$handle = $atts['username'];
 	
 	} else {
 		
@@ -111,7 +112,7 @@ function bctt_shortcode( $atts ) {
 
 	}
 
-	if ( ! empty( $handle ) && $via != 'no' ) {
+	if ( ! empty( $handle ) && $atts['via'] != 'no' ) {
 
 		$handle_code = "&amp;via=" . $handle . "&amp;related=" . $handle;
 
@@ -121,21 +122,20 @@ function bctt_shortcode( $atts ) {
 
 	}
 	
-	if ( $via != 'yes' ) {
+	if ( $atts['via'] != 'yes' ) {
 
-		$handle        = '';
 		$handle_code   = '';
 		$handle_length = 0;
 
 	}
 
-	$text = $tweet;
+	$text = $atts['tweet'];
 
-	if ( filter_var( $url, FILTER_VALIDATE_URL ) ) {
+	if ( filter_var( $atts['url'], FILTER_VALIDATE_URL ) ) {
 
-		$bcttURL = '&amp;url=' . $url;
+		$bcttURL = '&amp;url=' . $atts['url'];
 
-	} elseif ( $url != 'no' ) {
+	} elseif ( $atts['url'] != 'no' ) {
 
 		if ( get_option( 'bctt-short-url' ) != false ) {
 
@@ -153,9 +153,7 @@ function bctt_shortcode( $atts ) {
 
 	}
 
-	$bcttBttn = sprintf( _x( 'Click To Tweet', 'Text for the box on the reader-facing box', 'better-click-to-tweet' ) );
-
-	if ( $url != 'no' ) {
+	if ( $atts['url'] != 'no' ) {
 
 		$short = bctt_shorten( $text, ( 117 - ( $handle_length ) ) );
 
@@ -165,7 +163,7 @@ function bctt_shortcode( $atts ) {
 
 	}
 
-	if ( $nofollow != 'no' ) {
+	if ( $atts['nofollow'] != 'no' ) {
 
 		$rel = "rel='nofollow'";
 
@@ -181,12 +179,12 @@ function bctt_shortcode( $atts ) {
 
 	if ( ! is_feed() ) {
 
-		return "<span class='" . $bctt_span_class . "'><span class='" . $bctt_text_span_class . "'><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank'" . $rel . ">" . $short . " </a></span><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='" . $bctt_button_span_class ."'" . $rel . ">" . $bcttBttn . "</a></span>";
+		return "<span class='" . $bctt_span_class . "'><span class='" . $bctt_text_span_class . "'><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank'" . $rel . ">" . $short . " </a></span><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='" . $bctt_button_span_class ."'" . $rel . ">" . $atts['prompt'] . "</a></span>";
 	} else {
 
-		return "<hr /><p><em>" . $short . "</em><br /><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='bctt-ctt-btn'" . $rel . ">" . $bcttBttn . "</a><br /><hr />";
+		return "<hr /><p><em>" . $short . "</em><br /><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='bctt-ctt-btn'" . $rel . ">" . $atts['prompt'] . "</a><br /><hr />";
 
-	};
+	}
 }
 
 add_shortcode( 'bctt', 'bctt_shortcode' );
