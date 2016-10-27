@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 4.6
-Stable tag: 4.9
+Stable tag: 4.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,6 +102,14 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 4.10 =
+* enhancement — added a 'prompt' shortcode attribute, so not you can change the words "Click To Tweet" on a per-box basis. Thanks to @apearlman on the Wordpress.org support forums for the suggestion!
+* fix — changed the way the shortcode attributes are called, because my IDE kept throwing strange errors because the code wasn't clean enough.
+* fix — removed some unused local variables because I used to not know how to code things good.
+* dream — thought about ways to monetize this plugin, but ultimately decided against it for now, because I hate dashboard nags. But if you like it, donate: http://benlikes.us/donate
+* change — decided to go with 4.10 instead of 5.0 in an attempt to move toward a version numbering system that makes sense, because I have learned much since 0.X --> 1.0.
+* just for kicks and totally unrelated — wrote a cool post about rolling back WordPress plugins: http://benlikes.us/fk
 
 = 4.9 =
 * enhancement - Made the function that registers and enqueues the scripts filterable, so that developers who want to put all styles for Better Click To Tweet boxes in their theme files are able to do so using this snippet: https://gist.github.com/Benunc/533985231bbfde551d019620f628a921
