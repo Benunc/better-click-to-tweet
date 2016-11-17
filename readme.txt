@@ -1,5 +1,5 @@
 === Better Click To Tweet ===
-Contributors: ben.meredith@gmail.com
+Contributors: ben.meredith@gmail.com, wpsteward
 Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
