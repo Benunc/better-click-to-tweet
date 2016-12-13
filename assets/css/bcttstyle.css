@@ -30,6 +30,7 @@
     text-transform: none !important;
     word-wrap: break-word;
     border-bottom: none !important;
+    box-shadow: none !important;
 }
 
 .bctt-ctt-text a:hover {
@@ -39,6 +40,7 @@
 
 a.bctt-ctt-btn {
     border-bottom: none !important;
+    box-shadow: none !important;
     margin: 0;
     padding: 18px 0 0 0;
     position: relative;

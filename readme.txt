@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 4.7
-Stable tag: 4.10
+Stable tag: 5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,6 +102,14 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.0 =
+* enhancement — settings page now looks good on mobile. Before it looked a bit like someone was actively hitting it with a bat.
+* enhancement — added multiple action hooks to the settings page. This provides third party developers with the ability to add things to that page without hacking the core code.
+* enhancement — made the function enqueuing the front end styles DRYer.
+* change — the previous way (version 4.9) I had filtered the function enqueuing styles was throwing PHP warnings when I used it, so I introduced an options-based method for never enqueueing it in the first first place. Updated gist for that: http://benlikes.us/bcttgist2 This method will also pave the way for the most exciting update (for me) in the history of Better Click To Tweet:
+* change — introduced the first premium add-on (Premium Styles), and made some changes to the settings page to facilitate that. The goal is threefold: (1) Don't introduce the option to folks who have already replaced the custom stylesheet using the power user guide http://benlikes.us/7r or by dequeueing the stylesheet using this gist http://benlikes.us/bcttgist1  (2) Introduce the option to purchase custom styles in a non-sleazy way. (3) Um, introduce the option to my tens of thousands of happy users to pay me for something.
+
 
 = 4.10 =
 * enhancement — added a 'prompt' shortcode attribute, so not you can change the words "Click To Tweet" on a per-box basis. Thanks to @apearlman on the Wordpress.org support forums for the suggestion!

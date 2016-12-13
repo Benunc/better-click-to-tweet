@@ -2,7 +2,7 @@
 /*
 Plugin Name: Better Click To Tweet
 Description: Add Click to Tweet boxes simply and elegantly to your posts or pages. All the features of a premium plugin, for FREE!
-Version: 4.10
+Version: 5.0
 Author: Ben Meredith
 Author URI: https://www.wpsteward.com
 Plugin URI: https://wordpress.org/plugins/better-click-to-tweet/
@@ -89,17 +89,17 @@ function bctt_shortcode( $atts ) {
 		'url'      => 'yes',
 		'nofollow' => 'no',
 		'prompt'   => sprintf( _x( 'Click To Tweet', 'Text for the box on the reader-facing box', 'better-click-to-tweet' ) )
-	), $atts, 'bctt'  );
-	
+	), $atts, 'bctt' );
+
 	//since 4.7: adds option to add in a per-box username to the tweet
 	if ( $atts['username'] != 'not-a-real-user' ) {
-	
+
 		$handle = $atts['username'];
-	
+
 	} else {
-		
+
 		$handle = get_option( 'bctt-twitter-handle' );
-	
+
 	}
 
 	if ( function_exists( 'mb_internal_encoding' ) ) {
@@ -121,7 +121,7 @@ function bctt_shortcode( $atts ) {
 		$handle_code = '';
 
 	}
-	
+
 	if ( $atts['via'] != 'yes' ) {
 
 		$handle_code   = '';
@@ -173,13 +173,13 @@ function bctt_shortcode( $atts ) {
 
 	}
 
-	$bctt_span_class =  apply_filters( 'bctt_span_class', 'bctt-click-to-tweet' );
-	$bctt_text_span_class = apply_filters( 'bctt_text_span_class', 'bctt-ctt-text');
-	$bctt_button_span_class = apply_filters('bctt_button_span_class', 'bctt-ctt-btn');
+	$bctt_span_class        = apply_filters( 'bctt_span_class', 'bctt-click-to-tweet' );
+	$bctt_text_span_class   = apply_filters( 'bctt_text_span_class', 'bctt-ctt-text' );
+	$bctt_button_span_class = apply_filters( 'bctt_button_span_class', 'bctt-ctt-btn' );
 
 	if ( ! is_feed() ) {
 
-		return "<span class='" . $bctt_span_class . "'><span class='" . $bctt_text_span_class . "'><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank'" . $rel . ">" . $short . " </a></span><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='" . $bctt_button_span_class ."'" . $rel . ">" . $atts['prompt'] . "</a></span>";
+		return "<span class='" . $bctt_span_class . "'><span class='" . $bctt_text_span_class . "'><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank'" . $rel . ">" . $short . " </a></span><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='" . $bctt_button_span_class . "'" . $rel . ">" . $atts['prompt'] . "</a></span>";
 	} else {
 
 		return "<hr /><p><em>" . $short . "</em><br /><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='bctt-ctt-btn'" . $rel . ">" . $atts['prompt'] . "</a><br /><hr />";
@@ -202,29 +202,41 @@ add_shortcode( 'bctt', 'bctt_shortcode' );
 
 function bctt_scripts() {
 
+	if ( get_option( 'bctt_disable_css' ) ) {
+		add_option( 'bctt_style_dequeued', true );
+		foreach ( wp_load_alloptions() as $option => $value ) {
+			if ( strpos( $option, 'bcct_' ) === 0 ) {
+				delete_option( $option );
+			}
+		}
+
+		return;
+	}
+
 	$dir = wp_upload_dir();
 
 	$custom = file_exists( $dir['basedir'] . '/bcttstyle.css' );
 
-	if ( $custom != 'true' ) {
+	$tag      = $custom ? 'bcct_custom_style' : 'bcct_style';
+	$antitag  = $custom ? 'bcct_style' : 'bcct_custom_style';
+	$location = $custom ? $dir['baseurl'] . '/bcttstyle.css' : plugins_url( 'assets/css/styles.css', __FILE__ );
 
-		wp_register_style( 'bcct_style', plugins_url( 'assets/css/styles.css', __FILE__ ), false, '3.0', 'all' );
+	$version = $custom ? '1.0' : '3.0';
 
-		wp_enqueue_style( 'bcct_style' );
+	wp_register_style( $tag, $location, false, $version, 'all' );
 
-	} else {
+	wp_enqueue_style( $tag );
 
-		wp_register_style( 'bcct_custom_style', $dir['baseurl'] . '/bcttstyle.css', false, '1.0', 'all' );
-
-		wp_enqueue_style( 'bcct_custom_style' );
-	}
+	delete_option( 'bctt_style_dequeued' );
+	add_option( $tag . '_enqueued', true );
+	delete_option( $antitag . '_enqueued' );
 
 
 }
 
-;
 
-add_action( 'wp_enqueue_scripts', apply_filters( 'bctt_script_change', 'bctt_scripts' ) );
+add_action( 'wp_enqueue_scripts', 'bctt_scripts', 10 );
+
 
 /*
  * Delete options and shortcode on uninstall
@@ -237,6 +249,10 @@ function bctt_on_uninstall() {
 	delete_option( 'bctt-twitter-handle' );
 
 	delete_option( 'bctt-short-url' );
+
+	delete_option( 'bctt_disable_css' );
+
+	delete_option( 'bctt_style_enqueued' );
 
 	remove_shortcode( 'bctt' );
 
