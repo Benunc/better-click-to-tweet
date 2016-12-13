@@ -148,7 +148,7 @@ function bctt_settings_page() {
 													echo 'disabled="disabled"';
 												} ?>" /> <span
 													style="font-size: .85em;"><em>  <?php if ( ! is_plugin_active( 'better-click-to-tweet-styles/better-click-to-tweet-styles.php' ) ) {
-															echo sprintf( __( 'Want Premium styles? Add the <a href=%s>Premium Styles add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'https://www.wpsteward.com/insider/bctt-styles' ) );
+															echo sprintf( __( 'Want Premium styles? Add the <a href=%s>Premium Styles add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'http://benlikes.us/bcttpsdirect' ) );
 														} ?></em></span>
 
 											</td>
