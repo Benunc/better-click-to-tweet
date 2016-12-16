@@ -266,7 +266,7 @@ function bctt_options_link( $links ) {
 
 	$settingsText = sprintf( _x( 'Settings', 'text for the link on the plugins page', 'better-click-to-tweet' ) );
 
-	$settings_link = '<a href="options-general.php?page=better-click-to-tweet">' . $settingsText . '</a>';
+	$settings_link = '<a href="admin.php?page=better-click-to-tweet">' . $settingsText . '</a>';
 
 	array_unshift( $links, $settings_link );
 
