@@ -142,12 +142,12 @@ function bctt_settings_page() {
 												<label><?php _ex( 'Use Premium Styles?', 'label for checkbox on settings screen', 'better-click-to-tweet' ); ?></label>
 											</th>
 											<td><input type="checkbox" name="bctt-custom-style"
-											           value="1" <?php if ( is_plugin_active( 'better-click-to-tweet-styles/better-click-to-tweet-styles.php' ) ) {
+											           value="1" <?php if ( is_plugin_active( 'better-click-to-tweet-styles/better-click-to-tweet-premium-styles.php' ) ) {
 													echo 'checked="checked"';
 												} else {
 													echo 'disabled="disabled"';
 												} ?>" /> <span
-													style="font-size: .85em;"><em>  <?php if ( ! is_plugin_active( 'better-click-to-tweet-styles/better-click-to-tweet-styles.php' ) ) {
+													style="font-size: .85em;"><em>  <?php if ( ! is_plugin_active( 'better-click-to-tweet-styles/better-click-to-tweet-premium-styles.php' ) ) {
 															echo sprintf( __( 'Want Premium styles? Add the <a href=%s>Premium Styles add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'http://benlikes.us/bcttpsdirect' ) );
 														} ?></em></span>
 
