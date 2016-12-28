@@ -27,7 +27,7 @@ class Better_Click_To_Tweet_Settings {
 		// Add Settings Link
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 
-		add_filter( 'plugin_action_links_' . BTCC_PLUGIN_BASENAME, array( $this, 'plugin_meta_link' ) );
+		add_filter( 'plugin_action_links_' . BCTT_PLUGIN_BASENAME, array( $this, 'plugin_meta_link' ) );
 	}
 
 
@@ -74,7 +74,7 @@ class Better_Click_To_Tweet_Settings {
 	 * Admin styles.
 	 */
 	public function admin_styles() {
-		wp_register_style( 'bctt_admin_style', BTCC_PLUGIN_URL . 'assets/css/bctt-admin.css' );
+		wp_register_style( 'bctt_admin_style', BCTT_PLUGIN_URL . 'assets/css/bctt-admin.css' );
 		wp_enqueue_style( 'bctt_admin_style' );
 	}
 

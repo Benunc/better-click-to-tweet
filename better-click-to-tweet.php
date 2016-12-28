@@ -33,7 +33,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 		private static $instance;
 
 		/**
-		 * BTCC Shortcodes Object
+		 * BCTT Shortcodes Object
 		 *
 		 * @since  5.x
 		 * @access public
@@ -53,12 +53,12 @@ if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 		public $settings;
 
 		/**
-		 * BTCC i18n Notice Object
+		 * BCTT i18n Notice Object
 		 *
 		 * @since  5.x
 		 * @access public
 		 *
-		 * @var    BTCC_i18n_Notice object
+		 * @var    BCTT_i18n_Notice object
 		 */
 		public $i18n_notice;
 
@@ -89,7 +89,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 				self::$instance->shortcodes = new Better_Click_To_Tweet_Shortcodes();
 
 				// instantiate i18n encouragement module
-				self::$instance->i18n_notice = new BTCC_i18n_Notice(
+				self::$instance->i18n_notice = new BCTT_i18n_Notice(
 					array(
 						'textdomain'     => 'better-click-to-tweet',
 						'project_slug'   => '/wp-plugins/better-click-to-tweet/stable',
@@ -119,23 +119,23 @@ if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 		private function setup_constants() {
 
 			// Plugin Folder Path.
-			if ( ! defined( 'BTCC_PLUGIN_DIR' ) ) {
-				define( 'BTCC_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+			if ( ! defined( 'BCTT_PLUGIN_DIR' ) ) {
+				define( 'BCTT_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 			}
 
 			// Plugin Folder URL.
-			if ( ! defined( 'BTCC_PLUGIN_URL' ) ) {
-				define( 'BTCC_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+			if ( ! defined( 'BCTT_PLUGIN_URL' ) ) {
+				define( 'BCTT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 			}
 
 			// Plugin Basename.
-			if ( ! defined( 'BTCC_PLUGIN_BASENAME' ) ) {
-				define( 'BTCC_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+			if ( ! defined( 'BCTT_PLUGIN_BASENAME' ) ) {
+				define( 'BCTT_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 			}
 
 			// Plugin Root File.
-			if ( ! defined( 'BTCC_PLUGIN_FILE' ) ) {
-				define( 'BTCC_PLUGIN_FILE', __FILE__ );
+			if ( ! defined( 'BCTT_PLUGIN_FILE' ) ) {
+				define( 'BCTT_PLUGIN_FILE', __FILE__ );
 			}
 
 		}
@@ -149,10 +149,10 @@ if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 		 * @return void
 		 */
 		private function includes() {
-			require_once BTCC_PLUGIN_DIR . 'includes/class-btcc-i18n-notice.php';
-			require_once BTCC_PLUGIN_DIR . 'includes/class-btcc-shortcodes.php';
-			require_once BTCC_PLUGIN_DIR . 'includes/class-btcc-settings.php';
-			require_once BTCC_PLUGIN_DIR . 'assets/tinymce/bctt-tinymce.php';
+			require_once BCTT_PLUGIN_DIR . 'includes/class-bctt-i18n-notice.php';
+			require_once BCTT_PLUGIN_DIR . 'includes/class-bctt-shortcodes.php';
+			require_once BCTT_PLUGIN_DIR . 'includes/class-bctt-settings.php';
+			require_once BCTT_PLUGIN_DIR . 'assets/tinymce/bctt-tinymce.php';
 		}
 
 		/**
@@ -218,27 +218,27 @@ if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 		 */
 		public function load_textdomain() {
 
-			// Set filter for BTCC's languages directory
-			$btcc_lang_dir = dirname( plugin_basename( BTCC_PLUGIN_FILE ) ) . '/languages/';
-			$btcc_lang_dir = apply_filters( 'btcc_languages_directory', $btcc_lang_dir );
+			// Set filter for BCTT's languages directory
+			$bctt_lang_dir = dirname( plugin_basename( BCTT_PLUGIN_FILE ) ) . '/languages/';
+			$bctt_lang_dir = apply_filters( 'bctt_languages_directory', $bctt_lang_dir );
 
 			// Traditional WordPress plugin locale filter
 			$locale = apply_filters( 'plugin_locale', get_locale(), 'better-click-to-tweet' );
 			$mofile = sprintf( '%1$s-%2$s.mo', 'better-click-to-tweet', $locale );
 
 			// Setup paths to current locale file
-			$mofile_local  = $btcc_lang_dir . $mofile;
+			$mofile_local  = $bctt_lang_dir . $mofile;
 			$mofile_global = WP_LANG_DIR . '/better-click-to-tweet/' . $mofile;
 
 			if ( file_exists( $mofile_global ) ) {
 				// Look in global /wp-content/languages/better-click-to-tweet directory.
 				load_textdomain( 'better-click-to-tweet', $mofile_global );
 			} elseif ( file_exists( $mofile_local ) ) {
-				// Look in local location from filter `btcc_languages_directory`.
+				// Look in local location from filter `bctt_languages_directory`.
 				load_textdomain( 'better-click-to-tweet', $mofile_local );
 			} else {
-				// Load the default language files packaged up w/ BTCC
-				load_plugin_textdomain( 'better-click-to-tweet', false, $btcc_lang_dir );
+				// Load the default language files packaged up w/ BCTT
+				load_plugin_textdomain( 'better-click-to-tweet', false, $bctt_lang_dir );
 			}
 		}
 
