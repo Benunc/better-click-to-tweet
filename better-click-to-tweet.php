@@ -1,278 +1,267 @@
 <?php
-/*
-Plugin Name: Better Click To Tweet
-Description: Add Click to Tweet boxes simply and elegantly to your posts or pages. All the features of a premium plugin, for FREE!
-Version: 5.0
-Author: Ben Meredith
-Author URI: https://www.wpsteward.com
-Plugin URI: https://wordpress.org/plugins/better-click-to-tweet/
-License: GPL2
-Text Domain: better-click-to-tweet 
-*/
-include 'i18n-module.php';
-include 'bctt_options.php';
-include 'bctt-i18n.php';
+/**
+ * Plugin Name: Better Click To Tweet
+ * Description: Add Click to Tweet boxes simply and elegantly to your posts or pages. All the features of a premium plugin, for FREE!
+ * Version: 5.0
+ * Author: Ben Meredith
+ * Author URI: https://www.wpsteward.com
+ * Plugin URI: https://wordpress.org/plugins/better-click-to-tweet/
+ * License: GPL2
+ * Text Domain: better-click-to-tweet
+ */
 
-
-defined( 'ABSPATH' ) or die( "No soup for you. You leave now." );
-
-/*
-*  	Strips the html, shortens the text (after checking for mb_internal_encoding compatibility) 
-*	and adds an ellipsis if the text has been shortened
-* 
-* 	@param string $input raw text string from the shortcode
-* 	@param int $length length for truncation
-* 	@param bool $ellipsis boolean for whether the text has been truncated
-* 	@param bool $strip_html ensures that html is stripped from text string
-*/
-
-function bctt_shorten( $input, $length, $ellipsis = true, $strip_html = true ) {
-
-	if ( $strip_html ) {
-		$input = strip_tags( $input );
-	}
-
-	/*
-	* 	Checks to see if the mbstring php extension is loaded, for optimal truncation.
-	*	If it's not, it bails and counts the characters based on utf-8.
-	*	What this means for users is that non-Roman characters will only be counted
-	*	correctly if that extension is loaded. Contact your server admin to enable the extension.
-	*/
-
-	if ( function_exists( 'mb_internal_encoding' ) ) {
-		if ( mb_strlen( $input ) <= $length ) {
-			return $input;
-		}
-
-		$last_space   = mb_strrpos( mb_substr( $input, 0, $length ), ' ' );
-		$trimmed_text = mb_substr( $input, 0, $last_space );
-
-		if ( $ellipsis ) {
-			$trimmed_text .= "…";
-		}
-
-		return $trimmed_text;
-
-	} else {
-
-		if ( strlen( $input ) <= $length ) {
-			return $input;
-		}
-
-		$last_space   = strrpos( substr( $input, 0, $length ), ' ' );
-		$trimmed_text = substr( $input, 0, $last_space );
-
-		if ( $ellipsis ) {
-			$trimmed_text .= "…";
-		}
-
-		return $trimmed_text;
-	}
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
-;
+if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 
-/*
-* 	Creates the bctt shortcode
-*
-* 	@since 0.1
-* 	@param array $atts an array of shortcode attributes
-*	
-*/
+	/**
+	 * Class Better_Click_To_Tweet
+	 */
+	final class Better_Click_To_Tweet {
 
-function bctt_shortcode( $atts ) {
+		/**
+		 * Instance
+		 *
+		 * @since  5.1
+		 * @access private
+		 *
+		 * @var    Better_Click_To_Tweet
+		 */
+		private static $instance;
 
-	$atts = shortcode_atts( array(
-		'tweet'    => '',
-		'via'      => 'yes',
-		'username' => 'not-a-real-user',
-		'url'      => 'yes',
-		'nofollow' => 'no',
-		'prompt'   => sprintf( _x( 'Click To Tweet', 'Text for the box on the reader-facing box', 'better-click-to-tweet' ) )
-	), $atts, 'bctt' );
+		/**
+		 * BCTT Shortcodes Object
+		 *
+		 * @since  5.1
+		 * @access public
+		 *
+		 * @var    Better_Click_To_Tweet_Shortcodes object
+		 */
+		public $shortcodes;
 
-	//since 4.7: adds option to add in a per-box username to the tweet
-	if ( $atts['username'] != 'not-a-real-user' ) {
+		/**
+		 * Settings Object
+		 *
+		 * @since  5.1
+		 * @access public
+		 *
+		 * @var    Better_Click_To_Tweet_Settings object
+		 */
+		public $settings;
 
-		$handle = $atts['username'];
+		/**
+		 * BCTT i18n Notice Object
+		 *
+		 * @since  5.1
+		 * @access public
+		 *
+		 * @var    BCTT_i18n_Notice object
+		 */
+		public $i18n_notice;
 
-	} else {
+		/**
+		 * Main Better_Click_To_Tweet Instance
+		 *
+		 * Insures that only one instance of Better_Click_To_Tweet exists in memory at any one
+		 * time. Also prevents needing to define globals all over the place.
+		 *
+		 * @since     5.1
+		 * @access    public
+		 *
+		 * @staticvar array $instance
+		 *
+		 * @return    Better_Click_To_Tweet
+		 */
+		public static function instance() {
+			if ( ! isset( self::$instance ) ) {
 
-		$handle = get_option( 'bctt-twitter-handle' );
+				self::$instance = new Better_Click_To_Tweet();
+				self::$instance->setup_constants();
 
-	}
+				add_action( 'plugins_loaded', array( self::$instance, 'load_textdomain' ) );
 
-	if ( function_exists( 'mb_internal_encoding' ) ) {
+				self::$instance->includes();
 
-		$handle_length = ( 6 + mb_strlen( $handle ) );
+				self::$instance->settings   = new Better_Click_To_Tweet_Settings();
+				self::$instance->shortcodes = new Better_Click_To_Tweet_Shortcodes();
 
-	} else {
+				// instantiate i18n encouragement module
+				self::$instance->i18n_notice = new BCTT_i18n_Notice(
+					array(
+						'textdomain'     => 'better-click-to-tweet',
+						'project_slug'   => '/wp-plugins/better-click-to-tweet/stable',
+						'plugin_name'    => 'Better Click To Tweet',
+						'hook'           => 'bctt_settings_top',
+						'glotpress_url'  => 'https://translate.wordpress.org/',
+						'glotpress_name' => 'Translating WordPress',
+						'glotpress_logo' => 'https://plugins.svn.wordpress.org/better-click-to-tweet/assets/icon-256x256.png',
+						'register_url '  => 'https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet/',
+					)
+				);
 
-		$handle_length = ( 6 + strlen( $handle ) );
+				self::$instance->actions();
+			}
 
-	}
+			return self::$instance;
+		}
 
-	if ( ! empty( $handle ) && $atts['via'] != 'no' ) {
+		/**
+		 * Setup plugin constants
+		 *
+		 * @since  5.1
+		 * @access private
+		 *
+		 * @return void
+		 */
+		private function setup_constants() {
 
-		$handle_code = "&amp;via=" . $handle . "&amp;related=" . $handle;
+			// Plugin Folder Path.
+			if ( ! defined( 'BCTT_PLUGIN_DIR' ) ) {
+				define( 'BCTT_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+			}
 
-	} else {
+			// Plugin Folder URL.
+			if ( ! defined( 'BCTT_PLUGIN_URL' ) ) {
+				define( 'BCTT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+			}
 
-		$handle_code = '';
+			// Plugin Basename.
+			if ( ! defined( 'BCTT_PLUGIN_BASENAME' ) ) {
+				define( 'BCTT_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+			}
 
-	}
-
-	if ( $atts['via'] != 'yes' ) {
-
-		$handle_code   = '';
-		$handle_length = 0;
-
-	}
-
-	$text = $atts['tweet'];
-
-	if ( filter_var( $atts['url'], FILTER_VALIDATE_URL ) ) {
-
-		$bcttURL = '&amp;url=' . $atts['url'];
-
-	} elseif ( $atts['url'] != 'no' ) {
-
-		if ( get_option( 'bctt-short-url' ) != false ) {
-
-			$bcttURL = '&amp;url=' . wp_get_shortlink();
-
-		} else {
-
-			$bcttURL = '&amp;url=' . get_permalink();
+			// Plugin Root File.
+			if ( ! defined( 'BCTT_PLUGIN_FILE' ) ) {
+				define( 'BCTT_PLUGIN_FILE', __FILE__ );
+			}
 
 		}
 
-	} else {
+		/**
+		 * Include required files
+		 *
+		 * @since  5.1
+		 * @access private
+		 *
+		 * @return void
+		 */
+		private function includes() {
+			require_once BCTT_PLUGIN_DIR . 'includes/class-bctt-i18n-notice.php';
+			require_once BCTT_PLUGIN_DIR . 'includes/class-bctt-shortcodes.php';
+			require_once BCTT_PLUGIN_DIR . 'includes/class-bctt-settings.php';
+			require_once BCTT_PLUGIN_DIR . 'assets/tinymce/bctt-tinymce.php';
+		}
 
-		$bcttURL = '';
+		/**
+		 * Add our actions.
+		 *
+		 * @since  1.0
+		 * @access private
+		 *
+		 * @return void
+		 */
+		private function actions() {
 
-	}
+			add_action( 'wp_enqueue_scripts', array( $this, 'frontend_scripts' ), 10 );
 
-	if ( $atts['url'] != 'no' ) {
+		}
 
-		$short = bctt_shorten( $text, ( 117 - ( $handle_length ) ) );
+		/**
+		 * Frontend Script Loading
+		 *
+		 * @param $hook
+		 */
+		public function frontend_scripts( $hook ) {
 
-	} else {
+			if ( get_option( 'bctt_disable_css' ) ) {
+				add_option( 'bctt_style_dequeued', true );
+				foreach ( wp_load_alloptions() as $option => $value ) {
+					if ( strpos( $option, 'bcct_' ) === 0 ) {
+						delete_option( $option );
+					}
+				}
 
-		$short = bctt_shorten( $text, ( 140 - ( $handle_length ) ) );
+				return;
+			}
 
-	}
+			$dir = wp_upload_dir();
 
-	if ( $atts['nofollow'] != 'no' ) {
+			$custom = file_exists( $dir['basedir'] . '/bcttstyle.css' );
 
-		$rel = "rel='nofollow'";
+			$tag      = $custom ? 'bcct_custom_style' : 'bcct_style';
+			$antitag  = $custom ? 'bcct_style' : 'bcct_custom_style';
+			$location = $custom ? $dir['baseurl'] . '/bcttstyle.css' : plugins_url( 'assets/css/styles.css', __FILE__ );
 
-	} else {
+			$version = $custom ? '1.0' : '3.0';
 
-		$rel = '';
+			wp_register_style( $tag, $location, false, $version, 'all' );
 
-	}
+			wp_enqueue_style( $tag );
 
-	$bctt_span_class        = apply_filters( 'bctt_span_class', 'bctt-click-to-tweet' );
-	$bctt_text_span_class   = apply_filters( 'bctt_text_span_class', 'bctt-ctt-text' );
-	$bctt_button_span_class = apply_filters( 'bctt_button_span_class', 'bctt-ctt-btn' );
+			delete_option( 'bctt_style_dequeued' );
+			add_option( $tag . '_enqueued', true );
+			delete_option( $antitag . '_enqueued' );
 
-	if ( ! is_feed() ) {
 
-		return "<span class='" . $bctt_span_class . "'><span class='" . $bctt_text_span_class . "'><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank'" . $rel . ">" . $short . " </a></span><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='" . $bctt_button_span_class . "'" . $rel . ">" . $atts['prompt'] . "</a></span>";
-	} else {
+		}
 
-		return "<hr /><p><em>" . $short . "</em><br /><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='bctt-ctt-btn'" . $rel . ">" . $atts['prompt'] . "</a><br /><hr />";
+		/**
+		 * Loads the plugin language files
+		 *
+		 * @since  5.1
+		 * @access public
+		 *
+		 * @return void
+		 */
+		public function load_textdomain() {
 
-	}
-}
+			// Set filter for BCTT's languages directory
+			$bctt_lang_dir = dirname( plugin_basename( BCTT_PLUGIN_FILE ) ) . '/languages/';
+			$bctt_lang_dir = apply_filters( 'bctt_languages_directory', $bctt_lang_dir );
 
-add_shortcode( 'bctt', 'bctt_shortcode' );
+			// Traditional WordPress plugin locale filter
+			$locale = apply_filters( 'plugin_locale', get_locale(), 'better-click-to-tweet' );
+			$mofile = sprintf( '%1$s-%2$s.mo', 'better-click-to-tweet', $locale );
 
-/*
- * Load the stylesheet to style the output.
- *
- * As of v4.1, defaults to a custom stylesheet
- * located in the root of the uploads folder at wp-content/uploads/bcttstyle.css and falls
- * back to the stylesheet bundled with the plugin if the custom sheet is not present.
- *
- * @since 0.1
- *
-*/
+			// Setup paths to current locale file
+			$mofile_local  = $bctt_lang_dir . $mofile;
+			$mofile_global = WP_LANG_DIR . '/better-click-to-tweet/' . $mofile;
 
-function bctt_scripts() {
-
-	if ( get_option( 'bctt_disable_css' ) ) {
-		add_option( 'bctt_style_dequeued', true );
-		foreach ( wp_load_alloptions() as $option => $value ) {
-			if ( strpos( $option, 'bcct_' ) === 0 ) {
-				delete_option( $option );
+			if ( file_exists( $mofile_global ) ) {
+				// Look in global /wp-content/languages/better-click-to-tweet directory.
+				load_textdomain( 'better-click-to-tweet', $mofile_global );
+			} elseif ( file_exists( $mofile_local ) ) {
+				// Look in local location from filter `bctt_languages_directory`.
+				load_textdomain( 'better-click-to-tweet', $mofile_local );
+			} else {
+				// Load the default language files packaged up w/ BCTT
+				load_plugin_textdomain( 'better-click-to-tweet', false, $bctt_lang_dir );
 			}
 		}
 
-		return;
 	}
 
-	$dir = wp_upload_dir();
+endif; // End if class_exists check.
 
-	$custom = file_exists( $dir['basedir'] . '/bcttstyle.css' );
-
-	$tag      = $custom ? 'bcct_custom_style' : 'bcct_style';
-	$antitag  = $custom ? 'bcct_style' : 'bcct_custom_style';
-	$location = $custom ? $dir['baseurl'] . '/bcttstyle.css' : plugins_url( 'assets/css/styles.css', __FILE__ );
-
-	$version = $custom ? '1.0' : '3.0';
-
-	wp_register_style( $tag, $location, false, $version, 'all' );
-
-	wp_enqueue_style( $tag );
-
-	delete_option( 'bctt_style_dequeued' );
-	add_option( $tag . '_enqueued', true );
-	delete_option( $antitag . '_enqueued' );
-
-
-}
-
-
-add_action( 'wp_enqueue_scripts', 'bctt_scripts', 10 );
-
-
-/*
- * Delete options and shortcode on uninstall
+/**
+ * The main function responsible for returning the one true Better_Click_To_Tweet instance
+ * to functions everywhere.
  *
- * @since 0.1
-*/
+ * Use this function like you would a global variable, except without needing
+ * to declare the global.
+ *
+ * Example: <?php $recurring = Better_Click_To_Tweet(); ?>
+ *
+ * @since 1.0
+ *
+ * @return Better_Click_To_Tweet one true Better_Click_To_Tweet instance.
+ */
 
-function bctt_on_uninstall() {
-
-	delete_option( 'bctt-twitter-handle' );
-
-	delete_option( 'bctt-short-url' );
-
-	delete_option( 'bctt_disable_css' );
-
-	delete_option( 'bctt_style_enqueued' );
-
-	remove_shortcode( 'bctt' );
-
+function Better_Click_To_Tweet() {
+	return Better_Click_To_Tweet::instance();
 }
 
-;
-
-register_uninstall_hook( __FILE__, 'bctt_on_uninstall' );
-
-function bctt_options_link( $links ) {
-
-	$settingsText = sprintf( _x( 'Settings', 'text for the link on the plugins page', 'better-click-to-tweet' ) );
-
-	$settings_link = '<a href="admin.php?page=better-click-to-tweet">' . $settingsText . '</a>';
-
-	array_unshift( $links, $settings_link );
-
-	return $links;
-
-}
-
-$bcttlink = plugin_basename( __FILE__ );
-add_filter( "plugin_action_links_$bcttlink", 'bctt_options_link' );
+add_action( 'init', 'Better_Click_To_Tweet', 1 );
