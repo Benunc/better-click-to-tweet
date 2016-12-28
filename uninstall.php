@@ -8,7 +8,7 @@
  * @subpackage  Uninstall
  * @copyright   Copyright (c) 2016, WordImpress
  * @license     https://opensource.org/licenses/gpl-license GNU Public License
- * @since       5.x
+ * @since       5.1
  */
 
 // Exit if accessed directly.

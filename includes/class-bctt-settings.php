@@ -5,7 +5,7 @@
  * Better Click to Tweet Settings
  *
  * @package     Better_Click_To_Tweet
- * @since       5.x
+ * @since       5.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Better_Click_To_Tweet_Settings Class.
  *
- * @since 5.x
+ * @since 5.1
  */
 class Better_Click_To_Tweet_Settings {
 
