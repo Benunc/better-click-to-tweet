@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 4.7
-Stable tag: 5.0
+Stable tag: 5.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,6 +102,10 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.0.1 =
+* fix — "subscribe" text on plugin settings page was not translatable.
+* New customers are enjoying Premium Styles: http://benlikes.us/bcttps
 
 = 5.0 =
 * enhancement — settings page now looks good on mobile. Before it looked a bit like someone was actively hitting it with a bat.
