@@ -200,7 +200,7 @@ function bctt_settings_page() {
 									                                                       name="b_8f88921110b81f81744101f4d_bd909b5f89"
 									                                                       tabindex="-1" value="">
 									</div>
-									<p class="clear"><input type="submit" value="Subscribe" name="subscribe"
+									<p class="clear"><input type="submit" value="<?php _e( 'Subscribe', 'better-click-to-tweet' ); ?>" name="subscribe"
 									                        id="mc-embedded-subscribe" class="button-secondary"></p>
 
 								</div>
