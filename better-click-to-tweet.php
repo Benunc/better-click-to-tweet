@@ -86,6 +86,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 				self::$instance->includes();
 
 				self::$instance->settings   = new Better_Click_To_Tweet_Settings();
+				self::$instance->licenses   = new Better_Click_To_Tweet_License();
 				self::$instance->shortcodes = new Better_Click_To_Tweet_Shortcodes();
 
 				// instantiate i18n encouragement module
@@ -151,6 +152,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 		private function includes() {
 			require_once BCTT_PLUGIN_DIR . 'includes/class-bctt-i18n-notice.php';
 			require_once BCTT_PLUGIN_DIR . 'includes/class-bctt-shortcodes.php';
+			require_once BCTT_PLUGIN_DIR . 'includes/class-bctt-license-handler.php';
 			require_once BCTT_PLUGIN_DIR . 'includes/class-bctt-settings.php';
 			require_once BCTT_PLUGIN_DIR . 'assets/tinymce/bctt-tinymce.php';
 		}
@@ -193,7 +195,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 
 			$tag      = $custom ? 'bcct_custom_style' : 'bcct_style';
 			$antitag  = $custom ? 'bcct_style' : 'bcct_custom_style';
-			$location = $custom ? $dir['baseurl'] . '/bcttstyle.css' : plugins_url( 'assets/css/styles.css', __FILE__ );
+			$location = $custom ?    : plugins_url( 'assets/css/styles.css', __FILE__ );
 
 			$version = $custom ? '1.0' : '3.0';
 

@@ -2,14 +2,15 @@
 /**
  * Better Click To Tweet License handler
  *
- * @package     Give
+ * @package     Better_Click_To_Tweet
  * @subpackage  Admin/License
- * @copyright   Copyright (c) 2016, WordImpress
+ * @copyright   Copyright (c) 2016, Ben Meredith
  * @license     https://opensource.org/licenses/gpl-license GNU Public License
- * @since       1.0
+ * @since       5.1
  */
 
 // Exit if accessed directly.
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -21,7 +22,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 	 *
 	 * This class simplifies the process of adding license information to new Better Click To Tweet add-ons.
 	 *
-	 * @since 1.0
+	 * @since 5.1
 	 */
 	class Better_Click_To_Tweet_License {
 
@@ -29,7 +30,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * File
 		 *
 		 * @access private
-		 * @since  1.0
+		 * @since  5.1
 		 *
 		 * @var    string
 		 */
@@ -39,7 +40,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * License
 		 *
 		 * @access private
-		 * @since  1.0
+		 * @since  5.1
 		 *
 		 * @var    string
 		 */
@@ -49,27 +50,17 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Item name
 		 *
 		 * @access private
-		 * @since  1.0
+		 * @since  5.1
 		 *
 		 * @var    string
 		 */
 		private $item_name;
 
 		/**
-		 * License Information object.
-		 *
-		 * @access private
-		 * @since  1.7
-		 *
-		 * @var    object
-		 */
-		private $license_data;
-
-		/**
 		 * Item shortname
 		 *
 		 * @access private
-		 * @since  1.0
+		 * @since  5.1
 		 *
 		 * @var    string
 		 */
@@ -79,7 +70,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Version
 		 *
 		 * @access private
-		 * @since  1.0
+		 * @since  5.1
 		 *
 		 * @var    string
 		 */
@@ -89,7 +80,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Author
 		 *
 		 * @access private
-		 * @since  1.0
+		 * @since  5.1
 		 *
 		 * @var    string
 		 */
@@ -99,31 +90,11 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * API URL
 		 *
 		 * @access private
-		 * @since  1.0
+		 * @since  5.1
 		 *
 		 * @var    string
 		 */
-		private $api_url      = 'https://www.wpsteward.com/edd-sl-api/';
-
-		/**
-		 * Account URL
-		 *
-		 * @access private
-		 * @since  1.7
-		 *
-		 * @var null|string
-		 */
-		private $account_url  = 'https://www.wpsteward.com/my-account/';
-
-		/**
-		 * Ccheckout URL
-		 *
-		 * @access private
-		 * @since  1.7
-		 *
-		 * @var null|string
-		 */
-		private $checkout_url = 'https://www.wpsteward.com/checkout/';
+		private $api_url = 'https://www.wpsteward.com/';
 
 		/**
 		 * Class Constructor
@@ -131,25 +102,26 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Set up the Better Click To Tweet License Class.
 		 *
 		 * @access public
-		 * @since  1.0
+		 * @since  5.1
 		 *
-		 * @param string  $_file
-		 * @param string  $_item_name
-		 * @param string  $_version
-		 * @param string  $_author
-		 * @param string  $_optname
-		 * @param string  $_api_url
-		 * @param string  $_checkout_url
-		 * @param string  $_account_url
+		 * @param string $_file
+		 * @param string $_item_name
+		 * @param string $_version
+		 * @param string $_author
+		 * @param string $_optname
+		 * @param string $_api_url
+		 * @param string $_checkout_url
+		 * @param string $_account_url
 		 */
 		public function __construct( $_file, $_item_name, $_version, $_author, $_optname = null, $_api_url = null, $_checkout_url = null, $_account_url = null ) {
-			$bctt_options = bctt_get_settings();
+
 
 			$this->file           = $_file;
 			$this->item_name      = $_item_name;
-			$this->item_shortname = 'bctt_' . preg_replace( '/[^a-zA-Z0-9_\s]/', '', str_replace( ' ', '_', strtolower( $this->item_name ) ) );
+			$this->item_shortname = preg_replace( '/[^a-zA-Z0-9_\s]/', '', str_replace( ' ', '_', strtolower( $this->item_name ) ) );
+			$bctt_options         = get_option( $this->item_shortname . '_license_key' );
 			$this->version        = $_version;
-			$this->license        = isset( $bctt_options[ $this->item_shortname . '_license_key' ] ) ? trim( $bctt_options[ $this->item_shortname . '_license_key' ] ) : '';
+			$this->license        = isset( $bctt_options ) ? trim( $bctt_options ) : '';
 			$this->license_data   = get_option( $this->item_shortname . '_license_active' );
 			$this->author         = $_author;
 			$this->api_url        = is_null( $_api_url ) ? $this->api_url : $_api_url;
@@ -168,13 +140,13 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Include the updater class.
 		 *
 		 * @access private
-		 * @since  1.0
+		 * @since  5.1
 		 *
 		 * @return void
 		 */
 		private function includes() {
 			if ( ! class_exists( 'EDD_SL_Plugin_Updater' ) ) {
-				require_once 'admin/EDD_SL_Plugin_Updater.php';
+				require_once 'EDD_SL_Plugin_Updater.php';
 			}
 		}
 
@@ -184,14 +156,14 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Setup license hooks.
 		 *
 		 * @access private
-		 * @since  1.0
+		 * @since  5.1
 		 *
 		 * @return void
 		 */
 		private function hooks() {
 
 			// Register settings
-			add_filter( 'bctt_settings_licenses', array( $this, 'settings' ), 1 );
+			add_filter( 'bctt_settings_licenses', array( $this, 'settings' ), 20 );
 
 			// Activate license key on settings save
 			add_action( 'admin_init', array( $this, 'activate_license' ) );
@@ -200,7 +172,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 			add_action( 'admin_init', array( $this, 'deactivate_license' ) );
 
 			// Updater
-			add_action( 'admin_init', array( $this, 'auto_updater' ), 0 );
+			//add_action( 'admin_init', array( $this, 'auto_updater' ), 0 );
 
 			add_action( 'admin_notices', array( $this, 'notices' ) );
 
@@ -217,7 +189,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Auto Updater
 		 *
 		 * @access private
-		 * @since  1.0
+		 * @since  5.1
 		 *
 		 * @return bool
 		 */
@@ -246,33 +218,68 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Add license field to settings.
 		 *
 		 * @access public
-		 * @since  1.0
+		 * @since  5.1
 		 *
 		 * @param  array $settings License settings.
 		 *
 		 * @return array           License settings.
 		 */
-		public function settings( $settings ) {
+		public function settings( $output ) {
 
-			$bctt_license_settings = array(
-				array(
-					'name'    => $this->item_name,
-					'id'      => $this->item_shortname . '_license_key',
-					'desc'    => '',
-					'type'    => 'license_key',
-					'options' => array(
-						'license'       => get_option( $this->item_shortname . '_license_active' ),
-						'shortname'     => $this->item_shortname,
-						'item_name'     => $this->item_name,
-						'api_url'       => $this->api_url,
-						'checkout_url'  => $this->checkout_url,
-						'account_url'   => $this->account_url
-					),
-					'size'    => 'regular'
-				)
-			);
+			$license          = get_option( $this->item_shortname . '_license_key' );
+			$status           = get_option( $this->item_shortname . '_license_status' );
+			$key_heading_text = __( 'License Key', 'better-click-to-tweet' );
+			$key_label_text   = __( 'Enter your license key', 'better-click-to-tweet' );
 
-			return array_merge( $settings, $bctt_license_settings );
+			$output = '<div class="wrap">';
+			$output .= '<h2>' . __( 'Add-on Licenses', 'better-click-to-tweet' ) . '</h2>';
+			$output .= '</div>';
+			$output .= '<form method="post" action="options.php">';
+
+			$output .= settings_fields( 'bctt_license' );
+
+
+			$output .= '<form>';
+			$output .= '<table class="form-table">';
+			$output .= '<tbody>';
+			$output .= '<tr valign="top">';
+			$output .= '<th scope="row" valign="top">';
+			$output .= $key_heading_text;
+			$output .= '</th>';
+			$output .= '<td>';
+			$output .= '<input id="' . $this->item_shortname . '_license_key" name="' . esc_attr_e( $license ) . '" type="text" class="regular-text" value="' . esc_attr_e( $license ) . '"/>';
+			$output .= '<label class="description" for="' . $this->item_shortname . 'license_key">';
+			$output .= $key_label_text;
+			$output .= '</label></td> </tr>';
+
+			$key_activate_text   = __( 'Activate License', 'better-click-to-tweet' );
+			$key_active_text     = __( 'active', 'better-click-to-tweet' );
+			$key_deactivate_text = __( 'Deactivate License', 'better-click-to-tweet' );
+
+			if ( false !== $license ) {
+				$output .= '<tr valign="top"> <th scope="row" valign="top">';
+				$output .= $key_activate_text;
+				$output .= '</th> <td>';
+
+				if ( $status !== false && $status == 'valid' ) {
+					$output .= '<span style="color:green;">';
+					$output .= $key_active_text . '</span>';
+					$output .= wp_nonce_field( 'bcttps_nonce', 'bcttps_nonce' );
+
+					$output .= '<input type="submit" class="button-secondary" name="edd_license_deactivate" value="' . $key_deactivate_text . '"/>';
+				} else {
+					$output .= wp_nonce_field( 'bcttps_nonce', 'bcttps_nonce' );
+					$output .= '<input type="submit" class="button-secondary" name="edd_license_activate" value="' . $key_activate_text . '"/>';
+				}
+				$output .= '</td></tr>';
+			}
+			$output .= '</tbody> </table>';
+			$output .= submit_button();
+
+			$output .= '</form>';
+
+			return $output;
+
 		}
 
 		/**
@@ -281,7 +288,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Add Some Content to the Licensing Settings.
 		 *
 		 * @access public
-		 * @since  1.0
+		 * @since  5.1
 		 *
 		 * @param  array $settings License settings content.
 		 *
@@ -307,7 +314,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Activate the license key.
 		 *
 		 * @access public
-		 * @since  1.0
+		 * @since  5.1
 		 *
 		 * @return void
 		 */
@@ -330,14 +337,16 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 			}
 
 			// Allow third party addon developers to handle license activation.
-			if( $this->__is_third_party_addon() ){
+			if ( $this->__is_third_party_addon() ) {
 				do_action( 'bctt_activate_license', $this );
+
 				return;
 			}
 
 			// Delete previous license setting if a empty license key submitted.
 			if ( empty( $_POST[ $this->item_shortname . '_license_key' ] ) ) {
 				delete_option( $this->item_shortname . '_license_active' );
+
 				return;
 			}
 
@@ -359,7 +368,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 			$license = sanitize_text_field( $_POST[ $this->item_shortname . '_license_key' ] );
 
 			// Bailout.
-			if( empty( $license ) ) {
+			if ( empty( $license ) ) {
 				return;
 			}
 
@@ -406,7 +415,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Deactivate the license key.
 		 *
 		 * @access public
-		 * @since  1.0
+		 * @since  5.1
 		 *
 		 * @return void
 		 */
@@ -427,8 +436,9 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 			}
 
 			// Allow third party addon developers to handle license deactivation.
-			if( $this->__is_third_party_addon() ){
+			if ( $this->__is_third_party_addon() ) {
 				do_action( 'bctt_deactivate_license', $this );
+
 				return;
 			}
 
@@ -469,207 +479,12 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 			}
 		}
 
-		/**
-		 * Check if license key is valid once per week.
-		 *
-		 * @access public
-		 * @since  1.7
-		 *
-		 * @return bool|void
-		 */
-		public function weekly_license_check() {
-
-			if( ! empty( $_POST['bctt_settings'] ) ) {
-				// Don't fire when saving settings
-				return false;
-			}
-
-			if( empty( $this->license ) ) {
-				return false;
-			}
-
-			// Allow third party addon developers to handle their license check.
-			if( $this->__is_third_party_addon() ){
-				do_action( 'bctt_weekly_license_check', $this );
-				return false;
-			}
-
-			// Data to send in our API request.
-			$api_params = array(
-				'edd_action'=> 'check_license',
-				'license' 	=> $this->license,
-				'item_name' => urlencode( $this->item_name ),
-				'url'       => home_url()
-			);
-
-			// Call the API.
-			$response = wp_remote_post(
-				$this->api_url,
-				array(
-					'timeout'   => 15,
-					'sslverify' => false,
-					'body'      => $api_params
-				)
-			);
-
-			// Make sure the response came back okay.
-			if ( is_wp_error( $response ) ) {
-				return false;
-			}
-
-			$license_data = json_decode( wp_remote_retrieve_body( $response ) );
-			update_option( $this->item_shortname . '_license_active', $license_data );
-		}
-
-		/**
-		 * Check subscription validation once per week
-		 *
-		 * @access public
-		 * @since  1.7
-		 *
-		 * @return bool|void
-		 */
-		public function weekly_subscription_check() {
-
-			if( ! empty( $_POST['bctt_settings'] ) ) {
-				// Don't fire when saving settings
-				return false;
-			}
-
-			// Remove old subscription data.
-			if( absint( get_option( '_bctt_subscriptions_edit_last', true ) ) < current_time( 'timestamp' , 1 ) ){
-				delete_option( 'bctt_subscriptions' );
-				update_option( '_bctt_subscriptions_edit_last', strtotime( '+ 1 day', current_time( 'timestamp' , 1 ) ) );
-			}
-
-			if( empty( $this->license ) ) {
-				return false;
-			}
-
-			// Allow third party addon developers to handle there subscription check.
-			if( $this->__is_third_party_addon() ){
-				do_action( 'bctt_weekly_subscription_check', $this );
-				return false;
-			}
-
-			// Delete subscription notices show blocker.
-			$this->__remove_license_notices_show_blocker();
-
-			// Data to send in our API request.
-			$api_params = array(
-				// Do not get confuse with edd_action check_subscription.
-				// By default edd software licensing api does not have api to check subscription.
-				// This is custom feature to check subscriptions.
-				'edd_action'=> 'check_subscription',
-				'license' 	=> $this->license,
-				'item_name' => urlencode( $this->item_name ),
-				'url'       => home_url()
-			);
-
-			// Call the API
-			$response = wp_remote_post(
-				$this->api_url,
-				array(
-					'timeout'   => 15,
-					'sslverify' => false,
-					'body'      => $api_params
-				)
-			);
-
-			// Make sure the response came back okay.
-			if ( is_wp_error( $response ) ) {
-				return false;
-			}
-
-			$subscription_data = json_decode( wp_remote_retrieve_body( $response ), true );
-
-			if( ! empty( $subscription_data['success'] ) && absint( $subscription_data['success'] ) ) {
-				$subscriptions = get_option( 'bctt_subscriptions', array() );
-
-				// Update subscription data only if subscription does not exist already.
-				if( ! array_key_exists( $subscription_data['id'], $subscriptions ) ) {
-					$subscriptions[ $subscription_data['id'] ] = $subscription_data;
-					$subscriptions[ $subscription_data['id'] ]['licenses'] = array();
-				}
-
-				// Store licenses for subscription.
-				if( ! in_array( $this->license, $subscriptions[ $subscription_data['id'] ]['licenses'] ) ) {
-					$subscriptions[ $subscription_data['id'] ]['licenses'][] = $this->license;
-				}
-
-				update_option( 'bctt_subscriptions', $subscriptions );
-			}
-		}
-
-		/**
-		 * Check if license key is part of subscription or not
-		 *
-		 * @access private
-		 * @since  1.7
-		 *
-		 * @return bool|void
-		 */
-		private function __single_subscription_check() {
-			// Do not fire if license key is not set.
-			if ( ! isset( $_POST[ $this->item_shortname . '_license_key' ] ) ) {
-				return false;
-			}
-
-			if( empty( $this->license ) ) {
-				return false;
-			}
-
-			// Data to send in our API request.
-			$api_params = array(
-				// Do not get confuse with edd_action check_subscription.
-				// By default edd software licensing api does not have api to check subscription.
-				// This is custom feature to check subscriptions.
-				'edd_action'=> 'check_subscription',
-				'license' 	=> $this->license,
-				'item_name' => urlencode( $this->item_name ),
-				'url'       => home_url()
-			);
-
-			// Call the API
-			$response = wp_remote_post(
-				$this->api_url,
-				array(
-					'timeout'   => 15,
-					'sslverify' => false,
-					'body'      => $api_params
-				)
-			);
-
-			// Make sure the response came back okay.
-			if ( is_wp_error( $response ) ) {
-				return false;
-			}
-
-			$subscription_data = json_decode( wp_remote_retrieve_body( $response ), true );
-
-			if( ! empty( $subscription_data['success'] ) && absint( $subscription_data['success'] ) ) {
-				$subscriptions = get_option( 'bctt_subscriptions', array() );
-
-				// Update subscription data only if subscription does not exist already.
-				if( ! array_key_exists( $subscription_data['id'], $subscriptions ) ) {
-					$subscriptions[ $subscription_data['id'] ] = $subscription_data;
-					$subscriptions[ $subscription_data['id'] ]['licenses'] = array();
-				}
-
-				// Store licenses for subscription.
-				if( ! in_array( $this->license, $subscriptions[ $subscription_data['id'] ]['licenses'] ) ) {
-					$subscriptions[ $subscription_data['id'] ]['licenses'][] = $this->license;
-				}
-
-				update_option( 'bctt_subscriptions', $subscriptions );
-			}
-		}
 
 		/**
 		 * Admin notices for errors
 		 *
 		 * @access public
-		 * @since  1.0
+		 * @since  5.1
 		 *
 		 * @return void
 		 */
@@ -681,16 +496,16 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 			// Set default value.
 			$addon_license_key_in_subscriptions = ! empty( $addon_license_key_in_subscriptions ) ? $addon_license_key_in_subscriptions : array();
 
-			if( empty( $this->license ) ) {
+			if ( empty( $this->license ) ) {
 				return;
 			}
 
-			if( ! current_user_can( 'manage_shop_settings' ) ) {
+			if ( ! current_user_can( 'manage_shop_settings' ) ) {
 				return;
 			}
 
 			// Do not show licenses notices on license tab.
-			if( ! empty( $_GET['tab'] ) && 'licenses' === $_GET['tab'] ) {
+			if ( ! empty( $_GET['tab'] ) && 'licenses' === $_GET['tab'] ) {
 				return;
 			}
 
@@ -700,34 +515,34 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 			$subscriptions = get_option( 'bctt_subscriptions' );
 
 			// Show subscription messages.
-			if( ! empty( $subscriptions ) && ! $showed_subscriptions_message ) {
+			if ( ! empty( $subscriptions ) && ! $showed_subscriptions_message ) {
 
 				foreach ( $subscriptions as $subscription ) {
 					// Subscription expires timestamp.
 					$subscription_expires = strtotime( $subscription['expires'] );
 
 					// Start showing subscriptions message before one week of renewal date.
-					if( strtotime( '- 7 days', $subscription_expires ) > current_time( 'timestamp', 1 ) ) {
+					if ( strtotime( '- 7 days', $subscription_expires ) > current_time( 'timestamp', 1 ) ) {
 						continue;
 					}
 
 					// Check if subscription message already exist in messages.
-					if( array_key_exists( $subscription['id'], $messages ) ) {
+					if ( array_key_exists( $subscription['id'], $messages ) ) {
 						continue;
 					}
 
-					if( ( ! $this->__is_notice_dismissed( $subscription['id'] ) && 'active' !== $subscription['status'] ) ) {
+					if ( ( ! $this->__is_notice_dismissed( $subscription['id'] ) && 'active' !== $subscription['status'] ) ) {
 
-						if( strtotime( $subscription['expires'] ) < current_time( 'timestamp', 1 ) ) {// Check if license already expired.
-							$messages[$subscription['id']] = sprintf(
+						if ( strtotime( $subscription['expires'] ) < current_time( 'timestamp', 1 ) ) {// Check if license already expired.
+							$messages[ $subscription['id'] ] = sprintf(
 								__( 'Your Better Click To Tweet addon license expired for payment <a href="%s" target="_blank">#%d</a>. <a href="%s" target="_blank">Click to renew an existing license</a> or <a href="%s">Click here if already renewed</a>.', 'better-click-to-tweet' ),
 								urldecode( $subscription['invoice_url'] ),
 								$subscription['payment_id'],
 								"{$this->checkout_url}?edd_license_key={$subscription['license_key']}&utm_campaign=admin&utm_source=licenses&utm_medium=expired",
 								esc_url( add_query_arg( '_bctt_hide_license_notices_permanently', $subscription['id'], $_SERVER['REQUEST_URI'] ) )
 							);
-						}else{
-							$messages[$subscription['id']] = sprintf(
+						} else {
+							$messages[ $subscription['id'] ] = sprintf(
 								__( 'Your Better Click To Tweet addon license will expire in %s for payment <a href="%s" target="_blank">#%d</a>. <a href="%s" target="_blank">Click to renew an existing license</a> or <a href="%s">Click here if already renewed</a>.', 'better-click-to-tweet' ),
 								human_time_diff( current_time( 'timestamp', 1 ), strtotime( $subscription['expires'] ) ),
 								urldecode( $subscription['invoice_url'] ),
@@ -745,9 +560,9 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 			}
 
 			// Show non subscription addon messages.
-			if( ! in_array( $this->license, $addon_license_key_in_subscriptions ) && ! $this->__is_notice_dismissed( 'general' ) && ! $this->is_valid_license() && empty( $showed_invalid_message ) ) {
+			if ( ! in_array( $this->license, $addon_license_key_in_subscriptions ) && ! $this->__is_notice_dismissed( 'general' ) && ! $this->is_valid_license() && empty( $showed_invalid_message ) ) {
 
-				$messages['general'] = sprintf(
+				$messages['general']    = sprintf(
 					__( 'You have invalid or expired license keys for Better Click To Tweet Addon. Please go to the <a href="%s">licenses page</a> to correct this issue.', 'better-click-to-tweet' ),
 					admin_url( '' )
 				);
@@ -756,8 +571,8 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 			}
 
 			// Print messages.
-			if( ! empty( $messages ) ) {
-				foreach( $messages as $notice_id => $message ) {
+			if ( ! empty( $messages ) ) {
+				foreach ( $messages as $notice_id => $message ) {
 					echo '<div class="notice notice-error is-dismissible" data-dismiss-notice-shortly="' . esc_url( add_query_arg( '_bctt_hide_license_notices_shortly', $notice_id, $_SERVER['REQUEST_URI'] ) ) . '">';
 					echo '<p>' . $message . '</p>';
 					echo '</div>';
@@ -765,133 +580,6 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 			}
 		}
 
-		/**
-		 * Check if license is valid or not.
-		 *
-		 * @access public
-		 * @since  1.7
-		 *
-		 * @return bool
-		 */
-		public function is_valid_license() {
-			if( apply_filters( 'bctt_is_valid_license' , ( is_object( $this->license_data ) && ! empty( $this->license_data ) &&  property_exists( $this->license_data, 'license' )&& 'valid' === $this->license_data->license ) ) ) {
-				return true;
-			}
-
-			return false;
-		}
-
-		/**
-		 * Check if license is valid or not.
-		 *
-		 * @access private
-		 * @since  1.7
-		 *
-		 * @return bool
-		 */
-		private function __is_third_party_addon() {
-			return ( false === strpos( $this->api_url, 'www.wpsteward.com/' ) );
-		}
-
-		/**
-		 * Remove license key from subscription.
-		 *
-		 * This function mainly uses when admin user deactivate license key,
-		 * then we do not need subscription information for that license key.
-		 *
-		 * @access private
-		 * @since  1.7
-		 *
-		 * @return void|bool
-		 */
-		private function __remove_license_key_from_subscriptions(){
-			$subscriptions = get_option( 'bctt_subscriptions', array() );
-
-			// Bailout.
-			if( empty( $this->license ) ) {
-				return false;
-			}
-
-			if( ! empty( $subscriptions ) ) {
-				foreach ( $subscriptions as $subscription_id => $subscription ) {
-					$license_index = array_search( $this->license, $subscription['licenses'] );
-					if( false !== $license_index ) {
-						// Remove license key.
-						unset( $subscriptions[ $subscription_id ]['licenses'][$license_index] );
-
-						// Rearrange license keys.
-						$subscriptions[ $subscription_id ]['licenses'] = array_values( $subscriptions[ $subscription_id ]['licenses'] );
-
-						// Update subscription information.
-						update_option( 'bctt_subscriptions', $subscriptions );
-						break;
-					}
-				}
-			}
-		}
-
-		/**
-		 * Remove license notices show blocker.
-		 *
-		 * @access private
-		 * @since  1.7
-		 *
-		 * @return void
-		 */
-		private function __remove_license_notices_show_blocker(){
-			global $wpdb;
-
-			// Delete permanent notice blocker.
-			$wpdb->query(
-				$wpdb->prepare(
-					"
-					DELETE FROM $wpdb->usermeta
-					WHERE meta_key
-					LIKE '%%%s%%'
-					",
-					'_bctt_hide_license_notices_permanently'
-				)
-			);
-
-			// Delete short notice blocker.
-			$wpdb->query(
-				$wpdb->prepare(
-					"
-					DELETE FROM $wpdb->options
-					WHERE option_name
-					LIKE '%%%s%%'
-					",
-					'__bctt_hide_license_notices_shortly_'
-				)
-			);
-		}
-
-		/**
-		 * Check if notice dismissed by admin user or not.
-		 *
-		 * @access private
-		 * @since  1.7
-		 *
-		 * @param  int $notice_id Notice ID.
-		 *
-		 * @return bool
-		 */
-		private function __is_notice_dismissed( $notice_id ){
-			$current_user = wp_get_current_user();
-			$is_notice_dismissed = false;
-
-			// Ge is notice dismissed permanently.
-			$already_dismiss_notices = ( $already_dismiss_notices = get_user_meta( $current_user->ID, '_bctt_hide_license_notices_permanently', true ) )
-				? $already_dismiss_notices
-				: array();
-
-
-			if( in_array( $notice_id, $already_dismiss_notices ) || get_transient( "_bctt_hide_license_notices_shortly_{$current_user->ID}_{$notice_id}" ) ) {
-				$is_notice_dismissed =  true;
-			}
-
-			return $is_notice_dismissed;
-		}
 	}
 
 endif; // end class_exists check

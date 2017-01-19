@@ -60,6 +60,17 @@ class Better_Click_To_Tweet_Settings {
 			$this,
 			'settings_page'
 		) );
+		add_submenu_page( 'better-click-to-tweet', 'Better Click To Tweet add-on Licenses', 'Licenses', 'manage_options', 'better-click-to-tweet-licenses', array(
+			$this,
+			'license_page'
+		) );
+	}
+
+	public function license_page () {
+
+		$output = apply_filters( 'bctt_settings_licenses', '<div class="wrap"><h2>Testing</h2>' );
+		echo $output;
+
 	}
 
 	/**
