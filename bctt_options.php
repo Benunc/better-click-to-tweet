@@ -9,7 +9,7 @@ add_filter( 'tiny_mce_version', 'refresh_mce' );
 include dirname( __FILE__ ) . '/assets/tinymce/bctt-tinymce.php';
 
 // instantiate i18n encouragement module
-$bctt_i18n = new yoast_i18n(
+$bctt_i18n = new bctt_i18n(
 	array(
 		'textdomain'     => 'better-click-to-tweet',
 		'project_slug'   => '/wp-plugins/better-click-to-tweet/stable',

@@ -3,7 +3,7 @@
 /**
  * This class defines a promo box and checks your translation site's API for stats about it, then shows them to the user.
  */
-class yoast_i18n {
+class bctt_i18n {
 
 	/**
 	 * Your translation site's logo
