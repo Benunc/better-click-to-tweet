@@ -12,7 +12,7 @@ Text Domain: better-click-to-tweet
 include 'i18n-module.php';
 include 'bctt_options.php';
 include 'bctt-i18n.php';
-
+include 'admin-nags.php';
 
 defined( 'ABSPATH' ) or die( "No soup for you. You leave now." );
 
@@ -25,6 +25,7 @@ defined( 'ABSPATH' ) or die( "No soup for you. You leave now." );
 * 	@param bool $ellipsis boolean for whether the text has been truncated
 * 	@param bool $strip_html ensures that html is stripped from text string
 */
+
 
 function bctt_shorten( $input, $length, $ellipsis = true, $strip_html = true ) {
 
@@ -256,9 +257,12 @@ function bctt_on_uninstall() {
 
 	remove_shortcode( 'bctt' );
 
+	delete_metadata( 'user', 0, 'bctt_has_dismissed_nag', '', true );
+
+
 }
 
-;
+
 
 register_uninstall_hook( __FILE__, 'bctt_on_uninstall' );
 
