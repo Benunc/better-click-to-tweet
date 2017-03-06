@@ -14,7 +14,8 @@ function bctt_alerts() {
 
 		$user_id       = wp_get_current_user()->ID;
 		$has_dismissed = get_user_meta( $user_id, 'bctt_has_dismissed_nag', true );
-		if ( ! $has_dismissed ) {
+
+		if ( ! $has_dismissed && ! bctt_add_custom_style_option() ) {
 			//add style inline so that it isn't enqueued if not used
 			?>
 			<style>
