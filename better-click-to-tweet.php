@@ -25,7 +25,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 		/**
 		 * Instance
 		 *
-		 * @since  5.1
+		 * @since  6.0
 		 * @access private
 		 *
 		 * @var    Better_Click_To_Tweet
@@ -35,7 +35,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 		/**
 		 * BCTT Shortcodes Object
 		 *
-		 * @since  5.1
+		 * @since  6.0
 		 * @access public
 		 *
 		 * @var    Better_Click_To_Tweet_Shortcodes object
@@ -45,7 +45,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 		/**
 		 * Settings Object
 		 *
-		 * @since  5.1
+		 * @since  6.0
 		 * @access public
 		 *
 		 * @var    Better_Click_To_Tweet_Settings object
@@ -55,7 +55,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 		/**
 		 * BCTT i18n Notice Object
 		 *
-		 * @since  5.1
+		 * @since  6.0
 		 * @access public
 		 *
 		 * @var    BCTT_i18n_Notice object
@@ -68,7 +68,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 		 * Insures that only one instance of Better_Click_To_Tweet exists in memory at any one
 		 * time. Also prevents needing to define globals all over the place.
 		 *
-		 * @since     5.1
+		 * @since     6.0
 		 * @access    public
 		 *
 		 * @staticvar array $instance
@@ -112,7 +112,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 		/**
 		 * Setup plugin constants
 		 *
-		 * @since  5.1
+		 * @since  6.0
 		 * @access private
 		 *
 		 * @return void
@@ -144,7 +144,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 		/**
 		 * Include required files
 		 *
-		 * @since  5.1
+		 * @since  6.0
 		 * @access private
 		 *
 		 * @return void
@@ -213,7 +213,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet' ) ) :
 		/**
 		 * Loads the plugin language files
 		 *
-		 * @since  5.1
+		 * @since  6.0
 		 * @access public
 		 *
 		 * @return void

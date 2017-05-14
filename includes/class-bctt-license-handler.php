@@ -6,7 +6,7 @@
  * @subpackage  Admin/License
  * @copyright   Copyright (c) 2016, Ben Meredith
  * @license     https://opensource.org/licenses/gpl-license GNU Public License
- * @since       5.1
+ * @since       6.0
  */
 
 // Exit if accessed directly.
@@ -22,7 +22,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 	 *
 	 * This class simplifies the process of adding license information to new Better Click To Tweet add-ons.
 	 *
-	 * @since 5.1
+	 * @since 6.0
 	 */
 	class Better_Click_To_Tweet_License {
 
@@ -30,7 +30,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * File
 		 *
 		 * @access private
-		 * @since  5.1
+		 * @since  6.0
 		 *
 		 * @var    string
 		 */
@@ -40,7 +40,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * License
 		 *
 		 * @access private
-		 * @since  5.1
+		 * @since  6.0
 		 *
 		 * @var    string
 		 */
@@ -50,7 +50,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Item name
 		 *
 		 * @access private
-		 * @since  5.1
+		 * @since  6.0
 		 *
 		 * @var    string
 		 */
@@ -60,7 +60,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Item shortname
 		 *
 		 * @access private
-		 * @since  5.1
+		 * @since  6.0
 		 *
 		 * @var    string
 		 */
@@ -70,7 +70,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Version
 		 *
 		 * @access private
-		 * @since  5.1
+		 * @since  6.0
 		 *
 		 * @var    string
 		 */
@@ -80,7 +80,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Author
 		 *
 		 * @access private
-		 * @since  5.1
+		 * @since  6.0
 		 *
 		 * @var    string
 		 */
@@ -90,7 +90,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * API URL
 		 *
 		 * @access private
-		 * @since  5.1
+		 * @since  6.0
 		 *
 		 * @var    string
 		 */
@@ -102,7 +102,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Set up the Better Click To Tweet License Class.
 		 *
 		 * @access public
-		 * @since  5.1
+		 * @since  6.0
 		 *
 		 * @param string $_file
 		 * @param string $_item_name
@@ -140,7 +140,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Include the updater class.
 		 *
 		 * @access private
-		 * @since  5.1
+		 * @since  6.0
 		 *
 		 * @return void
 		 */
@@ -156,7 +156,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Setup license hooks.
 		 *
 		 * @access private
-		 * @since  5.1
+		 * @since  6.0
 		 *
 		 * @return void
 		 */
@@ -189,7 +189,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Auto Updater
 		 *
 		 * @access private
-		 * @since  5.1
+		 * @since  6.0
 		 *
 		 * @return bool
 		 */
@@ -218,7 +218,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Add license field to settings.
 		 *
 		 * @access public
-		 * @since  5.1
+		 * @since  6.0
 		 *
 		 * @param  array $settings License settings.
 		 *
@@ -288,7 +288,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Add Some Content to the Licensing Settings.
 		 *
 		 * @access public
-		 * @since  5.1
+		 * @since  6.0
 		 *
 		 * @param  array $settings License settings content.
 		 *
@@ -314,7 +314,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Activate the license key.
 		 *
 		 * @access public
-		 * @since  5.1
+		 * @since  6.0
 		 *
 		 * @return void
 		 */
@@ -415,7 +415,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Deactivate the license key.
 		 *
 		 * @access public
-		 * @since  5.1
+		 * @since  6.0
 		 *
 		 * @return void
 		 */
@@ -484,7 +484,7 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 * Admin notices for errors
 		 *
 		 * @access public
-		 * @since  5.1
+		 * @since  6.0
 		 *
 		 * @return void
 		 */

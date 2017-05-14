@@ -3,7 +3,7 @@
  * Better Click to Tweet Shortcode
  *
  * @package     Better_Click_To_Tweet
- * @since       5.1
+ * @since       6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Better_Click_To_Tweet_Shortcode Class.
  *
- * @since 5.1
+ * @since 6.0
  */
 class Better_Click_To_Tweet_Shortcodes {
 
