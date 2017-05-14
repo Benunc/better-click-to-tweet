@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 4.7
-Stable tag: 5.0.2
+Stable tag: 5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Insert click to tweet boxes into your posts, simply and securely. This plugin is
 
 == Description ==
 
-= The Best Click To Tweet Plugin on the Market, FREE! =
+= The most popular Click To Tweet Plugin for WordPress, for good reason. =
 
 This plugin allows you to easily create tweetable content for your readers. Using a simple shortcode, your selected text is highlighted and made tweetable. 
 
@@ -48,7 +48,12 @@ Translation is now managed at [the official WordPress translation page](https://
 
 == Frequently Asked Questions ==
 
-= How Does Better Click To Tweet Work? =
+= Are there other style options? =
+Yes! If you are a developer, there are [limitless options for styling](http://benlikes.us/bcttcustom "custom style for Better Click To Tweet").
+
+If you are not a developer, I have released a premium add-on for selecting among several (and growing) different style options. Check out [Premium Styles](http://benlikes.us/bcttps "Premium Styles for Better Click To Tweet")
+
+= How does Better Click To Tweet work? =
 Better Click To Tweet enables you to create beautiful Click To Tweet boxes in your blog posts. Once you've installed and activated the plugin, click on the settings link to put in your Twitter username, and save the settings. 
 
 Then, wherever you want to insert a Click to Tweet quote, use a shortcode in the format `[bctt tweet="xxxxxxxxxxxx"]` replacing the `xxxxxxx` with your tweetable quote. 
@@ -76,20 +81,13 @@ On the settings page for Better Click To Tweet, simply check the box indicating 
 
 If you run into any issues with my plugin not working alongside a certain link shortener, start a [support thread](https://wordpress.org/support/plugin/better-click-to-tweet "support forum") and include a link to the other plugin. I'll see what I can do to work with the other developer.
 
-I've also written a tutorial at http://benlikes.us/79 for how to set up the shortlinks with bit.ly and yourls.org.
+I've also written [a tutorial](http://benlikes.us/79 "shortlink tutorial") for how to set up the shortlinks with bit.ly and yourls.org.
 
 = Are there any other hidden tricks? =
-Yes! Because I want the majority of users (who aren't as concerned with options like nofollow links and getting rid of the URL in the tweet) to be happy, most options are hidden. I've written a tutorial for using those advanced options over at http://benlikes.us/7r 
+Yes! Because I want the majority of users (who aren't as concerned with options like nofollow links and getting rid of the URL in the tweet) to be happy, most options are hidden. I've written [a tutorial for using those advanced options](http://benlikes.us/7r "power user guide")
 
 = What do I do if it's not working right? =
 I am active in [the support forums](https://wordpress.org/support/plugin/better-click-to-tweet "BCTT Support"), and in patching the plugin. Start a thread there, and I will gladly help you out. Most of the time you can expect a day or two before a response. I'm in the eastern US, and I like playing with my kids at night, so you might not hear back immediately. Don't panic.
-
-= What are the differences between this plugin and Click To Tweet by Todaymade? =
-I originally was planning on contacting Justin at Todaymade to suggest some improvements to the code on his plugin, and in the midst of that, his plugin was unexpectedly pulled from the official repository, for having a (frowned upon) "Powered By" link. So, I set about fully overhauling the plugin. 
-
-Since that time Justin and the team over at Todaymade have rereleased a version of their plugin without the "Powered By" link. His plugin (which was originally released before the advent of the shortcode API) still doesn't use it, and for that reason is less secure than mine. For him to change to support the shortcode API is a more complicated issue, as he'll need to still provide support for how his plugin currently handles the pseudo-shortcode system, or risk breaking every current user's website.
-
-I've pushed out many releases with bug fixes, improvements, and additional functionality, while the other plugin remains unchanged. There's no way in which my plugin doesn't live up to it's name.
 
 = How can I help? =
 Translations: https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet
@@ -102,6 +100,10 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.1 =
+* enhancement — I added a highly dismissable notice to the plugins page upon update, encouraging people to purchase my Premium styles add-on. The notice only shows to folks who have not previously customized their own styles, and once dismissed will never be shown to that user again.
+* enhancement — I made several changes to the readme file so that the plugin is showcased nicely in the WordPress Plugin Directory's new design.
 
 = 5.0.2 =
 * fix — I was incorrectly calling translation module, breaking things when people updated to the latest version of Yoast SEO.

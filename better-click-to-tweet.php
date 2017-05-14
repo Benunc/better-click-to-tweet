@@ -2,7 +2,7 @@
 /*
 Plugin Name: Better Click To Tweet
 Description: Add Click to Tweet boxes simply and elegantly to your posts or pages. All the features of a premium plugin, for FREE!
-Version: 5.0.2
+Version: 5.1
 Author: Ben Meredith
 Author URI: https://www.wpsteward.com
 Plugin URI: https://wordpress.org/plugins/better-click-to-tweet/
@@ -83,14 +83,14 @@ function bctt_shorten( $input, $length, $ellipsis = true, $strip_html = true ) {
 
 function bctt_shortcode( $atts ) {
 
-	$atts = shortcode_atts( array(
+	$atts = shortcode_atts( apply_filters( 'bctt_atts', array(
 		'tweet'    => '',
 		'via'      => 'yes',
 		'username' => 'not-a-real-user',
 		'url'      => 'yes',
 		'nofollow' => 'no',
 		'prompt'   => sprintf( _x( 'Click To Tweet', 'Text for the box on the reader-facing box', 'better-click-to-tweet' ) )
-	), $atts, 'bctt' );
+	) ), $atts, 'bctt' );
 
 	//since 4.7: adds option to add in a per-box username to the tweet
 	if ( $atts['username'] != 'not-a-real-user' ) {
@@ -180,12 +180,13 @@ function bctt_shortcode( $atts ) {
 
 	if ( ! is_feed() ) {
 
-		return "<span class='" . $bctt_span_class . "'><span class='" . $bctt_text_span_class . "'><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank'" . $rel . ">" . $short . " </a></span><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='" . $bctt_button_span_class . "'" . $rel . ">" . $atts['prompt'] . "</a></span>";
+		$output = "<span class='" . $bctt_span_class . "'><span class='" . $bctt_text_span_class . "'><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank'" . $rel . ">" . $short . " </a></span><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='" . $bctt_button_span_class . "'" . $rel . ">" . $atts['prompt'] . "</a></span>";
 	} else {
 
-		return "<hr /><p><em>" . $short . "</em><br /><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='bctt-ctt-btn'" . $rel . ">" . $atts['prompt'] . "</a><br /><hr />";
+		$output = "<hr /><p><em>" . $short . "</em><br /><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='bctt-ctt-btn' " . $rel . " >" . $atts['prompt'] . "</a><br /><hr />";
 
 	}
+	return apply_filters( 'bctt_output', $output, $short, $bctt_button_span_class, $bctt_span_class, $bctt_text_span_class, $bcttURL, $handle_code, $rel, $atts );
 }
 
 add_shortcode( 'bctt', 'bctt_shortcode' );
