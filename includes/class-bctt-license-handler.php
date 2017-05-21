@@ -224,63 +224,29 @@ if ( ! class_exists( 'Better_Click_To_Tweet_License' ) ) :
 		 *
 		 * @return array           License settings.
 		 */
-		public function settings( $output ) {
+		public function settings( $settings ) {
 
-			$license          = get_option( $this->item_shortname . '_license_key' );
-			$status           = get_option( $this->item_shortname . '_license_status' );
-			$key_heading_text = __( 'License Key', 'better-click-to-tweet' );
-			$key_label_text   = __( 'Enter your license key', 'better-click-to-tweet' );
+			$bctt_license_settings = array(
+				array(
+					'name'    => $this->item_name,
+					'id'      => $this->item_shortname . '_license_key',
+					'desc'    => '',
+					'type'    => 'license_key',
+					'options' => array(
+						'license'      => get_option( $this->item_shortname . '_license_active' ),
+						'shortname'    => $this->item_shortname,
+						'item_name'    => $this->item_name,
+						'api_url'      => $this->api_url,
+						'checkout_url' => $this->checkout_url,
+						'account_url'  => $this->account_url,
+					),
+					'size'    => 'regular',
+				),
+			);
 
-			$output = '<div class="wrap">';
-			$output .= '<h2>' . __( 'Add-on Licenses', 'better-click-to-tweet' ) . '</h2>';
-			$output .= '</div>';
-			$output .= '<form method="post" action="options.php">';
-
-			$output .= settings_fields( 'bctt_license' );
-
-
-			$output .= '<form>';
-			$output .= '<table class="form-table">';
-			$output .= '<tbody>';
-			$output .= '<tr valign="top">';
-			$output .= '<th scope="row" valign="top">';
-			$output .= $key_heading_text;
-			$output .= '</th>';
-			$output .= '<td>';
-			$output .= '<input id="' . $this->item_shortname . '_license_key" name="' . esc_attr_e( $license ) . '" type="text" class="regular-text" value="' . esc_attr_e( $license ) . '"/>';
-			$output .= '<label class="description" for="' . $this->item_shortname . 'license_key">';
-			$output .= $key_label_text;
-			$output .= '</label></td> </tr>';
-
-			$key_activate_text   = __( 'Activate License', 'better-click-to-tweet' );
-			$key_active_text     = __( 'active', 'better-click-to-tweet' );
-			$key_deactivate_text = __( 'Deactivate License', 'better-click-to-tweet' );
-
-			if ( false !== $license ) {
-				$output .= '<tr valign="top"> <th scope="row" valign="top">';
-				$output .= $key_activate_text;
-				$output .= '</th> <td>';
-
-				if ( $status !== false && $status == 'valid' ) {
-					$output .= '<span style="color:green;">';
-					$output .= $key_active_text . '</span>';
-					$output .= wp_nonce_field( 'bcttps_nonce', 'bcttps_nonce' );
-
-					$output .= '<input type="submit" class="button-secondary" name="edd_license_deactivate" value="' . $key_deactivate_text . '"/>';
-				} else {
-					$output .= wp_nonce_field( 'bcttps_nonce', 'bcttps_nonce' );
-					$output .= '<input type="submit" class="button-secondary" name="edd_license_activate" value="' . $key_activate_text . '"/>';
-				}
-				$output .= '</td></tr>';
-			}
-			$output .= '</tbody> </table>';
-			$output .= submit_button();
-
-			$output .= '</form>';
-
-			return $output;
-
+			return array_merge( $settings, $bctt_license_settings );
 		}
+
 
 		/**
 		 * License Settings Content

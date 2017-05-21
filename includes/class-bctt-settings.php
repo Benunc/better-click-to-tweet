@@ -60,18 +60,73 @@ class Better_Click_To_Tweet_Settings {
 			$this,
 			'settings_page'
 		) );
-		add_submenu_page( 'better-click-to-tweet', 'Better Click To Tweet add-on Licenses', 'Licenses', 'manage_options', 'better-click-to-tweet-licenses', array(
+
+		add_submenu_page( 'better-click-to-tweet', 'Better Click To Tweet add-on Licenses', ' Add-on Licenses', 'manage_options', 'better-click-to-tweet-licenses', array(
 			$this,
 			'license_page'
 		) );
 	}
 
 	public function license_page () {
+        $options = Better_Click_To_Tweet_License::settings();
 
-		$output = apply_filters( 'bctt_settings_licenses', '<div class="wrap"><h2>Testing</h2>' );
-		echo $output;
+		$license          = get_option( $this->item_shortname . '_license_key' );
+		$status           = get_option( $this->item_shortname . '_license_status' );
+		$key_heading_text = $this->item_shortname . __( ' License Key', 'better-click-to-tweet' );
+		$key_label_text   = __( 'Enter your license key', 'better-click-to-tweet' );
+
+		$output = '<div class="wrap">';
+		$output .= '<h2>' . __( 'Add-on Licenses', 'better-click-to-tweet' ) . '</h2>';
+		$output .= '</div>';
+		$output .= '<form method="post" action="options.php">';
+
+		$output .= settings_fields( 'bctt_license' );
+
+
+		$output .= '<form>';
+		$output .= '<table class="form-table">';
+		$output .= '<tbody>';
+		$output .= '<tr valign="top">';
+		$output .= '<th scope="row" valign="top">';
+		$output .= $key_heading_text;
+		$output .= '</th>';
+		$output .= '<td>';
+		$output .= '<input id="' . $this->item_shortname . '_license_key" name="' . esc_attr_e( $license ) . '" type="text" class="regular-text" value="' . esc_attr_e( $license ) . '"/>';
+		$output .= '<label class="description" for="' . $this->item_shortname . 'license_key">';
+		$output .= $key_label_text;
+		$output .= '</label></td> </tr>';
+
+		$key_activate_text   = __( 'Activate License', 'better-click-to-tweet' );
+		$key_active_text     = __( 'active', 'better-click-to-tweet' );
+		$key_deactivate_text = __( 'Deactivate License', 'better-click-to-tweet' );
+
+		if ( false !== $license ) {
+			$output .= '<tr valign="top"> <th scope="row" valign="top">';
+			$output .= $key_activate_text;
+			$output .= '</th> <td>';
+
+			if ( $status !== false && $status == 'valid' ) {
+				$output .= '<span style="color:green;">';
+				$output .= $key_active_text . '</span>';
+				$output .= wp_nonce_field( 'bcttps_nonce', 'bcttps_nonce' );
+
+				$output .= '<input type="submit" class="button-secondary" name="edd_license_deactivate" value="' . $key_deactivate_text . '"/>';
+			} else {
+				$output .= wp_nonce_field( 'bcttps_nonce', 'bcttps_nonce' );
+				$output .= '<input type="submit" class="button-secondary" name="edd_license_activate" value="' . $key_activate_text . '"/>';
+			}
+			$output .= '</td></tr>';
+		}
+		$output .= '</tbody> </table>';
+		$output .= submit_button();
+
+		$output .= '</form>';
+
+		return $output;
 
 	}
+
+
 
 	/**
 	 * Register Settings
