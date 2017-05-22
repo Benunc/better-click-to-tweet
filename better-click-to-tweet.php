@@ -114,12 +114,13 @@ function bctt_shortcode( $atts ) {
 	}
 
 	if ( ! empty( $handle ) && $atts['via'] != 'no' ) {
-
-		$handle_code = "&amp;via=" . $handle . "&amp;related=" . $handle;
-
+		
+		$via = $handle;
+		$related = $handle;
 	} else {
 
-		$handle_code = '';
+		$via = '';
+		$related = '';
 
 	}
 
@@ -134,17 +135,17 @@ function bctt_shortcode( $atts ) {
 
 	if ( filter_var( $atts['url'], FILTER_VALIDATE_URL ) ) {
 
-		$bcttURL = '&amp;url=' . $atts['url'];
+		$bcttURL = $atts['url'];
 
 	} elseif ( $atts['url'] != 'no' ) {
 
 		if ( get_option( 'bctt-short-url' ) != false ) {
 
-			$bcttURL = '&amp;url=' . wp_get_shortlink();
+			$bcttURL  = wp_get_shortlink();
 
 		} else {
 
-			$bcttURL = '&amp;url=' . get_permalink();
+			$bcttURL = get_permalink();
 
 		}
 
@@ -178,12 +179,20 @@ function bctt_shortcode( $atts ) {
 	$bctt_text_span_class   = apply_filters( 'bctt_text_span_class', 'bctt-ctt-text' );
 	$bctt_button_span_class = apply_filters( 'bctt_button_span_class', 'bctt-ctt-btn' );
 
+
+	$href  = add_query_arg( array(
+		'url'     => $bcttURL,
+		'text'    => rawurlencode( html_entity_decode( $short ) ),
+		'via'     => $via,
+		'related' => $related,
+	), 'https://twitter.com/intent/tweet' );
+
 	if ( ! is_feed() ) {
 
-		$output = "<span class='" . esc_attr( $bctt_span_class ) . "'><span class='" . esc_attr( $bctt_text_span_class ) . "'><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank'" . $rel . ">" . esc_html( $short ) . " </a></span><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='" . esc_attr( $bctt_button_span_class ) . "'" . $rel . ">" . esc_html( $atts['prompt'] ) . "</a></span>";
+		$output = "<span class='" . esc_attr( $bctt_span_class ) . "'><span class='" . esc_attr( $bctt_text_span_class ) . "'><a href='" . esc_url( $href ) . "' target='_blank'" . $rel . ">" . esc_html( $short ) . " </a></span><a href='" . esc_url( $href ) . "' target='_blank' class='" . esc_attr( $bctt_button_span_class ) . "'" . $rel . ">" . esc_html( $atts['prompt'] ) . "</a></span>";
 	} else {
 
-		$output = "<hr /><p><em>" . esc_html( $short ) . "</em><br /><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='bctt-ctt-btn' " . $rel . " >" . esc_html( $atts['prompt'] ) . "</a><br /><hr />";
+		$output = "<hr /><p><em>" . esc_html( $short ) . "</em><br /><a href='" . esc_url( $href ) . "' target='_blank' class='bctt-ctt-btn' " . $rel . " >" . esc_html( $atts['prompt'] ) . "</a><br /><hr />";
 
 	}
 	return apply_filters( 'bctt_output', $output, $short, $bctt_button_span_class, $bctt_span_class, $bctt_text_span_class, $bcttURL, $handle_code, $rel, $atts );
