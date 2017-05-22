@@ -180,10 +180,10 @@ function bctt_shortcode( $atts ) {
 
 	if ( ! is_feed() ) {
 
-		$output = "<span class='" . $bctt_span_class . "'><span class='" . $bctt_text_span_class . "'><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank'" . $rel . ">" . $short . " </a></span><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='" . $bctt_button_span_class . "'" . $rel . ">" . $atts['prompt'] . "</a></span>";
+		$output = "<span class='" . esc_attr( $bctt_span_class ) . "'><span class='" . esc_attr( $bctt_text_span_class ) . "'><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank'" . $rel . ">" . esc_html( $short ) . " </a></span><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='" . esc_attr( $bctt_button_span_class ) . "'" . $rel . ">" . esc_html( $atts['prompt'] ) . "</a></span>";
 	} else {
 
-		$output = "<hr /><p><em>" . $short . "</em><br /><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='bctt-ctt-btn' " . $rel . " >" . $atts['prompt'] . "</a><br /><hr />";
+		$output = "<hr /><p><em>" . esc_html( $short ) . "</em><br /><a href='https://twitter.com/intent/tweet?text=" . rawurlencode( html_entity_decode( $short ) ) . $handle_code . $bcttURL . "' target='_blank' class='bctt-ctt-btn' " . $rel . " >" . esc_html( $atts['prompt'] ) . "</a><br /><hr />";
 
 	}
 	return apply_filters( 'bctt_output', $output, $short, $bctt_button_span_class, $bctt_span_class, $bctt_text_span_class, $bcttURL, $handle_code, $rel, $atts );
@@ -271,7 +271,7 @@ function bctt_options_link( $links ) {
 
 	$settingsText = sprintf( _x( 'Settings', 'text for the link on the plugins page', 'better-click-to-tweet' ) );
 
-	$settings_link = '<a href="admin.php?page=better-click-to-tweet">' . $settingsText . '</a>';
+	$settings_link = '<a href="admin.php?page=better-click-to-tweet">' . esc_html( $settingsText ) . '</a>';
 
 	array_unshift( $links, $settings_link );
 

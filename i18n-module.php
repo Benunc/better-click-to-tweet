@@ -192,11 +192,11 @@ class bctt_i18n {
 			echo '<div id="i18n_promo_box" style="border:1px solid #ccc;background-color:#fff;padding:1em 2em;max-width:100%;min-height:220px;">';
 			echo '<a href="' . esc_url( add_query_arg( array( 'remove_i18n_promo' => '1' ) ) ) . '" style="color:#333;text-decoration:none;font-weight:bold;font-size:16px;border:1px solid #ccc;padding:1px 4px;" class="alignright">X</a>';
 			if ( isset( $this->glotpress_logo ) && '' != $this->glotpress_logo ) {
-				echo '<a href="https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet/"><img style="float: right;margin: 15px 5px 5px 5px;padding: 0 1em;width: 200px;" src="' . $this->glotpress_logo . '" alt="' . $this->glotpress_name . '"/></a>';
+				echo '<a href="https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet/"><img style="float: right;margin: 15px 5px 5px 5px;padding: 0 1em;width: 200px;" src="' . esc_url( $this->glotpress_logo ) . '" alt="' . esc_attr( $this->glotpress_name ) . '"/></a>';
 			}
-			echo '<h2>' . sprintf( __( 'Translation of %s', 'better-click-to-tweet' ), $this->plugin_name ) . '</h2>';
+			echo '<h2>' . sprintf( __( 'Translation of %s', 'better-click-to-tweet' ), esc_html( $this->plugin_name ) ) . '</h2>';
 
-			echo '<p>' . $message . '</p>';
+			echo '<p>' . esc_html( $message ) . '</p>';
 			echo '<p><a href="https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet/">' . __( 'Register now &raquo;', 'better-click-to-tweet' ) . '</a></p>';
 			echo '</div>';
 		}
