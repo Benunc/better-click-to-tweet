@@ -72,13 +72,13 @@ function bctt_alerts() {
 				//The Dismiss Button.
 				$nag_meta_key          = 'bctt_has_dismissed_nag';
 				$nag_admin_dismiss_url = 'plugins.php?' . $nag_meta_key . '=0';
-				echo admin_url( $nag_admin_dismiss_url ); ?>" class="dismiss bctt-addon-nag-dismiss">Dismiss this <span
+				echo esc_url( admin_url( $nag_admin_dismiss_url ) ); ?>" class="dismiss bctt-addon-nag-dismiss">Dismiss this <span
 						class="dashicons dashicons-dismiss"></span></a>
 				<h3
 					class="bctt-addon-nag-header"><?php esc_html_e( 'Add Premium Style to your Better Click To Tweet boxes!', 'better-click-to-tweet' ) ?></h3>
 
 				<a href="http://benlikes.us/bcttnag"
-				   target="_blank"><img class="bctt-nag-photo" src="<?php echo plugins_url() . '/better-click-to-tweet/assets/img/premium_style.png'?>"/></a>
+				   target="_blank"><img class="bctt-nag-photo" src="<?php echo esc_url( plugins_url() . '/better-click-to-tweet/assets/img/premium_style.png' ); ?>"/></a>
 
 				<p class="bctt-addon-nag-copy"><?php esc_attr_e( 'Choose from multiple options when styling your Better Click To Tweet boxes, with no code.', 'better-click-to-tweet' ) ?></p>
 				<ul class="bctt-addon-nag-list">
