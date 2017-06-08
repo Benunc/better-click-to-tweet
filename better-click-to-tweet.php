@@ -114,19 +114,18 @@ function bctt_shortcode( $atts ) {
 	}
 
 	if ( ! empty( $handle ) && $atts['via'] != 'no' ) {
-		
+
 		$via = $handle;
 		$related = $handle;
 	} else {
 
-		$via = '';
+		$via = null;
 		$related = '';
 
 	}
 
 	if ( $atts['via'] != 'yes' ) {
-
-		$handle_code   = '';
+		$via = null;
 		$handle_length = 0;
 
 	}
@@ -151,7 +150,7 @@ function bctt_shortcode( $atts ) {
 
 	} else {
 
-		$bcttURL = '';
+		$bcttURL = null;
 
 	}
 
@@ -192,10 +191,10 @@ function bctt_shortcode( $atts ) {
 		$output = "<span class='" . esc_attr( $bctt_span_class ) . "'><span class='" . esc_attr( $bctt_text_span_class ) . "'><a href='" . esc_url( $href ) . "' target='_blank'" . $rel . ">" . esc_html( $short ) . " </a></span><a href='" . esc_url( $href ) . "' target='_blank' class='" . esc_attr( $bctt_button_span_class ) . "'" . $rel . ">" . esc_html( $atts['prompt'] ) . "</a></span>";
 	} else {
 
-		$output = "<hr /><p><em>" . esc_html( $short ) . "</em><br /><a href='" . esc_url( $href ) . "' target='_blank' class='bctt-ctt-btn' " . $rel . " >" . esc_html( $atts['prompt'] ) . "</a><br /><hr />";
+		$output = "<hr /><p><em>" . esc_html( $short ) . "</em><br /><a href='" . esc_url( $href ) . "' target='_blank' " . $rel . " >" . esc_html( $atts['prompt'] ) . "</a><br /><hr />";
 
 	}
-	return apply_filters( 'bctt_output', $output, $short, $bctt_button_span_class, $bctt_span_class, $bctt_text_span_class, $bcttURL, $handle_code, $rel, $atts );
+	return apply_filters( 'bctt_output', $output, $short, $bctt_button_span_class, $bctt_span_class, $bctt_text_span_class, $href, $rel, $atts );
 }
 
 add_shortcode( 'bctt', 'bctt_shortcode' );
