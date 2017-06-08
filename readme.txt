@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 4.8
-Stable tag: 5.2
+Stable tag: 5.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,10 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.2.1 =
+* fix — unused $handle_code variable has been removed. Was causing some errors for folks.
+* fix — code introduced in 5.2 messed up the "via" option and the option to not include the URL. This has been fixed.
 
 = 5.2 =
 * security fix — adds (more) escaping throughout the plugin. Thanks to Paul de Wouters from HumanMade for the PR!
