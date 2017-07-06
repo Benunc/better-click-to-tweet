@@ -50,9 +50,9 @@ function bctt_validate_checkbox( $input ) {
 }
 
 function bctt_add_custom_style_option() {
-	$bctt_dequeued_with_custom_funtion = get_option( 'bctt_style_dequeued' );
+	$bctt_dequeued_with_custom_funtion = bctt_is_default_styles_dequeued();
 
-	$bctt_custom_style = get_option( 'bcct_custom_style_enqueued' );
+	$bctt_custom_style = bctt_is_custom_stylesheet();
 
 	if ( $bctt_dequeued_with_custom_funtion || $bctt_custom_style ) {
 		return true;
