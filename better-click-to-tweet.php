@@ -212,8 +212,7 @@ add_shortcode( 'bctt', 'bctt_shortcode' );
 
 function bctt_scripts() {
 
-	if ( get_option( 'bctt_disable_css' ) ) {
-		add_option( 'bctt_style_dequeued', true );
+	if ( bctt_is_default_styles_dequeued() ) {
 		foreach ( wp_load_alloptions() as $option => $value ) {
 			if ( strpos( $option, 'bcct_' ) === 0 ) {
 				delete_option( $option );
@@ -223,30 +222,78 @@ function bctt_scripts() {
 		return;
 	}
 
-	$dir = wp_upload_dir();
-
-	$custom = file_exists( $dir['basedir'] . '/bcttstyle.css' );
+	$custom = bctt_is_custom_stylesheet();
 
 	$tag      = $custom ? 'bcct_custom_style' : 'bcct_style';
-	$antitag  = $custom ? 'bcct_style' : 'bcct_custom_style';
-	$location = $custom ? $dir['baseurl'] . '/bcttstyle.css' : plugins_url( 'assets/css/styles.css', __FILE__ );
+	$location = bctt_get_stylesheet_url();
 
 	$version = $custom ? '1.0' : '3.0';
 
 	wp_register_style( $tag, $location, false, $version, 'all' );
 
 	wp_enqueue_style( $tag );
-
-	delete_option( 'bctt_style_dequeued' );
-	add_option( $tag . '_enqueued', true );
-	delete_option( $antitag . '_enqueued' );
-
-
 }
 
 
 add_action( 'wp_enqueue_scripts', 'bctt_scripts', 10 );
 
+/**
+ * Check if default stylesheet must not be enqueued
+ *
+ * @return bool
+ */
+function bctt_is_default_styles_dequeued() {
+	return (bool) get_option( 'bctt_disable_css' );
+}
+
+
+/**
+ * Check if there's a custo stylesheet that will be enqueued
+ */
+function bctt_is_custom_stylesheet() {
+	return file_exists( bctt_get_custom_styles_path() );
+}
+
+/**
+ * Return the BCTT stylesheet URL
+ *
+ * Return custom styles URL if the file exists or the default one otherwise
+ *
+ * @return string
+ */
+function bctt_get_stylesheet_url() {
+	return bctt_is_custom_stylesheet() ? bctt_get_custom_styles_url() : bctt_get_styles_url();
+}
+
+
+/**
+ * Return the custom stylesheet path
+ *
+ * @return string
+ */
+function bctt_get_custom_styles_path() {
+	$dir = wp_upload_dir();
+	return $dir['basedir'] . '/bcttstyle.css';
+}
+
+/**
+ * Return the custom stylesheet URL
+ *
+ * @return string
+ */
+function bctt_get_custom_styles_url() {
+	$dir = wp_upload_dir();
+	return $dir['baseurl'] . '/bcttstyle.css';
+}
+
+/**
+ * Return the default stylesheet path
+ *
+ * @return string
+ */
+function bctt_get_styles_url() {
+	return plugins_url( 'assets/css/styles.css', __FILE__ );
+}
 
 /*
  * Delete options and shortcode on uninstall
