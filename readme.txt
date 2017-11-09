@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 4.8
-Stable tag: 5.2.1
+Stable tag: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Insert click to tweet boxes into your posts, simply and securely. This plugin is
 
 == Description ==
 
-= The most popular Click To Tweet Plugin for WordPress, for good reason. =
+= The most popular Click To Tweet Plugin for WordPress (by a mile), for good reason. =
 
 This plugin allows you to easily create tweetable content for your readers. Using a simple shortcode, your selected text is highlighted and made tweetable. 
 
@@ -100,6 +100,10 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.3 =
+* enhancement — cleaned up the various options checks that were happening on the front end (thanks @igmoweb on GitHub!)
+* Readme changes. I also celebrated a milestone of 20K active installs, which was cause for great celebration, and at least one undocumented happy dance.
 
 = 5.2.1 =
 * fix — unused $handle_code variable has been removed. Was causing some errors for folks.
