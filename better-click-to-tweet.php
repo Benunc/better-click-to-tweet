@@ -2,7 +2,7 @@
 /*
 Plugin Name: Better Click To Tweet
 Description: Add Click to Tweet boxes simply and elegantly to your posts or pages. All the features of a premium plugin, for FREE!
-Version: 5.3
+Version: 5.3.1
 Author: Ben Meredith
 Author URI: https://www.wpsteward.com
 Plugin URI: https://wordpress.org/plugins/better-click-to-tweet/
@@ -156,11 +156,11 @@ function bctt_shortcode( $atts ) {
 
 	if ( $atts['url'] != 'no' ) {
 
-		$short = bctt_shorten( $text, ( 117 - ( $handle_length ) ) );
+		$short = bctt_shorten( $text, ( 253 - ( $handle_length ) ) );
 
 	} else {
 
-		$short = bctt_shorten( $text, ( 140 - ( $handle_length ) ) );
+		$short = bctt_shorten( $text, ( 280 - ( $handle_length ) ) );
 
 	}
 

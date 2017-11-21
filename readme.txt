@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 4.8
-Stable tag: 5.3
+Stable tag: 5.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,10 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.3.1 =
+* Security Fix — potential XSS vulnerability on settings page. (mild security risk only affecting logged-in administrator accounts previously compromised). Thanks Robbie at DXW @robbiepaul on Github for the responsible disclosure.
+* If the last point didn't make any sense, please translate it to "UPDATE NOW. Previous versions of the plugin are mildly vulnerable to enterprising attackers."
 
 = 5.3 =
 * enhancement — cleaned up the various options checks that were happening on the front end (thanks @igmoweb on GitHub!)

@@ -38,7 +38,7 @@ function bctt_register_settings() {
 }
 
 function bctt_validate_settings( $input ) {
-	return str_replace( '@', '', strip_tags( stripslashes( $input ) ) );
+	return preg_replace('/[^0-9a-zA-Z_]/', '', $input);
 }
 
 function bctt_validate_checkbox( $input ) {
@@ -123,7 +123,7 @@ function bctt_settings_page() {
 											<label><?php _ex( 'Your Twitter Handle', 'label for text input on settings screen', 'better-click-to-tweet' ); ?></label>
 										</th>
 										<td><input type="text" name="bctt-twitter-handle"
-										           value="<?php echo get_option( 'bctt-twitter-handle' ); ?>"/>
+										           value="<?php echo esc_attr( get_option( 'bctt-twitter-handle' ) ); ?>"/>
 										</td>
 									<tr valign="top">
 										<th style="width: 200px;">
