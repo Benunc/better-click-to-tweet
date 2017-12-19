@@ -8,6 +8,8 @@ add_filter( 'tiny_mce_version', 'refresh_mce' );
 // Add button to visual editor
 include dirname( __FILE__ ) . '/assets/tinymce/bctt-tinymce.php';
 
+include dirname( __FILE__ ) . '/assets/gutenberg/index.php';
+
 // instantiate i18n encouragement module
 $bctt_i18n = new bctt_i18n(
 	array(
@@ -120,16 +122,16 @@ function bctt_settings_page() {
 								<table class="form-table">
 									<tr valign="top">
 										<th style="width: 200px;">
-											<label><?php _ex( 'Your Twitter Handle', 'label for text input on settings screen', 'better-click-to-tweet' ); ?></label>
+											<label for="bctt-twitter-handle"><?php _ex( 'Your Twitter Handle', 'label for text input on settings screen', 'better-click-to-tweet' ); ?></label>
 										</th>
-										<td><input type="text" name="bctt-twitter-handle"
+										<td><input id="bctt-twitter-handle" type="text" name="bctt-twitter-handle"
 										           value="<?php echo esc_attr( get_option( 'bctt-twitter-handle' ) ); ?>"/>
 										</td>
 									<tr valign="top">
 										<th style="width: 200px;">
-											<label><?php _ex( 'Use Short URL?', 'label for checkbox on settings screen', 'better-click-to-tweet' ); ?></label>
+											<label for="bctt-short-url"><?php _ex( 'Use Short URL?', 'label for checkbox on settings screen', 'better-click-to-tweet' ); ?></label>
 										</th>
-										<td><input type="checkbox" name="bctt-short-url"
+										<td><input id="bctt-short-url" type="checkbox" name="bctt-short-url"
 										           value="1" <?php if ( 1 == get_option( 'bctt-short-url' ) ) {
 												echo 'checked="checked"';
 											} ?>" />
@@ -162,7 +164,7 @@ function bctt_settings_page() {
 								          value="<?php _e( 'Save Changes', 'better-click-to-tweet' ); ?>"/>
 								</p>
 								<br class="clear"/>
-								<em><?php $url = 'https://www.wpsteward.com';
+								<em><?php $url = 'https://www.betterclicktotweet.com';
 									$link      = sprintf( __( 'An open source plugin by <a href=%s>Ben Meredith</a>', 'better-click-to-tweet' ), esc_url( $url ) );
 									echo $link; ?></em>
 							</form>
@@ -190,13 +192,20 @@ function bctt_settings_page() {
 								class="validate" target="_blank" novalidate>
 								<div id="mc_embed_signup_scroll">
 									<p> <?php echo sprintf( __( 'This plugin is developed by <a href="%s">Ben Meredith</a>. I am a freelance developer specializing in <a href="%s">outrunning and outsmarting hackers</a>.', 'better-click-to-tweet' ), esc_url( 'https://www.wpsteward.com' ), esc_url( 'https://www.wpsteward.com/service-plans' ) ); ?></p>
-									<h4><?php _e( 'Sign up to receive my FREE web strategy guide', 'better-click-to-tweet' ); ?></h4>
+									<h3 class="bctt-signup"><?php _e( 'Sign up to receive my FREE web strategy guide', 'better-click-to-tweet' ); ?></h3>
 
-									<p><input type="email" value="" name="EMAIL" class="widefat" id="mce-EMAIL"
+									<p><label for="bctt-email-signup" class="hidden">
+                                            Your Email Address
+                                        </label>
+                                        <input id="bctt-email-signup" type="email" value="" name="EMAIL" class="widefat" id="mce-EMAIL"
 									          placeholder="<?php _ex( 'Your Email Address', 'placeholder text for input field', 'better-click-to-tweet' ); ?>">
 										<small><?php _e( 'No Spam. One-click unsubscribe in every message', 'better-click-to-tweet' ); ?></small>
 									</p>
-									<div style="position: absolute; left: -5000px;"><input type="text"
+									<div style="position: absolute; left: -5000px;">
+                                        <label for="bctt-mailchimp-subscribe-hidden" class="hidden">
+                                            Hidden field for MailChimp verification
+                                        </label>
+                                        <input id="bctt-mailchimp-subscribe-hidden" type="text"
 									                                                       name="b_8f88921110b81f81744101f4d_bd909b5f89"
 									                                                       tabindex="-1" value="">
 									</div>

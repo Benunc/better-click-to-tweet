@@ -3,8 +3,8 @@ Contributors: ben.meredith@gmail.com, wpsteward
 Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
-Tested up to: 4.8
-Stable tag: 5.3.1
+Tested up to: 4.9
+Stable tag: 5.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,14 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.4.1 =
+* Fix — made the settings page more accessible with the help of Rachel Cherry's fantastic wa11y plugin. https://wordpress.org/plugins/wa11y/ Thanks Rachel!
+* Started tinkering with Gutenberg compatibility, the new editor experience coming to WordPress, to make BCTT compatible with .
+
+= 5.4 =
+* Enhancement — Now supports Twitter's new 280 character limit. Note that non-roman characters may effect the new truncation in strange ways. Please report any such strangeness to me in the support forums.
+* Enhancement — updated some links in the back end to link to the all new (and still kinda bland) https://www.betterclicktotweet.com
 
 = 5.3.1 =
 * Security Fix — potential XSS vulnerability on settings page. (mild security risk only affecting logged-in administrator accounts previously compromised). Thanks Robbie at DXW @robbiepaul on Github for the responsible disclosure.
