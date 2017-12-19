@@ -103,7 +103,7 @@ Donations: http://benlikes.us/donate
 
 = 5.4.1 =
 * Fix — made the settings page more accessible with the help of Rachel Cherry's fantastic wa11y plugin. https://wordpress.org/plugins/wa11y/ Thanks Rachel!
-* Started tinkering with Gutenberg compatibility, the new editor experience coming to WordPress, to make BCTT compatible with .
+* Started tinkering with Gutenberg compatibility, the new editor experience coming to WordPress, to make BCTT compatible with the Future of WordPress (no file changes on this, just wnate to let you know it's on the radar. Learn more at https://wordpress.org/gutenberg
 
 = 5.4 =
 * Enhancement — Now supports Twitter's new 280 character limit. Note that non-roman characters may effect the new truncation in strange ways. Please report any such strangeness to me in the support forums.
