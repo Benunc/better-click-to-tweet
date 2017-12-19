@@ -8,7 +8,6 @@ add_filter( 'tiny_mce_version', 'refresh_mce' );
 // Add button to visual editor
 include dirname( __FILE__ ) . '/assets/tinymce/bctt-tinymce.php';
 
-include dirname( __FILE__ ) . '/assets/gutenberg/index.php';
 
 // instantiate i18n encouragement module
 $bctt_i18n = new bctt_i18n(
