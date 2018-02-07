@@ -35,7 +35,7 @@ export default registerBlockType(
         ],
         attributes: {
             tweet: {
-                type: 'string',
+                type: 'string'
             },
             username: {
                 type: 'string',
@@ -65,7 +65,7 @@ export default registerBlockType(
 
             // Inspector control events
             const onChangeTweet = value => {
-                props.setAttributes({ tweet: value });
+                props.setAttributes({ tweet: value[0] });
             };
             const onChangeUsername = value => {
                 props.setAttributes({ username: value });
@@ -137,10 +137,9 @@ export default registerBlockType(
                         <Editable
                             tagName="a"
                             placeholder={__('Enter Your Tweet')}
-                            onChange={onChangeTweet}
+                            onChange={(onChangeTweet)}
                             value={props.attributes.tweet} 
                             focus={props.focus}
-                            formattingControls={[]}
                         />
                     </span>
                     <a href="#" onClick={onClickPrompt} class="bctt-ctt-btn">
