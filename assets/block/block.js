@@ -95,17 +95,17 @@ export default registerBlockType(
                     <InspectorControls key="inspector">
                         <PanelBody Title={__('Tweet Settings')}>
                             <TextControl
-                                label={__('Username')}
+                                label={__('Twitter Username')}
                                 value={props.attributes.username}
                                 onChange={onChangeUsername}
                             />
                             <ToggleControl
-                                label={__('Username in tweet')}
+                                label={__('Include the username in Tweet?')}
                                 checked={( !! props.attributes.via  ) }
                                 onChange={toggleVia}
                             />
                             <ToggleControl
-                                label={__('Url in tweet')}
+                                label={__('Include URL in tweet?')}
                                 checked={(!!props.attributes.url)}
                                 onChange={toggleUrl}
                             />
@@ -113,12 +113,13 @@ export default registerBlockType(
                                 label={__('Custom URL')}
                                 value={props.attributes.urlcustom}
                                 onChange={onChangeUrlCustom}
-                                help={__('Custom Url to use instead of post')}
+                                help={__('Custom URL to use instead of post')}
                             />
                             <ToggleControl
-                                label={__('No Follow')}
+                                label={__('Nofollow')}
                                 checked={(!!props.attributes.nofollow)}
                                 onChange={toggleNoFollow}
+                                help={__('Make links nofollow')}
                             />
                             <TextControl
                                 label={__('Prompt')}
@@ -136,7 +137,7 @@ export default registerBlockType(
                     <span class="bctt-ctt-text">
                         <Editable
                             tagName="a"
-                            placeholder={__('Enter Your Tweet')}
+                            placeholder={__('Enter text for readers to Tweet')}
                             onChange={(onChangeTweet)}
                             value={props.attributes.tweet} 
                             focus={props.focus}
