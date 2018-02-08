@@ -1,3 +1,8 @@
+/**
+ * Internal block libraries
+ */
+const { __ } = wp.i18n;
+
 const blockAttributes = {
     tweet: {
         type: 'string'
@@ -23,7 +28,7 @@ const blockAttributes = {
     },
     prompt: {
         type: 'string',
-        default: 'Click To Tweet'
+        default: __('Click To Tweet')
     },
 }
 

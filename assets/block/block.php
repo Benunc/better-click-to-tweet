@@ -33,7 +33,6 @@ register_block_type('bctt/clicktotweet', [
         ),
          'username' => array(
             'type' => 'string',
-            'default' => 'not-a-real-user'
         ),
         'via' => array(
             'type' => 'boolean',
@@ -52,7 +51,7 @@ register_block_type('bctt/clicktotweet', [
         ),      
         'prompt' => array(
             'type' => 'string',
-            'default' => 'Click To Tweet'
+            'default' => sprintf( _x( 'Click To Tweet', 'Text for the box on the reader-facing box', 'better-click-to-tweet' ) )
         ),  
     ),
 ]);
