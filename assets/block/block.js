@@ -33,7 +33,7 @@ export default registerBlockType(
 
             // Inspector control events
             const onChangeTweet = value => {
-                props.setAttributes({ tweet: value[0] });
+                props.setAttributes({ tweet: value });
             };
             const onChangeUsername = value => {
                 props.setAttributes({ username: value });
@@ -72,8 +72,7 @@ export default registerBlockType(
                             tagName="div"
                             placeholder={__('Enter text for readers to Tweet')}
                             onChange={(onChangeTweet)}
-                            value={props.attributes.tweet} 
-                            formattingControls={ [] }
+                            value={props.attributes.tweet}
                         />
                     </span>
                     <a href="#" onClick={onClickPrompt} class="bctt-ctt-btn">
