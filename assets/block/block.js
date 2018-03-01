@@ -2,6 +2,8 @@
  * Block dependencies
  */
 import classnames from 'classnames';
+import blockAttributes from './attributes';
+import Inspector from './inspector';
 
 /**
  * Internal block libraries
@@ -9,16 +11,8 @@ import classnames from 'classnames';
 const { __ } = wp.i18n;
 const {
     registerBlockType,
-    Editable,
-    InspectorControls,
+    RichText,
 } = wp.blocks;
-const {
-	PanelBody
-} = wp.components;
-const {
-    TextControl,
-    ToggleControl,
-} = InspectorControls;
 
 /**
  * Register block
@@ -27,40 +21,14 @@ export default registerBlockType(
     'bctt/clicktotweet',
     {
         title: __('Better Click to Tweet'),
+        description: __('The most popular click to tweet plugin for wordpress (by a mile), for good reason.'),
         category: 'widgets',
         icon: 'twitter',
         keywords: [
             __('Twitter'),
             __('Tweet'),
         ],
-        attributes: {
-            tweet: {
-                type: 'string'
-            },
-            username: {
-                type: 'string',
-                default: bctt_options_js.username
-            },
-            via: {
-                type: 'boolean',
-                default: true
-            },
-            url: {
-                type: 'boolean',
-                default: true
-            },
-            urlcustom: {
-                type: 'string',
-            },
-            nofollow: {
-                type: 'boolean',
-                default: false
-            },
-            prompt: {
-                type: 'string',
-                default: 'Click To Tweet'
-            },
-        },
+        attributes: blockAttributes,
         edit: props => {
 
             // Inspector control events
@@ -91,56 +59,21 @@ export default registerBlockType(
            
             return [
                 // Inspector Options
-                !! props.focus && (
-                    <InspectorControls key="inspector">
-                        <PanelBody Title={__('Tweet Settings')}>
-                            <TextControl
-                                label={__('Twitter Username')}
-                                value={props.attributes.username}
-                                onChange={onChangeUsername}
-                            />
-                            <ToggleControl
-                                label={__('Include the username in Tweet?')}
-                                checked={( !! props.attributes.via  ) }
-                                onChange={toggleVia}
-                            />
-                            <ToggleControl
-                                label={__('Include URL in tweet?')}
-                                checked={(!!props.attributes.url)}
-                                onChange={toggleUrl}
-                            />
-                            <TextControl
-                                label={__('Custom URL')}
-                                value={props.attributes.urlcustom}
-                                onChange={onChangeUrlCustom}
-                                help={__('Custom URL to use instead of post')}
-                            />
-                            <ToggleControl
-                                label={__('Nofollow')}
-                                checked={(!!props.attributes.nofollow)}
-                                onChange={toggleNoFollow}
-                                help={__('Make links nofollow')}
-                            />
-                            <TextControl
-                                label={__('Prompt')}
-                                value={props.attributes.prompt}
-                                onChange={onChangePrompt}
-                                help={__('Text for action/prompt link')}
-                            />
-                            
-                        </PanelBody>
-                    </InspectorControls>
+                !! props.isSelected && (
+                    <Inspector 
+                        { ... { onChangeTweet, onChangeUsername, toggleVia, toggleUrl, onChangeUrlCustom, toggleNoFollow, onChangePrompt, onClickPrompt, ...props } }
+                    />
                 ),
 
-                // Block Edit UI
+                // Edit UI
                 <span className={classnames(props.className, 'bctt-click-to-tweet')} key={props.className}>
                     <span class="bctt-ctt-text">
-                        <Editable
-                            tagName="a"
+                        <RichText
+                            tagName="div"
                             placeholder={__('Enter text for readers to Tweet')}
                             onChange={(onChangeTweet)}
                             value={props.attributes.tweet} 
-                            focus={props.focus}
+                            formattingControls={ [] }
                         />
                     </span>
                     <a href="#" onClick={onClickPrompt} class="bctt-ctt-btn">
