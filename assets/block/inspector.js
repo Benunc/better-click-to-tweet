@@ -6,12 +6,10 @@ const {
     InspectorControls,
 } = wp.blocks;
 const {
-	PanelBody
-} = wp.components;
-const {
+    PanelBody,
     TextControl,
     ToggleControl,
-} = InspectorControls;
+} = wp.components;
 
 /**
 * Create an Inspector Controls wrapper Component

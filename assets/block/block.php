@@ -40,7 +40,7 @@ register_block_type('bctt/clicktotweet', [
             'default' => true
         ),
         'url' => array(
-            'type' => boolean,
+            'type' => 'boolean',
             'default' => true
         ),
         'urlcustom' => array(

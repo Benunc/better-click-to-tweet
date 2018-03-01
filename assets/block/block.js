@@ -11,7 +11,7 @@ import Inspector from './inspector';
 const { __ } = wp.i18n;
 const {
     registerBlockType,
-    Editable,
+    RichText,
 } = wp.blocks;
 
 /**
@@ -59,7 +59,7 @@ export default registerBlockType(
            
             return [
                 // Inspector Options
-                !! props.focus && (
+                !! props.isSelected && (
                     <Inspector 
                         { ... { onChangeTweet, onChangeUsername, toggleVia, toggleUrl, onChangeUrlCustom, toggleNoFollow, onChangePrompt, onClickPrompt, ...props } }
                     />
@@ -68,12 +68,11 @@ export default registerBlockType(
                 // Edit UI
                 <span className={classnames(props.className, 'bctt-click-to-tweet')} key={props.className}>
                     <span class="bctt-ctt-text">
-                        <Editable
-                            tagName="a"
+                        <RichText
+                            tagName="div"
                             placeholder={__('Enter text for readers to Tweet')}
                             onChange={(onChangeTweet)}
                             value={props.attributes.tweet} 
-                            focus={props.focus}
                             formattingControls={ [] }
                         />
                     </span>
