@@ -11,8 +11,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Enque Block assets
 function bctt_block_editor_assets() {
-    wp_enqueue_script('bctt-block-js', plugins_url('block/block.build.js', dirname(__FILE__)), array( 'wp-i18n', 'wp-blocks', 'wp-components' ));
-    wp_enqueue_style('bctt-block-editor-css', plugins_url('css/styles.css', dirname(__FILE__)), array( 'wp-edit-blocks' ));
+    wp_enqueue_script('bctt-block-js', plugins_url('block/build/script.js', dirname(__FILE__)), array( 'wp-i18n', 'wp-blocks', 'wp-components' ));
+    wp_enqueue_style('bctt-block-editor-css', plugins_url('css/styles.css', dirname(__FILE__)), array( ));
 
     // Add plugin options for block
     $bctt_data = array(
@@ -33,7 +33,7 @@ register_block_type('bctt/clicktotweet', [
         ),
          'username' => array(
             'type' => 'string',
-            'default' => 'not-a-real-user'
+            'default' => get_option( 'bctt-twitter-handle' )
         ),
         'via' => array(
             'type' => 'boolean',
@@ -59,6 +59,9 @@ register_block_type('bctt/clicktotweet', [
 
 // Callback function to render bctt on frontend
 function bctt_block_callback( $attributes ) {
+
+    //echo var_dump($attributes);
+    //exit;
     extract( $attributes );
 
    $url = ($url ? 'yes' : 'no');

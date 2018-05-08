@@ -342,6 +342,6 @@ add_filter( "plugin_action_links_$bcttlink", 'bctt_options_link' );
  */
 add_action( 'plugins_loaded', function () {
 	if ( function_exists( 'register_block_type' ) ) {
-		require_once( plugin_dir_path( __FILE__ ) . 'assets/block/block.php' );
+		require_once( plugin_dir_path( __FILE__ ) . 'assets/block/init.php' );
 	}
 } );
