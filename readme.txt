@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 4.9
-Stable tag: 5.4.2
+Stable tag: 5.4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,10 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.4.3 =
+* Security fix — added a line to the output that secures the target _blank vulnerability. Thanks to @dmv912 on the wordpress forums for the call-out!
+
 = 5.4.2 =
 * Fix — removed a line that was breaking things.
 
