@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 import { __ } from "@wordpress/i18n";
-import { InspectorControls } from "@wordpress/blocks";
+import { InspectorControls } from "@wordpress/editor";
 import { PanelBody, TextControl, ToggleControl } from "@wordpress/components";
 
 /**

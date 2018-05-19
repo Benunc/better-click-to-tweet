@@ -42,6 +42,7 @@ const wpDependencies = [
   "components",
   "element",
   "blocks",
+  "editor",
   "hooks",
   "utils",
   "date",
@@ -59,9 +60,7 @@ wpDependencies.forEach(wpDependency => {
 
 // Webpack config.
 const config = {
-  entry: {
-    bctt: ["./assets/block/src/index.js"]
-  },
+  entry: "./assets/block/src/index.js",
   externals,
   output: {
     filename: "./assets/block/build/script.js",
@@ -82,7 +81,7 @@ const config = {
       {
         test: /editor\.s?css$/,
         use: editBlocksCSSPlugin.extract(extractConfig)
-      },
+      }
     ]
   },
   plugins: [

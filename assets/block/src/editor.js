@@ -8,7 +8,7 @@ import classnames from "classnames";
  */
 import { __ } from "@wordpress/i18n";
 import { Fragment } from "@wordpress/element";
-import { RichText } from "@wordpress/blocks";
+import { RichText } from "@wordpress/editor";
 
 /**
  * Internal dependencies
