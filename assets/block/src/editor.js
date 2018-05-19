@@ -39,6 +39,7 @@ const editor = props => {
         <span className="bctt-ctt-text">
           <RichText
             format="string"
+            formattingControls={[]}
             tagName="div"
             placeholder={__("Enter text for readers to Tweet")}
             onChange={onChangeTweet}
