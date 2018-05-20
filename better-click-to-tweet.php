@@ -336,3 +336,12 @@ function bctt_options_link( $links ) {
 
 $bcttlink = plugin_basename( __FILE__ );
 add_filter( "plugin_action_links_$bcttlink", 'bctt_options_link' );
+
+/**
+ * Register Block
+ */
+add_action( 'plugins_loaded', function () {
+	if ( function_exists( 'register_block_type' ) ) {
+		require_once( plugin_dir_path( __FILE__ ) . 'assets/block/init.php' );
+	}
+} );
