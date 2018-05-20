@@ -20,6 +20,22 @@
     height: 0;
 }
 
+/* For compatibility with the new editor in version 5.0 codenamed Gutenberg */
+
+.bctt-click-to-tweet .mce-content-body {
+	position: relative;
+    color: #000 !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 1.5em;
+    line-height: 140%;
+    font-weight: 100;
+    text-decoration: none !important;
+    text-transform: none !important;
+    word-wrap: break-word;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
 .bctt-ctt-text a {
     padding: 15px 0;
     margin: 15px 0;
