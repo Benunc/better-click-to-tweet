@@ -17,7 +17,7 @@ import render from "./render";
 export default registerBlockType("bctt/clicktotweet", {
   title: __("Better Click to Tweet"),
   description: __(
-    "The most popular click to tweet plugin for wordpress (by a mile), for good reason."
+    "Add text for your readers to tweet, calling them to action on your behalf."
   ),
   category: "widgets",
   icon: "twitter",
