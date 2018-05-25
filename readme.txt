@@ -101,6 +101,12 @@ Donations: http://benlikes.us/donate
 
 == Changelog ==
 
+= 5.5 =
+* Enhancement — added compatibility with WordPress 5.0's new editor, codenamed Gutenberg (thanks to Ajit Bohra @ajitbohra for all the great work!)
+* Enhancement — Some CSS modifications to make the plugin play nicely with the new editor.
+* Enhancement — changed the twitter bird icon for an updated one on the front end. (Thanks to @oliverpitsch for the PR on Github.)
+
+
 = 5.4.3 =
 * Security fix — added a line to the output that secures the target _blank vulnerability. Thanks to @dmv912 on the wordpress forums for the call-out!
 
