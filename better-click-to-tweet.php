@@ -13,6 +13,8 @@ include 'i18n-module.php';
 include 'bctt_options.php';
 include 'bctt-i18n.php';
 include 'admin-nags.php';
+include 'includes/updater/bctt-updater.php';
+include 'includes/updater/license-page.php';
 
 defined( 'ABSPATH' ) or die( "No soup for you. You leave now." );
 
