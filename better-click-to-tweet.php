@@ -142,11 +142,11 @@ function bctt_shortcode( $atts ) {
 
 		if ( get_option( 'bctt-short-url' ) != false ) {
 
-			$bcttURL  = wp_get_shortlink();
+			$bcttURL  = apply_filters( 'bctturl', wp_get_shortlink());
 
 		} else {
 
-			$bcttURL = get_permalink();
+			$bcttURL = apply_filters( 'bctturl', get_permalink());
 
 		}
 
@@ -181,7 +181,7 @@ function bctt_shortcode( $atts ) {
 	$bctt_button_span_class = apply_filters( 'bctt_button_span_class', 'bctt-ctt-btn' );
 
 
-	$href  = add_query_arg( array(
+	$href  = add_query_arg(  array(
 		'url'     => $bcttURL,
 		'text'    => rawurlencode( html_entity_decode( $short ) ),
 		'via'     => $via,
