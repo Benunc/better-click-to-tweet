@@ -130,7 +130,7 @@ function bctt_shortcode( $atts ) {
 
 	}
 
-	$text = $atts['tweet'];
+	$text = empty($atts['tweet']) ? get_the_title() : $atts['tweet'];
 
 	if ( filter_var( $atts['url'], FILTER_VALIDATE_URL ) ) {
 
