@@ -102,7 +102,8 @@ if ( ! class_exists( 'BCTT_License' ) ):
 			$bctt_license         = get_option( $this->item_shortname . '_license_key' );
 			$this->file           = $_file;
 			$this->item_name      = $_item_name;
-			$this->item_shortname = self::get_short_name( $this->item_name );
+			$this->item_shortname = 'bctt' . bctt_addon_slug( $this->item_name );
+			$this->item_slug      = preg_replace( '/[^a-zA-Z0-9_\s]/', '', str_replace( ' ', '_', strtolower( $this->item_shortname ) ) );
 			$this->version        = $_version;
 			$this->license        = isset( $bctt_license ) ? trim( $bctt_license ) : '';
 			$this->author         = $_author;
@@ -161,6 +162,7 @@ if ( ! class_exists( 'BCTT_License' ) ):
 
 				// run a quick security check
 				if ( ! check_admin_referer( 'bctt_nonce', 'bctt_nonce' ) ) {
+					echo "error, dog.";
 					return;
 				}
 
@@ -179,9 +181,17 @@ if ( ! class_exists( 'BCTT_License' ) ):
 				$this->license = sanitize_text_field( $_POST[ $this->item_shortname . '_license_key' ] );
 
 				// Make sure there are no api errors.
-				if ( ! ( $license_data = $this->get_license_info( 'activate_license' ) ) ) {
+				if ( ! ( $license_data = $this->get_license_info( 'activate_license' ) ) ) {                var_dump($license_data);
 					return;
 				}
+
+
+				// Tell WordPress to check for updates
+				set_site_transient( 'update_plugins', null );
+
+				//update the license key option.
+				update_option( "{$this->item_shortname}_license_active", $license_data );
+
 
 			}
 		}

@@ -15,6 +15,7 @@ include 'bctt-i18n.php';
 include 'admin-nags.php';
 include 'includes/updater/bctt-updater.php';
 include 'includes/updater/license-page.php';
+include 'includes/misc-functions.php';
 
 defined( 'ABSPATH' ) or die( "No soup for you. You leave now." );
 
