@@ -1,7 +1,13 @@
 <?php
 
 function bctt_license_menu() {
-	add_submenu_page( 'better-click-to-tweet', 'Add-on Licenses', 'Add-on Licenses', 'manage_options', 'bctt-licenses', 'bctt_license_page' );
+	add_submenu_page(
+	        'better-click-to-tweet',
+            'Add-on Licenses',
+            'Add-on Licenses',
+            'manage_options',
+            'bctt-licenses',
+            'bctt_license_page' );
 
 }
 
@@ -15,20 +21,21 @@ function bctt_license_page() {
 	?>
     <div class="wrap">
     <h2><?php _e( 'Activate Your Addons' ); ?></h2>
-    <p>An active license is required for updates (including bugfixes and security updates) as well as support.</p>
+    <p>An active license is required for updates (including bug fixes and security updates) as well as support.</p>
     <form method="post" action="options.php">
 		<?php
 		$active_plugins = bctt_get_active_addons();
-		//var_dump( $active_plugins );
+
 		foreach ( $active_plugins as $addons ) {
 		$shortname   = bctt_addon_shortname( $addons['Name'] );
 		$license_key = 'bctt_' . bctt_addon_slug($shortname) . '_license_key';
 		$key         = get_option( $license_key );
 		$status      = get_option( $license_key . '_active' );
 
+		//var_dump( $active_plugins );
+		settings_fields( 'bctt_license' );
+		 ?>
 
-		settings_fields( 'bctt_license' ); ?>
-<?php var_dump($license_key);?>
         <table class="form-table">
             <tbody>
             <tr valign="top">
@@ -45,7 +52,7 @@ function bctt_license_page() {
 			<?php if ( false == $status ) { ?>
             <tr valign="top">
                 <th scope="row" valign="top">
-					<?php _e( 'Activate License' ); ?>
+                    <?php //empty column for spacing ?>
                 </th>
                 <td>
 					<?php if ( $status !== false && $status == 'valid' ) { ?>
@@ -95,16 +102,6 @@ function bctt_sanitize_license( $new ) {
 		if ( $old && $old != $new ) {
 			delete_option( $longoption . '_active' ); // new license has been entered, so must reactivate
 		}
-	}
-
-	return $new;
-}
-
-function bctt_utm_tags_sanitize_license( $new ) {
-
-	$old = get_option( 'bctt_utm_tags_license_key' );
-	if ( $old && $old != $new ) {
-		delete_option( 'bctt_utm_tags_license_key_active' ); // new license has been entered, so must reactivate
 	}
 
 	return $new;

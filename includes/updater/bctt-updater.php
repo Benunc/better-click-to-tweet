@@ -94,20 +94,22 @@ if ( ! class_exists( 'BCTT_License' ) ):
 		 *
 		 * @var    string
 		 */
-		private $api_url = 'https://betterclicktotweet.com/';
+		private $api_url = 'https://www.betterclicktotweet.com/';
 
 
 		public function __construct( $_file, $_item_name, $_version, $_author, $_optname = null, $_api_url = null ) {
 
-			$bctt_license         = get_option( $this->item_shortname . '_license_key' );
+
 			$this->file           = $_file;
 			$this->item_name      = $_item_name;
 			$this->item_shortname = 'bctt' . bctt_addon_slug( $this->item_name );
 			$this->item_slug      = preg_replace( '/[^a-zA-Z0-9_\s]/', '', str_replace( ' ', '_', strtolower( $this->item_shortname ) ) );
 			$this->version        = $_version;
+			$bctt_license         = get_option( $this->item_shortname . '_license_key' );
 			$this->license        = isset( $bctt_license ) ? trim( $bctt_license ) : '';
 			$this->author         = $_author;
 			$this->api_url        = is_null( $_api_url ) ? $this->api_url : $_api_url;
+
 
 			$this->includes();
 			$this->hooks();
@@ -161,10 +163,10 @@ if ( ! class_exists( 'BCTT_License' ) ):
 			if ( isset( $_POST['edd_license_activate'] ) ) {
 
 				// run a quick security check
-				if ( ! check_admin_referer( 'bctt_nonce', 'bctt_nonce' ) ) {
-					echo "error, dog.";
-					return;
-				}
+//				if ( ! check_admin_referer( 'bctt_nonce', 'bctt_nonce' ) ) {
+//					echo "error, dog.";
+//					return;
+//				}
 
 				if ( empty( $_POST["{$this->item_shortname}_license_key"] ) ) {
 					$this->unset_license();
@@ -181,7 +183,7 @@ if ( ! class_exists( 'BCTT_License' ) ):
 				$this->license = sanitize_text_field( $_POST[ $this->item_shortname . '_license_key' ] );
 
 				// Make sure there are no api errors.
-				if ( ! ( $license_data = $this->get_license_info( 'activate_license' ) ) ) {                var_dump($license_data);
+				if ( ! ( $license_data = $this->get_license_info( 'activate_license' ) ) ) {
 					return;
 				}
 
