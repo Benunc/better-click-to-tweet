@@ -102,7 +102,7 @@ if ( ! class_exists( 'BCTT_License' ) ):
 
 			$this->file           = $_file;
 			$this->item_name      = $_item_name;
-			$this->item_shortname = 'bctt' . bctt_addon_slug( $this->item_name );
+			$this->item_shortname = 'bctt_' . bctt_addon_slug( $this->item_name );
 			$this->item_slug      = preg_replace( '/[^a-zA-Z0-9_\s]/', '', str_replace( ' ', '_', strtolower( $this->item_shortname ) ) );
 			$this->version        = $_version;
 			$bctt_license         = get_option( $this->item_shortname . '_license_key' );
@@ -130,7 +130,7 @@ if ( ! class_exists( 'BCTT_License' ) ):
 			$license_key = trim( get_option( 'bcttps_license_key' ) );
 
 			// setup the updater
-			$edd_updater = new EDD_SL_Plugin_Updater(
+			$edd_updater = new BCTT_SL_Plugin_Updater(
 				$this->api_url,
 				$this->file,
 				array(
@@ -152,22 +152,22 @@ if ( ! class_exists( 'BCTT_License' ) ):
 
 		private function includes() {
 
-			if ( ! class_exists( 'EDD_SL_Plugin_Updater' ) ) {
-				require_once 'EDD_SL_Plugin_Updater.php';
+			if ( ! class_exists( 'BCTT_SL_Plugin_Updater' ) ) {
+				require_once 'BCTT_SL_Plugin_Updater.php';
 			}
 		}
 
 		public function activate_license() {
 
 			// listen for our activate button to be clicked
-			if ( isset( $_POST['edd_license_activate'] ) ) {
+			if ( isset( $_POST['bctt_license_activate'] ) ) {
 
 				// run a quick security check
-//				if ( ! check_admin_referer( 'bctt_nonce', 'bctt_nonce' ) ) {
-//					echo "error, dog.";
-//					return;
-//				}
+			if ( ! isset( $_REQUEST[ $this->item_shortname . '_license_key_nonce'] ) || ! wp_verify_nonce( $_REQUEST[ $this->item_shortname . '_license_key_nonce'], $this->item_shortname . '_license_key_nonce' ) ) {
 
+			return;
+
+			}
 				if ( empty( $_POST["{$this->item_shortname}_license_key"] ) ) {
 					$this->unset_license();
 
@@ -182,7 +182,7 @@ if ( ! class_exists( 'BCTT_License' ) ):
 				// Get license key.
 				$this->license = sanitize_text_field( $_POST[ $this->item_shortname . '_license_key' ] );
 
-				// Make sure there are no api errors.
+				// Make the call to the API and make sure there are no api errors.
 				if ( ! ( $license_data = $this->get_license_info( 'activate_license' ) ) ) {
 					return;
 				}
