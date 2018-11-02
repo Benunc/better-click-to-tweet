@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Enqueue Block assets
 function bctt_block_editor_assets() {
-    wp_enqueue_script('bctt-block-js', plugins_url('block/build/script.js', dirname(__FILE__)), array( 'wp-i18n', 'wp-blocks', 'wp-components' ));
+    wp_enqueue_script('bctt-block-js', plugins_url('block/build/script.js', dirname(__FILE__)), array( 'wp-i18n', 'wp-blocks', 'wp-components', 'wp-editor' ));
     if ( ! bctt_is_default_styles_dequeued() ) {
 	    $stylesheet_url = bctt_get_stylesheet_url();
 
