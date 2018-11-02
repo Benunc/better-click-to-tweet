@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 4.9
-Stable tag: 5.4.3
+Stable tag: 5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,10 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.6.0 =
+* fix — improving compatibility with WordPress 5.0 and the new block-based (Gutenberg) editor. Thanks again to @ajitbohra for the help
+* fix — resolve "invalid headers" problem on certain new installs
 
 = 5.5 =
 * Enhancement — added compatibility with WordPress 5.0's new editor, codenamed Gutenberg (thanks to Ajit Bohra @ajitbohra for all the great work!)
