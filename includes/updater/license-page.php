@@ -25,7 +25,7 @@ function bctt_license_page() {
     <div class="wrap">
     <h2><?php _e( 'Activate Your Addons' ); ?></h2>
     <p>An active license is required for updates (including bug fixes and security updates) as well as support.</p>
-    <form method="post" action="options.php">
+    <form method="post" action="admin.php?page=bctt-licenses">
 		<?php
 		$active_plugins = bctt_get_active_addons(); ?>
 
@@ -38,7 +38,7 @@ function bctt_license_page() {
 		    $key         = get_option( $license_key );
 		    $status      = get_option( $license_key . '_active' );
 
-		//var_dump( $active_plugins );
+		var_dump( $shortname );
 
             ?>
 
