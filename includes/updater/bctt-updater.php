@@ -102,7 +102,7 @@ if ( ! class_exists( 'BCTT_License' ) ):
 
 			$this->file           = $_file;
 			$this->item_name      = $_item_name;
-			$this->item_shortname = 'bctt_' . bctt_addon_slug( $this->item_name );
+			$this->item_shortname = 'bctt_' . bctt_addon_slug( bctt_addon_shortname( $this->item_name ) );
 			$this->item_slug      = preg_replace( '/[^a-zA-Z0-9_\s]/', '', str_replace( ' ', '_', strtolower( $this->item_shortname ) ) );
 			$this->version        = $_version;
 			$bctt_license         = get_option( $this->item_shortname . '_license_key' );
