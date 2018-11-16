@@ -34,12 +34,10 @@ function bctt_license_page() {
 
 		foreach ( $active_plugins as $addons ) {
 		    $shortname   = bctt_addon_shortname( $addons['Name'] );
-		    $license_key = 'bctt_' . bctt_addon_slug($shortname) . '_license_key';
+		    $license_key = 'bctt_' . bctt_addon_slug($shortname) . '_license';
 		    $key         = get_option( $license_key );
 		    $status      = get_option( $license_key . '_active' );
-
-		var_dump( $shortname );
-
+        var_dump($status);
             ?>
 
             <tbody>
@@ -54,13 +52,13 @@ function bctt_license_page() {
                            value="<?php echo $key; ?>" placeholder="<?php _e( 'Enter your license key', 'better-click-to-tweet' ); ?>"/>
                 </td>
             </tr>
-			<?php if ( false == $status ) { ?>
+			<?php if ( 'valid' !== $status || false == $status ) { ?>
             <tr valign="top">
                 <th scope="row" valign="top">
                     <?php //empty column for spacing ?>
                 </th>
                 <td>
-					<?php if ( $status !== false && $status == 'valid' ) { ?>
+					<?php if ( $status == 'valid' ) { ?>
                         <span style="color:green;"><?php _e( 'active' ); ?></span>
 						<?php wp_nonce_field( $license_key . '_nonce',  $license_key . '_nonce' ); ?>
                         <input type="submit" class="button-secondary" name="bctt_license_deactivate"
@@ -86,9 +84,10 @@ function bctt_license_page() {
 function bctt_register_license_option() {
 
     $active_plugins = bctt_get_active_addons();
+
 	foreach ( $active_plugins as $addons ) {
 		$shortname  = bctt_addon_slug( bctt_addon_shortname( $addons['Name'] ) );
-		$longoption = 'bctt_' . $shortname . '_license_key';
+		$longoption = 'bctt_' . $shortname . '_license';
 		if ( ! get_option( $longoption ) ) {
 			// creates our settings in the options table
 			register_setting( 'bctt_license', $longoption, 'bctt_sanitize_license' );
@@ -102,7 +101,7 @@ function bctt_sanitize_license( $new ) {
 	$active_plugins = bctt_get_active_addons();
 	foreach ( $active_plugins as $addons ) {
 		$shortname  = bctt_addon_slug( bctt_addon_shortname( $addons['Name'] ) );
-		$longoption = 'bctt_' . $shortname . '_license_key';
+		$longoption = 'bctt_' . $shortname . '_license';
         $old = get_option( $longoption );
 		if ( $old && $old != $new ) {
 			delete_option( $longoption . '_active' ); // new license has been entered, so must reactivate

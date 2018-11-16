@@ -105,7 +105,7 @@ if ( ! class_exists( 'BCTT_License' ) ):
 			$this->item_shortname = 'bctt_' . bctt_addon_slug( bctt_addon_shortname( $this->item_name ) );
 			$this->item_slug      = preg_replace( '/[^a-zA-Z0-9_\s]/', '', str_replace( ' ', '_', strtolower( $this->item_shortname ) ) );
 			$this->version        = $_version;
-			$bctt_license         = get_option( $this->item_shortname . '_license_key' );
+			$bctt_license         = get_option( $this->item_shortname . '_license' );
 			$this->license        = isset( $bctt_license ) ? trim( $bctt_license ) : '';
 			$this->author         = $_author;
 			$this->api_url        = is_null( $_api_url ) ? $this->api_url : $_api_url;
@@ -163,12 +163,12 @@ if ( ! class_exists( 'BCTT_License' ) ):
 			if ( isset( $_POST['bctt_license_activate'] ) ) {
 
 				// run a quick security check
-			if ( ! isset( $_REQUEST[ $this->item_shortname . '_license_key_nonce'] ) || ! wp_verify_nonce( $_REQUEST[ $this->item_shortname . '_license_key_nonce'], $this->item_shortname . '_license_key_nonce' ) ) {
+			if ( ! isset( $_REQUEST[ $this->item_shortname . '_license_nonce'] ) || ! wp_verify_nonce( $_REQUEST[ $this->item_shortname . '_license_nonce'], $this->item_shortname . '_license_nonce' ) ) {
 
 			return;
 
 			}
-				if ( empty( $_POST["{$this->item_shortname}_license_key"] ) ) {
+				if ( empty( $_POST["{$this->item_shortname}_license"] ) ) {
 					$this->unset_license();
 
 					return;
@@ -180,7 +180,7 @@ if ( ! class_exists( 'BCTT_License' ) ):
 				}
 
 				// Get license key.
-				$this->license = sanitize_text_field( $_POST[ $this->item_shortname . '_license_key' ] );
+				$this->license = sanitize_text_field( $_POST[ $this->item_shortname . '_license' ] );
 
 				// Make the call to the API and make sure there are no api errors.
 				if ( ! ( $license_data = $this->get_license_info( 'activate_license' ) ) ) {
@@ -192,7 +192,8 @@ if ( ! class_exists( 'BCTT_License' ) ):
 				set_site_transient( 'update_plugins', null );
 
 				//update the license key option.
-				update_option( "{$this->item_shortname}_license_active", $license_data );
+				update_option( "{$this->item_shortname}_license", $this->license );
+				update_option( "{$this->item_shortname}_license_active", 'valid' );
 
 
 			}
