@@ -1,14 +1,14 @@
 <?php
-/*
-Plugin Name: Better Click To Tweet
-Description: Add Click to Tweet boxes simply and elegantly to your posts or pages. All the features of a premium plugin, for FREE!
-Version: 5.6.0
-Author: Ben Meredith
-Author URI: https://www.betterclicktotweet.com
-Plugin URI: https://wordpress.org/plugins/better-click-to-tweet/
-License: GPL2
-Text Domain: better-click-to-tweet 
-*/
+/**
+ * Plugin Name: Better Click To Tweet
+ * Description: Add Click to Tweet boxes simply and elegantly to your posts or pages. All the features of a premium plugin, for FREE!
+ * Version: 5.6.1
+ * Author: Ben Meredith
+ * Author URI: https://www.betterclicktotweet.com
+ * Plugin URI: https://wordpress.org/plugins/better-click-to-tweet/
+ * License: GPL2
+ * Text Domain: better-click-to-tweet
+**/
 
 defined( 'ABSPATH' ) or die( "No soup for you. You leave now." );
 

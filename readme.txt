@@ -101,6 +101,9 @@ Donations: http://benlikes.us/donate
 
 == Changelog ==
 
+= 5.6.1 =
+* fix — another attempt at the "invalid headers" intermittent problem.
+
 = 5.6.0 =
 * fix — improving compatibility with WordPress 5.0 and the new block-based (Gutenberg) editor. Thanks again to @ajitbohra for the help
 * fix — resolve "invalid headers" problem on certain new installs
