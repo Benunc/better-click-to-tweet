@@ -100,8 +100,10 @@ function bctt_settings_page() {
 							_e( 'Meaningful, tweetable quote.', 'better-click-to-tweet' ); ?>"]</pre>
 						<p><?php /* translators: Also, treat "BCTT" as a brand name, don't translate it */
 							_e( 'If you are using the visual editor, click the BCTT birdie in the toolbar to add a pre-formatted shortcode to your post.', 'better-click-to-tweet' ); ?></p>
-
-						<p><?php _e( 'Tweet length is automatically shortened to 117 characters minus the length of your twitter name, to leave room for it and a link back to the post.', 'better-click-to-tweet' ); ?></p>
+                        <p><?php
+							_e( 'In the WordPress 5.0 editor (codenamed Gutenberg), there is a Better Click To Tweet block.', 'better-click-to-tweet' ); ?></p>
+						<p><?php _e( 'If you include a link back to the post using the URL parameter (or leaving it out, the default behavior), the tweet length is automatically shortened to 253 characters minus the length of your twitter handle, to leave room for the handle and link back to the post.', 'better-click-to-tweet' ); ?></p>
+                        <p><?php echo sprintf( __( 'Learn more about the URL parameter as well as the other power user features in the <a href=%s>Power User Guide</a>.', 'better-click-to-tweet' ), esc_url( 'http://benlikes.us/7r') ); ?></p>
 					</div>
 					<!--/inside-->
 				</div>
@@ -191,7 +193,7 @@ function bctt_settings_page() {
 								class="validate" target="_blank" novalidate>
 								<div id="mc_embed_signup_scroll">
 									<p> <?php echo sprintf( __( 'This plugin is developed by <a href="%s">Ben Meredith</a>. I am a freelance developer specializing in <a href="%s">outrunning and outsmarting hackers</a>.', 'better-click-to-tweet' ), esc_url( 'https://www.wpsteward.com' ), esc_url( 'https://www.wpsteward.com/service-plans' ) ); ?></p>
-									<h3 class="bctt-signup"><?php _e( 'Sign up to receive my FREE web strategy guide', 'better-click-to-tweet' ); ?></h3>
+									<h3 class="bctt-signup"><?php _e( 'Sign up here for a free 7-part email series on how to manage your website like a pro.', 'better-click-to-tweet' ); ?></h3>
 
 									<p><label for="bctt-email-signup" class="hidden">
                                             Your Email Address

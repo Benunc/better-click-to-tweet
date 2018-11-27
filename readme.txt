@@ -3,8 +3,8 @@ Contributors: ben.meredith@gmail.com, wpsteward
 Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
-Tested up to: 4.9
-Stable tag: 5.6.0
+Tested up to: 5.0
+Stable tag: 5.6.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,17 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.6.3 =
+* fix — update language on the settings page about the tweet length (280 character support added earlier, this is updating the help text to reflect that)
+* fix — tested up to WordPress 5.0
+* random — updated the text on the email signup box on the settings page. I don't offer a PDF any more... It's more of a email drip sequence at this point.
+
+= 5.6.2 =
+* fix — resolving zip problem.
+
+= 5.6.1 =
+* fix — another attempt at the "invalid headers" intermittent problem.
 
 = 5.6.0 =
 * fix — improving compatibility with WordPress 5.0 and the new block-based (Gutenberg) editor. Thanks again to @ajitbohra for the help
