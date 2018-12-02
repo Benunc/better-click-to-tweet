@@ -160,7 +160,7 @@ if ( ! class_exists( 'BCTT_License' ) ):
 		public function activate_license() {
 
 			// listen for our activate button to be clicked
-			if ( isset( $_POST[ $this->item_shortname . 'license_activate'] ) ) {
+			if ( isset( $_POST[ $this->item_shortname . '_license_activate'] ) ) {
 
 				// run a quick security check
 			if ( ! isset( $_REQUEST[ $this->item_shortname . '_license_nonce'] ) || ! wp_verify_nonce( $_REQUEST[ $this->item_shortname . '_license_nonce'], $this->item_shortname . '_license_nonce' ) ) {
@@ -261,7 +261,7 @@ if ( ! class_exists( 'BCTT_License' ) ):
 		public function deactivate_license() {
 
 			// Run on deactivate button press.
-			if ( isset( $_POST[ $this->item_shortname . 'license_deactivate'] ) ) {
+			if ( isset( $_POST[ $this->item_shortname . '_license_deactivate'] ) ) {
 				$this->unset_license();
 			}
 		}

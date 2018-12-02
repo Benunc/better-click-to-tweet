@@ -42,7 +42,9 @@ function bctt_license_page() {
 			$status      = get_option( $license_key . '_active' );
 			var_dump( $status );
 			?>
-
+            <script>
+                console.log(<?php echo json_encode($_POST); ?>);
+            </script>
             <tbody>
             <tr valign="top">
 
@@ -69,7 +71,7 @@ function bctt_license_page() {
                                value="<?php _e( 'Deactivate License', 'better-click-to-tweet' ); ?>"/>
 					<?php } else {
 						wp_nonce_field( $license_key . '_nonce', $license_key . '_nonce' ); ?>
-                        <input type="submit" class="button-secondary" name="bctt_license_activate"
+                        <input type="submit" class="button-secondary" name="<?php echo $license_key ?>_activate"
                                value="<?php _e( 'Activate License', 'better-click-to-tweet' ); ?>"/>
 					<?php }
 					} ?>
