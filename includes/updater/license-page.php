@@ -2,16 +2,17 @@
 
 function bctt_license_menu() {
 
-    if ( ! empty( bctt_get_active_addons())) {
-	    add_submenu_page(
-		    'better-click-to-tweet',
-		    'Add-on Licenses',
-		    'Add-on Licenses',
-		    'manage_options',
-		    'bctt-licenses',
-		    'bctt_license_page' );
-    }
-    return;
+	if ( ! empty( bctt_get_active_addons() ) ) {
+		add_submenu_page(
+			'better-click-to-tweet',
+			'Add-on Licenses',
+			'Add-on Licenses',
+			'manage_options',
+			'bctt-licenses',
+			'bctt_license_page' );
+	}
+
+	return;
 }
 
 add_action( 'admin_menu', 'bctt_license_menu', 40 );
@@ -30,15 +31,17 @@ function bctt_license_page() {
 		$active_plugins = bctt_get_active_addons(); ?>
 
         <table class="form-table">
-            <?php settings_fields( 'bctt_license' );
+			<?php settings_fields( 'bctt_license' );
 
-		foreach ( $active_plugins as $addons ) {
-		    $shortname   = bctt_addon_shortname( $addons['Name'] );
-		    $license_key = 'bctt_' . bctt_addon_slug($shortname) . '_license';
-		    $key         = get_option( $license_key );
-		    $status      = get_option( $license_key . '_active' );
-        var_dump($status);
-            ?>
+			foreach ( $active_plugins
+
+			as $addons ) {
+			$shortname   = bctt_addon_shortname( $addons['Name'] );
+			$license_key = 'bctt_' . bctt_addon_slug( $shortname ) . '_license';
+			$key         = get_option( $license_key );
+			$status      = get_option( $license_key . '_active' );
+			var_dump( $status );
+			?>
 
             <tbody>
             <tr valign="top">
@@ -49,19 +52,20 @@ function bctt_license_page() {
                 <td>
                     <input id="<?php echo $license_key ?>" name="<?php echo $license_key ?>" type="text"
                            class="regular-text"
-                           value="<?php echo $key; ?>" placeholder="<?php _e( 'Enter your license key', 'better-click-to-tweet' ); ?>"/>
+                           value="<?php echo $key; ?>"
+                           placeholder="<?php _e( 'Enter your license key', 'better-click-to-tweet' ); ?>"/>
                 </td>
             </tr>
-			<?php if ( 'valid' !== $status || false == $status ) { ?>
+			<?php if (  false == $status || 'valid' == $status) { ?>
             <tr valign="top">
                 <th scope="row" valign="top">
-                    <?php //empty column for spacing ?>
+					<?php //empty column for spacing ?>
                 </th>
                 <td>
 					<?php if ( $status == 'valid' ) { ?>
                         <span style="color:green;"><?php _e( 'active' ); ?></span>
-						<?php wp_nonce_field( $license_key . '_nonce',  $license_key . '_nonce' ); ?>
-                        <input type="submit" class="button-secondary" name="bctt_license_deactivate"
+						<?php wp_nonce_field( $license_key . '_nonce', $license_key . '_nonce' ); ?>
+                        <input type="submit" class="button-secondary" name="<?php echo $license_key ?>_deactivate"
                                value="<?php _e( 'Deactivate License', 'better-click-to-tweet' ); ?>"/>
 					<?php } else {
 						wp_nonce_field( $license_key . '_nonce', $license_key . '_nonce' ); ?>
@@ -83,7 +87,7 @@ function bctt_license_page() {
 
 function bctt_register_license_option() {
 
-    $active_plugins = bctt_get_active_addons();
+	$active_plugins = bctt_get_active_addons();
 
 	foreach ( $active_plugins as $addons ) {
 		$shortname  = bctt_addon_slug( bctt_addon_shortname( $addons['Name'] ) );
@@ -102,7 +106,7 @@ function bctt_sanitize_license( $new ) {
 	foreach ( $active_plugins as $addons ) {
 		$shortname  = bctt_addon_slug( bctt_addon_shortname( $addons['Name'] ) );
 		$longoption = 'bctt_' . $shortname . '_license';
-        $old = get_option( $longoption );
+		$old        = get_option( $longoption );
 		if ( $old && $old != $new ) {
 			delete_option( $longoption . '_active' ); // new license has been entered, so must reactivate
 		}

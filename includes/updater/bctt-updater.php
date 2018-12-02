@@ -160,7 +160,7 @@ if ( ! class_exists( 'BCTT_License' ) ):
 		public function activate_license() {
 
 			// listen for our activate button to be clicked
-			if ( isset( $_POST['bctt_license_activate'] ) ) {
+			if ( isset( $_POST[ $this->item_shortname . 'license_activate'] ) ) {
 
 				// run a quick security check
 			if ( ! isset( $_REQUEST[ $this->item_shortname . '_license_nonce'] ) || ! wp_verify_nonce( $_REQUEST[ $this->item_shortname . '_license_nonce'], $this->item_shortname . '_license_nonce' ) ) {
@@ -233,9 +233,13 @@ if ( ! class_exists( 'BCTT_License' ) ):
 
 		private function unset_license() {
 
+			if ( ! ( $license_data = $this->get_license_info( 'deactivate_license' ) ) ) {
+				return;
+			}
 			// Remove license from database.
 			delete_option( "{$this->item_shortname}_license_active" );
-			unset( $_POST["{$this->item_shortname}_license_key"] );
+			delete_option( "{$this->item_shortname}_license" );
+			unset( $_POST["{$this->item_shortname}_license"] );
 
 			// Unset license param.
 			$this->license = '';
@@ -245,7 +249,7 @@ if ( ! class_exists( 'BCTT_License' ) ):
 			$status = false;
 
 			foreach ( $_POST as $key => $value ) {
-				if ( false !== strpos( $key, 'license_key_deactivate' ) ) {
+				if ( false !== strpos( $key, 'license_deactivate' ) ) {
 					$status = true;
 					break;
 				}
@@ -257,7 +261,7 @@ if ( ! class_exists( 'BCTT_License' ) ):
 		public function deactivate_license() {
 
 			// Run on deactivate button press.
-			if ( isset( $_POST[ $this->item_shortname . '_license_key_deactivate' ] ) ) {
+			if ( isset( $_POST[ $this->item_shortname . 'license_deactivate'] ) ) {
 				$this->unset_license();
 			}
 		}
