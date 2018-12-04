@@ -127,7 +127,7 @@ if ( ! class_exists( 'BCTT_License' ) ):
 		public function bctt_updater() {
 
 			// retrieve our license key from the DB
-			$license_key = trim( get_option( 'bcttps_license_key' ) );
+			$license_key = trim( get_option( $this->license ) );
 
 			// setup the updater
 			$edd_updater = new BCTT_SL_Plugin_Updater(
