@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 5.0
-Stable tag: 5.6.3
+Stable tag: 5.6.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,10 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.6.4 =
+* fix — resolve an error for folks running both WordPress 5.0 and PHP version 5.3.x
+* fix — changes to make the code more legible for humans. But only the total geeks.
 
 = 5.6.3 =
 * fix — update language on the settings page about the tweet length (280 character support added earlier, this is updating the help text to reflect that)
