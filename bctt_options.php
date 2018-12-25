@@ -188,7 +188,7 @@ function bctt_settings_page() {
 
 						<div id="bctt_signup" class="inside">
 							<form
-								action="//benandjacq.us1.list-manage.com/subscribe/post?u=8f88921110b81f81744101f4d&amp;id=bd909b5f89"
+								action="//benandjacq.us1.list-manage.com/subscribe/post?u=8f88921110b81f81744101f4d&amp;id=bd909b5f89&amp;SUBSET=<?php echo urlencode( site_url() ) ?>"
 								method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
 								class="validate" target="_blank" novalidate>
 								<div id="mc_embed_signup_scroll">
