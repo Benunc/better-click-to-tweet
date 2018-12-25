@@ -90,10 +90,10 @@ Donations: http://benlikes.us/donate
 
 == Screenshots ==
 
-1. This in the editor...
-1. Becomes this in your blog post!
 1. Find our block with a forward slash...
 1. ...and adding tweetable content just got EASY.
+1. This in the classic editor...
+1. Becomes this in your blog post!
 
 == Changelog ==
 
