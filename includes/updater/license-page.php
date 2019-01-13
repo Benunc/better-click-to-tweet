@@ -91,29 +91,19 @@ function bctt_license_page() {
 function bctt_register_license_option() {
 
 	$active_plugins = bctt_get_active_addons();
-
+	$args = array(
+		'type' => 'string',
+		'sanitize_callback' => 'sanitize_text_field',
+		'default' => NULL,
+	);
 	foreach ( $active_plugins as $addons ) {
 		$shortname  = bctt_addon_slug( bctt_addon_shortname( $addons['Name'] ) );
 		$longoption = 'bctt_' . $shortname . '_license';
 		if ( ! get_option( $longoption ) ) {
 			// creates our settings in the options table
-			register_setting( 'bctt_license', $longoption, 'bctt_sanitize_license' );
+			register_setting( 'bctt_license', $longoption, $args );
 		}
 	}
 }
 
 add_action( 'admin_init', 'bctt_register_license_option' );
-
-function bctt_sanitize_license( $new ) {
-	$active_plugins = bctt_get_active_addons();
-	foreach ( $active_plugins as $addons ) {
-		$shortname  = bctt_addon_slug( bctt_addon_shortname( $addons['Name'] ) );
-		$longoption = 'bctt_' . $shortname . '_license';
-		$old        = get_option( $longoption );
-		if ( $old && $old != $new ) {
-			delete_option( $longoption . '_active' ); // new license has been entered, so must reactivate
-		}
-	}
-
-	return $new;
-}
