@@ -1,9 +1,22 @@
 <?php
 
+function maybe_remove_premium_styles_license_page() {
+	if ( function_exists( 'bcttps_settings_page') ) {
+
+		remove_action( 'admin_menu', 'bcttps_settings_page', 30 );
+
+	}
+}
+
+add_action( 'init', 'maybe_remove_premium_styles_license_page', 40 );
+
 function bctt_license_menu() {
     $addons = bctt_get_active_addons();
 
+
+
     if ( ! empty( $addons ) ) {
+
 		add_submenu_page(
 			'better-click-to-tweet',
 			'Add-on Licenses',
