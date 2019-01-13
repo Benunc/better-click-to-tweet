@@ -80,7 +80,6 @@ function bctt_license_page() {
 			<?php } ?>
             </tbody>
         </table>
-		<?php submit_button(); ?>
 
     </form>
 	<?php
