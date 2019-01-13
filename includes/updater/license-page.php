@@ -1,8 +1,9 @@
 <?php
 
 function bctt_license_menu() {
+    $addons = bctt_get_active_addons();
 
-	if ( ! empty( bctt_get_active_addons() ) ) {
+    if ( ! empty( $addons ) ) {
 		add_submenu_page(
 			'better-click-to-tweet',
 			'Add-on Licenses',
