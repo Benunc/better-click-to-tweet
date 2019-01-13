@@ -25,8 +25,8 @@ add_action( 'admin_menu', 'bctt_license_menu', 40 );
 function bctt_license_page() {
 	?>
     <div class="wrap">
-    <h2><?php _e( 'Activate Your Addons' ); ?></h2>
-    <p><?php _e('An active license is required for updates (including bug fixes and security updates) as well as support.' );?></p>
+    <h2><?php _e( 'Activate Your Addons', 'better-click-to-tweet' ); ?></h2>
+    <p><?php _e('An active license is required for updates (including bug fixes and security updates) as well as support.', 'better-click-to-tweet' );?></p>
     <form method="post" action="admin.php?page=bctt-licenses">
 		<?php
 		$active_plugins = bctt_get_active_addons(); ?>
