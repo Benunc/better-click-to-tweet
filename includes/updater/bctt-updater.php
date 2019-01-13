@@ -183,7 +183,10 @@ if ( ! class_exists( 'BCTT_License' ) ):
 				$this->license = sanitize_text_field( $_POST[ $this->item_shortname . '_license' ] );
 
 				// Make the call to the API and make sure there are no api errors.
-				if ( ! ( $license_data = $this->get_license_info( 'activate_license' ) ) ) {
+				$license_data = $this->get_license_info( 'activate_license' );
+				var_dump($license_data );
+				if (  $license_data->success !== true ) {
+					add_settings_error('bctt-license', esc_attr( 'settings_updated' ), __( 'License failed to activate. Please double-check it and enter again.', 'better-click-to-tweet' ) );
 					return;
 				}
 
