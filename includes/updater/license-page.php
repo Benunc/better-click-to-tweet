@@ -63,9 +63,9 @@ function bctt_license_page() {
                 <th scope="row" valign="top">
 					<?php //empty column for spacing ?>
                 </th>
-                <td>
+                <td style="padding-top:0;">
 					<?php if ( $status == 'valid' ) { ?>
-                        <span style="color:green;"><?php _e( 'active' ); ?></span>
+                        <div style="color:green; margin-bottom:1em;"><?php _e( 'License active!' ); ?></div>
 						<?php wp_nonce_field( $license_key . '_nonce', $license_key . '_nonce' ); ?>
                         <input type="submit" class="button-secondary" name="<?php echo $license_key ?>_deactivate"
                                value="<?php _e( 'Deactivate License', 'better-click-to-tweet' ); ?>"/>
