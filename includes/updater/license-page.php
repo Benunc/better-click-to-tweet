@@ -43,11 +43,8 @@ function bctt_license_page() {
 			$license_key = 'bctt_' . bctt_addon_slug( $shortname ) . '_license';
 			$key         = get_option( $license_key );
 			$status      = get_option( $license_key . '_active' );
-			var_dump( $status );
+			//var_dump( $status );
 			?>
-            <script>
-                console.log(<?php echo json_encode($_POST); ?>);
-            </script>
             <tbody>
             <tr valign="top">
 
