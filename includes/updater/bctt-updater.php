@@ -1,5 +1,12 @@
 <?php
-
+/*
+ * License Handler Class
+ *
+ * This is the base class for adding licenses for Premium add-ons. Each add-on extends this class
+ *
+ * @since 5.7.0
+ *
+ */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
