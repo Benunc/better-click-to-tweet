@@ -49,12 +49,16 @@ add_action( 'admin_menu', 'bctt_license_menu', 40 );
 function bctt_license_page() {
 	?>
     <div class="wrap">
-    <h2><?php _e( 'Activate Your Addons', 'better-click-to-tweet' ); ?></h2>
-    <p><?php _e('An active license is required for updates (including bug fixes and security updates) as well as support.', 'better-click-to-tweet' );?></p>
+    <h2><?php _e( 'Activate Your Add-on Licenses', 'better-click-to-tweet' ); ?></h2>
+    <p><?php _e('An active license is required for updates (including bug fixes and security updates) as well as support. Licenses don\'t affect the functionality of the add-ons in any way, but in order to recieve support for installed add-ons you\'ll need an active license. Thanks again for your suport!', 'better-click-to-tweet' );?></p>
+
 
     <form method="post" action="admin.php?page=bctt-licenses">
 	    <?php settings_errors('bctt-license');
+        if ( function_exists( 'bcttps_license_menu' ) ) {
+            echo sprintf( __( '<div style="background-color:#b22222; text-align:center; color: white; padding: 1em;"><p><strong>IMPORTANT:</strong></p><p>Your version of the Premium Styles add-on needs to be updated before you can input a functional license key.</p> <p><strong>You haven\'t done anything wrong here</strong>, but the below input for Premium Styles will not work until you address this. For more information, see <a style="color:yellow;"href="%1$s">this post</a></p></div>', 'better-click-to-tweet' ), esc_url('http://benlikes.us/premiumstylesupdate1') );
 
+        }
 		$active_plugins = bctt_get_active_addons(); ?>
 
         <table class="form-table">
