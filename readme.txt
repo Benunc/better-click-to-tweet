@@ -97,6 +97,12 @@ Donations: http://benlikes.us/donate
 
 == Changelog ==
 
+= 5.7.0 =
+* feature — moved license management for premium add-ons (get them at https://www.betterclicktotweet.com today!) to the core plugin. Free plugin users will not notice a difference here at all. Premium users: check your email!
+* enhancement — several updates to code comments for clarity.
+* enhancement — the callback URL (from tweet back to website) is now filterable.
+* not much in terms of user-focused enhancements in this release, but a ton happened "under the hood."
+
 = 5.6.5 =
 * fix — added a parameter to the mailing list signup in the admin to help determine where some suspicious signups are originating from.
 * enhancement — gave the readme file a makeover so that the page on the plugin directory is more focused and provides greater value.
