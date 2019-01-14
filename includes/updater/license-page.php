@@ -1,5 +1,15 @@
 <?php
 
+/*
+ *  This file adds in a license page, if any premium add-ons are installed and active.
+ *  If no premium add-ons are active, this file doesn't do anything.
+ *
+ *  @since 5.7.0
+ */
+
+
+// Backward compatibility for the previous version of the Premium Styles add-on (version 1.3 and earlier)
+// removes the submenu page added by those versions of the add-on.
 function maybe_remove_premium_styles_license_page() {
 	if ( function_exists( 'bcttps_settings_page') ) {
 
