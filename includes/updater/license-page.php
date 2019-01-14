@@ -11,14 +11,15 @@
 // Backward compatibility for the previous version of the Premium Styles add-on (version 1.3 and earlier)
 // removes the submenu page added by those versions of the add-on.
 function maybe_remove_premium_styles_license_page() {
-	if ( function_exists( 'bcttps_settings_page') ) {
 
-		remove_action( 'admin_menu', 'bcttps_settings_page', 30 );
+	if ( function_exists( 'bcttps_license_menu' ) ) {
+
+		remove_submenu_page('better-click-to-tweet', 'bcttps-license' );
 
 	}
 }
 
-add_action( 'init', 'maybe_remove_premium_styles_license_page', 40 );
+add_action( 'admin_menu', 'maybe_remove_premium_styles_license_page', 999 );
 
 function bctt_license_menu() {
     $addons = bctt_get_active_addons();
