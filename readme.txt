@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 5.0
-Stable tag: 5.7.0
+Stable tag: 5.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,10 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.7.1 =
+
+* fix — replace premium styles page for premium styles users.
 
 = 5.7.0 =
 * feature — moved license management for premium add-ons (get them at https://www.betterclicktotweet.com today!) to the core plugin. Free plugin users will not notice a difference here at all. Premium users: check your email!
