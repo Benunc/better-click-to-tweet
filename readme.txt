@@ -97,6 +97,9 @@ Donations: http://benlikes.us/donate
 
 == Changelog ==
 
+= 5.7.2 =
+* fix — two spelling typos in the new License activation page. Thanks to @garrett-eclipse on Github for the fix.
+
 = 5.7.1 =
 
 * fix — replace premium styles page for premium styles users.
