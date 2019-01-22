@@ -50,7 +50,7 @@ function bctt_license_page() {
 	?>
     <div class="wrap">
     <h2><?php _e( 'Activate Your Add-on Licenses', 'better-click-to-tweet' ); ?></h2>
-    <p><?php _e('An active license is required for updates (including bug fixes and security updates) as well as support. Licenses don\'t affect the functionality of the add-ons in any way, but in order to recieve support for installed add-ons you\'ll need an active license. Thanks again for your suport!', 'better-click-to-tweet' );?></p>
+    <p><?php _e('An active license is required for updates (including bug fixes and security updates) as well as support. Licenses don\'t affect the functionality of the add-ons in any way, but in order to receive support for installed add-ons you\'ll need an active license. Thanks again for your support!', 'better-click-to-tweet' );?></p>
 
 
     <form method="post" action="admin.php?page=bctt-licenses">
