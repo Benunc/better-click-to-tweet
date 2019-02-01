@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 5.0
-Stable tag: 5.7.1
+Stable tag: 5.7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,7 +98,9 @@ Donations: http://benlikes.us/donate
 == Changelog ==
 
 = 5.7.2 =
+
 * fix — two spelling typos in the new License activation page. Thanks to @garrett-eclipse on Github for the fix.
+* fix — on certain installs I was getting a front end notice about an undefined variable. This patch fixes that. Thanks to @dannycooper for the help!
 
 = 5.7.1 =
 
