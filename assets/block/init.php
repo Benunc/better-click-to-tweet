@@ -52,7 +52,8 @@ register_block_type( 'bctt/clicktotweet', array(
 				'default' => true
 			),
 			'urlcustom' => array(
-				'type' => 'string'
+				'type' => 'string',
+				'default' => false
 			),
 			'nofollow'  => array(
 				'type'    => 'boolean',
