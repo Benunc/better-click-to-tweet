@@ -140,17 +140,17 @@ function bctt_shortcode( $atts ) {
 
 	if ( filter_var( $atts['url'], FILTER_VALIDATE_URL ) ) {
 
-		$bcttURL = $atts['url'];
+		$bcttURL = apply_filters( 'bctturl', $atts['url'], $atts );
 
 	} elseif ( $atts['url'] != 'no' ) {
 
 		if ( get_option( 'bctt-short-url' ) != false ) {
 
-			$bcttURL  = apply_filters( 'bctturl', wp_get_shortlink());
+			$bcttURL  = apply_filters( 'bctturl', wp_get_shortlink(), $atts );
 
 		} else {
 
-			$bcttURL = apply_filters( 'bctturl', get_permalink());
+			$bcttURL = apply_filters( 'bctturl', get_permalink(), $atts);
 
 		}
 
