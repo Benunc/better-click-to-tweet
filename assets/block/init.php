@@ -68,9 +68,6 @@ register_block_type( 'bctt/clicktotweet', array(
 
 // Callback function to render bctt on frontend
 function bctt_block_callback( $attributes ) {
-
-	//echo var_dump($attributes);
-	//exit;
 	extract( $attributes );
 
 	$url = ( $url ? 'yes' : 'no' );
@@ -79,4 +76,3 @@ function bctt_block_callback( $attributes ) {
 
 	return sprintf( $shortcode_string, $tweet, ( $urlcustom ? $urlcustom : $url ), ( $via ? 'yes' : 'no' ), $username, ( $nofollow ? 'yes' : 'no' ), $prompt );
 }
-

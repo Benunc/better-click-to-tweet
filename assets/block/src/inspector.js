@@ -11,60 +11,48 @@ import { PanelBody, TextControl, ToggleControl } from "@wordpress/components";
 const Inspector = ({ attributes, setAttributes }) => {
   const { username, via, url, urlcustom, nofollow, prompt } = attributes;
 
-  // Inspector control events
-  const onChangeUsername = value => {
-    setAttributes({ username: value });
+  const updateAttribute = (name, value) => {
+    setAttributes({ [name]: value });
   };
-  const toggleVia = () => {
-    setAttributes({ via: !via });
-  };
-  const toggleUrl = () => {
-    setAttributes({ url: !url });
-  };
-  const onChangeUrlCustom = value => {
-    setAttributes({ urlcustom: value });
-  };
-  const toggleNoFollow = () => {
-    setAttributes({ nofollow: !nofollow });
-  };
-  const onChangePrompt = value => {
-    setAttributes({ prompt: value });
-  };
+
   return (
-    <InspectorControls key="inspector">
-      <PanelBody Title={__("Tweet Settings")}>
+    <InspectorControls>
+      <PanelBody title={__("General")}>
         <TextControl
           label={__("Twitter Username")}
           value={username}
-          onChange={onChangeUsername}
+          onChange={value => updateAttribute("username", value)}
         />
         <ToggleControl
           label={__("Include the username in Tweet?")}
-          checked={!!via}
-          onChange={toggleVia}
+          checked={via}
+          onChange={value => updateAttribute("via", value)}
         />
+
+        <TextControl
+          label={__("Prompt")}
+          value={prompt}
+          onChange={value => updateAttribute("prompt", value)}
+          help={__("Text for action/prompt link")}
+        />
+      </PanelBody>
+      <PanelBody title={__("URL")}>
         <ToggleControl
           label={__("Include URL in tweet?")}
-          checked={!!url}
-          onChange={toggleUrl}
+          checked={url}
+          onChange={value => updateAttribute("url", value)}
         />
         <TextControl
           label={__("Custom URL")}
           value={urlcustom}
-          onChange={onChangeUrlCustom}
+          onChange={value => updateAttribute("urlcustom", value)}
           help={__("Custom URL to use instead of post")}
         />
         <ToggleControl
           label={__("Nofollow")}
-          checked={!!nofollow}
-          onChange={toggleNoFollow}
+          checked={nofollow}
+          onChange={value => updateAttribute("nofollow", value)}
           help={__("Make links nofollow")}
-        />
-        <TextControl
-          label={__("Prompt")}
-          value={prompt}
-          onChange={onChangePrompt}
-          help={__("Text for action/prompt link")}
         />
       </PanelBody>
     </InspectorControls>
