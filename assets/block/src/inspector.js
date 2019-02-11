@@ -36,7 +36,7 @@ const Inspector = ({ attributes, setAttributes }) => {
           help={__("Text for action/prompt link")}
         />
       </PanelBody>
-      <PanelBody title={__("URL")}>
+      <PanelBody title={__("URL")} initialOpen={false}>
         <ToggleControl
           label={__("Include URL in tweet?")}
           checked={url}

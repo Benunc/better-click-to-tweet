@@ -35,7 +35,7 @@ add_action( 'enqueue_block_editor_assets', 'bctt_block_editor_assets' );
 // Server side rendering callback to output shortcode
 register_block_type( 'bctt/clicktotweet', array(
 		'render_callback' => 'bctt_block_callback',
-		'attributes'      => array(
+		'attributes'      => apply_filters ( 'bctt_block_attributes' ,array(
 			'tweet'     => array(
 				'type' => 'string',
 			),
@@ -62,7 +62,7 @@ register_block_type( 'bctt/clicktotweet', array(
 				'type'    => 'string',
 				'default' => sprintf( _x( 'Click To Tweet', 'Text for the box on the reader-facing box', 'better-click-to-tweet' ) )
 			),
-		),
+		)),
 	)
 );
 
@@ -72,7 +72,14 @@ function bctt_block_callback( $attributes ) {
 
 	$url = ( $url ? 'yes' : 'no' );
 
-	$shortcode_string = '[bctt tweet="%s" url="%s" via="%s" username="%s" nofollow="%s" prompt="%s"]';
+	$shortcode_attributes =  apply_filters ( 'bctt_block_render_attributes', array(
+		'tweet'    => $tweet,
+		'via'      =>  $via ? 'yes' : 'no',
+		'username' => $username,
+		'url'      => $urlcustom ? $urlcustom : $url,
+		'nofollow' => $nofollow ? 'yes' : 'no',
+		'prompt'   => $prompt
+	), $attributes );
 
-	return sprintf( $shortcode_string, $tweet, ( $urlcustom ? $urlcustom : $url ), ( $via ? 'yes' : 'no' ), $username, ( $nofollow ? 'yes' : 'no' ), $prompt );
+	return bctt_shortcode( $shortcode_attributes );
 }
