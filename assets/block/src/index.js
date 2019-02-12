@@ -7,7 +7,6 @@ import { registerBlockType } from "@wordpress/blocks";
 /**
  * Internal dependencies
  */
-import blockAttributes from "./attributes";
 import editor from "./editor";
 import render from "./render";
 
@@ -22,7 +21,6 @@ export default registerBlockType("bctt/clicktotweet", {
   category: "widgets",
   icon: "twitter",
   keywords: [__("Twitter"), __("Tweet")],
-  attributes: blockAttributes,
   edit: editor,
   save: render
 });
