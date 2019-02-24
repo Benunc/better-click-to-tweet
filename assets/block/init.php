@@ -38,6 +38,7 @@ register_block_type( 'bctt/clicktotweet', array(
 		'attributes'      => apply_filters ( 'bctt_block_attributes' ,array(
 			'tweet'     => array(
 				'type' => 'string',
+				'default' => ''
 			),
 			'username'  => array(
 				'type'    => 'string',
