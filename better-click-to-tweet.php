@@ -12,7 +12,7 @@
 
 defined( 'ABSPATH' ) or die( "No soup for you. You leave now." );
 
-define ( 'BCTT_VERSION', '5.7.3' );
+define ( 'BCTT_VERSION', '5.8.0' );
 
 include 'i18n-module.php';
 include 'bctt_options.php';
