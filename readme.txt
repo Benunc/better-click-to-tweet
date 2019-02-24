@@ -350,6 +350,9 @@ Donations: http://benlikes.us/donate
 * Initial release. 
 
 == Upgrade Notice ==
+= 5.8.0 =
+This update mainly adds support for a new premium add-on, UTM Tags. But aditional enhancements are also added for the gutenberg block.
+
 = 4.3 =
 * added translation support, updated three languages.
 
