@@ -97,7 +97,7 @@ Donations: http://benlikes.us/donate
 
 == Changelog ==
 
-= 5.7.3 =
+= 5.8.0 =
 * new — adding a filter and various other enhancements to support a new UTM tags add-on
 * fix — testing with the newest version of the block-based editor (Gutenberg)
 * new — added a constant to define the core BCTT version, allowing add-ons to make sure that BCTT core is up to date before activating.
