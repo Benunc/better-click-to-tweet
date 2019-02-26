@@ -3,8 +3,8 @@ Contributors: ben.meredith@gmail.com, wpsteward
 Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
-Tested up to: 5.0
-Stable tag: 5.7.2
+Tested up to: 5.1
+Stable tag: 5.8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,11 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.8.0 =
+* new — adding a filter and various other enhancements to support a new UTM tags add-on
+* fix — testing with the newest version of the block-based editor (Gutenberg)
+* new — added a constant to define the core BCTT version, allowing add-ons to make sure that BCTT core is up to date before activating.
 
 = 5.7.2 =
 
@@ -345,6 +350,9 @@ Donations: http://benlikes.us/donate
 * Initial release. 
 
 == Upgrade Notice ==
+= 5.8.0 =
+Refinements to the Gutenberg block, and compatibility for the new Better Click To Tweet UTM Tags add-on.
+
 = 4.3 =
 * added translation support, updated three languages.
 
