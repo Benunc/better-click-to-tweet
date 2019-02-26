@@ -351,7 +351,7 @@ Donations: http://benlikes.us/donate
 
 == Upgrade Notice ==
 = 5.8.0 =
-This update mainly adds support for a new premium add-on, UTM Tags. But aditional enhancements are also added for the gutenberg block.
+Refinements to the Gutenberg block, and compatibility for the new Better Click To Tweet UTM Tags add-on.
 
 = 4.3 =
 * added translation support, updated three languages.
