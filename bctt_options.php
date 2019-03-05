@@ -145,17 +145,31 @@ function bctt_settings_page() {
 												<label><?php _ex( 'Use Premium Styles?', 'label for checkbox on settings screen', 'better-click-to-tweet' ); ?></label>
 											</th>
 											<td><input type="checkbox" name="bctt-custom-style"
-											           value="1" <?php if ( is_plugin_active( 'better-click-to-tweet-styles/better-click-to-tweet-premium-styles.php' ) ) {
+											           value="1" style="float:left;"<?php if ( is_plugin_active( 'better-click-to-tweet-styles/better-click-to-tweet-premium-styles.php' ) ) {
 													echo 'checked="checked"';
 												} else {
 													echo 'disabled="disabled"';
-												} ?>" /> <span
-													style="font-size: .85em;"><em>  <?php if ( ! is_plugin_active( 'better-click-to-tweet-styles/better-click-to-tweet-premium-styles.php' ) ) {
+												} ?>" /> <div
+													style="font-size: .85em; margin-left:3em; line-height:1.5em"><em>  <?php if ( ! is_plugin_active( 'better-click-to-tweet-styles/better-click-to-tweet-premium-styles.php' ) ) {
 															echo sprintf( __( 'Want Premium styles? Add the <a href=%s>Premium Styles add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'http://benlikes.us/bcttpsdirect' ) );
-														} ?></em></span>
+														} ?></em></div>
 
 											</td>
 										</tr>
+									<?php } ?>
+									<?php if ( ! defined( 'BCTTUTM_VERSION' ) ) { ?>
+                                        <tr valign="top">
+                                            <th style="width:200px;">
+                                                <label><?php _ex( 'Use UTM Tags?', 'label for checkbox on settings screen', 'better-click-to-tweet' ); ?></label>
+                                            </th>
+                                            <td><input type="checkbox" name="bctt-utm-tags"
+                                                       value="1" disabled="disabled" style="float:left;" /> <div
+                                                        style="font-size: .85em; margin-left:3em; line-height:1.5em"><em>  <?php
+															echo sprintf( __( 'Want add UTM tags to the return URL to track how well BCTT boxes are performing? Add the <a href=%s>UTM tags add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'http://benlikes.us/bcttutmdirect' ) );
+														 ?></em></div>
+
+                                            </td>
+                                        </tr>
 									<?php } ?>
 								</table>
 								<?php do_action( 'bctt_before_settings_submit' ); ?>
