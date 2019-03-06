@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 5.1
-Stable tag: 5.8.0
+Stable tag: 5.8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,11 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.8.1 =
+* new — created a new nag for the plugins page announcing the UTM tags add-on.
+* new — added a link to the main settings page for folks to check out the new UTM Tags addon.
+* bonus — people who read change logs should get a discount. Use the code CHANGELOG at checkout for 10% off. http://benlikes.us/bcttaddons (good on the bundle, too!)
 
 = 5.8.0 =
 * new — adding a filter and various other enhancements to support a new UTM tags add-on
