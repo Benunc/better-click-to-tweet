@@ -54,6 +54,7 @@ register_block_type( 'bctt/clicktotweet', array(
 			),
 			'urlcustom' => array(
 				'type' => 'string',
+				'default' => ''
 			),
 			'nofollow'  => array(
 				'type'    => 'boolean',
@@ -69,15 +70,22 @@ register_block_type( 'bctt/clicktotweet', array(
 
 // Callback function to render bctt on frontend
 function bctt_block_callback( $attributes ) {
-	extract( $attributes );
 
-	$url = ( $url ? 'yes' : 'no' );
+	$tweet = $attributes['tweet'];
+	$via = $attributes['via'];
+	$username = $attributes['username'];
+	$url = $attributes['url'];
+	$urlcustom = $attributes['urlcustom'];
+	$nofollow = $attributes['nofollow'];
+	$prompt = $attributes['prompt'];
+
+	$showUrl = ( $url ? 'yes' : 'no' );
 
 	$shortcode_attributes =  apply_filters ( 'bctt_block_render_attributes', array(
 		'tweet'    => $tweet,
 		'via'      =>  $via ? 'yes' : 'no',
 		'username' => $username,
-		'url'      => $urlcustom ? $urlcustom : $url,
+		'url'      => $urlcustom ? $urlcustom : $showUrl,
 		'nofollow' => $nofollow ? 'yes' : 'no',
 		'prompt'   => $prompt
 	), $attributes );
