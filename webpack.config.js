@@ -4,7 +4,6 @@
 const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const WebpackRTLPlugin = require("webpack-rtl-plugin");
 
 // Enviornment Flag
 const inProduction = "production" === process.env.NODE_ENV;
@@ -86,8 +85,7 @@ const config = {
   },
   plugins: [
     new CleanWebpackPlugin(["build"]),
-    editBlocksCSSPlugin,
-    new WebpackRTLPlugin()
+    editBlocksCSSPlugin
   ],
   stats: {
     children: false
