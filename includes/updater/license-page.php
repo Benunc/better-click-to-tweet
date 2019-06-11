@@ -120,7 +120,7 @@ function bctt_register_license_option() {
 	$args = array(
 		'type' => 'string',
 		'sanitize_callback' => 'sanitize_text_field',
-		'default' => NULL,
+		'default' => null,
 	);
 	foreach ( $active_plugins as $addons ) {
 		$shortname  = bctt_addon_slug( bctt_addon_shortname( $addons['Name'] ) );
