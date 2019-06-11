@@ -3,8 +3,8 @@ Contributors: ben.meredith@gmail.com, wpsteward
 Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
-Tested up to: 5.1
-Stable tag: 5.8.1
+Tested up to: 5.2
+Stable tag: 5.8.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,12 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.8.2 =
+* fix — resolving PHP notices related to the custom URL not being set.
+* fix — resolve outstanding errors around UTM tags add-on integration.
+* chore — tested up to WordPress version 5.2. you should definitely be on 5.2. It's awesome.
+* bonus — I feel like you people aren't reading my changelogs. I'm over here handing out discounts, and y'all just keep paying full price. try CHANGELOG to see if you get 10% off!
 
 = 5.8.1 =
 * new — created a new nag for the plugins page announcing the UTM tags add-on.
