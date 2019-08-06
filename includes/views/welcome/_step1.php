@@ -1,22 +1,30 @@
         <div id="bctt-steps">
             <ul class="list-outside flex justify-around pb-10 my-8">
                 <li class="flex flex-col flex-no-wrap text-blue-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm font-bold">Step 1</span>
+                    <span class="-mb-8 text-sm font-bold">
+                        <?php _e( 'Step 1', 'better-click-to-tweet' )?>
+                    </span>
                     <span class="text-6xl -mb-px">•</span>
                     <hr class="bg-blue-500 h-1 w-full m-0 -mt-12"/>
                 </li>
                 <li class="flex flex-col flex-no-wrap text-gray-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">Step 2</span>
+                    <span class="-mb-8 text-sm">
+                        <?php _e( 'Step 2', 'better-click-to-tweet' )?>
+                    </span>
                     <span class="text-6xl -mb-px">•</span>
                     <hr class="bg-gray-500 h-1 w-full m-0 -mt-12"/>
                 </li>
                 <li class="flex flex-col flex-no-wrap text-gray-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">Step 3</span>
+                    <span class="-mb-8 text-sm">
+                        <?php _e( 'Step 3', 'better-click-to-tweet' )?>
+                    </span>
                     <span class="text-6xl -mb-px">•</span>
                     <hr class="bg-gray-500 h-1 w-full m-0 -mt-12"/>
                 </li>
                 <li class="flex flex-col flex-no-wrap text-gray-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">Step 4</span>
+                    <span class="-mb-8 text-sm">
+                        <?php _e( 'Step 4', 'better-click-to-tweet' )?>
+                    </span>
                     <span class="text-6xl -mb-px">•</span>
                     <hr class="bg-gray-500 h-1 w-full m-0 -mt-12"/>
                 </li>
@@ -45,7 +53,9 @@
             method="post"
             class="text-center flex flex-col flex-no-wrap mt-12">
 
-            <label for="bctt-twitter" class="text-gray-600 font-bold">Set Twitter Handle</label>
+            <label for="bctt-twitter" class="text-gray-600 font-bold">
+                <?php _e( 'Set Twitter Handle', 'better-click-to-tweet' )?>
+            </label>
             <div class="mt-2 flex justify-center">
                 <span class="flex justify-center bg-gray-300 rounded px-2 -mr-2">
                     <svg
@@ -63,7 +73,7 @@
                     type="text" 
                     name="bctt-twitter" 
                     id="bctt-twitter" 
-                    placeholder="username"
+                    placeholder="<?php _e( 'username', 'better-click-to-tweet' )?>"
                     required
                     class="border-2 border-solid border-gray-300 text-gray-600 px-2 pl-2 py-1 rounded text-center w-1/2"
                 />
@@ -72,7 +82,7 @@
             <div id="bctt-wizard-nav" class="mt-12 flex justify-end">
                 <input 
                     type="submit" 
-                    value="Next"
+                    value="<?php _e( 'Next', 'better-click-to-tweet' )?>"
                     class="rounded py-1 px-2 bg-blue-500 border-2 border-solid border-blue-500 text-white cursor-pointer self-end">
             </div>
         </form>

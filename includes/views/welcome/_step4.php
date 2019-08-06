@@ -1,22 +1,30 @@
         <div id="bctt-steps">
             <ul class="list-outside flex justify-around pb-10 my-8">
                 <li class="flex flex-col flex-no-wrap text-blue-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm font-bold">Step 1</span>
+                    <span class="-mb-8 text-sm font-bold">
+                        <?php _e( 'Step 1', 'better-click-to-tweet' )?>
+                    </span>
                     <span class="text-6xl -mb-px">•</span>
                     <hr class="bg-blue-500 h-1 w-full m-0 -mt-12"/>
                 </li>
                 <li class="flex flex-col flex-no-wrap text-blue-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">Step 2</span>
+                    <span class="-mb-8 text-sm">
+                        <?php _e( 'Step 2', 'better-click-to-tweet' )?>
+                    </span>
                     <span class="text-6xl -mb-px">•</span>
                     <hr class="bg-blue-500 h-1 w-full m-0 -mt-12"/>
                 </li>
                 <li class="flex flex-col flex-no-wrap text-blue-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">Step 3</span>
+                    <span class="-mb-8 text-sm">
+                        <?php _e( 'Step 3', 'better-click-to-tweet' )?>
+                    </span>
                     <span class="text-6xl -mb-px">•</span>
                     <hr class="bg-blue-500 h-1 w-full m-0 -mt-12"/>
                 </li>
                 <li class="flex flex-col flex-no-wrap text-blue-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">Step 4</span>
+                    <span class="-mb-8 text-sm">
+                        <?php _e( 'Step 4', 'better-click-to-tweet' )?>
+                    </span>
                     <span class="text-6xl -mb-px">•</span>
                     <hr class="bg-blue-500 h-1 w-full m-0 -mt-12"/>
                 </li>
@@ -36,7 +44,9 @@
             target="_blank"           
             class="text-center mt-12">
             
-            <label for="bctt-email" class="text-gray-600 font-bold">Subscribe to mailing list</label>
+            <label for="bctt-email" class="text-gray-600 font-bold">
+                <?php _e( 'Subscribe to mailing list', 'better-click-to-tweet' )?>
+            </label>
             <div class="mt-2 flex justify-center">
                 <span class="flex justify-center bg-gray-300 rounded px-2 -mr-2">
                     <svg
@@ -64,11 +74,12 @@
                 <a 
                     href="<?php echo bctt_get_step_url( 'step3' ); ?>"
                     class="rounded py-1 px-2 border-2 border-solid border-blue-500 text-blue-600">
-                    Previous
+                        <?php _e( 'Previous', 'better-click-to-tweet' )?>
                 </a>
                 <input 
                     type="submit" 
-                    value="Finish"
+                    value="<?php _e( 'Finish', 'better-click-to-tweet' )?>
+"
                     class="rounded py-1 px-2 bg-blue-500 border-2 border-solid border-blue-500 text-white cursor-pointer">            
             </div>
         </form>
@@ -77,7 +88,7 @@
         href="<?php echo bctt_get_step_url( 'finish' ); ?>"
         class="text-blue-500 underline w-full text-center block"
         title="Go to dashboard">
-            Skip
+            <?php _e( 'Skip', 'better-click-to-tweet' )?>
         </a>
 
 
