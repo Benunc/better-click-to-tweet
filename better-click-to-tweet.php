@@ -23,6 +23,7 @@ include 'admin-nags.php';
 include 'includes/updater/bctt-updater.php';
 include 'includes/updater/license-page.php';
 include 'includes/misc-functions.php';
+include 'bctt-welcome-functions.php';
 
 /*
 *  	Strips the html, shortens the text (after checking for mb_internal_encoding compatibility) 
@@ -303,6 +304,16 @@ function bctt_get_styles_url() {
 	return plugins_url( 'assets/css/styles.css', __FILE__ );
 }
 
+/**
+ * Plugin Activation
+ *
+ * @return void
+ */
+function bctt_on_activation() {
+	set_transient( '_bctt_activation_redirect', 1, 30 );
+}
+register_activation_hook( __FILE__, 'bctt_on_activation' );
+
 /*
  * Delete options and shortcode on uninstall
  *
@@ -325,8 +336,6 @@ function bctt_on_uninstall() {
 
 
 }
-
-
 
 register_uninstall_hook( __FILE__, 'bctt_on_uninstall' );
 
