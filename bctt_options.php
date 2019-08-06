@@ -1,38 +1,6 @@
 <?php
 defined( 'ABSPATH' ) or die( "No script kiddies please!" );
 
-
-// Cache bust tinymce
-add_filter( 'tiny_mce_version', 'refresh_mce' );
-
-// Add button to visual editor
-include dirname( __FILE__ ) . '/assets/tinymce/bctt-tinymce.php';
-
-
-// instantiate i18n encouragement module
-$bctt_i18n = new bctt_i18n(
-	array(
-		'textdomain'     => 'better-click-to-tweet',
-		'project_slug'   => '/wp-plugins/better-click-to-tweet/stable',
-		'plugin_name'    => 'Better Click To Tweet',
-		'hook'           => 'bctt_settings_top',
-		'glotpress_url'  => 'https://translate.wordpress.org/',
-		'glotpress_name' => 'Translating WordPress',
-		'glotpress_logo' => 'https://plugins.svn.wordpress.org/better-click-to-tweet/assets/icon-256x256.png',
-		'register_url '  => 'https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet/',
-	)
-);
-
-// Add Settings Link
-add_action( 'admin_menu', 'bctt_admin_menu' );
-
-
-function bctt_admin_menu() {
-	add_action( 'admin_init', 'bctt_register_settings', 100, 1 );
-	add_menu_page( 'Better Click To Tweet Options', 'Better Click To Tweet', 'manage_options', 'better-click-to-tweet', null, 'dashicons-twitter' );
-	add_submenu_page('better-click-to-tweet', 'Better Click To Tweet Main Settings', 'Settings', 'manage_options', 'better-click-to-tweet', 'bctt_settings_page' );
-}
-
 function bctt_register_settings() {
 	register_setting( 'bctt_clicktotweet-options', 'bctt-twitter-handle', 'bctt_validate_settings' );
 	register_setting( 'bctt_clicktotweet-options', 'bctt-short-url', 'bctt_validate_checkbox' );

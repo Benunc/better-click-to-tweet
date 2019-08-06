@@ -15,6 +15,7 @@ defined( 'ABSPATH' ) or die( "No soup for you. You leave now." );
 define ( 'BCTT_VERSION', '5.8.2' );
 
 include 'i18n-module.php';
+include 'bctt-admin.php';
 include 'bctt_options.php';
 include 'bctt-i18n.php';
 include 'admin-nags.php';
