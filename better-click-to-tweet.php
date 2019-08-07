@@ -188,7 +188,7 @@ function bctt_shortcode( $atts ) {
 
 
 	$href  = add_query_arg(  array(
-		'url'     => $bcttURL,
+		'url'     => rawurlencode( $bcttURL ),
 		'text'    => rawurlencode( html_entity_decode( $short ) ),
 		'via'     => $via,
 		'related' => $related,
