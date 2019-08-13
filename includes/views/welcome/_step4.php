@@ -33,7 +33,13 @@
       
         
         <div id="bctt-copy" class="text-gray-600">
-                Copy for email subscription ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque sem, iaculis sed interdum in, ultricies nec nunc. Sed fringilla ligula purus, sed porttitor lectus lobortis id. Quisque nisi est, mollis non commodo et, faucibus varius massa. Sed dictum massa ac turpis mollis hendrerit ut sit amet ligula. Vivamus dictum rhoncus est. Etiam finibus tellus a nulla pretium, a blandit nibh accumsan.      
+            <h2 class="text-center text-lg font-bold">About the Author</h2>
+            <div class=" flex justify-center my-4">
+                <?php echo get_avatar( 'ben.meredith@gmail.com', 128 , '' ,'Ben Meredith', array( 'class' => 'rounded-full shadow-2xl border-4 border-solid border-gray-200' ) ); ?>
+            </div>
+            <p class="text-center"> 
+                This plugin is developed by <a class="text-blue-500" href="https://www.wpsteward.com">Ben Meredith</a>. I am a freelance developer specializing in <a class="text-blue-500" href="https://www.wpsteward.com/service-plans">outrunning and outsmarting hackers</a>.
+            </p>
         </div>
        
         <form 
@@ -44,8 +50,8 @@
             target="_blank"           
             class="text-center mt-12">
             
-            <label for="bctt-email" class="text-gray-600 font-bold">
-                <?php _e( 'Subscribe to mailing list', 'better-click-to-tweet' )?>
+            <label for="bctt-email" class="text-gray-600 font-bold w-2/3 inline-block mb-2">
+                <?php _e( 'Sign up here for a free 7-part email series on how to manage your website like a pro.', 'better-click-to-tweet' )?>
             </label>
             <div class="mt-2 flex justify-center">
                 <span class="flex justify-center bg-gray-300 rounded px-2 -mr-2">
@@ -69,6 +75,8 @@
                     class="border-2 border-solid border-gray-300 text-gray-600 px-2 pl-2 py-1 rounded text-center w-1/2"
                 />
             </div>
+
+            <div class="mt-2 text-gray-500 text-sm">No Spam. One-click unsubscribe in every message</div>
 
             <div id="bctt-wizard-nav" class="mt-12 flex justify-between">
                 <a 
