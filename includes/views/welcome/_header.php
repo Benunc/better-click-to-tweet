@@ -11,7 +11,7 @@
 
     <body class="bg-gray-200">
 
-        <div class="bg-white w-1/3 m-auto p-8 my-4 shadow rounded">
+        <div class="bg-white w-11/12 md:w-3/4 xl:w-1/3 m-auto p-8 my-4 shadow rounded">
             <img 
                 src="<?php echo plugins_url( '../../assets/img/bctt-logo.png', dirname(__FILE__) ); ?>" 
                 alt="<?php _e( 'Better Click To Tweet', 'better-click-to-tweet' )?>" 

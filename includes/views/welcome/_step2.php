@@ -32,8 +32,22 @@
         </div>
       
         <div id="bctt-copy" class="text-gray-600">
-            <h2 class="text-lg font-bold text-gray-600 mb-2">Copy For How To Use Shortcode</h2>
-            BCTT marketing copy text goes here ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque sem, iaculis sed interdum in, ultricies nec nunc. Sed fringilla ligula purus, sed porttitor lectus lobortis id. Quisque nisi est, mollis non commodo et, faucibus varius massa. Sed dictum massa ac turpis mollis hendrerit ut sit amet ligula. Vivamus dictum rhoncus est. Etiam finibus tellus a nulla pretium, a blandit nibh accumsan. 
+            <h2 class="text-lg font-bold mb-2">Usage</h2>
+            <div id="bctt-instructions">
+                <p class="mb-4">To add styled click-to-tweet quote boxes include the Better Click To Tweet shortcode in your post.</p>
+               
+               <p class="mb-2">Here's how you format the shortcode:</p>
+               <pre class="bg-gray-200 p-4 rounded shadow-md">[bctt tweet="Meaningful, tweetable quote."]</pre>
+
+               <p class="my-4">
+                   If you are using the visual editor, click the BCTT birdie in the toolbar to add a pre-formatted shortcode to your post.
+
+               </p>
+             
+               <p class="mb-4">
+                   In the WordPress 5.0 editor (codenamed Gutenberg), there is a Better Click To Tweet block.
+               </p>
+            </div>
         </div>
        
         <form id="bctt-set-handle" action="" class="text-center">

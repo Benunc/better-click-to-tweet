@@ -44,19 +44,21 @@
         </div>
 
         <div id="bctt-copy" class="text-gray-600">
-            BCTT marketing copy text goes here ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque sem, iaculis sed interdum in, ultricies nec nunc. Sed fringilla ligula purus, sed porttitor lectus lobortis id. Quisque nisi est, mollis non commodo et, faucibus varius massa. Sed dictum massa ac turpis mollis hendrerit ut sit amet ligula. Vivamus dictum rhoncus est. Etiam finibus tellus a nulla pretium, a blandit nibh accumsan. 
+            <h1 class="text-center text-lg font-bold px-2 text-gray-700">
+                Better Click To Tweet — a plugin by Ben Meredith
+            </h1>
         </div>
-       
+
         <form 
             id="bctt-set-handle" 
             action="<?php echo $_SERVER['REQUEST_URI']; ?>" 
             method="post"
-            class="text-center flex flex-col flex-no-wrap mt-12">
+            class="text-center flex flex-col flex-no-wrap mt-8">
 
-            <label for="bctt-twitter" class="text-gray-600 font-bold">
-                <?php _e( 'Set Twitter Handle', 'better-click-to-tweet' )?>
+            <label for="bctt-twitter" class="text-blue-500 font-bold">
+                <?php _e( 'Lets get started', 'better-click-to-tweet' )?>
             </label>
-            <div class="mt-2 flex justify-center">
+            <div class="mt-4 flex justify-center">
                 <span class="flex justify-center bg-gray-300 rounded px-2 -mr-2">
                     <svg
                         class="text-gray-500 fill-current w-4 mr-2"
@@ -73,11 +75,12 @@
                     type="text" 
                     name="bctt-twitter" 
                     id="bctt-twitter" 
-                    placeholder="<?php _e( 'username', 'better-click-to-tweet' )?>"
+                    placeholder="<?php _e( 'Enter your Twitter handle ', 'better-click-to-tweet' )?>"
                     required
                     class="border-2 border-solid border-gray-300 text-gray-600 px-2 pl-2 py-1 rounded text-center w-1/2"
                 />
             </div>
+            <span class="mt-2 text-gray-500 text-sm">add "via @yourhandle" to your tweets</span>
 
             <div id="bctt-wizard-nav" class="mt-12 flex justify-end">
                 <input 
