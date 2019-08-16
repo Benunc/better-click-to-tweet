@@ -1,4 +1,14 @@
 <?php
+
+/**
+ * Get wizard step
+ *
+ * @return string
+ */
+function bctt_get_step() {
+    return isset( $_GET['step'] ) ? wp_unslash( $_GET['step'] ) : 'step1';
+}
+
 /**
  * Get welcome step url
  *

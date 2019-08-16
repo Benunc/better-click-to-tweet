@@ -38,14 +38,11 @@ if ( ! class_exists( 'BCTT_Welcome' ) ):
                 exit;
             }
             
-            // Get current step
-            $current_step = isset( $_GET['step'] ) ? wp_unslash( $_GET['step'] ) : 'step1';
-
             // Get page header
             require_once 'includes/views/welcome/_header.php'; 
 
             // Get step content
-            switch ($current_step) {
+            switch ( bctt_get_step() ) {
                 case 'step1':
                         require_once 'includes/views/welcome/_step1.php';
                     break;
