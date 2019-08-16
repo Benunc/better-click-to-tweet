@@ -76,7 +76,6 @@
                     name="bctt-twitter" 
                     id="bctt-twitter" 
                     placeholder="<?php _e( 'Enter your Twitter handle ', 'better-click-to-tweet' )?>"
-                    required
                     class="border-2 border-solid border-gray-300 text-gray-600 px-2 pl-2 py-1 rounded text-center w-1/2"
                 />
             </div>
