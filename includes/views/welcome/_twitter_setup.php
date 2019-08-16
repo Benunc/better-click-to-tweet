@@ -1,6 +1,5 @@
-      <div id="bctt-video" class="">
+      <div id="bctt-video" class="rounded-lg shadow overflow-hidden mx-auto mb-8 bg-gray-200">
             <iframe 
-                class="mx-auto mb-8"
                 width="560" 
                 height="315" 
                 src="https://www.youtube.com/embed/4GU9KLwtEWM?controls=0" 
