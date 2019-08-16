@@ -37,7 +37,8 @@
                 <p class="mb-4">To add styled click-to-tweet quote boxes include the Better Click To Tweet shortcode in your post.</p>
                
                <p class="mb-2">Here's how you format the shortcode:</p>
-               <pre class="bg-gray-200 p-4 rounded shadow-md">[bctt tweet="Meaningful, tweetable quote."]</pre>
+
+               <p class="bg-gray-200 p-4 rounded shadow-md font-mono">[bctt tweet="Meaningful, tweetable quote."]</p>
 
                <p class="my-4">
                    If you are using the visual editor, click the BCTT birdie in the toolbar to add a pre-formatted shortcode to your post.
