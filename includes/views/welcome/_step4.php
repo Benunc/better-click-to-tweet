@@ -78,12 +78,13 @@
 
             <div class="mt-2 text-gray-500 text-sm">No Spam. One-click unsubscribe in every message</div>
 
-            <div id="bctt-wizard-nav" class="mt-12 flex justify-between">
+            <div id="bctt-wizard-nav" class="mt-12 flex justify-between items-center">
                 <a 
                     href="<?php echo bctt_get_step_url( 'step3' ); ?>"
                     class="rounded py-1 px-2 border-2 border-solid border-blue-500 text-blue-600">
                         <?php _e( 'Previous', 'better-click-to-tweet' )?>
                 </a>
+
                 <input 
                     type="submit" 
                     value="<?php _e( 'Finish', 'better-click-to-tweet' )?>
@@ -91,14 +92,6 @@
                     class="rounded py-1 px-2 bg-blue-500 border-2 border-solid border-blue-500 text-white cursor-pointer">            
             </div>
         </form>
-
-        <a 
-        href="<?php echo bctt_get_step_url( 'finish' ); ?>"
-        class="text-blue-500 underline w-full text-center block"
-        title="Go to dashboard">
-            <?php _e( 'Skip', 'better-click-to-tweet' )?>
-        </a>
-
 
         <script>
             var bctt_mailing_form = document.getElementById("mc-embedded-subscribe-form");

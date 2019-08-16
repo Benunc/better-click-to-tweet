@@ -1,6 +1,6 @@
             </div>
 
-            <?php if ( 'step1' === bctt_get_step()  ): ?>
+            <?php if ( 'step1' === bctt_get_step() || 'step4' === bctt_get_step()  ): ?>
                 <a 
                     href="<?php echo admin_url( ); ?>"
                     class="text-gray-600 underline w-full text-center block mb-10 text-xs"
