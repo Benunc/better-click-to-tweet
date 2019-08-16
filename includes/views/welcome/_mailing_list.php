@@ -1,37 +1,3 @@
-        <div id="bctt-steps">
-            <ul class="list-outside flex justify-around pb-10 my-8">
-                <li class="flex flex-col flex-no-wrap text-blue-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm font-bold">
-                        <?php _e( 'Step 1', 'better-click-to-tweet' )?>
-                    </span>
-                    <span class="text-6xl -mb-px">•</span>
-                    <hr class="bg-blue-500 h-1 w-full m-0 -mt-12"/>
-                </li>
-                <li class="flex flex-col flex-no-wrap text-blue-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">
-                        <?php _e( 'Step 2', 'better-click-to-tweet' )?>
-                    </span>
-                    <span class="text-6xl -mb-px">•</span>
-                    <hr class="bg-blue-500 h-1 w-full m-0 -mt-12"/>
-                </li>
-                <li class="flex flex-col flex-no-wrap text-blue-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">
-                        <?php _e( 'Step 3', 'better-click-to-tweet' )?>
-                    </span>
-                    <span class="text-6xl -mb-px">•</span>
-                    <hr class="bg-blue-500 h-1 w-full m-0 -mt-12"/>
-                </li>
-                <li class="flex flex-col flex-no-wrap text-blue-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">
-                        <?php _e( 'Step 4', 'better-click-to-tweet' )?>
-                    </span>
-                    <span class="text-6xl -mb-px">•</span>
-                    <hr class="bg-blue-500 h-1 w-full m-0 -mt-12"/>
-                </li>
-            </ul>
-        </div>
-      
-        
         <div id="bctt-copy" class="text-gray-600">
             <h2 class="text-center text-lg font-bold">About the Author</h2>
             <div class=" flex justify-center my-4">
@@ -80,7 +46,7 @@
 
             <div id="bctt-wizard-nav" class="mt-12 flex justify-between items-center">
                 <a 
-                    href="<?php echo bctt_get_step_url( 'step3' ); ?>"
+                    href="<?php echo bctt_get_step_url( 'bctt-advanced' ); ?>"
                     class="rounded py-1 px-2 border-2 border-solid border-blue-500 text-blue-600">
                         <?php _e( 'Previous', 'better-click-to-tweet' )?>
                 </a>
@@ -97,6 +63,6 @@
             var bctt_mailing_form = document.getElementById("mc-embedded-subscribe-form");
 
             bctt_mailing_form.addEventListener("submit", function(e) {
-                window.location = "<?php echo bctt_get_step_url( 'finish' );  ?>"
+                window.location = "<?php echo bctt_get_step_url( 'bctt-ready' );  ?>"
             });
         </script>

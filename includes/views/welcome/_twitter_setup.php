@@ -1,36 +1,3 @@
-        <div id="bctt-steps">
-            <ul class="list-outside flex justify-around pb-10 my-8">
-                <li class="flex flex-col flex-no-wrap text-blue-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm font-bold">
-                        <?php _e( 'Step 1', 'better-click-to-tweet' )?>
-                    </span>
-                    <span class="text-6xl -mb-px">•</span>
-                    <hr class="bg-blue-500 h-1 w-full m-0 -mt-12"/>
-                </li>
-                <li class="flex flex-col flex-no-wrap text-gray-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">
-                        <?php _e( 'Step 2', 'better-click-to-tweet' )?>
-                    </span>
-                    <span class="text-6xl -mb-px">•</span>
-                    <hr class="bg-gray-500 h-1 w-full m-0 -mt-12"/>
-                </li>
-                <li class="flex flex-col flex-no-wrap text-gray-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">
-                        <?php _e( 'Step 3', 'better-click-to-tweet' )?>
-                    </span>
-                    <span class="text-6xl -mb-px">•</span>
-                    <hr class="bg-gray-500 h-1 w-full m-0 -mt-12"/>
-                </li>
-                <li class="flex flex-col flex-no-wrap text-gray-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">
-                        <?php _e( 'Step 4', 'better-click-to-tweet' )?>
-                    </span>
-                    <span class="text-6xl -mb-px">•</span>
-                    <hr class="bg-gray-500 h-1 w-full m-0 -mt-12"/>
-                </li>
-            </ul>
-        </div>
-      
       <div id="bctt-video" class="">
             <iframe 
                 class="mx-auto mb-8"
