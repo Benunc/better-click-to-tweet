@@ -1,5 +1,5 @@
         <div id="bctt-copy" class="text-gray-600">
-            <h2 class="text-center text-lg font-bold">About the Author</h2>
+            <h2 class="text-center text-lg font-bold"><?php _e( 'About The Author', 'better-click-to-tweet' )?></h2>
             <div class=" flex justify-center my-4">
                 <?php echo get_avatar( 'ben.meredith@gmail.com', 128 , '' ,'Ben Meredith', array( 'class' => 'rounded-full shadow-2xl border-4 border-solid border-gray-200' ) ); ?>
             </div>

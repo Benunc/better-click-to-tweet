@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Get wizard nav css class
  *

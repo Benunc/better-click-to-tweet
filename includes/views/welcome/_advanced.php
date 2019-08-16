@@ -1,5 +1,5 @@
         <div id="bctt-copy" class="text-gray-600">
-            <h2 class="text-lg font-bold mb-2">Power User</h2>
+            <h2 class="text-lg font-bold mb-2"><?php _e( 'Power User', 'better-click-to-tweet' )?></h2>
             <div id="bctt-instructions">
                 <p class="mb-4">
                     If you include a link back to the post using the URL parameter (or leaving it out, the default behavior), the tweet length is automatically shortened to 253 characters minus the length of your twitter handle, to leave room for the handle and link back to the post.
@@ -20,7 +20,7 @@
                     <a 
                         class="text-sm font-bold text-blue-500" 
                         href="https://www.wpsteward.com/2019/06/why-arent-my-posts-being-shared-on-social-media/">
-                        Learn how to get users to click on content
+                            <?php _e( 'Learn how to get users to click on content', 'better-click-to-tweet' )?>
                     </a>
                  </div>
             </div>     

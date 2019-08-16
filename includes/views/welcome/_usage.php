@@ -1,5 +1,5 @@
         <div id="bctt-copy" class="text-gray-600">
-            <h2 class="text-lg font-bold mb-2">Usage</h2>
+            <h2 class="text-lg font-bold mb-2"><?php _e( 'Usage', 'better-click-to-tweet' )?></h2>
             <div id="bctt-instructions">
                 <p class="mb-4">To add styled click-to-tweet quote boxes include the Better Click To Tweet shortcode in your post.</p>
                

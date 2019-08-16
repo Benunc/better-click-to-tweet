@@ -17,11 +17,21 @@
 
             <div id="bctt-steps-nav" class="hidden md:block max-w-2xl mx-6 md:mx-auto">
                 <ol class="bctt-steps">
-                    <li <?php echo bctt_get_step_class( 'bctt-twitter-setup' ); ?>>Twitter setup</li>
-                    <li <?php echo bctt_get_step_class( 'bctt-usage' ); ?>>Usage</li>
-                    <li <?php echo bctt_get_step_class( 'bctt-advanced' ); ?>>Advanced</li>
-                    <li <?php echo bctt_get_step_class( 'bctt-mailing-list' ); ?>>Mailing List</li>
-                    <li <?php echo bctt_get_step_class( 'bctt-ready' ); ?>>Ready!</li>
+                    <li <?php echo bctt_get_step_class( 'bctt-twitter-setup' ); ?>>
+                        <?php _e( 'Twitter Setup', 'better-click-to-tweet' )?>
+                    </li>
+                    <li <?php echo bctt_get_step_class( 'bctt-usage' ); ?>>
+                        <?php _e( 'Usage', 'better-click-to-tweet' )?>
+                    </li>
+                    <li <?php echo bctt_get_step_class( 'bctt-advanced' ); ?>>
+                        <?php _e( 'Advanced', 'better-click-to-tweet' )?>
+                    </li>
+                    <li <?php echo bctt_get_step_class( 'bctt-mailing-list' ); ?>>
+                        <?php _e( 'Mailing List', 'better-click-to-tweet' )?>
+                    </li>
+                    <li <?php echo bctt_get_step_class( 'bctt-ready' ); ?>>
+                        <?php _e( 'Ready!', 'better-click-to-tweet' )?>
+                    </li>
                 </ol>
             </div>
         <div class="bg-white max-w-2xl mx-6 md:mx-auto p-8 mb-4 shadow rounded">
