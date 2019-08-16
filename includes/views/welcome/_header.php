@@ -15,7 +15,7 @@
             alt="<?php _e( 'Better Click To Tweet', 'better-click-to-tweet' )?>" 
             class="mx-auto w-9/12 sm:max-w-xs mt-12 mb-10" />
 
-            <div id="bctt-steps-nav" class="max-w-2xl mx-6 md:mx-auto">
+            <div id="bctt-steps-nav" class="hidden md:block max-w-2xl mx-6 md:mx-auto">
                 <ol class="bctt-steps">
                     <li <?php echo bctt_get_step_class( 'bctt-twitter-setup' ); ?>>Twitter setup</li>
                     <li <?php echo bctt_get_step_class( 'bctt-usage' ); ?>>Usage</li>
