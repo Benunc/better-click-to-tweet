@@ -78,7 +78,8 @@ if ( ! class_exists( 'BCTT_Welcome' ) ):
         }
 
         public function enqueue_scripts() {
-            wp_enqueue_style( 'bctt_welcome_styles', plugins_url( '/assets/css/utility.css',  __FILE__ ) , array(), null );
+            wp_enqueue_style( 'bctt_welcome_utilitie', plugins_url( '/assets/css/utility.css',  __FILE__ ) , array(), null );
+            wp_enqueue_style( 'bctt_welcome_styles', plugins_url( '/assets/css/bctt-welcome.css',  __FILE__ ) , array(), null );
         }
     
     }
