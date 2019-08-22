@@ -1,39 +1,5 @@
-        <div id="bctt-steps">
-            <ul class="list-outside flex justify-around pb-10 my-8">
-                <li class="flex flex-col flex-no-wrap text-blue-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm font-bold">
-                        <?php _e( 'Step 1', 'better-click-to-tweet' )?>
-                    </span>
-                    <span class="text-6xl -mb-px">•</span>
-                    <hr class="bg-blue-500 h-1 w-full m-0 -mt-12"/>
-                </li>
-                <li class="flex flex-col flex-no-wrap text-gray-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">
-                        <?php _e( 'Step 2', 'better-click-to-tweet' )?>
-                    </span>
-                    <span class="text-6xl -mb-px">•</span>
-                    <hr class="bg-gray-500 h-1 w-full m-0 -mt-12"/>
-                </li>
-                <li class="flex flex-col flex-no-wrap text-gray-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">
-                        <?php _e( 'Step 3', 'better-click-to-tweet' )?>
-                    </span>
-                    <span class="text-6xl -mb-px">•</span>
-                    <hr class="bg-gray-500 h-1 w-full m-0 -mt-12"/>
-                </li>
-                <li class="flex flex-col flex-no-wrap text-gray-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">
-                        <?php _e( 'Step 4', 'better-click-to-tweet' )?>
-                    </span>
-                    <span class="text-6xl -mb-px">•</span>
-                    <hr class="bg-gray-500 h-1 w-full m-0 -mt-12"/>
-                </li>
-            </ul>
-        </div>
-      
-      <div id="bctt-video" class="">
+      <div id="bctt-video" class="rounded-lg shadow overflow-hidden mx-auto mb-8 bg-gray-200">
             <iframe 
-                class="mx-auto mb-8"
                 width="560" 
                 height="315" 
                 src="https://www.youtube.com/embed/4GU9KLwtEWM?controls=0" 
@@ -76,7 +42,6 @@
                     name="bctt-twitter" 
                     id="bctt-twitter" 
                     placeholder="<?php _e( 'Enter your Twitter handle ', 'better-click-to-tweet' )?>"
-                    required
                     class="border-2 border-solid border-gray-300 text-gray-600 px-2 pl-2 py-1 rounded text-center w-1/2"
                 />
             </div>

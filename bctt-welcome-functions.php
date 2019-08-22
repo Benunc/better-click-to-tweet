@@ -1,5 +1,72 @@
 <?php
 /**
+ * Get wizard nav css class
+ *
+ * @param string $step
+ * @return string
+ */
+function bctt_get_step_class( $step ) {
+   $class= "";
+
+   switch ( $step ) {
+       case 'bctt-twitter-setup':
+            if ( 'bctt-twitter-setup' === bctt_get_step() ) {
+                $class = 'class="active"';
+            } else {
+                $class = 'class="done"';
+            }
+           break;
+       case 'bctt-usage':
+            $done = array( 'bctt-advanced', 'bctt-mailing-list', 'bctt-ready' );
+                 
+            if ( 'bctt-usage' === bctt_get_step() ) {
+                $class = 'class="active"';
+            } else if ( in_array( bctt_get_step(), $done ) ) {
+                $class = 'class="done"';
+            }
+           break;
+       case 'bctt-advanced':
+             $done = array( 'bctt-mailing-list', 'bctt-ready' );
+
+            if ( 'bctt-advanced' === bctt_get_step() ) {
+                $class = 'class="active"';
+            } else if ( in_array( bctt_get_step(), $done ) ) {
+                $class = 'class="done"';
+            }
+           break;
+       case 'bctt-mailing-list':
+            $done = array( 'bctt-ready' );
+
+            if ( 'bctt-mailing-list' === bctt_get_step() ) {
+                $class = 'class="active"';
+            } else if ( in_array( bctt_get_step(), $done ) ) {
+                $class = 'class="done"';
+            }
+           break;
+       case 'bctt-ready':
+            if ( 'bctt-ready' === bctt_get_step() ) {
+                $class = 'class="active"';
+            }
+           break;
+       
+       default:
+           # code...
+           break;
+   }
+
+   return $class;
+}
+
+/**
+ * Get wizard step
+ *
+ * @return string
+ */
+function bctt_get_step() {
+    return isset( $_GET['step'] ) ? wp_unslash( $_GET['step'] ) : 'bctt-twitter-setup';
+}
+
+/**
  * Get welcome step url
  *
  * @param string $step
@@ -29,7 +96,7 @@ function bctt_welcome_redirect() {
         }
         if ( $do_redirect ) {
             delete_transient( '_bctt_activation_redirect' );
-            wp_safe_redirect( bctt_get_step_url( 'step1' ) );
+            wp_safe_redirect( bctt_get_step_url( 'bctt-twitter-setup' ) );
             exit;
         }
     }

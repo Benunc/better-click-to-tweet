@@ -34,40 +34,37 @@ if ( ! class_exists( 'BCTT_Welcome' ) ):
             // Update twitter handle
             if ( isset( $_POST['bctt-twitter'] ) ) {
                 update_option( 'bctt-twitter-handle', $_POST['bctt-twitter'] );
-                wp_safe_redirect( bctt_get_step_url( 'step2' ) );
+                wp_safe_redirect( bctt_get_step_url( 'bctt-usage' ) );
                 exit;
             }
             
-            // Get current step
-            $current_step = isset( $_GET['step'] ) ? wp_unslash( $_GET['step'] ) : 'step1';
-
             // Get page header
             require_once 'includes/views/welcome/_header.php'; 
 
             // Get step content
-            switch ($current_step) {
-                case 'step1':
-                        require_once 'includes/views/welcome/_step1.php';
+            switch ( bctt_get_step() ) {
+                case 'bctt-twitter-setup':
+                        require_once 'includes/views/welcome/_twitter_setup.php';
                     break;
 
-                case 'step2':
-                        require_once 'includes/views/welcome/_step2.php';
+                case 'bctt-usage':
+                        require_once 'includes/views/welcome/_usage.php';
                     break;
 
-                case 'step3':
-                        require_once 'includes/views/welcome/_step3.php';
+                case 'bctt-advanced':
+                        require_once 'includes/views/welcome/_advanced.php';
                     break;
 
-                case 'step4':
-                        require_once 'includes/views/welcome/_step4.php';
+                case 'bctt-mailing-list':
+                        require_once 'includes/views/welcome/_mailing_list.php';
                     break;
 
-                case 'finish':
-                        require_once 'includes/views/welcome/_finish.php';
+                case 'bctt-ready':
+                        require_once 'includes/views/welcome/_ready.php';
                     break;
                 
                 default:
-                        require_once 'includes/views/welcome/_step1.php';
+                        require_once 'includes/views/welcome/_twitter_setup.php';
                     break;
             }
 
@@ -78,7 +75,8 @@ if ( ! class_exists( 'BCTT_Welcome' ) ):
         }
 
         public function enqueue_scripts() {
-            wp_enqueue_style( 'bctt_welcome_styles', plugins_url( '/assets/css/utility.css',  __FILE__ ) , array(), null );
+            wp_enqueue_style( 'bctt_welcome_utilitie', plugins_url( '/assets/css/utility.css',  __FILE__ ) , array(), null );
+            wp_enqueue_style( 'bctt_welcome_styles', plugins_url( '/assets/css/bctt-welcome.css',  __FILE__ ) , array(), null );
         }
     
     }

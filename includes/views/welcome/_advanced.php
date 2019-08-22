@@ -1,38 +1,5 @@
-        <div id="bctt-steps">
-            <ul class="list-outside flex justify-around pb-10 my-8">
-                <li class="flex flex-col flex-no-wrap text-blue-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm font-bold">
-                        <?php _e( 'Step 1', 'better-click-to-tweet' )?>
-                    </span>
-                    <span class="text-6xl -mb-px">•</span>
-                    <hr class="bg-blue-500 h-1 w-full m-0 -mt-12"/>
-                </li>
-                <li class="flex flex-col flex-no-wrap text-blue-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">
-                        <?php _e( 'Step 2', 'better-click-to-tweet' )?>
-                    </span>
-                    <span class="text-6xl -mb-px">•</span>
-                    <hr class="bg-blue-500 h-1 w-full m-0 -mt-12"/>
-                </li>
-                <li class="flex flex-col flex-no-wrap text-blue-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">
-                        <?php _e( 'Step 3', 'better-click-to-tweet' )?>
-                    </span>
-                    <span class="text-6xl -mb-px">•</span>
-                    <hr class="bg-blue-500 h-1 w-full m-0 -mt-12"/>
-                </li>
-                <li class="flex flex-col flex-no-wrap text-gray-500 text-center w-1/4">
-                    <span class="-mb-8 text-sm">
-                        <?php _e( 'Step 4', 'better-click-to-tweet' )?>
-                    </span>
-                    <span class="text-6xl -mb-px">•</span>
-                    <hr class="bg-gray-500 h-1 w-full m-0 -mt-12"/>
-                </li>
-            </ul>
-        </div>
-      
         <div id="bctt-copy" class="text-gray-600">
-            <h2 class="text-lg font-bold mb-2">Power User</h2>
+            <h2 class="text-lg font-bold mb-2"><?php _e( 'Power User', 'better-click-to-tweet' )?></h2>
             <div id="bctt-instructions">
                 <p class="mb-4">
                     If you include a link back to the post using the URL parameter (or leaving it out, the default behavior), the tweet length is automatically shortened to 253 characters minus the length of your twitter handle, to leave room for the handle and link back to the post.
@@ -53,7 +20,7 @@
                     <a 
                         class="text-sm font-bold text-blue-500" 
                         href="https://www.wpsteward.com/2019/06/why-arent-my-posts-being-shared-on-social-media/">
-                        Learn how to get users to click on content
+                            <?php _e( 'Learn how to get users to click on content', 'better-click-to-tweet' )?>
                     </a>
                  </div>
             </div>     
@@ -62,12 +29,12 @@
         <form id="bctt-set-handle" action="" class="text-center">
             <div id="bctt-wizard-nav" class="mt-8 flex justify-between">
                 <a 
-                    href="<?php echo bctt_get_step_url( 'step2' ); ?>"
+                    href="<?php echo bctt_get_step_url( 'bctt-usage' ); ?>"
                     class="rounded py-1 px-2 border-2 border-solid border-blue-500 text-blue-600">
                         <?php _e( 'Previous', 'better-click-to-tweet' )?>
                 </a>
             
-                <a href="<?php echo bctt_get_step_url( 'step4' ); ?>"
+                <a href="<?php echo bctt_get_step_url( 'bctt-mailing-list' ); ?>"
                     class="rounded py-1 px-2 bg-blue-500 border-2 border-solid border-blue-500 text-white cursor-pointer">
                     <?php _e( 'Next', 'better-click-to-tweet' )?>
                 </a>
