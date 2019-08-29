@@ -14,36 +14,12 @@
         </h2>
 </div>
 
-<h2 class="text-center text-lg mb-4 pb-2 text-gray-600 font-bold border-b border-solid border-gray-200">
-    <?php _e( 'Quickstart', 'better-click-to-tweet' ); ?>
-</h2>
-<div class="flex justify-around">
+<div class="flex justify-around border-t border-solid border-gray-200 pt-4">
     <a 
     href="<?php echo admin_url( ); ?>"
     class="text-blue-500 underline w-full text-center block"
     title="<?php _e( 'Go to dashboard', 'better-click-to-tweet' ); ?>">
-        <?php _e( 'Dashboard', 'better-click-to-tweet' ); ?>
-    </a>
-
-    <a 
-    href="<?php echo admin_url( 'admin.php?page=better-click-to-tweet' ); ?>"
-    class="text-blue-500 underline w-full text-center block"
-    title="<?php _e( 'Go to better click to tweet Settings', 'better-click-to-tweet' ); ?>">
-        <?php _e( 'Settings', 'better-click-to-tweet' ); ?>
-    </a>
-
-    <a 
-    href="<?php echo admin_url( 'edit.php' ); ?>"
-    class="text-blue-500 underline w-full text-center block"
-    title="<?php _e( 'Go to posts"', 'better-click-to-tweet' ); ?>">
-        <?php _e( 'Posts', 'better-click-to-tweet' ); ?>
-    </a>
-
-    <a 
-    href="<?php echo admin_url( 'edit.php?post_type=page' ); ?>"
-    class="text-blue-500 underline w-full text-center block"
-    title="<?php _e( 'Go to pages', 'better-click-to-tweet' ); ?>">
-        <?php _e( 'Pages', 'better-click-to-tweet' ); ?>
+        <?php _e( 'Get Started', 'better-click-to-tweet' ); ?>
     </a>
 
     <a 
