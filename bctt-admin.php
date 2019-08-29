@@ -29,19 +29,10 @@ add_action( 'admin_menu', 'bctt_admin_menu' );
 function bctt_admin_menu() {
     add_action( 'admin_init', 'bctt_register_settings', 100, 1 );
     
-	add_menu_page( 
-        __( 'Better Click To Tweet Options', 'better-click-to-tweet' ), 
-        __( 'Better Click To Tweet', 'better-click-to-tweet' ), 
-        'manage_options', 
-        'better-click-to-tweet', 
-        null, 
-        'dashicons-twitter' 
-    );
-
 	add_submenu_page(
-        __( 'Better Click To Tweet', 'better-click-to-tweet' ), 
+        'options-general.php', 
         __( 'Better Click To Tweet Main Settings', 'better-click-to-tweet' ), 
-        'Settings', 
+        __( 'Better Click To Tweet', 'better-click-to-tweet' ), 
         'manage_options', 
         'better-click-to-tweet', 
         'bctt_settings' 
