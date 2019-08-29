@@ -20,12 +20,12 @@
        
         <form id="bctt-set-handle" action="" class="text-center">
             <div id="bctt-wizard-nav" class="mt-12 flex justify-between">
-                <a href="<?php echo bctt_get_step_url( 'bctt-twitter-setup' ); ?>"
+                <a href="<?php echo bctt_get_step_url( 'bctt-setup' ); ?>"
                     class="rounded py-1 px-2 border-2 border-solid border-blue-500 text-blue-600">
                         <?php _e( 'Previous', 'better-click-to-tweet' )?>
                 </a>
                
-                <a href="<?php echo bctt_get_step_url( 'bctt-advanced' ); ?>"
+                <a href="<?php echo bctt_get_step_url( 'bctt-content' ); ?>"
                     class="rounded py-1 px-2 bg-blue-500 border-2 border-solid border-blue-500 text-white cursor-pointer">
                         <?php _e( 'Next', 'better-click-to-tweet' )?>
                 </a>

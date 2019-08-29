@@ -43,28 +43,28 @@ if ( ! class_exists( 'BCTT_Welcome' ) ):
 
             // Get step content
             switch ( bctt_get_step() ) {
-                case 'bctt-twitter-setup':
-                        require_once 'includes/views/welcome/_twitter_setup.php';
+                case 'bctt-setup':
+                        require_once 'includes/views/welcome/_welcome.php';
                     break;
 
                 case 'bctt-usage':
                         require_once 'includes/views/welcome/_usage.php';
                     break;
 
-                case 'bctt-advanced':
-                        require_once 'includes/views/welcome/_advanced.php';
+                case 'bctt-content':
+                        require_once 'includes/views/welcome/_content.php';
                     break;
 
-                case 'bctt-mailing-list':
-                        require_once 'includes/views/welcome/_mailing_list.php';
+                case 'bctt-grow':
+                        require_once 'includes/views/welcome/_grow.php';
                     break;
 
-                case 'bctt-ready':
-                        require_once 'includes/views/welcome/_ready.php';
+                case 'bctt-done':
+                        require_once 'includes/views/welcome/_done.php';
                     break;
                 
                 default:
-                        require_once 'includes/views/welcome/_twitter_setup.php';
+                        require_once 'includes/views/welcome/_welcome.php';
                     break;
             }
 

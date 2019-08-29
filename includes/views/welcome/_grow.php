@@ -63,6 +63,6 @@
             var bctt_mailing_form = document.getElementById("mc-embedded-subscribe-form");
 
             bctt_mailing_form.addEventListener("submit", function(e) {
-                window.location = "<?php echo bctt_get_step_url( 'bctt-ready' );  ?>"
+                window.location = "<?php echo bctt_get_step_url( 'bctt-done' );  ?>"
             });
         </script>
