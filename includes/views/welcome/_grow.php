@@ -38,31 +38,27 @@
                     type="email" 
                     id="bctt-emails" 
                     placeholder="jhon@gmail.com"
-                    class="border-2 border-solid border-gray-300 text-gray-600 px-2 pl-2 py-1 rounded text-center w-1/2"
+                    class="border-2 border-solid border-gray-300 text-gray-600 px-2 pl-2 py-1 rounded-l text-center w-1/2"
                 />
+                <input 
+                    type="submit" 
+                    value="<?php _e( 'Subscribe', 'better-click-to-tweet' )?>"
+                    class="rounded-r py-1 px-2 bg-blue-400 border-2 border-solid border-blue-400 text-white cursor-pointer -ml-1 text-sm"/>  
             </div>
 
             <div class="mt-2 text-gray-500 text-sm">No Spam. One-click unsubscribe in every message</div>
+        </form>
 
-            <div id="bctt-wizard-nav" class="mt-12 flex justify-between items-center">
+        <div id="bctt-wizard-nav" class="mt-12 flex justify-between items-center">
                 <a 
-                    href="<?php echo bctt_get_step_url( 'bctt-advanced' ); ?>"
+                    href="<?php echo bctt_get_step_url( 'bctt-content' ); ?>"
                     class="rounded py-1 px-2 border-2 border-solid border-blue-500 text-blue-600">
                         <?php _e( 'Previous', 'better-click-to-tweet' )?>
                 </a>
 
-                <input 
-                    type="submit" 
-                    value="<?php _e( 'Finish', 'better-click-to-tweet' )?>
-"
-                    class="rounded py-1 px-2 bg-blue-500 border-2 border-solid border-blue-500 text-white cursor-pointer">            
-            </div>
-        </form>
-
-        <script>
-            var bctt_mailing_form = document.getElementById("mc-embedded-subscribe-form");
-
-            bctt_mailing_form.addEventListener("submit", function(e) {
-                window.location = "<?php echo bctt_get_step_url( 'bctt-done' );  ?>"
-            });
-        </script>
+                <a 
+                    href="<?php echo bctt_get_step_url( 'bctt-done' ); ?>"
+                    class="rounded py-1 px-2 bg-blue-500 border-2 border-solid border-blue-500 text-white">
+                        <?php _e( 'Finish', 'better-click-to-tweet' )?>
+                </a>         
+        </div>
