@@ -16,7 +16,7 @@
 
 <div class="flex justify-around border-t border-solid border-gray-200 pt-4">
     <a 
-    href="<?php echo admin_url( ); ?>"
+    href="<?php echo admin_url( 'options-general.php?page=better-click-to-tweet' ); ?>"
     class="text-blue-500 underline w-full text-center block"
     title="<?php _e( 'Go to dashboard', 'better-click-to-tweet' ); ?>">
         <?php _e( 'Get Started', 'better-click-to-tweet' ); ?>
