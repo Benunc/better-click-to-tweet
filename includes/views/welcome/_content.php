@@ -1,12 +1,12 @@
         <div id="bctt-copy" class="text-gray-600">
-            <h2 class="text-lg font-bold mb-2"><?php _e( 'Power Users Rejoice!', 'better-click-to-tweet' )?></h2>
+            <h2 class="text-lg font-bold mb-2"><?php _e( 'Your low quality content is probably the problem.', 'better-click-to-tweet' )?></h2>
             <div id="bctt-instructions">
                 <p class="mb-4">
-                    <?php _e( 'This plugin has a ton under the hood to maximize the sharing of your posts on Twitter. If you\'re using the classic editor, many of those features are more hidden. ', 'better-click-to-tweet' )?>
+                    <?php _e( 'I didn\'t want to be the one to have to tell you, but you could likely triple the number of social shares on your content with a little effort.', 'better-click-to-tweet' )?>
                 </p>
                 
                 <p class="mb-4">
-                    <?php echo sprintf( __( 'That\'s why we have a <a class="text-blue-500" target="_blank" rel="noopener noreferrer" href="%s">Power User Guide</a>.', 'better-click-to-tweet'), esc_url( 'http://benlikes.us/7r') ); ?>
+                    <?php _e( 'Since launching Better Click To Tweet in 2014, I\'ve seen thousands of folks use the plugin, and some patterns started to emerge. Some would get one or two clicks-to-tweet while others got hundreds or even thousands of clicks. I started to isolate what made the difference.', 'better-click-to-tweet')  ?>
                 </p>
 
                 <div class="border border-solid border-blue-200 bg-blue-100 p-4 rounded flex justify-center my-12">

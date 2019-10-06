@@ -15,8 +15,16 @@
                    <?php _e('If you are using the visual editor within the classic WordPress editor, click the BCTT birdie in the toolbar to access a shortcode generator that adds a pre-formatted shortcode to your post.', 'better-click-to-tweet') ?>
 
                </p>
-             
-               
+            </div>
+            <h2 class="text-lg font-bold mb-2"><?php _e( 'Power Users Rejoice!', 'better-click-to-tweet' )?></h2>
+            <div id="bctt-instructions">
+                <p class="mb-4">
+                    <?php _e( 'This plugin has a ton under the hood to maximize the sharing of your posts on Twitter. If you\'re using the classic editor, many of those features are more hidden. ', 'better-click-to-tweet' )?>
+                </p>
+                
+                <p class="mb-4">
+                    <?php echo sprintf( __( 'That\'s why we have a <a class="text-blue-500" target="_blank" rel="noopener noreferrer" href="%s">Power User Guide</a>.', 'better-click-to-tweet'), esc_url( 'http://benlikes.us/7r') ); ?>
+                </p>   
             </div>
         </div>
        
