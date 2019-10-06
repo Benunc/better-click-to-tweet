@@ -17,20 +17,41 @@
 
             <div id="bctt-steps-nav" class="hidden md:block max-w-2xl mx-6 md:mx-auto">
                 <ol class="bctt-steps">
-                    <li <?php echo bctt_get_step_class( 'bctt-setup' ); ?>>
-                        <?php _e( 'Welcome', 'better-click-to-tweet' )?>
+                    <li 
+                        <?php echo bctt_get_step_class( 'bctt-setup' ); ?>>
+                        <a 
+                            href=" <?php echo admin_url( "admin.php?page=bctt-welcome&step=1")?>"> 
+                        
+                            <?php _e( 'Welcome', 'better-click-to-tweet' )?>
+                        </a>
                     </li>
                     <li <?php echo bctt_get_step_class( 'bctt-usage' ); ?>>
-                        <?php _e( 'Usage', 'better-click-to-tweet' )?>
+                        <a 
+                            href=" <?php echo admin_url( "admin.php?page=bctt-welcome&step=bctt-usage")?>"> 
+                        
+                            <?php _e( 'Usage', 'better-click-to-tweet' )?>
+                        </a>
                     </li>
                     <li <?php echo bctt_get_step_class( 'bctt-content' ); ?>>
-                        <?php _e( 'Content', 'better-click-to-tweet' )?>
+                        <a 
+                            href=" <?php echo admin_url( "admin.php?page=bctt-welcome&step=bctt-content")?>"> 
+                        
+                            <?php _e( 'Content', 'better-click-to-tweet' )?>
+                        </a>
                     </li>
                     <li <?php echo bctt_get_step_class( 'bctt-grow' ); ?>>
-                        <?php _e( 'Grow', 'better-click-to-tweet' )?>
+                        <a 
+                            href=" <?php echo admin_url( "admin.php?page=bctt-welcome&step=bctt-grow")?>"> 
+                        
+                            <?php _e( 'Grow', 'better-click-to-tweet' )?>
+                        </a>
                     </li>
                     <li <?php echo bctt_get_step_class( 'bctt-done' ); ?>>
-                        <?php _e( 'Done!', 'better-click-to-tweet' )?>
+                        <a 
+                            href=" <?php echo admin_url( "admin.php?page=bctt-welcome&step=bctt-done")?>"> 
+                        
+                            <?php _e( 'Done!', 'better-click-to-tweet' )?>
+                        </a>
                     </li>
                 </ol>
             </div>
