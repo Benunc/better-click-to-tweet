@@ -9,7 +9,7 @@
             </g>
         </svg>
         <h2 class="text-center text-teal-400 font-bold my-4">
-            <?php _e( 'All Right Sparky !', 'better-click-to-tweet' ); ?>
+            <?php _e( 'Let\'s GO!', 'better-click-to-tweet' ); ?>
             
         </h2>
 </div>

@@ -4,7 +4,7 @@
                 <p class="mb-4"><?php _e( 'To add styled click-to-tweet quote boxes include the Better Click To Tweet block or shortcode in your post.', 'better-click-to-tweet') ?></p>
                
                 <p class="mb-4">
-                   <?php _e('In the WordPress 5.x+ editor (also known as Gutenberg), there is a Better Click To Tweet block. Use the forward slash command <code>/tweet</code> to quickly add a Better Click To Tweet block.', 'better-click-to-tweet') ?> 
+                   <?php _e('In the WordPress 5.x+ editor (also known as Gutenberg), there is a Better Click To Tweet block. Use the forward slash command <span class="bg-gray-200 font-mono">/tweet</span> to quickly add a Better Click To Tweet block.', 'better-click-to-tweet') ?> 
                </p>
                
                <p class="mb-2"><?php _e('If you\'re using the Classic Editor, here\'s how you format the shortcode:', 'better-click-to-tweet') ?></p>
