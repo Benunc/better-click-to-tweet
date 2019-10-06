@@ -1,12 +1,12 @@
         <div id="bctt-copy" class="text-gray-600">
-            <h2 class="text-lg font-bold mb-2"><?php _e( 'Power User', 'better-click-to-tweet' )?></h2>
+            <h2 class="text-lg font-bold mb-2"><?php _e( 'Power Users Rejoice!', 'better-click-to-tweet' )?></h2>
             <div id="bctt-instructions">
                 <p class="mb-4">
-                    If you include a link back to the post using the URL parameter (or leaving it out, the default behavior), the tweet length is automatically shortened to 253 characters minus the length of your twitter handle, to leave room for the handle and link back to the post.
+                    <?php _e( 'This plugin has a ton under the hood to maximize the sharing of your posts on Twitter. If you\'re using the classic editor, many of those features are more hidden. ', 'better-click-to-tweet' )?>
                 </p>
                 
                 <p class="mb-4">
-                    Learn more about the URL parameter as well as the other power user features in the <a class="text-blue-500" target="_blank" href="http://benlikes.us/7r">Power User Guide</a>.
+                    <?php echo sprintf( __( 'That\'s why we have a <a class="text-blue-500" target="_blank" rel="noopener noreferrer" href="%s">Power User Guide</a>.', 'better-click-to-tweet'), esc_url( 'http://benlikes.us/7r') ); ?>
                 </p>
 
                 <div class="border border-solid border-blue-200 bg-blue-100 p-4 rounded flex justify-center my-12">
@@ -20,7 +20,7 @@
                     <a 
                         class="text-sm font-bold text-blue-500" 
                         href="https://www.wpsteward.com/2019/06/why-arent-my-posts-being-shared-on-social-media/">
-                            <?php _e( 'Learn how to get users to click on content', 'better-click-to-tweet' )?>
+                            <?php _e( 'Here\'s a splash of cold water to the face regarding your content', 'better-click-to-tweet' )?>
                     </a>
                  </div>
             </div>     

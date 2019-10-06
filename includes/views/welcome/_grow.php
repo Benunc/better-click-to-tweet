@@ -1,11 +1,9 @@
         <div id="bctt-copy" class="text-gray-600">
-            <h2 class="text-center text-lg font-bold"><?php _e( 'About The Author', 'better-click-to-tweet' )?></h2>
-            <div class=" flex justify-center my-4">
-                <?php echo get_avatar( 'ben.meredith@gmail.com', 128 , '' ,'Ben Meredith', array( 'class' => 'rounded-full shadow-2xl border-4 border-solid border-gray-200' ) ); ?>
+            <h2 class="text-center text-lg font-bold"><?php _e( 'We\'re planning big things to help you ace the quality content game.', 'better-click-to-tweet' )?></h2>
+            <div id="bctt-instructions">
+                <p class="my-4"><?php _e( 'If you want to be the first to know about our plans to help you level up your content, so that readers share it, sign up below.', 'better-click-to-tweet' ) ?>
             </div>
-            <p class="text-center"> 
-                This plugin is developed by <a class="text-blue-500" href="https://www.wpsteward.com">Ben Meredith</a>. I am a freelance developer specializing in <a class="text-blue-500" href="https://www.wpsteward.com/service-plans">outrunning and outsmarting hackers</a>.
-            </p>
+
         </div>
        
         <form 
@@ -13,11 +11,12 @@
             name="mc-embedded-subscribe-form"
             action="//benandjacq.us1.list-manage.com/subscribe/post?u=8f88921110b81f81744101f4d&id=bd909b5f89&SUBSET=http%3A%2F%2Fbctt.test" 
             method="post"
-            target="_blank"           
+            target="_blank" 
+            rel="noopener noreferrer"          
             class="text-center mt-12">
             
             <label for="bctt-email" class="text-gray-600 font-bold w-2/3 inline-block mb-2">
-                <?php _e( 'Sign up here for a free 7-part email series on how to manage your website like a pro.', 'better-click-to-tweet' )?>
+                <?php _e( 'Better content starts here.', 'better-click-to-tweet' )?>
             </label>
             <div class="mt-2 flex justify-center">
                 <span class="flex justify-center bg-gray-300 rounded px-2 -mr-2">
@@ -37,7 +36,7 @@
                     name="EMAIL"
                     type="email" 
                     id="bctt-emails" 
-                    placeholder="jhon@gmail.com"
+                    placeholder="you@example.com"
                     class="border-2 border-solid border-gray-300 text-gray-600 px-2 pl-2 py-1 rounded-l text-center w-1/2"
                 />
                 <input 
@@ -46,7 +45,7 @@
                     class="rounded-r py-1 px-2 bg-blue-400 border-2 border-solid border-blue-400 text-white cursor-pointer -ml-1 text-sm"/>  
             </div>
 
-            <div class="mt-2 text-gray-500 text-sm">No Spam. One-click unsubscribe in every message</div>
+            <div class="mt-2 text-gray-500 text-sm"><?php _e( 'No Spam. One-click unsubscribe in every message', 'better-click-to-tweet' ) ?></div>
         </form>
 
         <div id="bctt-wizard-nav" class="mt-12 flex justify-between items-center">

@@ -11,7 +11,7 @@
 
         <div id="bctt-copy" class="text-gray-600">
             <h1 class="text-center text-lg font-bold px-2 text-gray-700">
-                Better Click To Tweet — a plugin by Ben Meredith
+                <?php _e( 'Good content is shared when you make it shareable!', 'better-click-to-tweet') ?>
             </h1>
         </div>
 
@@ -22,7 +22,7 @@
             class="text-center flex flex-col flex-no-wrap mt-8">
 
             <label for="bctt-twitter" class="text-blue-500 font-bold">
-                <?php _e( 'Lets get started', 'better-click-to-tweet' )?>
+                <?php _e( 'Want a site-wide default for the "via" on the Tweet?', 'better-click-to-tweet' )?>
             </label>
             <div class="mt-4 flex justify-center">
                 <span class="flex justify-center bg-gray-300 rounded px-2 -mr-2">
@@ -45,7 +45,7 @@
                     class="border-2 border-solid border-gray-300 text-gray-600 px-2 pl-2 py-1 rounded text-center w-1/2"
                 />
             </div>
-            <span class="mt-2 text-gray-500 text-sm">add "via @yourhandle" to your tweets</span>
+            <span class="mt-2 text-gray-500 text-sm"><?php _e( 'You can also do this on a per-box basis in the block settings or the shortcode generator.', 'better-click-to-tweet') ?></span>
 
             <div id="bctt-wizard-nav" class="mt-12 flex justify-end">
                 <input 

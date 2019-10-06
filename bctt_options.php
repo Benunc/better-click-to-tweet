@@ -224,7 +224,7 @@ function bctt_settings_page() {
 
 							<p>
 								<a href="https://www.wpsteward.com/donations/plugin-support/"
-								   target="_blank"><?php _e( 'Click here to buy me a Coke to say thanks.', 'better-click-to-tweet' ); ?></a>
+								   target="_blank" rel="noopener noreferrer"><?php _e( 'Click here to buy me a Coke to say thanks.', 'better-click-to-tweet' ); ?></a>
 							</p>
 						</div>
 						<!--/inside-->

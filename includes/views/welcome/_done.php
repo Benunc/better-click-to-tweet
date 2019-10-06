@@ -25,6 +25,7 @@
     <a 
     href="https://www.betterclicktotweet.com/all-add-ons/"
     target="_blank"
+    rel="noopener noreferrer"
     class="text-blue-500 underline w-full text-center block"
     title="<?php _e( 'Go Premium', 'better-click-to-tweet' ); ?>">
         <?php _e( 'Go Premium', 'better-click-to-tweet' ); ?>

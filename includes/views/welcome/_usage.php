@@ -1,20 +1,22 @@
         <div id="bctt-copy" class="text-gray-600">
             <h2 class="text-lg font-bold mb-2"><?php _e( 'Usage', 'better-click-to-tweet' )?></h2>
             <div id="bctt-instructions">
-                <p class="mb-4">To add styled click-to-tweet quote boxes include the Better Click To Tweet shortcode in your post.</p>
+                <p class="mb-4"><?php _e( 'To add styled click-to-tweet quote boxes include the Better Click To Tweet block or shortcode in your post.', 'better-click-to-tweet') ?></p>
                
-               <p class="mb-2">Here's how you format the shortcode:</p>
+                <p class="mb-4">
+                   <?php _e('In the WordPress 5.x+ editor (also known as Gutenberg), there is a Better Click To Tweet block. Use the forward slash command <code>/tweet</code> to quickly add a Better Click To Tweet block.', 'better-click-to-tweet') ?> 
+               </p>
+               
+               <p class="mb-2"><?php _e('If you\'re using the Classic Editor, here\'s how you format the shortcode:', 'better-click-to-tweet') ?></p>
 
-               <p class="bg-gray-200 p-4 rounded shadow-md font-mono">[bctt tweet="Meaningful, tweetable quote."]</p>
+               <p class="bg-gray-200 p-4 rounded shadow-md font-mono">[bctt tweet="<?php _e('Meaningful, tweetable quote.', 'better-click-to-tweet') ?>"]</p>
 
                <p class="my-4">
-                   If you are using the visual editor, click the BCTT birdie in the toolbar to add a pre-formatted shortcode to your post.
+                   <?php _e('If you are using the visual editor within the classic WordPress editor, click the BCTT birdie in the toolbar to access a shortcode generator that adds a pre-formatted shortcode to your post.', 'better-click-to-tweet') ?>
 
                </p>
              
-               <p class="mb-4">
-                   In the WordPress 5.0 editor (codenamed Gutenberg), there is a Better Click To Tweet block.
-               </p>
+               
             </div>
         </div>
        
