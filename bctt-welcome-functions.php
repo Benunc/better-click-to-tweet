@@ -9,15 +9,15 @@ function bctt_get_step_class( $step ) {
    $class= "";
 
    switch ( $step ) {
-       case 'bctt-twitter-setup':
-            if ( 'bctt-twitter-setup' === bctt_get_step() ) {
+       case 'bctt-setup':
+            if ( 'bctt-setup' === bctt_get_step() ) {
                 $class = 'class="active"';
             } else {
                 $class = 'class="done"';
             }
            break;
        case 'bctt-usage':
-            $done = array( 'bctt-advanced', 'bctt-mailing-list', 'bctt-ready' );
+            $done = array( 'bctt-content', 'bctt-grow', 'bctt-done' );
                  
             if ( 'bctt-usage' === bctt_get_step() ) {
                 $class = 'class="active"';
@@ -25,26 +25,26 @@ function bctt_get_step_class( $step ) {
                 $class = 'class="done"';
             }
            break;
-       case 'bctt-advanced':
-             $done = array( 'bctt-mailing-list', 'bctt-ready' );
+       case 'bctt-content':
+             $done = array( 'bctt-grow', 'bctt-done' );
 
-            if ( 'bctt-advanced' === bctt_get_step() ) {
+            if ( 'bctt-content' === bctt_get_step() ) {
                 $class = 'class="active"';
             } else if ( in_array( bctt_get_step(), $done ) ) {
                 $class = 'class="done"';
             }
            break;
-       case 'bctt-mailing-list':
-            $done = array( 'bctt-ready' );
+       case 'bctt-grow':
+            $done = array( 'bctt-done' );
 
-            if ( 'bctt-mailing-list' === bctt_get_step() ) {
+            if ( 'bctt-grow' === bctt_get_step() ) {
                 $class = 'class="active"';
             } else if ( in_array( bctt_get_step(), $done ) ) {
                 $class = 'class="done"';
             }
            break;
-       case 'bctt-ready':
-            if ( 'bctt-ready' === bctt_get_step() ) {
+       case 'bctt-done':
+            if ( 'bctt-done' === bctt_get_step() ) {
                 $class = 'class="active"';
             }
            break;
@@ -63,7 +63,7 @@ function bctt_get_step_class( $step ) {
  * @return string
  */
 function bctt_get_step() {
-    return isset( $_GET['step'] ) ? wp_unslash( $_GET['step'] ) : 'bctt-twitter-setup';
+    return isset( $_GET['step'] ) ? wp_unslash( $_GET['step'] ) : 'bctt-setup';
 }
 
 /**
@@ -96,7 +96,7 @@ function bctt_welcome_redirect() {
         }
         if ( $do_redirect ) {
             delete_transient( '_bctt_activation_redirect' );
-            wp_safe_redirect( bctt_get_step_url( 'bctt-twitter-setup' ) );
+            wp_safe_redirect( bctt_get_step_url( 'bctt-setup' ) );
             exit;
         }
     }
