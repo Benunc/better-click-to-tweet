@@ -1,4 +1,9 @@
-      <div id="bctt-video" class="rounded-lg shadow overflow-hidden mx-auto mb-8 bg-gray-200">
+        <div id="bctt-copy" class="text-gray-600">
+            <h1 class="text-center text-lg font-bold px-2 text-gray-700">
+                <?php _e( 'Getting Started Using Better Click To Tweet', 'better-click-to-tweet') ?>
+            </h1>
+        </div>
+        <div id="bctt-video" class="rounded-lg shadow overflow-hidden mx-auto my-8 bg-gray-200">
             <iframe 
                 width="560" 
                 height="315" 
@@ -10,9 +15,9 @@
         </div>
 
         <div id="bctt-copy" class="text-gray-600">
-            <h1 class="text-center text-lg font-bold px-2 text-gray-700">
+            <h2 class="text-center text-lg font-bold px-2 text-gray-700">
                 <?php _e( 'Good content is shared when you make it shareable!', 'better-click-to-tweet') ?>
-            </h1>
+            </h2>
         </div>
 
         <form 
