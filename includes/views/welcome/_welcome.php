@@ -3,7 +3,7 @@
                 <?php _e( 'Getting Started Using Better Click To Tweet', 'better-click-to-tweet') ?>
             </h1>
         </div>
-        <div id="bctt-video" class="rounded-lg shadow overflow-hidden mx-auto my-8 bg-gray-200">
+        <div id="bctt-video" class="rounded-lg shadow-xl overflow-hidden mx-auto my-8 bg-gray-200">
             <iframe 
                 width="560" 
                 height="315" 
@@ -46,6 +46,7 @@
                     type="text" 
                     name="bctt-twitter" 
                     id="bctt-twitter" 
+                    value="<?php echo esc_attr( get_option( 'bctt-twitter-handle' ) ); ?>"
                     placeholder="<?php _e( 'Enter your Twitter handle ', 'better-click-to-tweet' )?>"
                     class="border-2 border-solid border-gray-300 text-gray-600 px-2 pl-2 py-1 rounded text-center w-1/2"
                 />
