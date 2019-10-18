@@ -133,7 +133,7 @@ function bctt_settings_page() {
                                             <td><input type="checkbox" name="bctt-utm-tags"
                                                        value="1" disabled="disabled" style="float:left;" /> <div
                                                         style="font-size: .85em; margin-left:3em; line-height:1.5em"><em>  <?php
-															echo sprintf( __( 'Want add UTM tags to the return URL to track how well BCTT boxes are performing? Add the <a href=%s>UTM tags add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'http://benlikes.us/bcttutmdirect' ) );
+															echo sprintf( __( 'Want to add UTM tags to the return URL to track how well BCTT boxes are performing? Add the <a href=%s>UTM tags add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'http://benlikes.us/bcttutmdirect' ) );
 														 ?></em></div>
 
                                             </td>

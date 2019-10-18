@@ -98,7 +98,7 @@ function bctt_settings() {
                 case 'bctt-utm-tags':
                         if ( ! defined( 'BCTTUTM_VERSION' ) ) {
                             echo '<h2 style="text-align: center; margin-top: 20%;">';
-                            echo sprintf( __( 'Want add UTM tags to the return URL to track how well BCTT boxes are performing? Add the <a href=%s>UTM tags add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'http://benlikes.us/bcttutmdirect' ) );
+                            echo sprintf( __( 'Want to add UTM tags to the return URL to track how well BCTT boxes are performing? Add the <a href=%s>UTM tags add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'http://benlikes.us/bcttutmdirect' ) );
                             echo '</h2>';
                         } else {
                             $BCTT_Utm_tags = Bctt_Utm_Tags::get_instance();
