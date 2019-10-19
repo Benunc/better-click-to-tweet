@@ -3,8 +3,8 @@ Contributors: ben.meredith@gmail.com, wpsteward
 Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
-Tested up to: 5.2
-Stable tag: 5.8.2
+Tested up to: 5.3
+Stable tag: 5.9.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,12 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.9.0 =
+* enhancement — new onboarding/welcome wizard to help users maximize their productivity with the plugin.
+* fix — at long last, this plugin doesn't eat up valuable Top Level Menu space, and all menu items for the free plugin or premium addons are moved to tabs.
+* chore — tested up to 5.3, and listen, if you're not on at least 5.2 for the massive enhancements like recovery mode, you definitely should be.
+* bonus — people keep giving me extra money when they check out at betterclicktotweet.com because they don't read changelogs. You've got a leg up and can get a discount with code CHANGELOG.
 
 = 5.8.2 =
 * fix — resolving PHP notices related to the custom URL not being set.

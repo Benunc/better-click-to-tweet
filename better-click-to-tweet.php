@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Better Click To Tweet
  * Description: Add Click to Tweet boxes simply and elegantly to your posts or pages. All the features of a premium plugin, for FREE!
- * Version: 5.8.2
+ * Version: 5.9.0
  * Author: Ben Meredith
  * Author URI: https://www.betterclicktotweet.com
  * Plugin URI: https://wordpress.org/plugins/better-click-to-tweet/
@@ -12,9 +12,10 @@
 
 defined( 'ABSPATH' ) or die( "No soup for you. You leave now." );
 
-define ( 'BCTT_VERSION', '5.8.2' );
+define ( 'BCTT_VERSION', '5.9.0' );
 
 include 'i18n-module.php';
+include 'bctt-admin.php';
 include 'bctt_options.php';
 include 'bctt-i18n.php';
 include 'admin-nags.php';
@@ -23,6 +24,7 @@ include 'admin-nags.php';
 include 'includes/updater/bctt-updater.php';
 include 'includes/updater/license-page.php';
 include 'includes/misc-functions.php';
+include 'bctt-welcome-functions.php';
 
 /*
 *  	Strips the html, shortens the text (after checking for mb_internal_encoding compatibility) 
@@ -303,6 +305,16 @@ function bctt_get_styles_url() {
 	return plugins_url( 'assets/css/styles.css', __FILE__ );
 }
 
+/**
+ * Plugin Activation
+ *
+ * @return void
+ */
+function bctt_on_activation() {
+	set_transient( '_bctt_activation_redirect', 1, 30 );
+}
+register_activation_hook( __FILE__, 'bctt_on_activation' );
+
 /*
  * Delete options and shortcode on uninstall
  *
@@ -325,8 +337,6 @@ function bctt_on_uninstall() {
 
 
 }
-
-
 
 register_uninstall_hook( __FILE__, 'bctt_on_uninstall' );
 

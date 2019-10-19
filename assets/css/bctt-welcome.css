@@ -1,0 +1,59 @@
+#bctt-video iframe {
+    width: 100%;
+}
+
+.bctt-steps {
+    padding: 0 0 24px;
+    margin: 0;
+    list-style: none outside;
+    overflow: hidden;
+    color: #ccc;
+    width: 100%;
+    display: inline-flex;
+}
+
+.bctt-steps li {
+    width: 100%;
+    float: left;
+    padding: 0 0 .8em;
+    margin: 0;
+    text-align: center;
+    position: relative;
+    border-bottom: 4px solid #ccc;
+    border-bottom-color: rgb(204, 204, 204);
+    line-height: 1.4;
+}
+
+.bctt-steps li::before {
+    content: "";
+    border: 4px solid #ccc;
+    border-radius: 100%;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -6px;
+    margin-bottom: -8px;
+    background: #fff;
+}
+
+.bctt-steps li.done {
+    border-color: #4299e1;
+    color: #4299e1;
+}
+
+.bctt-steps li.done::before {
+    border-color: #4299e1;
+    background: #4299e1;
+}
+
+.bctt-steps li.active {
+    border-color: #4299e1;
+    color: #4299e1;
+    font-weight: 700;
+}
+
+.bctt-steps li.active::before {
+    border-color: #4299e1;
+}
