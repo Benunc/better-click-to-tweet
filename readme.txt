@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 5.3
-Stable tag: 5.9.0
+Stable tag: 5.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,10 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.9.1 =
+* fix — resolve a minor error on the Premium Styles tab of the settings with folks who had their own custom styles enqueued but not the offical Premium Styles add-on.
+* bonus — there's still not-so-much usage for the CHANGELOG discount code at https://benlikes.us/bcttps I'm personally fine with folks paying full price, tho.
 
 = 5.9.0 =
 * enhancement — new onboarding/welcome wizard to help users maximize their productivity with the plugin.
