@@ -86,7 +86,7 @@ function bctt_settings() {
                     break;
 
                 case 'bctt-premium-styles':
-                        if ( ! bctt_add_custom_style_option() ) { 
+                        if ( ! function_exists( 'bcttps_register_settings' )) { 
                             echo '<h2 style="text-align: center; margin-top: 20%;">';
                             echo sprintf( __( 'Want Premium styles? Add the <a href=%s>Premium Styles add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'http://benlikes.us/bcttpsdirect' ) );
                             echo '</h2>';
