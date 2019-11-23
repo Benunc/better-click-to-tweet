@@ -97,6 +97,10 @@ Donations: http://benlikes.us/donate
 
 == Changelog ==
 
+= 5.9.2 =
+* fix — the link being sent to mailchimp was sending an incorrect subset, resulting in incorrect data.
+
+
 = 5.9.1 =
 * fix — resolve a minor error on the Premium Styles tab of the settings with folks who had their own custom styles enqueued but not the offical Premium Styles add-on.
 * bonus — there's still not-so-much usage for the CHANGELOG discount code at https://benlikes.us/bcttps I'm personally fine with folks paying full price, tho.
