@@ -31,7 +31,8 @@
     "prettier": "^1.9.1",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.6",
-    "webpack": "^3.8.1"
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   },
   "babel": {
     "presets": [
