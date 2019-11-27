@@ -9,7 +9,7 @@
         <form 
             id="mc-embedded-subscribe-form" 
             name="mc-embedded-subscribe-form"
-            action="//benandjacq.us1.list-manage.com/subscribe/post?u=8f88921110b81f81744101f4d&id=bd909b5f89&SUBSET=splash<?php echo urlencode( site_url() ) ?> " 
+            action="//benandjacq.us1.list-manage.com/subscribe/post?u=8f88921110b81f81744101f4d&id=bd909b5f89&SUBSET=splash_<?php echo urlencode( site_url() ) ?> " 
             method="post"
             target="_blank" 
             rel="noopener noreferrer"          
