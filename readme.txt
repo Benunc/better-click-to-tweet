@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 5.3
-Stable tag: 5.9.1
+Stable tag: 5.9.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,7 +98,7 @@ Donations: http://benlikes.us/donate
 == Changelog ==
 
 = 5.9.2 =
-* fix — the link being sent to mailchimp was sending an incorrect subset, resulting in incorrect data.
+* fix — the links being sent to mailchimp for those opting into the newsletter were sending an incorrect subset, resulting in incorrect data.
 
 
 = 5.9.1 =
