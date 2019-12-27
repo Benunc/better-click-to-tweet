@@ -11,15 +11,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Enqueue Block assets
 function bctt_block_editor_assets() {
-	wp_enqueue_script( 'bctt-block-js', plugins_url( 'block/build/script.js', dirname( __FILE__ ) ), array(
-		'wp-i18n',
-		'wp-blocks',
-		'wp-components',
-		'wp-editor'
-	) );
+	$asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
+	wp_enqueue_script( 
+		'bctt-block-js', 
+		plugins_url( 'block/build/index.js', dirname( __FILE__ ) ), 
+		$asset_file['dependencies'],
+		$asset_file['version']
+	);
 	if ( ! bctt_is_default_styles_dequeued() ) {
 		$stylesheet_url = bctt_get_stylesheet_url();
-
 		wp_enqueue_style( 'bctt-block-editor-css', $stylesheet_url, array(), 'all' );
 	}
 	// Add plugin options for block

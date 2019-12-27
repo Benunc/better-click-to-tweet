@@ -14,7 +14,6 @@ import { RichText } from "@wordpress/editor";
  * Internal dependencies
  */
 import Inspector from "./inspector";
-import "./editor.scss";
 
 /**
  * Block edit component
