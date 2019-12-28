@@ -3,40 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "lint": "eslint src",
-    "build": "cross-env BABEL_ENV=default NODE_ENV=production webpack",
-    "dev": "cross-env BABEL_ENV=default webpack --watch"
+    "lint-js": "wp-scripts lint-js ./assets/block/src",
+    "lint-js:fix": "npm run lint-js -- --fix",
+    "env:start": "docker-compose up -d",
+    "env:stop": "docker-compose stop",
+    "build": "wp-scripts build assets/block/src/index.js --output-path=assets/block/build",
+    "start": "wp-scripts start assets/block/src/index.js --output-path=assets/block/build"
   },
   "dependencies": {
     "classnames": "^2.2.5"
   },
   "devDependencies": {
-    "@wordpress/babel-plugin-makepot": "^1.0.0",
-    "@wordpress/babel-preset-default": "^1.1.0",
-    "@wordpress/browserslist-config": "^2.1.0",
-    "@wordpress/i18n": "^1.0.0",
-    "autoprefixer": "^7.1.6",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.3",
-    "babel-loader": "^7.1.2",
-    "clean-webpack-plugin": "^0.1.19",
-    "cross-env": "^5.1.1",
-    "eslint": "^4.19.1",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-react": "^7.7.0",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "node-sass": "^4.12.0",
-    "postcss-loader": "^2.0.9",
-    "prettier": "^1.9.1",
-    "raw-loader": "^0.5.1",
-    "sass-loader": "^6.0.6",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
-  },
-  "babel": {
-    "presets": [
-      "@wordpress/default"
-    ]
+    "@wordpress/scripts": "6.1.0"
   }
 }
