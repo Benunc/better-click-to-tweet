@@ -59,13 +59,7 @@ function bctt_settings_page() {
 				<div id="bctt_instructions" class="postbox ">
 					<h2><?php _e( 'Instructions', 'better-click-to-tweet' ); ?></h2>
 					<div class="inside">
-					<p style="	width: 50%; 
-								margin:0 auto; 
-								background-color: #ffd589; 
-								text-align: center; 
-								line-height: 2.5em;
-								font-size:1.3em; 
-								border: 3px solid grey;"><strong><?php echo sprintf( __( 'Don\'t miss our <a href="%s">Setup Wizard</a>', 'better-click-to-tweet' ), admin_url( '?page=bctt-welcome&step=bctt-setup' ) ); ?></strong></p>
+					<p class="bctt-setup-alert"><strong><?php echo sprintf( __( 'Don\'t miss the <a href="%s">Setup Wizard</a>', 'better-click-to-tweet' ), admin_url( '?page=bctt-welcome&step=bctt-setup' ) ); ?></strong></p>
 
 						<p><?php /* translators: Treat "Better Click To Tweet" as a brand name, don't translate it */
 							_e( 'To add styled click-to-tweet quote boxes include the Better Click To Tweet shortcode or Gutenberg block in your post.', 'better-click-to-tweet' ); ?></p>
