@@ -5,6 +5,15 @@
 .bctt-signup {
     font-size:unset;
 }
+.bctt-setup-alert {
+    width: 50%; 
+	margin:0 auto; 
+    background-color: #ffd589; 
+	text-align: center; 
+	line-height: 2.5em;
+	font-size:1.3em; 
+	border: 3px solid grey;
+}
 
 @media only screen and (max-width: 850px) {
     #post-box-container-1 {
