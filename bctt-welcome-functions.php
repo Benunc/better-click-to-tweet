@@ -84,7 +84,7 @@ function bctt_get_step_url( $step ) {
 function bctt_welcome_redirect() {
     if ( get_transient( '_bctt_activation_redirect' ) ) {
         $do_redirect  = true;
-        $current_page = isset( $_GET['page'] ) ? wc_clean( wp_unslash( $_GET['page'] ) ) : false;
+        $current_page = isset( $_GET['page'] ) ? wp_unslash( $_GET['page'] ) : false;
         // Bailout redirect during these events.
         if ( wp_doing_ajax() || is_network_admin() || ! current_user_can( 'manage_options' ) ) {
             $do_redirect = false;
