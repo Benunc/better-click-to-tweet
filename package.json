@@ -11,7 +11,7 @@
     "start": "wp-scripts start assets/block/src/index.js --output-path=assets/block/build"
   },
   "dependencies": {
-    "classnames": "^2.2.5"
+    "classnames": "^2.2.6"
   },
   "devDependencies": {
     "@wordpress/scripts": "6.1.0"
