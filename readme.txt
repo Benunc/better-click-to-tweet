@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 5.4
-Stable tag: 5.9.2
+Stable tag: 5.9.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,10 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.9.3 = 
+* fix — a woocommerce function somehow made it into my setup wizard, which has been removed now. It was causing errors on a select few installs on installation.
+* switcheroo — going back to featuring the Premium styles add-on in the plugins page upsell. You should buy that with a coupon of CHANGELOG at https://benlikes.us/bcttps
 
 = 5.9.2 =
 * fix — the links being sent to mailchimp for those opting into the newsletter were sending an incorrect subset, resulting in incorrect data.
