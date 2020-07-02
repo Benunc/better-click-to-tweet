@@ -96,7 +96,8 @@ function bctt_alerts() {
 }
 
 // Commented out in 5.8.1 to try the other new nag for a bit.
-// add_action( 'admin_notices', 'bctt_alerts' );
+// Added back in 5.9.3
+ add_action( 'admin_notices', 'bctt_alerts' );
 
 function bctt_addon_notice_ignore() {
 
@@ -116,8 +117,8 @@ function bctt_addon_notice_ignore() {
 }
 
 // Commented out in 5.8.1 to try the other new nag for a bit.
-
-// add_action( 'current_screen', 'bctt_addon_notice_ignore' );
+// Added back in 5.9.3
+add_action( 'current_screen', 'bctt_addon_notice_ignore' );
 
 
 function bctt_more_alerts() {
@@ -215,7 +216,8 @@ function bctt_more_alerts() {
 	}
 }
 
-add_action( 'admin_notices', 'bctt_more_alerts' );
+// commented out in 5.9.3 to try the other nag for a bit
+// add_action( 'admin_notices', 'bctt_more_alerts' );
 
 function bctt_more_addon_notice_ignore() {
 
@@ -234,4 +236,5 @@ function bctt_more_addon_notice_ignore() {
 	}
 }
 
-add_action( 'current_screen', 'bctt_more_addon_notice_ignore' );
+// commented out in 5.9.3 to try the other nag for a bit
+// add_action( 'current_screen', 'bctt_more_addon_notice_ignore' );
