@@ -3,8 +3,8 @@ Contributors: ben.meredith@gmail.com, wpsteward
 Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
-Tested up to: 5.4
-Stable tag: 5.9.3
+Tested up to: 5.5
+Stable tag: 5.9.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,9 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+= 5.9.4 =
+* fix — the upsell nag was previously showing on any page that was related to plugins, including the update interface. now it only shows up on the plugins page itself.
+* chore — tested up to WordPress version 5.5
 
 = 5.9.3 = 
 * fix — a woocommerce function somehow made it into my setup wizard, which has been removed now. It was causing errors on a select few installs on installation.
