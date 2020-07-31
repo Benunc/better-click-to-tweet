@@ -8,9 +8,10 @@ function bctt_alerts() {
 	$screen = get_current_screen();
 
 	$screenparent = $screen->parent_file;
+	$screen_id = $screen->id;
 
 
-	if ( $screenparent == 'plugins.php' && current_user_can( 'install_plugins' ) ) {
+	if ( $screenparent == 'plugins.php' && $screen_id == 'plugins' && current_user_can( 'install_plugins' ) ) {
 
 		$user_id       = wp_get_current_user()->ID;
 		$has_dismissed = get_user_meta( $user_id, 'bctt_has_dismissed_nag', true );
