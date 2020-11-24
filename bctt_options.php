@@ -215,9 +215,9 @@ function bctt_settings_page() {
 								echo $link2; ?></p>
 
 							<p><?php $url3 = 'https://benlikes.us/donate';
-								$link3     = sprintf( __( 'The best way you can support this and other plugins is to <a href=%s>donate</a>', 'better-click-to-tweet' ), esc_url( $url3 ) );
+								$link3     = sprintf( __( 'The best way you can support this and other plugins is to <a href=%s>donate</a>.', 'better-click-to-tweet' ), esc_url( $url3 ) );
 								echo $link3; ?>
-								. <?php $url4 = 'https://wordpress.org/support/view/plugin-reviews/better-click-to-tweet';
+								<?php $url4 = 'https://wordpress.org/support/view/plugin-reviews/better-click-to-tweet';
 								$link4        = sprintf( __( 'The second best way is to <a href=%s>leave an honest review.</a>', 'better-click-to-tweet' ), esc_url( $url4 ) );
 								echo $link4; ?></p>
 
