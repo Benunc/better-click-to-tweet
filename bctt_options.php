@@ -211,10 +211,10 @@ function bctt_settings_page() {
 					<div id="bctt-contrib" class="postbox">
 						<div class="inside">
 							<p><?php $url2 = 'https://github.com/Benunc/better-click-to-tweet';
-								$link2     = sprintf( __( 'Are you a developer? I would love your help making this plugin better. Check out the <a href=%s>plugin on Github.</a>', 'better-click-to-tweet' ), esc_url( $url2 ) );
+								$link2     = sprintf( __( 'This plugin is developed out in the open. Make requests for features and bugfixes <a href=%s>on the public GitHub repository.</a>', 'better-click-to-tweet' ), esc_url( $url2 ) );
 								echo $link2; ?></p>
 
-							<p><?php $url3 = 'https://www.wpsteward.com/donations/plugin-support/';
+							<p><?php $url3 = 'https://benlikes.us/donate';
 								$link3     = sprintf( __( 'The best way you can support this and other plugins is to <a href=%s>donate</a>', 'better-click-to-tweet' ), esc_url( $url3 ) );
 								echo $link3; ?>
 								. <?php $url4 = 'https://wordpress.org/support/view/plugin-reviews/better-click-to-tweet';
@@ -224,7 +224,7 @@ function bctt_settings_page() {
 							<p><?php _e( 'Did this plugin save you enough time to be worth some money?', 'better-click-to-tweet' ); ?></p>
 
 							<p>
-								<a href="https://www.wpsteward.com/donations/plugin-support/"
+								<a href="https://benlikes.us/donate"
 								   target="_blank" rel="noopener noreferrer"><?php _e( 'Click here to buy me a Coke to say thanks.', 'better-click-to-tweet' ); ?></a>
 							</p>
 						</div>
