@@ -8,7 +8,7 @@ import classnames from "classnames";
  */
 import { __ } from "@wordpress/i18n";
 import { Fragment } from "@wordpress/element";
-import { RichText } from "@wordpress/editor";
+import { RichText } from "@wordpress/block-editor";
 
 /**
  * Internal dependencies
@@ -21,6 +21,14 @@ import Inspector from "./inspector";
 const editor = props => {
   const { attributes, setAttributes, className } = props;
   const { tweet, prompt } = attributes;
+
+  // Default tweet content
+  const title = wp.data.select( 'core/editor' ).getEditedPostAttribute( 'title' );
+
+  if ( !tweet ) {
+    setAttributes( { tweet: title } );
+  }
+
   // Events
   const onChangeTweet = value => {
     setAttributes({ tweet: value });
@@ -38,11 +46,11 @@ const editor = props => {
         <span className="bctt-ctt-text">
           <RichText
             format="string"
-            formattingControls={[]}
+            allowedFormats={[]}
             tagName="div"
             placeholder={__("Enter text for readers to Tweet")}
             onChange={onChangeTweet}
-            value={tweet}
+            value={ tweet }
           />
         </span>
         <a href="#" onClick={onClickPrompt} className="bctt-ctt-btn">
