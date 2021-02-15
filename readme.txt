@@ -3,8 +3,8 @@ Contributors: ben.meredith@gmail.com, wpsteward
 Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
-Tested up to: 5.6
-Stable tag: 5.9.5
+Tested up to: 5.7
+Stable tag: 5.10.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -97,9 +97,11 @@ Donations: http://benlikes.us/donate
 
 == Changelog ==
 = 5.10.0 =
-* chore — confirm compatibility with WordPress 5.7
 * feature — adding a blank [bctt] shortcode populates the Better Click To Tweet box with the post/page's title.
-* bonus — attempted switching out which YouTube Video my toddler watches 2
+* bonus — moved to the country. Incorrectly assumed I'd eat a lot more peaches, based on my extensive knowledge of Presidents Of The United States songs from the 90s
+* chore — confirm compatibility with WordPress 5.7 and PHP 8.0
+* sale — you should reward yourself with the promo code CHANGELOG at https://benlikes.us/bcttps 
+
 
 = 5.9.5 =
 * chore — check for compatibility with the upcoming WordPress version 5.6
