@@ -96,6 +96,11 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+= 5.10.0 =
+* chore — confirm compatibility with WordPress 5.7
+* feature — adding a blank [bctt] shortcode populates the Better Click To Tweet box with the post/page's title.
+* bonus — attempted switching out which YouTube Video my toddler watches 2
+
 = 5.9.5 =
 * chore — check for compatibility with the upcoming WordPress version 5.6
 * enhancement — update some of the links and text on the settings page.
