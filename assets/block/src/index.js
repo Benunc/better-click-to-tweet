@@ -22,7 +22,7 @@ export default registerBlockType("bctt/clicktotweet", {
   icon: "twitter",
   keywords: [__("Twitter"), __("Tweet")],
   supports: {
-    align: true,
+    align: false,
     alignWide: false
   },
   edit: editor,
