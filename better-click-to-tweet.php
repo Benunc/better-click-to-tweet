@@ -95,7 +95,7 @@ function bctt_shortcode( $atts ) {
 	$twitter_handle = get_option( 'bctt-twitter-handle' );
 
 	$atts = shortcode_atts( apply_filters( 'bctt_atts', array(
-		'tweet'    => get_the_title( get_the_ID() ),
+		'tweet'    => !empty( get_the_ID() ) ? get_the_title( get_the_ID() ) : '',
 		'via'      => 'yes',
 		'username' => $twitter_handle ? $twitter_handle : 'not-a-real-user',
 		'url'      => 'yes',
