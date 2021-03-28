@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 5.7
-Stable tag: 5.10.0
+Stable tag: 5.10.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,12 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.10.1 =
+* fix — resolved a bug where Better Click To Tweet was not playing nicely with other plugins that made changes to the title related filters.
+* chore — unrelated to the plugin, there's so much pollen in the air in South Carolina. You can see it like a cloud. Use promo code CHANGELOG at https://benlikes.us/bcttps
+
+
 = 5.10.0 =
 * feature — adding a blank [bctt] shortcode populates the Better Click To Tweet box with the post/page's title.
 * bonus — moved to the country. Incorrectly assumed I'd eat a lot more peaches, based on my extensive knowledge of Presidents Of The United States songs from the 90s

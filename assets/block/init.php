@@ -38,7 +38,7 @@ register_block_type( 'bctt/clicktotweet', array(
 		'attributes'      => apply_filters ( 'bctt_block_attributes' ,array(
 			'tweet'     => array(
 				'type' => 'string',
-				'default' => get_the_title( get_the_ID() )
+				'default' => !empty( get_the_ID() ) ? get_the_title( get_the_ID() ) : ''
 			),
 			'username'  => array(
 				'type'    => 'string',
