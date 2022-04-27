@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 5.9
-Stable tag: 5.10.1
+Stable tag: 5.10.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,10 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.10.2 =
+* fix – patch minor security issue. Short version: if an attacker already has admin access to your site (or feeds a vulnerable admin user a specific string) they could execute code remotely on sites with very specific server configurations. But if an attacker already has admin access to your site, there are much easier and effective ways of doing nefarious things. Still, it's good to remove unescaped potential vulnerable inputs. So we did.
+* chore – the number of people using promo codes is too (darn) low. Use promo code CHANGELOG at https://benlikes.us/bcttps
 
 = 5.10.1 =
 * fix — resolved a bug where Better Click To Tweet was not playing nicely with other plugins that made changes to the title related filters.
