@@ -22,7 +22,7 @@
 
         <form 
             id="bctt-set-handle" 
-            action="<?php echo $_SERVER['REQUEST_URI']; ?>" 
+            action="<?php echo esc_attr($_SERVER['REQUEST_URI']); ?>" 
             method="post"
             class="text-center flex flex-col flex-no-wrap mt-8">
 
