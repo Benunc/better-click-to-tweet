@@ -246,7 +246,7 @@ function bctt_scripts() {
 }
 
 
-add_action( 'wp_enqueue_scripts', 'bctt_scripts', 10 );
+//add_action( 'wp_enqueue_scripts', 'bctt_scripts', 10 );
 
 /**
  * Check if default stylesheet must not be enqueued
