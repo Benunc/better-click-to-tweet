@@ -3,8 +3,8 @@ Contributors: ben.meredith@gmail.com, wpsteward
 Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
-Tested up to: 6.0
-Stable tag: 5.10.2
+Tested up to: 6.1
+Stable tag: 5.10.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,10 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.10.3 = 
+* updated compatibility for PHP 8.0 and 8.1
+* checked to make sure it works on the forthcoming WordPress 6.1
 
 = 5.10.2 =
 * fix – patch minor security issue. Short version: if an attacker already has admin access to your site (or feeds a vulnerable admin user a specific string) they could execute code remotely on sites with very specific server configurations. But if an attacker already has admin access to your site, there are much easier and effective ways of doing nefarious things. Still, it's good to remove unescaped potential vulnerable inputs. So we did.
