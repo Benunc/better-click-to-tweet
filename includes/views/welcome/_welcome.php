@@ -25,7 +25,8 @@
             action="<?php echo esc_attr($_SERVER['REQUEST_URI']); ?>" 
             method="post"
             class="text-center flex flex-col flex-no-wrap mt-8">
-
+            <?php wp_nonce_field( 'change-handle', 'save-the-handle' ); ?>
+            
             <label for="bctt-twitter" class="text-blue-500 font-bold">
                 <?php _e( 'Want a site-wide default for the "via" on the Tweet?', 'better-click-to-tweet' )?>
             </label>
