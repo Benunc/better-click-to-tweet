@@ -171,7 +171,7 @@ function bctt_settings_page() {
 
 						<div id="bctt_signup" class="inside">
 						<p><?php _e( 'We\'ve seen all the ways content gets shared online. Now we\'re building some tools to help you write better content.', 'better-click-to-tweet'); ?></p>
-						<p><strong><a href="https://dashboard.mailerlite.com/forms/319685/79491316893877812/share" target="_blank" rel="nofollow noopener noreferrer"> <?php _e( 'Be the first to Know', 'better-click-to-tweet' ); ?> </a></strong></p>
+						<p><strong><a href="https://benlikes.us/bcttsubscribe" target="_blank" rel="nofollow noopener noreferrer"> <?php _e( 'Be the first to Know', 'better-click-to-tweet' ); ?> </a></strong></p>
 						</div>
 						<!--/bctt_signup-->
 						<?php do_action( 'bctt_author_box_bottom' ); ?>
