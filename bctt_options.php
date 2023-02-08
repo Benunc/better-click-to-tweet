@@ -170,35 +170,8 @@ function bctt_settings_page() {
 						<h2><?php _e( 'Write Better Content', 'better-click-to-tweet' ); ?> </h2>
 
 						<div id="bctt_signup" class="inside">
-							<form
-								action="//benandjacq.us1.list-manage.com/subscribe/post?u=8f88921110b81f81744101f4d&amp;id=bd909b5f89&amp;SUBSET=settings_<?php echo urlencode( site_url() ) ?>"
-								method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
-								class="validate" target="_blank" novalidate>
-								<div id="mc_embed_signup_scroll">
-									<p> <?php  _e( 'We\'re building something big to not only amplify your content, but make it better to begin with.', 'better-click-to-tweet' ); ?></p>
-									<h3 class="bctt-signup"><?php _e( 'Sign up below to hear about it before anyone else.', 'better-click-to-tweet' ); ?></h3>
-
-									<p><label for="bctt-email-signup" class="hidden">
-                                            Your Email Address
-                                        </label>
-                                        <input id="bctt-email-signup" type="email" value="" name="EMAIL" class="widefat" id="mce-EMAIL"
-									          placeholder="<?php _ex( 'Your Email Address', 'placeholder text for input field', 'better-click-to-tweet' ); ?>">
-										<small><?php _e( 'No Spam. One-click unsubscribe in every message', 'better-click-to-tweet' ); ?></small>
-									</p>
-									<div style="position: absolute; left: -5000px;">
-                                        <label for="bctt-mailchimp-subscribe-hidden" class="hidden">
-                                            Hidden field for MailChimp verification
-                                        </label>
-                                        <input id="bctt-mailchimp-subscribe-hidden" type="text"
-									                                                       name="b_8f88921110b81f81744101f4d_bd909b5f89"
-									                                                       tabindex="-1" value="">
-									</div>
-									<p class="clear"><input type="submit" value="<?php _e( 'Subscribe', 'better-click-to-tweet' ); ?>" name="subscribe"
-									                        id="mc-embedded-subscribe" class="button-secondary"></p>
-
-								</div>
-								<!--/mc_embed_signup_scroll-->
-							</form>
+						<p><?php _e( 'We\'ve seen all the ways content gets shared online. Now we\'re building some tools to help you write better content.', 'better-click-to-tweet'); ?></p>
+						<p><strong><a href="https://dashboard.mailerlite.com/forms/319685/79491316893877812/share" target="_blank" rel="nofollow noopener noreferrer"> <?php _e( 'Be the first to Know', 'better-click-to-tweet' ); ?> </a></strong></p>
 						</div>
 						<!--/bctt_signup-->
 						<?php do_action( 'bctt_author_box_bottom' ); ?>
