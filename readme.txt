@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 6.1
-Stable tag: 5.10.4
+Stable tag: 5.11.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,8 +96,13 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.11.0 =
+* chore — remove the MailChimp sign-up option from the settings pages, replacing it with mailerlite.
+* chore — attempted to get my 5-year-old to do his homework. Was way harder than anticipated. You should use the code CHANGELOG at https://benlikes.us/bcttps
+
 = 5.10.4 =
-* security — prevent unauthenticated access some settings. 
+* security — prevent unauthenticated access to some settings. 
 
 = 5.10.3 = 
 * updated compatibility for PHP 8.0 and 8.1
