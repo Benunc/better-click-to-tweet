@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 6.1
-Stable tag: 5.11.0
+Stable tag: 5.11.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,9 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.11.1 =
+* chore — update the dependencies related to wp_scripts. This should have no effect other than stabilizing performance related to the block editor and compatibility with other plugins that use the block editor.
 
 = 5.11.0 =
 * chore — remove the MailChimp sign-up option from the settings pages, replacing it with mailerlite.
