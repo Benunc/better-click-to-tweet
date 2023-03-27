@@ -26,7 +26,12 @@ const editor = props => {
   const title = wp.data.select( 'core/editor' ).getEditedPostAttribute( 'title' );
 
   if ( !tweet ) {
-    setAttributes( { tweet: title } );
+    // Add a 1-second delay before inserting the title
+    setTimeout(() => {
+      if (!attributes.tweet) {
+        setAttributes({ tweet: title });
+      }
+    }, 1000);
   }
 
   // Events
