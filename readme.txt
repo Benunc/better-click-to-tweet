@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to tweet, twitter, tweet,
 Requires at least: 3.8
 Tested up to: 6.2
-Stable tag: 5.11.1
+Stable tag: 5.12.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,12 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.12.0 =
+* fix — the title was immediately overwriting things if users cleared the text from the block. Now it waits three seconds, and if you've not typed anything, it'll overwrite it. 
+* chore — I forgot to mention in the 5.11.1 changelog, but I also tested for compatibility with WordPress 6.2
+* news — Twitter has been doing some relatively aggressive repositioning under Elon Musk, but so far none of the changes there have adversely affected Better Click To Tweet. I'm obiviously keeping an eye on things, but overall just kinda sad that lots of good people have left Twitter. 
+* random — I still feel like more of you could be using the promo code CHANGELOG at https://benlikes.us/bcttps, considering nobody ever has. 
 
 = 5.11.1 =
 * chore — update the dependencies related to wp_scripts. This should have no effect other than stabilizing performance related to the block editor and compatibility with other plugins that use the block editor.
