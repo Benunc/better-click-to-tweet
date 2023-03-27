@@ -1,0 +1,65 @@
+name: Plugin Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build plugin
+        run: npm run build
+
+      - name: Remove unnecessary files
+        run: |
+          rm -rf node_modules
+          rm -rf .git
+          rm -rf .github
+          rm -rf .vscode
+          rm -rf tests
+          rm -rf .eslintrc.js
+          rm -rf .prettierrc.js
+          rm -rf package-lock.json
+          rm -rf README.md
+          rm -rf yarn.lock
+
+      - name: Update plugin version
+        run: |
+          PLUGIN_VERSION=$(node -p "require('./package.json').version")
+          sed -i "s/^Version:.*$/Version: $PLUGIN_VERSION/" /path/to/local/plugin/directory/your-plugin-name.php
+          sed -i "s/^Stable tag:.*$/Stable tag: $PLUGIN_VERSION/" /path/to/local/plugin/directory/readme.txt
+
+      - name: Release plugin
+        if: github.event.inputs.release == 'true'
+        run: |
+          PLUGIN_VERSION=$(node -p "require('./package.json').version")
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git tag -a v$PLUGIN_VERSION -m "Version $PLUGIN_VERSION"
+          git push origin v$PLUGIN_VERSION
+          svn cp https://plugins.svn.wordpress.org/your-plugin-name/trunk https://plugins.svn.wordpress.org/your-plugin-name/tags/$PLUGIN_VERSION -m "Tagging version $PLUGIN_VERSION"
+
+      - name: Create production zip
+        if: github.event.inputs.release != 'true'
+        run: |
+          PLUGIN_VERSION=$(node -p "require('./package.json').version")
+          zip -r ~/Desktop/your-plugin-name-$PLUGIN_VERSION.zip /path/to/local/plugin/directory/
+          echo "::set-output name=zip-path::~/Desktop/your-plugin-name-$PLUGIN_VERSION.zip"
+
+      - name: Upload production zip artifact
+        if: github.event.inputs.release != 'true'
+        uses: actions/upload-artifact@v2
+        with:
+          name: your-plugin-name-$PLUGIN_VERSION.zip
+          path: ${{ steps.create-zip.outputs.zip-path }}
