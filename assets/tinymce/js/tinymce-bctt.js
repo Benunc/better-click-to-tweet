@@ -15,24 +15,57 @@
 						{
 							type: 'textbox',
 							name: 'tweet',
+							id: 'bctt-tweet-textbox',
 							label: editor.getLang( 'bctt.tweetableQuote', 'Tweetable Quote' ),
 							multiline : true,
-							minHeight : 60
+							minHeight : 60,
+							onkeyup: function() { 
+								var tweetLength = jQuery( '#bctt-tweet-textbox' ).val().length;
+								tweetLength += 24; // Character count of URL plus space
+								if ( 'true' == jQuery( '#bctt-viamark-checkbox' ).attr( 'aria-checked' ) ) {
+									tweetLength += jQuery( '#bctt-username-textbox' ).val().length + 6; // Username count plus space & 'via'
+								}
+								jQuery( '#bctt-text-length p span' ).html( tweetLength );
+							}
 						},
 						{
 							type: 'checkbox',
 							checked: true,
 							name: 'viamark',
+							id: 'bctt-viamark-checkbox',
 							value: true,
-							text: editor.getLang( 'bctt.viaExplainer', 'Add the username below to this tweet'),
+							text: editor.getLang( 'bctt.viaExplainer', 'Add the username below to this tweet' ),
 							label: editor.getLang( 'bctt.viaPrompt', 'Include "via"?'),
+							onclick: function() { 
+								var tweetLength = jQuery( '#bctt-tweet-textbox' ).val().length;
+								tweetLength += 24; // Character count of URL
+								if ( 'true' == jQuery( '#bctt-viamark-checkbox' ).attr( 'aria-checked' ) ) {
+									tweetLength += jQuery( '#bctt-username-textbox' ).val().length + 6; // Username count plus space & 'via'
+								}
+								jQuery( '#bctt-text-length p span' ).html( tweetLength );
+							}
 						},
 						{
 							type: 'textbox',
 							name: 'username',
-							label: editor.getLang( 'bctt.usernameExplainer', 'Which Twitter username?'),
+							id: 'bctt-username-textbox',
+							label: editor.getLang( 'bctt.usernameExplainer', 'Which Twitter username?' ),
 							multiline: false,
-							value: editor.getLang( 'bctt.userPrePopulated', ''),
+							value: editor.getLang( 'bctt.userPrePopulated', '' ),
+							onkeyup: function() { 
+								var tweetLength = jQuery( '#bctt-tweet-textbox' ).val().length;
+								tweetLength += 24; // Character count of URL
+								if ( 'true' == jQuery( '#bctt-viamark-checkbox' ).attr( 'aria-checked' ) ) {
+									tweetLength += jQuery( '#bctt-username-textbox' ).val().length + 6; // Username count plus space & 'via'
+								}
+								jQuery( '#bctt-text-length p span' ).html( tweetLength );
+							}
+						},
+						{
+							type: 'container',
+							name: 'container',
+							id: 'bctt-text-length',
+							html: '<p>' + editor.getLang( 'bctt.totalLengthExplainer', 'Total Length:' ) + ' <span></span></p>'
 						}
 					],
 					width: 800,
