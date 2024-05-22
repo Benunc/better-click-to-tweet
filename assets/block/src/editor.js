@@ -22,7 +22,7 @@ const editor = props => {
   const { attributes, setAttributes, className } = props;
   const { tweet, prompt } = attributes;
 
-  // Default tweet content
+  // Default quotable content
   const title = wp.data.select('core/editor').getEditedPostAttribute('title');
 
   let timerId; // declare a variable to hold the timer ID
@@ -58,7 +58,7 @@ const editor = props => {
             format="string"
             allowedFormats={[]}
             tagName="div"
-            placeholder={__('Enter text for readers to Tweet')}
+            placeholder={__('Enter text for readers to Share on X')}
             onChange={onChangeTweet}
             value={tweet}
           />

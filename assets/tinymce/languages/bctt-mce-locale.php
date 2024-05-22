@@ -14,11 +14,11 @@ $strings =
 		"' . $mce_locale . '.bctt",
 			{
 			toolTip : "' . esc_js( _x( 'Better Click To Tweet Shortcode Generator', 'Text that shows on mouseover for visual editor button', 'better-click-to-tweet' ) ) . '",
-			windowTitle : "' . esc_js( _x( 'Better Click To Tweet Shortcode Generator', 'Text for title of the popup box when creating tweetable quote in the visual editor', 'better-click-to-tweet' ) ) . '",
+			windowTitle : "' . esc_js( _x( 'Better Click To Tweet Shortcode Generator', 'Text for title of the popup box when creating sharableable quote in the visual editor', 'better-click-to-tweet' ) ) . '",
 			tweetableQuote : "' . esc_js( _x( 'Tweetable Quote', 'Text for label on input box on popup box in visual editor', 'better-click-to-tweet' ) ) . '",
-			viaExplainer : "' . esc_js( _x( 'Add the username below to this tweet', 'Text explaining the checkbox on the visual editor', 'better-click-to-tweet' ) ) . '",
+			viaExplainer : "' . esc_js( _x( 'Add the username below to this post on X', 'Text explaining the checkbox on the visual editor', 'better-click-to-tweet' ) ) . '",
 			viaPrompt : "' . esc_js( _x( 'Include via?', 'Checkbox label in visual editor', 'better-click-to-tweet' ) ) . '",
-			usernameExplainer : "' . esc_js( _x( 'Which Twitter username?', 'Help text for label in visual editor', 'better-click-to-tweet' ) ) . '",
+			usernameExplainer : "' . esc_js( _x( 'Which X username?', 'Help text for label in visual editor', 'better-click-to-tweet' ) ) . '",
 			userPrePopulated : "' . esc_js( get_option( 'bctt-twitter-handle' ) ) . '",
 			} 
   		);

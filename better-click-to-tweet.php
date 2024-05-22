@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Better Click To Tweet
- * Description: Add Click to Tweet boxes simply and elegantly to your posts or pages. All the features of a premium plugin, for FREE!
+ * Description: Add styled boxes to posts and pages so that readers can share your content on X. Increase engagement by asking for it. All the features of a premium plugin, for FREE!
  * Version: 5.12.0
  * Author: Ben Meredith
  * Author URI: https://www.betterclicktotweet.com
@@ -100,7 +100,7 @@ function bctt_shortcode( $atts ) {
 		'username' => $twitter_handle ? $twitter_handle : 'not-a-real-user',
 		'url'      => 'yes',
 		'nofollow' => 'no',
-		'prompt'   => sprintf( _x( 'Click To Tweet', 'Text for the box on the reader-facing box', 'better-click-to-tweet' ) )
+		'prompt'   => sprintf( _x( 'Click To Share on X', 'Text for the box on the reader-facing box', 'better-click-to-tweet' ) )
 	) ), $atts, 'bctt' );
 
 	//since 4.7: adds option to add in a per-box username to the tweet

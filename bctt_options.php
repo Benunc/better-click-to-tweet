@@ -47,7 +47,7 @@ function bctt_settings_page() {
 	<div class="wrap">
 
 	<h1 class="wp-heading-inline"><?php /* translators: Treat "Better Click To Tweet" as a brand name, don't translate it */
-		_e( 'Better Click To Tweet — a plugin by Ben Meredith', 'better-click-to-tweet' ); ?></h1>
+		_e( 'Better Click To Tweet — a plugin by WP Steward', 'better-click-to-tweet' ); ?></h1>
 
 	<hr/>
 	<?php do_action( 'bctt_settings_top' ); ?>
@@ -62,16 +62,17 @@ function bctt_settings_page() {
 					<p class="bctt-setup-alert"><strong><?php echo sprintf( __( 'Don\'t miss the <a href="%s">Setup Wizard</a>', 'better-click-to-tweet' ), admin_url( '?page=bctt-welcome&step=bctt-setup' ) ); ?></strong></p>
 
 						<p><?php /* translators: Treat "Better Click To Tweet" as a brand name, don't translate it */
-							_e( 'To add styled click-to-tweet quote boxes include the Better Click To Tweet shortcode or Gutenberg block in your post.', 'better-click-to-tweet' ); ?></p>
+							_e( 'To add styled one-click-to-share-on-X quote boxes include the Better Click To Tweet shortcode or Gutenberg block in your post.', 'better-click-to-tweet' ); ?></p>
 
 						<p><?php _e( 'Here\'s how you format the shortcode:', 'better-click-to-tweet' ); ?></p>
 						<pre>[bctt tweet="<?php /* translators: This text shows up as a sample tweet in the instructions for how to use the plugin. */
-							_e( 'Meaningful, tweetable quote.', 'better-click-to-tweet' ); ?>"]</pre>
+							_e( 'Meaningful, shareable quote.', 'better-click-to-tweet' ); ?>"]</pre>
 						<p><?php /* translators: Also, treat "BCTT" as a brand name, don't translate it */
 							_e( 'If you are using the visual editor, click the BCTT birdie in the toolbar to add a pre-formatted shortcode to your post.', 'better-click-to-tweet' ); ?></p>
                         <p><?php
-							_e( 'In the WordPress 5.0 editor (codenamed Gutenberg), there is a Better Click To Tweet block.', 'better-click-to-tweet' ); ?></p>
-						<p><?php _e( 'If you include a link back to the post using the URL parameter (or leaving it out, the default behavior), the tweet length is automatically shortened to 253 characters minus the length of your twitter handle, to leave room for the handle and link back to the post.', 'better-click-to-tweet' ); ?></p>
+							_e( 'In the Block-based editor, there is a Better Click To Tweet block.', 'better-click-to-tweet' ); ?></p>
+						<p><?php _e( 'If you include a link back to the post using the URL parameter (or leaving it out, the default behavior), the post length is automatically shortened to 253 characters minus the length of your x.com username, to leave room for the handle and link back to the post.', 'better-click-to-tweet' ); ?></p>
+						<p><?php _e( 'NOTE: X.com allows premium members to post longer than 280 characters. Better Click To Tweet is designed to allow ALL users there to be able to share your post. That\'s why we do not plan to support longer posts to X.', 'better-click-to-tweet' ); ?></p>
                         <p><?php echo sprintf( __( 'Learn more about the URL parameter as well as the other power user features in the <a href=%s>Power User Guide</a>.', 'better-click-to-tweet' ), esc_url( 'http://benlikes.us/7r') ); ?></p>
 					</div>
 					<!--/inside-->
@@ -82,9 +83,9 @@ function bctt_settings_page() {
 					<h2><?php _e( 'Settings', 'better-click-to-tweet' ); ?></h2>
 					<div class="inside">
 						<div class="main">
-							<p><?php _e( 'Enter your Twitter handle to add "via @yourhandle" to your tweets. Do not include the @ symbol.', 'better-click-to-tweet' ); ?></p>
+							<p><?php _e( 'Enter your X Username to add "via @yourhandle" to the posts that are shared on X. Do not include the @ symbol.', 'better-click-to-tweet' ); ?></p>
 
-							<p><?php _e( 'Checking the box below will force the plugin to show the WordPress shortlink in place of the full URL. While this does not impact tweet character length, it is useful alongside plugins which customize the WordPress shortlink using services like bit.ly or yourls.org for tracking.', 'better-click-to-tweet' ) ?> </p>
+							<p><?php _e( 'Checking the box below will force the plugin to show the WordPress shortlink in place of the full URL. While this does not impact character length, it is useful alongside plugins which customize the WordPress shortlink using services like bit.ly or yourls.org for tracking.', 'better-click-to-tweet' ) ?> </p>
 
 							<form method="post" action="options.php" style="">
 								<?php settings_fields( 'bctt_clicktotweet-options' ); ?>
@@ -149,7 +150,7 @@ function bctt_settings_page() {
 								</p>
 								<br class="clear"/>
 								<em><?php $url = 'https://www.betterclicktotweet.com';
-									$link      = sprintf( __( 'An open source plugin by <a href=%s>Ben Meredith</a>', 'better-click-to-tweet' ), esc_url( $url ) );
+									$link      = sprintf( __( 'An open source plugin by <a href=%s>WP Steward</a>', 'better-click-to-tweet' ), esc_url( $url ) );
 									echo $link; ?></em>
 							</form>
 

@@ -1,20 +1,20 @@
 === Better Click To Tweet ===
 Contributors: ben.meredith@gmail.com, wpsteward
 Donate link: https://www.wpsteward.com/donations/plugin-support/
-Tags: click to tweet, twitter, tweet,
+Tags: click to social, twitter, x.com,
 Requires at least: 3.8
 Tested up to: 6.2
 Stable tag: 5.12.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Insert click to tweet boxes into your posts, simply and securely. Gutenberg/WordPress 5.X+ block included.
+Insert styled call-out boxes into your posts, simply and securely. Encourage readers to share your content on X.com.
 
 == Description ==
 
-= The most popular Click To Tweet Plugin for WordPress (by a mile), for good reason. =
+= The most popular Click To Tweet Plugin for WordPress (by a mile), for good reason. Want your WordPress-to-X sharing, but easier? =
 
-Create tweetable content for your readers, using a simple shortcode or Gutenberg block. Readers are encouraged to tweet out both a quote, and a link to your content.
+Make it dead-simple for your readers to share your content on X, using a simple shortcode or Gutenberg block. Readers are encouraged to share a quote, and a link to your content.
 
 * [Add Premium Styles](http://benlikes.us/bcttps "Premium Styles add-on") with just a few clicks.
 * Using the shortcode method in the classic editor? See our [Power User Guide](http://benlikes.us/7r "power user guide") for all the tricks (remove or change the "via," make links nofollow, change the callback URL, and more!).
@@ -30,16 +30,16 @@ Translation is managed at [the official WordPress translation page](https://tran
 
 **To install the plugin manually in WordPress:**
 
-1. Login as Admin on your WordPress blog.
-2. Click on the "Plugins" tab in the left menu.
+1. Log in as an administrator.
+2. Navigate to the "Plugins" tab in the left menu.
 3. Select "Add New."
-4. Click on "Upload" at the top of the page.
+4. Select "Upload" at the top of the page.
 5. Select the 'better-click-to-tweet.zip' on your computer, and upload. Activate the plugin once it is uploaded.
 
 **To install the plugin manually with FTP:**
 
 1. Unzip the 'better-click-to-tweet.zip' file. Upload that folder to the '/wp-content/plugins/' directory.
-2. Login to your WordPress dashboard and activate the plugin through the "Plugins" tab in the left menu.
+2. Log in to your WordPress dashboard and activate the plugin through the "Plugins" tab in the left menu.
 
 == Frequently Asked Questions ==
 
@@ -49,17 +49,16 @@ Yes! If you are a developer or handy with CSS, there are [limitless options for 
 If you are not a developer, I have released a premium add-on for selecting among several (and growing) different style options. Check out [Premium Styles](http://benlikes.us/bcttps "Premium Styles for Better Click To Tweet")
 
 = How does Better Click To Tweet work? =
-Better Click To Tweet enables you to create beautiful Click To Tweet boxes in your blog posts. Once you've installed and activated the plugin, click on the settings link to put in your Twitter username, and save the settings. 
+Better Click To Tweet enables you to create beautiful call-out boxes in your blog posts, asking your readers to share on X. Once you've installed and activated the plugin, click on the settings link to put in your Twitter username, and save the settings. 
 
-Then, wherever you want to insert a Click to Tweet quote, use a shortcode in the format `[bctt tweet="xxxxxxxxxxxx"]` replacing the `xxxxxxx` with your tweetable quote.
+Then, wherever you want to insert a shareable quote, use a shortcode in the format `[bctt tweet="xxxxxxxxxxxx"]` replacing the `xxxxxxx` with your shareable quote.
 
-
-In the visual editor, you can click the blue birdy icon in the toolbar and a correctly formatted shortcode will be inserted in your text. For more info or clarifications, start a [support thread](https://wordpress.org/support/plugin/better-click-to-tweet "support forum"). I'll actively answer.
+There's also a block for the WordPress Block Editor!
 
 = How does the URL shortener functionality work? =
 Better Click To Tweet gives you the maximum number of characters possible. Allow me to explain:
 
-Twitter automatically routes every link through its own URL shortener (you might recognize t.co as the domain they use). For their t.co links, the length is automatically truncated to 23 characters for URLs. This leaves 253 characters after the URL for you to use to compose your tweet. Even a link that is run through bit.ly or a yourls.org install is still routed through t.co in the tweet.
+X automatically routes every link through its own URL shortener (you might recognize t.co as the domain they use). For their t.co links, the length is automatically truncated to 23 characters for URLs. This leaves 253 characters after the URL for you to use to compose your tweet. Even a link that is run through bit.ly or a yourls.org install is still routed through t.co in the tweet.
 
 The benefit of URL shorteners goes beyond just character length, though. Many users use bit.ly or a similar service to track numbers of clicks and other analytical data. I personally use yourls.org to power http://benlikes.us for my shortened links.
 
@@ -67,14 +66,7 @@ Better Click To Tweet works alongside url shortening plugins to harness that pow
 
 WordPress has a feature called "shortlinks" which changes the long URL to something like example.com/?p=3435. Various plugins in the official plugin directory exist to change that shortlink to one using other outside services. Using a combination of those plugins and mine, your Better Click To Tweet boxes can now display a trackable link.
 
-On the settings page for Better Click To Tweet, simply check the box indicating you'd like to use the short URL, and save changes. If you've got a plugin that correctly hijacks the built-in WordPress shortlink functionality, you're all set! I've tested my plugin with the following plugins, and will make every effort to keep this list updated:
-
-* [WP Bitly](https://wordpress.org/plugins/wp-bitly/ "WP Bit.ly")
-* [YOURLS Link Creator](https://wordpress.org/support/plugin/yourls-link-creator "YOURLS Link Creator")
-* [Goo.gl](https://wordpress.org/plugins/googl/ "Goo.gl")
-
-If you run into any issues with my plugin not working alongside a certain link shortener, start a [support thread](https://wordpress.org/support/plugin/better-click-to-tweet "support forum") and include a link to the other plugin. I'll see what I can do to work with the other developer.
-
+On the settings page for Better Click To Tweet, simply check the box indicating you'd like to use the short URL, and save changes. If you've got a plugin that correctly hijacks the built-in WordPress shortlink functionality, you're all set! 
 I've also written [a tutorial](http://benlikes.us/79 "shortlink tutorial") for how to set up the shortlinks with bit.ly and yourls.org.
 
 = Are there any other hidden tricks? =
