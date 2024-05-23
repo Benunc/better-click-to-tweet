@@ -93,7 +93,7 @@ function bctt_settings_page() {
 								<table class="form-table">
 									<tr valign="top">
 										<th style="width: 200px;">
-											<label for="bctt-twitter-handle"><?php _ex( 'Your Twitter Handle', 'label for text input on settings screen', 'better-click-to-tweet' ); ?></label>
+											<label for="bctt-twitter-handle"><?php _ex( 'Your X Username', 'label for text input on settings screen', 'better-click-to-tweet' ); ?></label>
 										</th>
 										<td><input id="bctt-twitter-handle" type="text" name="bctt-twitter-handle"
 										           value="<?php echo esc_attr( get_option( 'bctt-twitter-handle' ) ); ?>"/>
