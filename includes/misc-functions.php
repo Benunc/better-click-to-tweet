@@ -1,4 +1,8 @@
 <?php
+
+// Include the callout box file
+include_once plugin_dir_path(__FILE__) . 'admin-clarifier.php';
+
 /**
  * Get plugin info including status, type, and license validation.
  *
@@ -12,6 +16,9 @@
  * @return array Plugin info plus status, and type if
  *               available.
  */
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 function bctt_get_active_addons() {
 	$plugins             = get_plugins();

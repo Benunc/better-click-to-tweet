@@ -43,8 +43,8 @@ function bctt_settings() {
     $addons = bctt_get_active_addons();
     ?>
     <div class="wrap">
-        <h2 class="dashicons-before dashicons-twitter"> 
-            <?php _e( 'Better Click To Tweet', 'better-click-to-tweet' ); ?>
+        <h2 class="bctt_settings_header"> 
+            <?php _e( 'Better Click To Tweet Settings', 'better-click-to-tweet' ); ?>
         </h2>
          
         <?php
