@@ -47,7 +47,7 @@ function bctt_settings_page() {
 	<div class="wrap">
 
 	<h1 class="wp-heading-inline"><?php /* translators: Treat "Better Click To Tweet" as a brand name, don't translate it */
-		_e( 'Better Click To Tweet — a plugin by WP Steward', 'better-click-to-tweet' ); ?></h1>
+		_e( 'Better Click To Tweet — a plugin by Ben Meredith', 'better-click-to-tweet' ); ?></h1>
 
 	<hr/>
 	<?php do_action( 'bctt_settings_top' ); ?>
@@ -150,7 +150,7 @@ function bctt_settings_page() {
 								</p>
 								<br class="clear"/>
 								<em><?php $url = 'https://www.betterclicktotweet.com';
-									$link      = sprintf( __( 'An open source plugin by <a href=%s>WP Steward</a>', 'better-click-to-tweet' ), esc_url( $url ) );
+									$link      = sprintf( __( 'An open source plugin by <a href=%s>Ben Meredith</a>', 'better-click-to-tweet' ), esc_url( $url ) );
 									echo $link; ?></em>
 							</form>
 

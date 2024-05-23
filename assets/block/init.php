@@ -62,7 +62,7 @@ register_block_type( 'bctt/clicktotweet', array(
 			),
 			'prompt'    => array(
 				'type'    => 'string',
-				'default' => sprintf( _x( 'Click To Share on X', 'Text for the box on the reader-facing box', 'better-click-to-tweet' ) )
+				'default' => sprintf( _x( 'Share on X', 'Text for the box on the reader-facing box', 'better-click-to-tweet' ) )
 			),
 		)),
 	)

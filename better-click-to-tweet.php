@@ -100,7 +100,7 @@ function bctt_shortcode( $atts ) {
 		'username' => $twitter_handle ? $twitter_handle : 'not-a-real-user',
 		'url'      => 'yes',
 		'nofollow' => 'no',
-		'prompt'   => sprintf( _x( 'Click To Share on X', 'Text for the box on the reader-facing box', 'better-click-to-tweet' ) )
+		'prompt'   => sprintf( _x( 'Share on X', 'Text for the box on the reader-facing box', 'better-click-to-tweet' ) )
 	) ), $atts, 'bctt' );
 
 	//since 4.7: adds option to add in a per-box username to the tweet
