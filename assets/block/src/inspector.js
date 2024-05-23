@@ -24,7 +24,7 @@ const Inspector = ({ attributes, setAttributes }) => {
           onChange={value => updateAttribute("username", value)}
         />
         <ToggleControl
-          label={__("Include the username in Tweet?")}
+          label={__("Include an X username in shared post?")}
           checked={via}
           onChange={value => updateAttribute("via", value)}
         />
@@ -38,7 +38,7 @@ const Inspector = ({ attributes, setAttributes }) => {
       </PanelBody>
       <PanelBody title={__("URL")} initialOpen={false}>
         <ToggleControl
-          label={__("Include URL in tweet?")}
+          label={__("Include URL in shared post?")}
           checked={url}
           onChange={value => updateAttribute("url", value)}
         />

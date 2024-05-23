@@ -15,7 +15,7 @@
 						{
 							type: 'textbox',
 							name: 'tweet',
-							label: editor.getLang( 'bctt.tweetableQuote', 'Tweetable Quote' ),
+							label: editor.getLang( 'bctt.tweetableQuote', 'Shareable Quote' ),
 							multiline : true,
 							minHeight : 60
 						},
@@ -24,13 +24,13 @@
 							checked: true,
 							name: 'viamark',
 							value: true,
-							text: editor.getLang( 'bctt.viaExplainer', 'Add the username below to this tweet'),
+							text: editor.getLang( 'bctt.viaExplainer', 'Add the username below to the shared post'),
 							label: editor.getLang( 'bctt.viaPrompt', 'Include "via"?'),
 						},
 						{
 							type: 'textbox',
 							name: 'username',
-							label: editor.getLang( 'bctt.usernameExplainer', 'Which Twitter username?'),
+							label: editor.getLang( 'bctt.usernameExplainer', 'Which x.com username?'),
 							multiline: false,
 							value: editor.getLang( 'bctt.userPrePopulated', ''),
 						}

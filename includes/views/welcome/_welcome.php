@@ -28,7 +28,7 @@
             <?php wp_nonce_field( 'change-handle', 'save-the-handle' ); ?>
             
             <label for="bctt-twitter" class="text-blue-500 font-bold">
-                <?php _e( 'Want a site-wide default for the "via" on the Tweet?', 'better-click-to-tweet' )?>
+                <?php _e( 'Want a site-wide default for the "via" on the shared post?', 'better-click-to-tweet' )?>
             </label>
             <div class="mt-4 flex justify-center">
                 <span class="flex justify-center bg-gray-300 rounded px-2 -mr-2">
@@ -48,7 +48,7 @@
                     name="bctt-twitter" 
                     id="bctt-twitter" 
                     value="<?php echo esc_attr( get_option( 'bctt-twitter-handle' ) ); ?>"
-                    placeholder="<?php _e( 'Enter your Twitter handle ', 'better-click-to-tweet' )?>"
+                    placeholder="<?php _e( 'Enter your X Username ', 'better-click-to-tweet' )?>"
                     class="border-2 border-solid border-gray-300 text-gray-600 px-2 pl-2 py-1 rounded text-center w-1/2"
                 />
             </div>

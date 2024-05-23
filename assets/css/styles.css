@@ -70,12 +70,10 @@ a.bctt-ctt-btn {
     color: #999999 !important;
     float: right;
     text-decoration: none !important;
-    background: transparent url(../img/birdy.png) no-repeat right top 10px;
     box-shadow: none !important;
 }
 
 .bctt-ctt-btn:hover {
     text-decoration: none;
     color: #666666 !important;
-    background: transparent url(../img/birdy.png) no-repeat right top 8px;
 }

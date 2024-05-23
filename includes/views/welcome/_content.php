@@ -6,7 +6,7 @@
                 </p>
                 
                 <p class="mb-4">
-                    <?php _e( 'Since launching Better Click To Tweet in 2014, I\'ve seen thousands of folks use the plugin, and some patterns started to emerge. Some would get one or two clicks-to-tweet while others got hundreds or even thousands of clicks. I started to isolate what made the difference.', 'better-click-to-tweet')  ?>
+                    <?php _e( 'Since launching Better Click To Tweet in 2014, I\'ve seen thousands of folks use the plugin, and some patterns started to emerge. Some would get one or two shares while others got hundreds or even thousands of clicks. I started to isolate what made the difference.', 'better-click-to-tweet')  ?>
                 </p>
 
                 <div class="border border-solid border-blue-200 bg-blue-100 p-4 rounded flex justify-center my-12">
