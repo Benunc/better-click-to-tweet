@@ -3,8 +3,8 @@ Contributors: ben.meredith@gmail.com, wpsteward
 Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to social, twitter, x.com,
 Requires at least: 3.8
-Tested up to: 6.2
-Stable tag: 5.12.0
+Tested up to: 6.5
+Stable tag: 5.13.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -88,6 +88,11 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.13.0 =
+* enhancement — finally gave up hope that Elon Musk would come to his senses on this whole "rebrand" thing, and went about removing the words "Tweet" and "Twitter" from the user interfaces throughout the plugin. Of course, you'll note that we didn't change the name of the plugin, but any place where your readers see it we made it such that you can talk about "sharing on X" instead of "clicking to Tweet." To the future of this platform!
+* chore — checked for compatibility with the latest version of WordPress
+* random — Checking to see if there's a record to be broken on age-of-unused-promo-code (the promo code is CHANGELOG at https://benlikes.us/bcttps) but the folks at Guinness won't return my calls. 
 
 = 5.12.0 =
 * fix — the title was immediately overwriting things if users cleared the text from the block. Now it waits three seconds, and if you've not typed anything, it'll overwrite it. 
