@@ -8,21 +8,19 @@ Stable tag: 5.13.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Insert styled call-out boxes into your posts, simply and securely. Encourage readers to share your content on X.com.
+Insert styled call-out boxes into your posts, simply and securely. Encourage readers to share your content on X in one simple action.
 
 == Description ==
 
-= The most popular Click To Tweet Plugin for WordPress (by a mile), for good reason. Want your WordPress-to-X sharing, but easier? =
+The most popular plugin for allowing readers to share content on X.com (formerly Twitter). 
 
-Make it dead-simple for your readers to share your content on X, using a simple shortcode or Gutenberg block. Readers are encouraged to share a quote, and a link to your content.
+Make it dead-simple for your readers to share your content on X, using a simple shortcode or block. Readers are encouraged to share a quote, and a link to your content.
 
 * [Add Premium Styles](http://benlikes.us/bcttps "Premium Styles add-on") with just a few clicks.
 * Using the shortcode method in the classic editor? See our [Power User Guide](http://benlikes.us/7r "power user guide") for all the tricks (remove or change the "via," make links nofollow, change the callback URL, and more!).
 
-><strong> Why Better?</strong><br>
->Back in the day, there was only one or two options for Click to Tweet plugins. They didn't do a lot of things I wanted them to do, so I made this plugin. I'm bad at naming things, so "Better Click To Tweet" it is. Since then, I've made so many changes and enhancements that any resemblance to the original inspiration plugins are long gone.
 
-**Developer? Designer? Geek of any sort?** Please hop in and suggest improvements. You can create issues or submit pull requests at the [github repository](https://github.com/Benunc/better-click-to-tweet "plugin github repo") for this plugin.
+**Developer? Designer? Geek of any sort?** We're always open to feature requests and PRs. You can create issues or submit pull requests at the [GitHub repository](https://github.com/Benunc/better-click-to-tweet "Better Click to Tweet on GitHub") for this plugin.
 
 Translation is managed at [the official WordPress translation page](https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet "WordPress translation").
 
@@ -42,6 +40,13 @@ Translation is managed at [the official WordPress translation page](https://tran
 2. Log in to your WordPress dashboard and activate the plugin through the "Plugins" tab in the left menu.
 
 == Frequently Asked Questions ==
+
+= Why are you still calling it "Tweet," post-rebrand to X? =
+Short and most accurate answer: Because I bought a domain name at betterclicktoweet.com back in the day, and it would be a ton of (unpaid) work to migrate to a new one, not to mention coming up with a way to make it not sound... boring.
+
+Longer answer: most users over at X are still calling the act of posting there "tweeting" at this point, and I don't see that changing. I've gone in and made all of the language that is publicly shared more inclusive of the (sadly bland) concept of "sharing on X" so that there's no confusion for anyone unaware that X used to be called Twitter.
+
+I may eventually rebrand completely, but it would have to make a ton of sense from a financial perspective. This is not my day job. 
 
 = Are there other style options? =
 Yes! If you are a developer or handy with CSS, there are [limitless options for styling](http://benlikes.us/bcttcustom "custom style for Better Click To Tweet").
@@ -83,7 +88,7 @@ Donations: http://benlikes.us/donate
 == Screenshots ==
 
 1. Find our block with a forward slash...
-1. ...and adding tweetable content just got EASY.
+1. ...and adding sharablable content just got EASY.
 1. This in the classic editor...
 1. Becomes this in your blog post!
 
