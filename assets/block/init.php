@@ -87,6 +87,6 @@ function bctt_block_callback( $attributes ) {
 		'nofollow' => $nofollow ? 'yes' : 'no',
 		'prompt'   => $prompt
 	), $attributes );
-
+    bctt_scripts();
 	return bctt_shortcode( $shortcode_attributes );
 }
