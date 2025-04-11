@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to social, twitter, x.com,
 Requires at least: 3.8
 Tested up to: 6.8
-Stable tag: 5.13.0
+Stable tag: 5.14.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,14 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.14.0 =
+* fix — Fixed translation loading issues for WordPress 6.8 compatibility by ensuring translations are loaded at the proper time
+* enhancement — Modernized block editor code to use the latest WordPress block editor APIs and patterns
+* enhancement — Added block.json for improved block registration
+* enhancement — Updated React components to use modern patterns and hooks
+* chore — Tested and confirmed compatibility with WordPress 6.8
+* random — Still waiting for someone to use the promo code CHANGELOG at https://benlikes.us/bcttps
 
 = 5.13.0 =
 * enhancement — finally gave up hope that Elon Musk would come to his senses on this whole "rebrand" thing, and went about removing the words "Tweet" and "Twitter" from the user interfaces throughout the plugin. Of course, you'll note that we didn't change the name of the plugin, but any place where your readers see it we made it such that you can talk about "sharing on X" instead of "clicking to Tweet." To the future of this platform!
