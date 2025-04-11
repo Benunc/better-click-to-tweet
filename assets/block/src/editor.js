@@ -1,5 +1,5 @@
 /**
- * External dependecies
+ * External dependencies
  */
 import classnames from 'classnames';
 
@@ -7,8 +7,10 @@ import classnames from 'classnames';
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
-import { RichText } from '@wordpress/block-editor';
+import { useEffect, useRef } from '@wordpress/element';
+import { RichText, useBlockProps } from '@wordpress/block-editor';
+import { useSelect } from '@wordpress/data';
+import { store as editorStore } from '@wordpress/editor';
 
 /**
  * Internal dependencies
@@ -18,24 +20,32 @@ import Inspector from './inspector';
 /**
  * Block edit component
  */
-const editor = props => {
-  const { attributes, setAttributes, className } = props;
+const Editor = (props) => {
+  const { attributes, setAttributes } = props;
   const { tweet, prompt } = attributes;
+  const timerRef = useRef(null);
 
-  // Default quotable content
-  const title = wp.data.select('core/editor').getEditedPostAttribute('title');
+  // Get the post title using the new useSelect hook
+  const title = useSelect(
+    (select) => select(editorStore).getEditedPostAttribute('title'),
+    []
+  );
 
-  let timerId; // declare a variable to hold the timer ID
-
-  if (!tweet) {
-    setAttributes({ tweet: title });
-  }
+  // Set default tweet text when component mounts or title changes
+  useEffect(() => {
+    if (!tweet && title) {
+      setAttributes({ tweet: title });
+    }
+  }, [tweet, title, setAttributes]);
 
   // Events
-  const onChangeTweet = value => {
-    clearTimeout(timerId); // clear the timer if it's already set
+  const onChangeTweet = (value) => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+
     if (!value) {
-      timerId = setTimeout(() => {
+      timerRef.current = setTimeout(() => {
         setAttributes({ tweet: title });
       }, 3000);
     } else {
@@ -43,22 +53,28 @@ const editor = props => {
     }
   };
 
-  const onClickPrompt = () => {
+  const onClickPrompt = (e) => {
+    e.preventDefault();
     return false;
   };
-  
+
+  // Get block props with className
+  const blockProps = useBlockProps({
+    className: 'bctt-click-to-tweet',
+  });
+
   // Render block editor
   return (
-    <Fragment>
-      <Inspector {...{ ...props }} />
+    <>
+      <Inspector {...props} />
 
-      <span className={classnames(className, 'bctt-click-to-tweet')}>
+      <div {...blockProps}>
         <span className="bctt-ctt-text">
           <RichText
             format="string"
             allowedFormats={[]}
             tagName="div"
-            placeholder={__('Enter text for readers to Share on X')}
+            placeholder={__('Enter text for readers to Share on X', 'better-click-to-tweet')}
             onChange={onChangeTweet}
             value={tweet}
           />
@@ -66,9 +82,9 @@ const editor = props => {
         <a href="#" onClick={onClickPrompt} className="bctt-ctt-btn">
           {prompt}
         </a>
-      </span>
-    </Fragment>
+      </div>
+    </>
   );
 };
 
-export default editor;
+export default Editor;

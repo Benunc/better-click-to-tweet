@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "bctt/clicktotweet",
+  "title": "Better Click to Tweet",
+  "category": "formatting",
+  "icon": "twitter",
+  "description": "Add text for your readers to tweet, calling them to action on your behalf.",
+  "keywords": ["Twitter", "Tweet"],
+  "supports": {
+    "align": false,
+    "alignWide": false
+  },
+  "attributes": {
+    "tweet": {
+      "type": "string",
+      "default": ""
+    },
+    "username": {
+      "type": "string",
+      "default": ""
+    },
+    "via": {
+      "type": "boolean",
+      "default": true
+    },
+    "url": {
+      "type": "boolean",
+      "default": true
+    },
+    "urlcustom": {
+      "type": "string",
+      "default": ""
+    },
+    "nofollow": {
+      "type": "boolean",
+      "default": false
+    },
+    "prompt": {
+      "type": "string",
+      "default": "Share on X"
+    }
+  },
+  "textdomain": "better-click-to-tweet",
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "bctt-block-editor-css"
+}
