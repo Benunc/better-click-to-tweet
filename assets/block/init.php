@@ -11,13 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Enqueue Block assets
 function bctt_block_editor_assets() {
-	$asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
-	wp_enqueue_script( 
-		'bctt-block-js', 
-		plugins_url( 'block/build/index.js', dirname( __FILE__ ) ), 
-		$asset_file['dependencies'],
-		$asset_file['version']
-	);
 	if ( ! bctt_is_default_styles_dequeued() ) {
 		$stylesheet_url = bctt_get_stylesheet_url();
 		wp_enqueue_style( 'bctt-block-editor-css', $stylesheet_url, array(), 'all' );
@@ -32,41 +25,47 @@ function bctt_block_editor_assets() {
 // Hook assets to editor
 add_action( 'enqueue_block_editor_assets', 'bctt_block_editor_assets' );
 
-// Server side rendering callback to output shortcode
-register_block_type( 'bctt/clicktotweet', array(
-		'render_callback' => 'bctt_block_callback',
-		'attributes'      => apply_filters ( 'bctt_block_attributes' ,array(
-			'tweet'     => array(
-				'type' => 'string',
-				'default' => !empty( get_the_ID() ) ? get_the_title( get_the_ID() ) : ''
-			),
-			'username'  => array(
-				'type'    => 'string',
-				'default' => get_option( 'bctt-twitter-handle' )
-			),
-			'via'       => array(
-				'type'    => 'boolean',
-				'default' => true
-			),
-			'url'       => array(
-				'type'    => 'boolean',
-				'default' => true
-			),
-			'urlcustom' => array(
-				'type' => 'string',
-				'default' => ''
-			),
-			'nofollow'  => array(
-				'type'    => 'boolean',
-				'default' => false
-			),
-			'prompt'    => array(
-				'type'    => 'string',
-				'default' => sprintf( _x( 'Share on X', 'Text for the box on the reader-facing box', 'better-click-to-tweet' ) )
-			),
-		)),
-	)
-);
+// Register block using block.json
+function bctt_register_block() {
+	// Register the block
+	register_block_type(
+		plugin_dir_path( __FILE__ ) . 'block.json',
+		array(
+			'render_callback' => 'bctt_block_callback',
+			'attributes' => apply_filters( 'bctt_block_attributes', array(
+				'tweet' => array(
+					'type' => 'string',
+					'default' => !empty( get_the_ID() ) ? get_the_title( get_the_ID() ) : ''
+				),
+				'username' => array(
+					'type' => 'string',
+					'default' => get_option( 'bctt-twitter-handle' )
+				),
+				'via' => array(
+					'type' => 'boolean',
+					'default' => true
+				),
+				'url' => array(
+					'type' => 'boolean',
+					'default' => true
+				),
+				'urlcustom' => array(
+					'type' => 'string',
+					'default' => ''
+				),
+				'nofollow' => array(
+					'type' => 'boolean',
+					'default' => false
+				),
+				'prompt' => array(
+					'type' => 'string',
+					'default' => sprintf( _x( 'Share on X', 'Text for the box on the reader-facing box', 'better-click-to-tweet' ) )
+				),
+			))
+		)
+	);
+}
+add_action( 'init', 'bctt_register_block' );
 
 // Callback function to render bctt on frontend
 function bctt_block_callback( $attributes ) {

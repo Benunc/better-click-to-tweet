@@ -3,8 +3,8 @@ Contributors: ben.meredith@gmail.com, wpsteward
 Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to social, twitter, x.com,
 Requires at least: 3.8
-Tested up to: 6.6
-Stable tag: 5.13.0
+Tested up to: 6.8
+Stable tag: 5.14.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Insert styled call-out boxes into your posts, simply and securely. Encourage rea
 
 == Description ==
 
-The most popular plugin for allowing readers to share content on X.com (formerly Twitter). 
+The most popular plugin for allowing readers to share content on X.com (formerly Twitter).
 
 Make it dead-simple for your readers to share your content on X, using a simple shortcode or block. Readers are encouraged to share a quote, and a link to your content.
 
@@ -46,7 +46,7 @@ Short and most accurate answer: Because I bought a domain name at betterclicktow
 
 Longer answer: most users over at X are still calling the act of posting there "tweeting" at this point, and I don't see that changing. I've gone in and made all of the language that is publicly shared more inclusive of the (sadly bland) concept of "sharing on X" so that there's no confusion for anyone unaware that X used to be called Twitter.
 
-I may eventually rebrand completely, but it would have to make a ton of sense from a financial perspective. This is not my day job. 
+I may eventually rebrand completely, but it would have to make a ton of sense from a financial perspective. This is not my day job.
 
 = Are there other style options? =
 Yes! If you are a developer or handy with CSS, there are [limitless options for styling](http://benlikes.us/bcttcustom "custom style for Better Click To Tweet").
@@ -54,7 +54,7 @@ Yes! If you are a developer or handy with CSS, there are [limitless options for 
 If you are not a developer, I have released a premium add-on for selecting among several (and growing) different style options. Check out [Premium Styles](http://benlikes.us/bcttps "Premium Styles for Better Click To Tweet")
 
 = How does Better Click To Tweet work? =
-Better Click To Tweet enables you to create beautiful call-out boxes in your blog posts, asking your readers to share on X. Once you've installed and activated the plugin, click on the settings link to put in your Twitter username, and save the settings. 
+Better Click To Tweet enables you to create beautiful call-out boxes in your blog posts, asking your readers to share on X. Once you've installed and activated the plugin, click on the settings link to put in your Twitter username, and save the settings.
 
 Then, wherever you want to insert a shareable quote, use a shortcode in the format `[bctt tweet="xxxxxxxxxxxx"]` replacing the `xxxxxxx` with your shareable quote.
 
@@ -71,7 +71,7 @@ Better Click To Tweet works alongside url shortening plugins to harness that pow
 
 WordPress has a feature called "shortlinks" which changes the long URL to something like example.com/?p=3435. Various plugins in the official plugin directory exist to change that shortlink to one using other outside services. Using a combination of those plugins and mine, your Better Click To Tweet boxes can now display a trackable link.
 
-On the settings page for Better Click To Tweet, simply check the box indicating you'd like to use the short URL, and save changes. If you've got a plugin that correctly hijacks the built-in WordPress shortlink functionality, you're all set! 
+On the settings page for Better Click To Tweet, simply check the box indicating you'd like to use the short URL, and save changes. If you've got a plugin that correctly hijacks the built-in WordPress shortlink functionality, you're all set!
 I've also written [a tutorial](http://benlikes.us/79 "shortlink tutorial") for how to set up the shortlinks with bit.ly and yourls.org.
 
 = Are there any other hidden tricks? =
@@ -94,16 +94,24 @@ Donations: http://benlikes.us/donate
 
 == Changelog ==
 
+= 5.14.0 =
+* fix — Fixed translation loading issues for WordPress 6.8 compatibility by ensuring translations are loaded at the proper time
+* enhancement — Modernized block editor code to use the latest WordPress block editor APIs and patterns
+* enhancement — Added block.json for improved block registration
+* enhancement — Updated React components to use modern patterns and hooks
+* chore — Tested and confirmed compatibility with WordPress 6.8
+* random — Still waiting for someone to use the promo code CHANGELOG at https://benlikes.us/bcttps
+
 = 5.13.0 =
 * enhancement — finally gave up hope that Elon Musk would come to his senses on this whole "rebrand" thing, and went about removing the words "Tweet" and "Twitter" from the user interfaces throughout the plugin. Of course, you'll note that we didn't change the name of the plugin, but any place where your readers see it we made it such that you can talk about "sharing on X" instead of "clicking to Tweet." To the future of this platform!
 * chore — checked for compatibility with the latest version of WordPress
-* random — Checking to see if there's a record to be broken on age-of-unused-promo-code (the promo code is CHANGELOG at https://benlikes.us/bcttps) but the folks at Guinness won't return my calls. 
+* random — Checking to see if there's a record to be broken on age-of-unused-promo-code (the promo code is CHANGELOG at https://benlikes.us/bcttps) but the folks at Guinness won't return my calls.
 
 = 5.12.0 =
-* fix — the title was immediately overwriting things if users cleared the text from the block. Now it waits three seconds, and if you've not typed anything, it'll overwrite it. 
+* fix — the title was immediately overwriting things if users cleared the text from the block. Now it waits three seconds, and if you've not typed anything, it'll overwrite it.
 * chore — I forgot to mention in the 5.11.1 changelog, but I also tested for compatibility with WordPress 6.2
-* news — Twitter has been doing some relatively aggressive repositioning under Elon Musk, but so far none of the changes there have adversely affected Better Click To Tweet. I'm obiviously keeping an eye on things, but overall just kinda sad that lots of good people have left Twitter. 
-* random — I still feel like more of you could be using the promo code CHANGELOG at https://benlikes.us/bcttps, considering nobody ever has. 
+* news — Twitter has been doing some relatively aggressive repositioning under Elon Musk, but so far none of the changes there have adversely affected Better Click To Tweet. I'm obiviously keeping an eye on things, but overall just kinda sad that lots of good people have left Twitter.
+* random — I still feel like more of you could be using the promo code CHANGELOG at https://benlikes.us/bcttps, considering nobody ever has.
 
 = 5.11.1 =
 * chore — update the dependencies related to wp_scripts. This should have no effect other than stabilizing performance related to the block editor and compatibility with other plugins that use the block editor.
@@ -113,15 +121,15 @@ Donations: http://benlikes.us/donate
 * chore — attempted to get my 5-year-old to do his homework. Was way harder than anticipated. You should use the code CHANGELOG at https://benlikes.us/bcttps
 
 = 5.10.4 =
-* security — prevent unauthenticated access to some settings. 
+* security — prevent unauthenticated access to some settings.
 
-= 5.10.3 = 
+= 5.10.3 =
 * updated compatibility for PHP 8.0 and 8.1
 * checked to make sure it works on the forthcoming WordPress 6.1
 
 = 5.10.2 =
 * fix – patch minor security issue. Short version: if an attacker already has admin access to your site (or feeds a vulnerable admin user a specific string) they could execute code remotely on sites with very specific server configurations. But if an attacker already has admin access to your site, there are much easier and effective ways of doing nefarious things. Still, it's good to remove unescaped potential vulnerable inputs. So we did.
-* chore – tested for compatibility with WordPress 6.0 
+* chore – tested for compatibility with WordPress 6.0
 * chore – the number of people using promo codes is too (darn) low. Use promo code CHANGELOG at https://benlikes.us/bcttps
 
 = 5.10.1 =
@@ -133,7 +141,7 @@ Donations: http://benlikes.us/donate
 * feature — adding a blank [bctt] shortcode populates the Better Click To Tweet box with the post/page's title.
 * bonus — moved to the country. Incorrectly assumed I'd eat a lot more peaches, based on my extensive knowledge of Presidents Of The United States songs from the 90s
 * chore — confirm compatibility with WordPress 5.7 and PHP 8.0
-* sale — you should reward yourself with the promo code CHANGELOG at https://benlikes.us/bcttps 
+* sale — you should reward yourself with the promo code CHANGELOG at https://benlikes.us/bcttps
 
 
 = 5.9.5 =
@@ -144,7 +152,7 @@ Donations: http://benlikes.us/donate
 * fix — the upsell nag was previously showing on any page that was related to plugins, including the update interface. now it only shows up on the plugins page itself.
 * chore — tested up to WordPress version 5.5
 
-= 5.9.3 = 
+= 5.9.3 =
 * fix — a woocommerce function somehow made it into my setup wizard, which has been removed now. It was causing errors on a select few installs on installation.
 * switcheroo — going back to featuring the Premium styles add-on in the plugins page upsell. You should buy that with a coupon of CHANGELOG at https://benlikes.us/bcttps
 
@@ -295,7 +303,7 @@ Donations: http://benlikes.us/donate
 * updated links throughout the back end of the plugin to send me money, for people who are into that sort of thing. Shoutout to https://givewp.com for the SWEET donation integration on my site.
 
 = 4.7 =
-* added the ability to change the "via" addendum on a per-box basis using the new "username" shortcode attribute. The default behavior is (still) to go with the username you saved on the settings page. 
+* added the ability to change the "via" addendum on a per-box basis using the new "username" shortcode attribute. The default behavior is (still) to go with the username you saved on the settings page.
 * (non-geek explanation of that first point) Now if you have a guest post by @KanyeWest, your Better Click To Tweet box can add "via @KanyeWest" automatically to your reader's tweets!
 * made some changes to the toolbar popup in the visual editor to facilitate the new "username" attribute, limiting confusion and causing much rejoicing.
 * Made unsuccessful attempt at getting Kanye West to guest post as the ultimate demonstration of the new feature.
@@ -353,7 +361,7 @@ Donations: http://benlikes.us/donate
 = 4.2 =
 * added the ability to specify a custom URL as a shortcode parameter. (more info at the power user tutorial at http://benlikes.us/7r )
 
-= 4.1.1 = 
+= 4.1.1 =
 * added Russian translation
 * added sample bcttstyle.css file (for moving to the root of the /uploads folder) to assets/css
 
@@ -361,8 +369,8 @@ Donations: http://benlikes.us/donate
 * the plugin now looks for a custom css stylesheet before falling back to the default style, giving designers and developers full access to the CSS, without disrupting user experience for folks just looking to plug and play.
 * added Finnish (fi) translation courtesy of Sampsa Daavitsainen at http://calltoaction.fi
 
-= 4.0 = 
-* complete overhaul of the visual editor button courtesy @norcross 
+= 4.0 =
+* complete overhaul of the visual editor button courtesy @norcross
 * added the ability to make all links "nofollow" by adding the parameter `nofollow="yes"` to the shortcode.
 * complete overhaul of the settings page for better readability.
 
@@ -391,7 +399,7 @@ Donations: http://benlikes.us/donate
 * complete overhaul of the javascript file to enable that functionality without having to mess with hand-coding the shortcode.
 
 = 3.0 =
-* added option to use WordPress shortlink in place of full URL. 
+* added option to use WordPress shortlink in place of full URL.
 * further refinement of the math used in calculating tweet truncation length.
 
 = 2.0.3 =
@@ -405,7 +413,7 @@ Donations: http://benlikes.us/donate
 * added css declarations to deal with issues in the Twenty Fifteen theme.
 * readme enhancements for better user experience.
 
-= 2.0 = 
+= 2.0 =
 * Major version release for internationalization: added Spanish (ES) translation, and updated code throughout for internationalization. Still to-do: add translation support for the tinymce plugin on the visual editor.
 
 = 1.0 =
@@ -423,12 +431,12 @@ Donations: http://benlikes.us/donate
 * updated the FAQ and other readme items.
 
 = 0.1 =
-* Initial release. 
+* Initial release.
 
 == Upgrade Notice ==
 
 = 5.13.0 =
-The latest version is a wholly-cosmetic update to change the words "Tweet," "Twitter" and other now-outdated ways of referring to X as a platform. You'll note that my plugin's name is not changing (yet?) because that's simply too much work for now. The update changes default behavior to not call it "tweeting" and "Twitter." No substantive code changes other than to add a bit of an explainer to the settings page. 
+The latest version is a wholly-cosmetic update to change the words "Tweet," "Twitter" and other now-outdated ways of referring to X as a platform. You'll note that my plugin's name is not changing (yet?) because that's simply too much work for now. The update changes default behavior to not call it "tweeting" and "Twitter." No substantive code changes other than to add a bit of an explainer to the settings page.
 
 = 5.8.0 =
 Refinements to the Gutenberg block, and compatibility for the new Better Click To Tweet UTM Tags add-on.
@@ -440,8 +448,8 @@ Refinements to the Gutenberg block, and compatibility for the new Better Click T
 * added full customizability (instructions forthcoming at http://benlikes.us/7r )
 * added Finnish translation.
 
-= 4.0 = 
-* complete overhaul of the visual editor button courtesy @norcross 
+= 4.0 =
+* complete overhaul of the visual editor button courtesy @norcross
 * added the ability to make all links "nofollow" by adding the parameter `nofollow="yes"` to the shortcode.
 * complete overhaul of the settings page for better readability.
 
@@ -463,7 +471,7 @@ Refinements to the Gutenberg block, and compatibility for the new Better Click T
 = 3.2 =
 * added the ability to leave off the url on a tweet-by-tweet basis (handwritten shortcodes only, the visual editor will not show it as an option on the popup window)
 
-= 3.1 = 
+= 3.1 =
 * Added ability to leave off the via @YourTwitterName
 
 = 2.0.3 =
