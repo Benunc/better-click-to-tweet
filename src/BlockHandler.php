@@ -62,13 +62,13 @@ class BlockHandler
         $twitter_handle = $settings['bctt-twitter-handle'] ?? '';
 
         // Add plugin options needed by the block's JS
-        // Assumes 'bctt-block-js' is the script handle defined in block.json
-        // We need to ensure block.json uses this handle for editorScript.
         $bctt_data = [
             'username' => $twitter_handle,
-            // Add other settings if the block JS needs them
         ];
-        wp_localize_script('bctt-block-js', 'bctt_options_js', $bctt_data);
+        
+        if (wp_script_is('bctt-block-js', 'registered')) {
+            wp_localize_script('bctt-block-js', 'bctt_options_js', $bctt_data);
+        }
     }
 
     /**
@@ -77,25 +77,34 @@ class BlockHandler
     public function register_block(): void
     {
         // Path to the block.json file relative to the main plugin file
-        $block_json_path = WP_PLUGIN_DIR . '/better-click-to-tweet/assets/block/block.json';
+        $block_json_path = BCTT_PLUGIN_DIR . 'assets/block/block.json';
 
         if (!file_exists($block_json_path)) {
-            // Log error or handle missing file
-            error_log('BCTT Error: block.json not found at ' . $block_json_path);
             return;
         }
-
+        
+        // Register the script first
+        $script_path = BCTT_PLUGIN_DIR . 'assets/block/build/index.js';
+        $script_url = BCTT_PLUGIN_URL . 'assets/block/build/index.js';
+        
+        if (file_exists($script_path)) {
+            wp_register_script(
+                'bctt-block-js',
+                $script_url,
+                ['wp-block-editor', 'wp-blocks', 'wp-components', 'wp-data', 'wp-editor', 'wp-element', 'wp-i18n'],
+                filemtime($script_path)
+            );
+        }
+        
         // Get the Twitter handle from the settings array for default attribute
         $settings = $this->options->get('bctt-settings', []);
         $default_twitter_handle = $settings['bctt-twitter-handle'] ?? '';
 
-        // Define default attributes, potentially overriding or supplementing block.json
-        // Note: block.json is the primary source, but defaults can be set here too.
-        // Using the filter is generally better for dynamic defaults.
+        // Define default attributes
         $block_attributes = apply_filters('bctt_block_attributes', [
             'tweet' => [
                 'type' => 'string',
-                'default' => $this->get_default_tweet_text(), // Use helper like in shortcode
+                'default' => $this->get_default_tweet_text(),
             ],
             'username' => [
                 'type' => 'string',
@@ -122,7 +131,7 @@ class BlockHandler
                 'default' => _x('Share on X', 'Text for the box on the reader-facing box', 'better-click-to-tweet')
             ],
         ]);
-
+        
         // Register the block type using block.json and provide the render callback
         register_block_type(
             $block_json_path,

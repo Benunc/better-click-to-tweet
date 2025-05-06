@@ -24,6 +24,11 @@ final class BetterClickToTweet
     public const VERSION = '6.0.0'; // Example: Update version for refactor
 
     /**
+     * Plugin basename.
+     */
+    private static string $plugin_basename = '';
+
+    /**
      * Singleton instance.
      * @var BetterClickToTweet|null
      */
@@ -56,7 +61,12 @@ final class BetterClickToTweet
     /**
      * Private constructor - keep minimal.
      */
-    private function __construct() {}
+    private function __construct() {
+        // Initialize the plugin basename
+        if (empty(self::$plugin_basename) && defined('BCTT_PLUGIN_BASENAME')) {
+            self::$plugin_basename = BCTT_PLUGIN_BASENAME;
+        }
+    }
 
     /**
      * Get the singleton instance.
@@ -217,5 +227,25 @@ final class BetterClickToTweet
     public function get_options_instance(): Options
     {
         return $this->options;
+    }
+
+    /**
+     * Get the BlockHandler instance.
+     *
+     * @return BlockHandler
+     */
+    public function get_block_handler(): ?BlockHandler
+    {
+        return $this->block_handler;
+    }
+
+    /**
+     * Get the plugin basename.
+     *
+     * @return string The plugin basename.
+     */
+    public static function get_plugin_basename(): string
+    {
+        return self::$plugin_basename;
     }
 } 

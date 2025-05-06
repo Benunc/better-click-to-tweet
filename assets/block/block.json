@@ -42,6 +42,9 @@
     }
   },
   "textdomain": "better-click-to-tweet",
-  "editorScript": "file:./build/index.js",
+  "editorScript": {
+    "file": "./build/index.js",
+    "handle": "bctt-block-js"
+  },
   "editorStyle": "bctt-block-editor-css"
 }

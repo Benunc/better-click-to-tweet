@@ -61,20 +61,26 @@ class Updater
      */
     public function run_updaters(): void
     {
-        if (!class_exists('BCTT_SL_Plugin_Updater')) {
+        if (!class_exists('\BCTT_SL_Plugin_Updater')) {
             return; // Don't run if the updater class isn't loaded
         }
 
         $active_addons = Utils::get_active_addons();
 
-        foreach ($active_addons as $plugin_path => $addon_data) {
-            $item_name = $addon_data['Name']; // e.g., "Better Click To Tweet Premium Styles"
+        foreach ($active_addons as $slug => $addon_data) {
+            // Check if the required keys exist to prevent errors
+            if (!isset($addon_data['name']) || !isset($addon_data['version']) || 
+                !isset($addon_data['author']) || !isset($addon_data['file_path'])) {
+                continue; // Skip incomplete addon data
+            }
+            
+            $item_name = $addon_data['name']; // e.g., "Better Click To Tweet Premium Styles"
             $item_shortname = Utils::get_addon_shortname($item_name); // e.g., "Premium Styles"
             $item_slug = Utils::generate_addon_slug($item_shortname); // e.g., "premium_styles"
             $license_option_name = 'bctt_' . $item_slug . self::LICENSE_OPTION_SUFFIX; // e.g., bctt_premium_styles_license
-            $version = $addon_data['Version'];
-            $author = $addon_data['Author'];
-            $plugin_file = WP_PLUGIN_DIR . '/' . $plugin_path;
+            $version = $addon_data['version'];
+            $author = $addon_data['author'];
+            $plugin_file = $addon_data['file_path'];
 
             $license_key = trim($this->options->get($license_option_name, ''));
 
@@ -100,8 +106,13 @@ class Updater
     {
         $active_addons = Utils::get_active_addons();
 
-        foreach ($active_addons as $plugin_path => $addon_data) {
-             $item_name = $addon_data['Name'];
+        foreach ($active_addons as $slug => $addon_data) {
+             // Check if the required keys exist to prevent errors
+             if (!isset($addon_data['name'])) {
+                 continue; // Skip incomplete addon data
+             }
+             
+             $item_name = $addon_data['name'];
              $item_shortname = Utils::get_addon_shortname($item_name);
              $item_slug = Utils::generate_addon_slug($item_shortname);
              $option_base = 'bctt_' . $item_slug; // e.g., bctt_premium_styles
@@ -262,8 +273,13 @@ class Updater
             );
 
             // Register settings and add fields for each add-on
-            foreach ($active_addons as $plugin_path => $addon_data) {
-                $item_name = $addon_data['Name'];
+            foreach ($active_addons as $slug => $addon_data) {
+                // Skip if name isn't set
+                if (!isset($addon_data['name'])) {
+                    continue;
+                }
+                
+                $item_name = $addon_data['name'];
                 $item_shortname = Utils::get_addon_shortname($item_name);
                 $item_slug = Utils::generate_addon_slug($item_shortname);
                 $option_base = 'bctt_' . $item_slug;
@@ -301,10 +317,12 @@ class Updater
         echo '<p>' . esc_html__('Enter the license keys for your Better Click To Tweet add-ons below to receive updates and support.', 'better-click-to-tweet') . '</p>';
         // Display settings errors specific to licenses
         settings_errors('bctt-license-error'); // General errors like empty key
-         foreach (Utils::get_active_addons() as $addon_data) { // Errors specific to an addon action
-             $item_slug = Utils::generate_addon_slug(Utils::get_addon_shortname($addon_data['Name']));
-             settings_errors('bctt-license-bctt_' . $item_slug);
-         }
+        foreach (Utils::get_active_addons() as $slug => $addon_data) { // Errors specific to an addon action
+            if (isset($addon_data['name'])) {
+                $item_slug = Utils::generate_addon_slug(Utils::get_addon_shortname($addon_data['name']));
+                settings_errors('bctt-license-bctt_' . $item_slug);
+            }
+        }
     }
 
     /**

@@ -27,6 +27,9 @@ if (!defined('BCTT_PLUGIN_DIR')) {
 if (!defined('BCTT_PLUGIN_URL')) {
     define('BCTT_PLUGIN_URL', plugin_dir_url(__FILE__));
 }
+if (!defined('BCTT_PLUGIN_BASENAME')) {
+    define('BCTT_PLUGIN_BASENAME', plugin_basename(__FILE__));
+}
 // === End Core Constants ===
 
 // --- PSR-4 Autoloader ---
@@ -101,6 +104,11 @@ function bctt_on_uninstall() {
     // $style_manager = new \BCTT\StyleManager(new \BCTT\Options()); // Requires loading classes...
     // $custom_path = $style_manager->get_custom_stylesheet_path();
     // if ($custom_path && file_exists($custom_path)) { @unlink($custom_path); }
+}
+
+// Include debug file for registered blocks when in admin
+if (is_admin()) {
+    // Debug files removed
 }
 
 
