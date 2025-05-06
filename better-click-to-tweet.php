@@ -14,9 +14,20 @@
 // Exit if accessed directly.
 defined('ABSPATH') or die("No soup for you. You leave now.");
 
-// Define BCTT_VERSION constant based on the plugin header
+// === Define Core Constants ===
 $plugin_data = get_file_data(__FILE__, ['Version' => 'Version'], false);
-define('BCTT_VERSION', $plugin_data['Version'] ?? '5.14.0'); // Fallback, though get_file_data is reliable
+define('BCTT_VERSION', $plugin_data['Version'] ?? '6.0.0'); // Ensure this matches header
+
+if (!defined('BCTT_PLUGIN_FILE')) {
+    define('BCTT_PLUGIN_FILE', __FILE__);
+}
+if (!defined('BCTT_PLUGIN_DIR')) {
+    define('BCTT_PLUGIN_DIR', plugin_dir_path(__FILE__));
+}
+if (!defined('BCTT_PLUGIN_URL')) {
+    define('BCTT_PLUGIN_URL', plugin_dir_url(__FILE__));
+}
+// === End Core Constants ===
 
 // --- PSR-4 Autoloader ---
 spl_autoload_register(function ($class) {

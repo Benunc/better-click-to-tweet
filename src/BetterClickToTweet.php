@@ -79,29 +79,9 @@ final class BetterClickToTweet
     private function initialize_plugin(): void
     {
         // Moved from constructor
-        $this->define_constants();
+        // $this->define_constants(); // Remove this call
         $this->instantiate_classes();
         $this->register_hooks();
-    }
-
-    /**
-     * Define plugin constants.
-     */
-    private function define_constants(): void
-    {
-        // BCTT_VERSION is defined in the main plugin file.
-        // Define BCTT_PLUGIN_DIR if not already defined
-        if (!defined('BCTT_PLUGIN_DIR')) {
-            define('BCTT_PLUGIN_DIR', plugin_dir_path(dirname(__FILE__, 2))); // Path to plugin root dir
-        }
-        // Define BCTT_PLUGIN_URL if not already defined
-        if (!defined('BCTT_PLUGIN_URL')) {
-            define('BCTT_PLUGIN_URL', plugin_dir_url(dirname(__FILE__, 2))); // URL to plugin root dir
-        }
-        // Define BCTT_PLUGIN_FILE if not already defined
-        if (!defined('BCTT_PLUGIN_FILE')) {
-            define('BCTT_PLUGIN_FILE', BCTT_PLUGIN_DIR . 'better-click-to-tweet.php'); // Main plugin file path
-        }
     }
 
     /**

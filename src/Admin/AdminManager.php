@@ -266,9 +266,14 @@ class AdminManager
         $plugin_page_hook = 'settings_page_' . $this->main_menu_slug;
 
         if ($hook_suffix === $plugin_page_hook) {
-             // Example: Enqueue admin CSS
-             $css_url = BCTT_PLUGIN_URL . 'assets/css/admin-styles.css';
-             wp_enqueue_style('bctt-admin-styles', $css_url, [], BCTT_VERSION);
+             // Enqueue correct admin CSS using BCTT_PLUGIN_URL
+             if (defined('BCTT_PLUGIN_URL')) {
+                 // $css_url = plugins_url('assets/css/bctt-admin.css', BCTT_PLUGIN_FILE); // Revert this
+                 $css_url = BCTT_PLUGIN_URL . 'assets/css/bctt-admin.css'; // Use constant
+                 wp_enqueue_style('bctt-admin-styles', $css_url, [], BCTT_VERSION);
+             } else {
+                 error_log('BCTT Error: BCTT_PLUGIN_URL constant not defined in enqueue_admin_assets.');
+             }
 
             // Example: Enqueue admin JS
             // $js_url = BCTT_PLUGIN_URL . 'assets/js/admin-script.js';

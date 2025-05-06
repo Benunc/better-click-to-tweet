@@ -18,6 +18,7 @@ class BCTT_SL_Plugin_Updater {
 	private $version     = '';
 	private $wp_override = false;
 	private $cache_key   = '';
+	private $beta        = false;
 
 	private $health_check_timeout = 5;
 
