@@ -1,6 +1,7 @@
 .svn/*
 
 better-click-to-tweet/.svn/*
+package-lock.json
 
 .DS_Store
 
