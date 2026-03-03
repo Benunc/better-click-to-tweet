@@ -40,6 +40,12 @@ function bctt_init() {
     if ( function_exists( 'register_block_type' ) ) {
         require_once( plugin_dir_path( __FILE__ ) . 'assets/block/init.php' );
     }
+
+    // WordPress 6.9+ Abilities API: register bctt/insert-click-to-tweet and bctt/suggest-tweetables.
+    // Only load when the API exists so we do not break sites on older WordPress versions.
+    if ( function_exists( 'wp_register_ability' ) ) {
+        require_once plugin_dir_path( __FILE__ ) . 'includes/class-bctt-abilities.php';
+    }
 }
 
 /*
