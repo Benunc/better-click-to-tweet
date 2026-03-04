@@ -20,6 +20,39 @@ function bctt_block_editor_assets() {
 		'username' => get_option( 'bctt-twitter-handle' ),
 	);
 	wp_localize_script( 'bctt-block-js', 'bctt_options_js', $bctt_data );
+
+	// Post sidebar: "Suggest X Content" panel — only when Abilities API exists (WP 6.9+).
+	if ( function_exists( 'wp_register_ability' ) ) {
+		$suggest_script = plugins_url( 'assets/block/suggest-x-content.js', BCTT_PLUGIN_FILE );
+		wp_enqueue_script(
+			'bctt-suggest-x-content',
+			$suggest_script,
+			array(
+				'wp-plugins',
+				'wp-editor',
+				'wp-edit-post',
+				'wp-element',
+				'wp-data',
+				'wp-components',
+				'wp-api-fetch',
+				'wp-blocks',
+				'wp-i18n',
+			),
+			BCTT_VERSION,
+			true
+		);
+		wp_localize_script(
+			'bctt-suggest-x-content',
+			'bctt_suggest_config',
+			array(
+				'hasLlm'                => function_exists( 'bctt_has_llm_connector' ) && bctt_has_llm_connector(),
+				'connectorsUrl'         => admin_url( 'options-general.php?page=connectors-wp-admin' ),
+				'connectorUsageAgreed'  => (bool) get_option( 'bctt_connector_usage_agreed', false ),
+				'userCanConnect'        => current_user_can( 'manage_options' ),
+				'settingsUrl'           => admin_url( 'options-general.php?page=better-click-to-tweet' ),
+			)
+		);
+	}
 }
 
 // Hook assets to editor

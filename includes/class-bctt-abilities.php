@@ -158,6 +158,11 @@ function bctt_register_abilities(): void {
 						'minimum'     => 50,
 						'maximum'     => 280,
 					),
+					'use_ai'           => array(
+						'type'        => 'boolean',
+						'description' => __( 'When true and a Connector is connected, use AI to generate an engaging tweet. When false, use rule-based extraction from post content. Default false.', 'better-click-to-tweet' ),
+						'default'     => false,
+					),
 				),
 				'additionalProperties' => false,
 			),
@@ -413,6 +418,7 @@ function bctt_ability_suggest_tweetables_execute( $input ) {
 	$content = isset( $input['content'] ) ? (string) $input['content'] : '';
 	$max_suggestions = isset( $input['max_suggestions'] ) ? (int) $input['max_suggestions'] : 3;
 	$max_length      = isset( $input['max_length'] ) ? (int) $input['max_length'] : 253;
+	$use_ai          = ! empty( $input['use_ai'] );
 
 	// Clamp to schema bounds.
 	$max_suggestions = max( 1, min( 10, $max_suggestions ) );
@@ -447,6 +453,54 @@ function bctt_ability_suggest_tweetables_execute( $input ) {
 
 	if ( $text === '' ) {
 		return array();
+	}
+
+	// --- Optional: use connected LLM (Connectors) for one engaging tweet ----
+	// Require site-level usage agreement before any AI calls (charges).
+	if ( $use_ai && function_exists( 'bctt_has_llm_connector' ) && bctt_has_llm_connector() && ! get_option( 'bctt_connector_usage_agreed', false ) ) {
+		return new WP_Error(
+			'bctt_connector_agreement_required',
+			__( 'Usage agreement is required before using AI suggestions. Please confirm in the Suggest X Content panel.', 'better-click-to-tweet' ),
+			array( 'status' => 403 )
+		);
+	}
+	if ( $use_ai && function_exists( 'bctt_has_llm_connector' ) && bctt_has_llm_connector() && function_exists( 'wp_ai_client_prompt' ) ) {
+		$text_for_ai = function_exists( 'mb_strlen' ) && mb_strlen( $text ) > 6000
+			? mb_substr( $text, 0, 6000 ) . '…'
+			: ( strlen( $text ) > 6000 ? substr( $text, 0, 6000 ) . '…' : $text );
+		$prompt = sprintf(
+			/* translators: %d: maximum character length for the tweet (e.g. 253). */
+			__( 'You are a senior social media marketer. Read the following post and write a single engaging tweet (at most %d characters) that will make people want to click through to read more. Aim for genuine interest and curiosity, not clickbait. Return only the tweet text, nothing else.', 'better-click-to-tweet' ),
+			$max_length
+		);
+		$full_prompt = $prompt . "\n\n" . __( 'Post content:', 'better-click-to-tweet' ) . "\n\n" . $text_for_ai;
+		$result = wp_ai_client_prompt( $full_prompt )->generate_text();
+
+		if ( is_wp_error( $result ) && defined( 'WP_DEBUG' ) && WP_DEBUG && function_exists( 'error_log' ) ) {
+			error_log( 'BCTT suggest-tweetables: AI returned WP_Error: ' . $result->get_error_message() . ' (code: ' . $result->get_error_code() . ')' );
+		}
+
+		if ( ! is_wp_error( $result ) && is_string( $result ) && $result !== '' ) {
+			$use_mb = function_exists( 'mb_strlen' );
+			$lines  = preg_split( '/\r\n|\r|\n/', $result );
+			foreach ( $lines as $line ) {
+				$line = trim( $line );
+				$line = preg_replace( '/^[\d]+[.)]\s*/', '', $line );
+				$line = preg_replace( '/^[-*]\s*/', '', $line );
+				$line = trim( $line );
+				if ( $line === '' ) {
+					continue;
+				}
+				$len = $use_mb ? mb_strlen( $line ) : strlen( $line );
+				if ( $len > $max_length ) {
+					$line = $use_mb ? mb_substr( $line, 0, $max_length ) : substr( $line, 0, $max_length );
+					$len  = $max_length;
+				}
+				if ( $len >= 20 ) {
+					return array( array( 'text' => $line, 'length' => $len ) );
+				}
+			}
+		}
 	}
 
 	// --- Split into sentence-like chunks ------------------------------------

@@ -4,6 +4,18 @@ defined( 'ABSPATH' ) or die( "No script kiddies please!" );
 function bctt_register_settings() {
 	register_setting( 'bctt_clicktotweet-options', 'bctt-twitter-handle', 'bctt_validate_settings' );
 	register_setting( 'bctt_clicktotweet-options', 'bctt-short-url', 'bctt_validate_checkbox' );
+	if ( function_exists( 'wp_register_ability' ) ) {
+		register_setting(
+			'bctt_clicktotweet-options',
+			'bctt_connector_usage_agreed',
+			array(
+				'type'              => 'boolean',
+				'sanitize_callback' => function ( $value ) {
+					return ( isset( $value ) && '1' === $value ) ? 1 : 0;
+				},
+			)
+		);
+	}
 }
 
 function bctt_validate_settings( $input ) {
@@ -140,6 +152,20 @@ function bctt_settings_page() {
 
                                             </td>
                                         </tr>
+									<?php } ?>
+									<?php if ( function_exists( 'wp_register_ability' ) ) { ?>
+										<tr valign="top">
+											<th style="width:200px;">
+												<label for="bctt-connector-usage-agreed"><?php _ex( 'Allow AI tweet suggestions?', 'label for checkbox on settings screen', 'better-click-to-tweet' ); ?></label>
+											</th>
+											<td>
+												<input type="hidden" name="bctt_connector_usage_agreed" value="0" />
+												<input id="bctt-connector-usage-agreed" type="checkbox" name="bctt_connector_usage_agreed" value="1" <?php checked( get_option( 'bctt_connector_usage_agreed', false ) ); ?> />
+												<p class="description" style="margin-top: 4px;">
+													<?php _e( 'When enabled, editors can use AI to suggest tweet text from the Suggest X Content panel. Usage charges from your connected AI model apply. Uncheck to disable AI features for all users.', 'better-click-to-tweet' ); ?>
+												</p>
+											</td>
+										</tr>
 									<?php } ?>
 								</table>
 								<?php do_action( 'bctt_before_settings_submit' ); ?>
