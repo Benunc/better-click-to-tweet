@@ -12,7 +12,7 @@
 
 defined( 'ABSPATH' ) or die( "No soup for you. You leave now." );
 
-define( 'BCTT_VERSION', '5.14.0' );
+define( 'BCTT_VERSION', '5.15.0' );
 define( 'BCTT_PLUGIN_FILE', __FILE__ );
 
 // Include files that don't use translation functions early

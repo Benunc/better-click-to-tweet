@@ -3,8 +3,8 @@ Contributors: ben.meredith@gmail.com, wpsteward
 Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to social, twitter, x.com,
 Requires at least: 3.8
-Tested up to: 6.9
-Stable tag: 5.14.0
+Tested up to: 7.0
+Stable tag: 5.15.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,15 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.15.0 =
+* feature — "Suggest X Content" panel in the block editor sidebar (WordPress 6.9+): get tweet suggestions from your post and drop in a Better Click to Tweet block with one click. No AI required — we'll pull smart excerpts from your content.
+* feature — Optional AI-powered suggestions when you've connected a model (WordPress Connectors): our cheekily named assistant "Bill" steps in as a senior social media marketer and drafts an engaging tweet for you. Usage charges apply per your connected provider; we're not responsible for those, but we make sure you can say so before anyone hits the button.
+* enhancement — Site-wide usage agreement for AI: agree once in the editor to accept responsibility for charges; only admins can revoke it (Settings → Better Click to Tweet). Non-admins see a friendly note that an admin can connect a model.
+* enhancement — Settings page now has an "Allow AI tweet suggestions?" checkbox so admins can turn AI features off for everyone without touching the editor. The editor even links you there with a "disable AI features for all users here" that scrolls straight to the checkbox. We're helpful like that.
+* enhancement — Block updated to API version 3 for iframe editor compatibility. Your block works in the iframed post editor and won't nag you in the console about deprecation. Tested and ready for WordPress 7.0.
+* chore — Tested and confirmed compatibility with WordPress 7.0
+* random — Bill (the AI) has not yet asked for a raise. The promo code CHANGELOG at https://benlikes.us/bcttps remains unclaimed.
 
 = 5.14.0 =
 * fix — Fixed translation loading issues for WordPress 6.8 compatibility by ensuring translations are loaded at the proper time
