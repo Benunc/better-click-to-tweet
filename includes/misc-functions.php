@@ -64,16 +64,14 @@ function bctt_get_active_addons() {
 	return $plugins;
 }
 
-function bctt_addon_shortname( $addonname ) {
-	$shortname = trim( str_replace( 'Better Click To Tweet ', '', $addonname ) );
-
-	return $shortname;
+if ( ! function_exists( 'bctt_addon_shortname' ) ) {
+	function bctt_addon_shortname( $addonname ) {
+		return trim( str_replace( 'Better Click To Tweet ', '', $addonname ) );
+	}
 }
 
-function bctt_addon_slug( $shortname ) {
-
-	$slug = str_replace( ' ', '_', strtolower( $shortname ) );
-
-	return $slug;
-
+if ( ! function_exists( 'bctt_addon_slug' ) ) {
+	function bctt_addon_slug( $shortname ) {
+		return str_replace( ' ', '_', strtolower( $shortname ) );
+	}
 }

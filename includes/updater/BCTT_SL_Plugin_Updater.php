@@ -18,6 +18,7 @@ class BCTT_SL_Plugin_Updater {
 	private $version     = '';
 	private $wp_override = false;
 	private $cache_key   = '';
+	private $beta        = false;
 
 	private $health_check_timeout = 5;
 
@@ -394,19 +395,23 @@ class BCTT_SL_Plugin_Updater {
 				$edd_plugin_url_available[ $store_hash ] = false;
 			} else {
 				$test_url = $scheme . '://' . $host . $port;
-				$response = wp_remote_get( $test_url, array( 'timeout' => $this->health_check_timeout, 'sslverify' => $verify_ssl ) );
+				$response = wp_remote_get( $test_url, array(
+				'timeout'     => $this->health_check_timeout,
+				'sslverify'   => $verify_ssl,
+				'redirection' => 5,
+			) );
 				$edd_plugin_url_available[ $store_hash ] = is_wp_error( $response ) ? false : true;
 			}
 		}
 
 		if ( false === $edd_plugin_url_available[ $store_hash ] ) {
-			return;
+			return false;
 		}
 
 		$data = array_merge( $this->api_data, $_data );
 
 		if ( $data['slug'] != $this->slug ) {
-			return;
+			return false;
 		}
 
 		if( $this->api_url == trailingslashit ( home_url() ) ) {
@@ -425,7 +430,12 @@ class BCTT_SL_Plugin_Updater {
 			'beta'       => ! empty( $data['beta'] ),
 		);
 
-		$request    = wp_remote_post( $this->api_url, array( 'timeout' => 15, 'sslverify' => $verify_ssl, 'body' => $api_params ) );
+		$request    = wp_remote_post( $this->api_url, array(
+			'timeout'     => 15,
+			'sslverify'   => $verify_ssl,
+			'body'        => $api_params,
+			'redirection' => 5,
+		) );
 
 		if ( ! is_wp_error( $request ) ) {
 			$request = json_decode( wp_remote_retrieve_body( $request ) );
@@ -492,7 +502,12 @@ class BCTT_SL_Plugin_Updater {
 			);
 
 			$verify_ssl = $this->verify_ssl();
-			$request    = wp_remote_post( $this->api_url, array( 'timeout' => 15, 'sslverify' => $verify_ssl, 'body' => $api_params ) );
+			$request    = wp_remote_post( $this->api_url, array(
+				'timeout'     => 15,
+				'sslverify'   => $verify_ssl,
+				'body'        => $api_params,
+				'redirection' => 5,
+			) );
 
 			if ( ! is_wp_error( $request ) ) {
 				$version_info = json_decode( wp_remote_retrieve_body( $request ) );

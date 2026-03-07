@@ -10,6 +10,20 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+// Helpers used by BCTT_License; normally in includes/misc-functions.php (loaded on init).
+// Define here when loaded early so add-ons can instantiate BCTT_License on plugins_loaded.
+if ( ! function_exists( 'bctt_addon_shortname' ) ) {
+	function bctt_addon_shortname( $addonname ) {
+		return trim( str_replace( 'Better Click To Tweet ', '', $addonname ) );
+	}
+}
+if ( ! function_exists( 'bctt_addon_slug' ) ) {
+	function bctt_addon_slug( $shortname ) {
+		return str_replace( ' ', '_', strtolower( $shortname ) );
+	}
+}
+
 if ( ! class_exists( 'BCTT_License' ) ):
 
 	class BCTT_License {
@@ -64,6 +78,16 @@ if ( ! class_exists( 'BCTT_License' ) ):
 		private $item_shortname;
 
 		/**
+		 * Item slug (sanitized shortname for API).
+		 *
+		 * @access private
+		 * @since  1.0
+		 *
+		 * @var    string
+		 */
+		private $item_slug;
+
+		/**
 		 * Version
 		 *
 		 * @access private
@@ -94,6 +118,14 @@ if ( ! class_exists( 'BCTT_License' ) ):
 		private static $licensed_addons = array();
 
 		/**
+		 * Plugin file paths that already have an updater registered (by add-on or fallback).
+		 *
+		 * @since  5.15.0
+		 * @var    array
+		 */
+		public static $registered_plugin_files = array();
+
+		/**
 		 * API URL
 		 *
 		 * @access private
@@ -106,6 +138,7 @@ if ( ! class_exists( 'BCTT_License' ) ):
 
 		public function __construct( $_file, $_item_name, $_version, $_author, $_optname = null, $_api_url = null ) {
 
+			self::$registered_plugin_files[] = $_file;
 
 			$this->file           = $_file;
 			$this->item_name      = $_item_name;
@@ -141,10 +174,11 @@ if ( ! class_exists( 'BCTT_License' ) ):
 				$this->api_url,
 				$this->file,
 				array(
-					'version'   => $this->version,   // current version number
-					'license'   => $this->license,   // license key (used get_option above to retrieve from DB)
-					'item_name' => $this->item_name, // name of this plugin
-					'author'    => $this->author,    // author of this plugin
+					'version'     => $this->version,   // current version number
+					'license'     => $this->license,   // license key (used get_option above to retrieve from DB)
+					'item_name'   => $this->item_name, // name of this plugin
+					'author'      => $this->author,    // author of this plugin
+					'wp_override' => true,
 				)
 			);
 
@@ -278,3 +312,41 @@ if ( ! class_exists( 'BCTT_License' ) ):
 
 	}
 endif;
+
+/**
+ * Fallback: ensure updater is registered for every active BCTT add-on.
+ * Runs on admin_init so add-ons that registered on plugins_loaded (after core) are already
+ * covered; this catches add-ons that didn't register (e.g. load order or different hook).
+ *
+ * @since 5.15.0
+ */
+function bctt_register_addon_updaters_fallback() {
+	if ( ! is_admin() ) {
+		return;
+	}
+	if ( ! function_exists( 'get_plugins' ) ) {
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	}
+	$plugins = get_plugins();
+	foreach ( $plugins as $path => $data ) {
+		if ( ! is_plugin_active( $path ) ) {
+			continue;
+		}
+		// BCTT add-on: author URI is our store, and not the core plugin.
+		$author_uri = isset( $data['AuthorURI'] ) ? $data['AuthorURI'] : '';
+		if ( strpos( $author_uri, 'betterclicktotweet.com' ) === false ) {
+			continue;
+		}
+		if ( isset( $data['Name'] ) && 'Better Click To Tweet' === trim( $data['Name'] ) ) {
+			continue;
+		}
+		$full_path = WP_PLUGIN_DIR . '/' . $path;
+		if ( in_array( $full_path, BCTT_License::$registered_plugin_files, true ) ) {
+			continue;
+		}
+		$version = isset( $data['Version'] ) ? $data['Version'] : '0';
+		$author  = isset( $data['Author'] ) ? $data['Author'] : 'Ben Meredith';
+		new BCTT_License( $full_path, $data['Name'], $version, $author );
+	}
+}
+add_action( 'admin_init', 'bctt_register_addon_updaters_fallback', 0 );

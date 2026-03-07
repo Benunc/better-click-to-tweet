@@ -15,6 +15,11 @@ defined( 'ABSPATH' ) or die( "No soup for you. You leave now." );
 define( 'BCTT_VERSION', '5.15.0' );
 define( 'BCTT_PLUGIN_FILE', __FILE__ );
 
+// Load updater at plugin load so BCTT_License exists before add-ons' plugins_loaded callbacks.
+// Add-ons (e.g. Premium Styles, UTM Tags) instantiate BCTT_License on plugins_loaded, which
+// runs before init, so the class must be defined when this file is loaded.
+require_once __DIR__ . '/includes/updater/bctt-updater.php';
+
 // Include files that don't use translation functions early
 include 'bctt-i18n.php';
 
@@ -28,8 +33,7 @@ function bctt_init() {
     include 'bctt_options.php';
     include 'admin-nags.php';
 
-    // @since 5.7.0
-    include 'includes/updater/bctt-updater.php';
+    // @since 5.7.0 (bctt-updater.php loaded in main file so add-ons can use BCTT_License on plugins_loaded)
     include 'includes/updater/license-page.php';
     include 'includes/misc-functions.php';
     include 'bctt-welcome-functions.php';
