@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Better Click To Tweet
  * Description: Add styled boxes to posts and pages so that readers can share your content on X. Increase engagement by asking for it. All the features of a premium plugin, for FREE!
- * Version: 5.15.0 
+ * Version: 5.15.1
  * Author: Ben Meredith
  * Author URI: https://www.betterclicktotweet.com
  * Plugin URI: https://wordpress.org/plugins/better-click-to-tweet/
@@ -12,7 +12,7 @@
 
 defined( 'ABSPATH' ) or die( "No soup for you. You leave now." );
 
-define( 'BCTT_VERSION', '5.15.0' );
+define( 'BCTT_VERSION', '5.15.1' );
 define( 'BCTT_PLUGIN_FILE', __FILE__ );
 
 // Load updater at plugin load so BCTT_License exists before add-ons' plugins_loaded callbacks.

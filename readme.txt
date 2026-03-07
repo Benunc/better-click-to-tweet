@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to social, twitter, x.com,
 Requires at least: 3.8
 Tested up to: 7.0
-Stable tag: 5.15.0
+Stable tag: 5.15.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,9 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 5.15.1 = 
+* fix — the updater for folks who have premium add-ons was not working. Now it is. No functionality changes to the plugin at all. 
 
 = 5.15.0 =
 * feature — "Suggest X Content" panel in the block editor sidebar (WordPress 6.9+): get tweet suggestions from your post and drop in a Better Click to Tweet block with one click. No AI required — we'll pull smart excerpts from your content.
