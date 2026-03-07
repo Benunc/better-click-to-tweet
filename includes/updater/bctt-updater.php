@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Define here when loaded early so add-ons can instantiate BCTT_License on plugins_loaded.
 if ( ! function_exists( 'bctt_addon_shortname' ) ) {
 	function bctt_addon_shortname( $addonname ) {
-		return trim( str_replace( 'Better Click To Tweet ', '', $addonname ) );
+		return trim( str_replace( array( 'Better Click To Tweet ', 'Better Click To Share ' ), '', $addonname ) );
 	}
 }
 if ( ! function_exists( 'bctt_addon_slug' ) ) {
@@ -133,7 +133,7 @@ if ( ! class_exists( 'BCTT_License' ) ):
 		 *
 		 * @var    string
 		 */
-		private $api_url = 'https://www.betterclicktotweet.com/';
+		private $api_url = 'https://www.betterclicktoshare.com/';
 
 
 		public function __construct( $_file, $_item_name, $_version, $_author, $_optname = null, $_api_url = null ) {
@@ -185,7 +185,7 @@ if ( ! class_exists( 'BCTT_License' ) ):
 		}
 
 		public static function get_short_name( $plugin_name ) {
-			$plugin_name = trim( str_replace( 'Better Click To Tweet ', '', $plugin_name ) );
+			$plugin_name = trim( str_replace( array( 'Better Click To Tweet ', 'Better Click To Share ' ), '', $plugin_name ) );
 			$plugin_name = 'bctt_' . preg_replace( '/[^a-zA-Z0-9_\s]/', '', str_replace( ' ', '_', strtolower( $plugin_name ) ) );
 
 			return $plugin_name;
@@ -334,10 +334,11 @@ function bctt_register_addon_updaters_fallback() {
 		}
 		// BCTT add-on: author URI is our store, and not the core plugin.
 		$author_uri = isset( $data['AuthorURI'] ) ? $data['AuthorURI'] : '';
-		if ( strpos( $author_uri, 'betterclicktotweet.com' ) === false ) {
+		if ( strpos( $author_uri, 'betterclicktotweet.com' ) === false && strpos( $author_uri, 'betterclicktoshare.com' ) === false ) {
 			continue;
 		}
-		if ( isset( $data['Name'] ) && 'Better Click To Tweet' === trim( $data['Name'] ) ) {
+		$name = isset( $data['Name'] ) ? trim( $data['Name'] ) : '';
+		if ( 'Better Click To Tweet' === $name || 'Better Click To Share (Formerly Better Click To Tweet)' === $name ) {
 			continue;
 		}
 		$full_path = WP_PLUGIN_DIR . '/' . $path;

@@ -1,6 +1,6 @@
         <div id="bctt-copy" class="text-gray-600">
             <h1 class="text-center text-lg font-bold px-2 text-gray-700">
-                <?php _e( 'Getting Started Using Better Click To Tweet', 'better-click-to-tweet') ?>
+                <?php _e( 'Getting Started Using Better Click To Share', 'better-click-to-tweet') ?>
             </h1>
         </div>
         <div id="bctt-video" class="rounded-lg shadow-xl overflow-hidden mx-auto my-8 bg-gray-200">

@@ -1,4 +1,4 @@
-The git repo for the Better Click To Tweet WordPress Plugin 
+The git repo for the Better Click To Share (formerly Better Click To Tweet) WordPress plugin 
 https://wordpress.org/plugins/better-click-to-tweet/
 
 This repo contains only the trunk from the SVN repo. 

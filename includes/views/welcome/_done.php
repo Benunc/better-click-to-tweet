@@ -27,7 +27,7 @@
     </a>
 
     <a 
-    href="https://www.betterclicktotweet.com/all-add-ons/"
+    href="https://www.betterclicktoshare.com/all-add-ons/"
     target="_blank"
     rel="noopener noreferrer"
     class="text-blue-500 underline w-full text-center block"

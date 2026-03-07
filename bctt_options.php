@@ -58,8 +58,8 @@ function bctt_settings_page() {
 
 	<div class="wrap">
 
-	<h1 class="wp-heading-inline"><?php /* translators: Treat "Better Click To Tweet" as a brand name, don't translate it */
-		_e( 'Better Click To Tweet — a plugin by Ben Meredith', 'better-click-to-tweet' ); ?></h1>
+	<h1 class="wp-heading-inline"><?php /* translators: Treat "Better Click To Share" as a brand name, don't translate it */
+		_e( 'Better Click To Share (Formerly Better Click To Tweet) — a plugin by Ben Meredith', 'better-click-to-tweet' ); ?></h1>
 
 	<hr/>
 	<?php do_action( 'bctt_settings_top' ); ?>
@@ -73,18 +73,18 @@ function bctt_settings_page() {
 					<div class="inside">
 					<p class="bctt-setup-alert"><strong><?php echo sprintf( __( 'Don\'t miss the <a href="%s">Setup Wizard</a>', 'better-click-to-tweet' ), admin_url( '?page=bctt-welcome&step=bctt-setup' ) ); ?></strong></p>
 
-						<p><?php /* translators: Treat "Better Click To Tweet" as a brand name, don't translate it */
-							_e( 'To add styled one-click-to-share-on-X quote boxes include the Better Click To Tweet shortcode or Gutenberg block in your post.', 'better-click-to-tweet' ); ?></p>
+						<p><?php /* translators: Treat "Better Click To Share" as a brand name, don't translate it */
+							_e( 'To add styled one-click-to-share-on-X quote boxes include the Better Click To Share shortcode or Gutenberg block in your post.', 'better-click-to-tweet' ); ?></p>
 
 						<p><?php _e( 'Here\'s how you format the shortcode:', 'better-click-to-tweet' ); ?></p>
 						<pre>[bctt tweet="<?php /* translators: This text shows up as a sample tweet in the instructions for how to use the plugin. */
 							_e( 'Meaningful, shareable quote.', 'better-click-to-tweet' ); ?>"]</pre>
-						<p><?php /* translators: Also, treat "BCTT" as a brand name, don't translate it */
-							_e( 'If you are using the visual editor, click the BCTT birdie in the toolbar to add a pre-formatted shortcode to your post.', 'better-click-to-tweet' ); ?></p>
+						<p><?php /* translators: Treat "Better Click To Share" as a brand name, don't translate it */
+							_e( 'If you are using the visual editor, click the Better Click To Share birdie in the toolbar to add a pre-formatted shortcode to your post.', 'better-click-to-tweet' ); ?></p>
                         <p><?php
-							_e( 'In the Block-based editor, there is a Better Click To Tweet block.', 'better-click-to-tweet' ); ?></p>
+							_e( 'In the Block-based editor, there is a Better Click To Share block.', 'better-click-to-tweet' ); ?></p>
 						<p><?php _e( 'If you include a link back to the post using the URL parameter (or leaving it out, the default behavior), the post length is automatically shortened to 253 characters minus the length of your x.com username, to leave room for the handle and link back to the post.', 'better-click-to-tweet' ); ?></p>
-						<p><?php _e( 'NOTE: X.com allows premium members to post longer than 280 characters. Better Click To Tweet is designed to allow ALL users there to be able to share your post. That\'s why we do not plan to support longer posts to X.', 'better-click-to-tweet' ); ?></p>
+						<p><?php _e( 'NOTE: X.com allows premium members to post longer than 280 characters. Better Click To Share is designed to allow ALL users there to be able to share your post. That\'s why we do not plan to support longer posts to X.', 'better-click-to-tweet' ); ?></p>
                         <p><?php echo sprintf( __( 'Learn more about the URL parameter as well as the other power user features in the <a href=%s>Power User Guide</a>.', 'better-click-to-tweet' ), esc_url( 'http://benlikes.us/7r') ); ?></p>
 					</div>
 					<!--/inside-->
@@ -175,7 +175,7 @@ function bctt_settings_page() {
 								          value="<?php _e( 'Save Changes', 'better-click-to-tweet' ); ?>"/>
 								</p>
 								<br class="clear"/>
-								<em><?php $url = 'https://www.betterclicktotweet.com';
+								<em><?php $url = 'https://www.betterclicktoshare.com';
 									$link      = sprintf( __( 'An open source plugin by <a href=%s>Ben Meredith</a>', 'better-click-to-tweet' ), esc_url( $url ) );
 									echo $link; ?></em>
 							</form>

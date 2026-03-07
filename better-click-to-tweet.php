@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: Better Click To Tweet
+ * Plugin Name: Better Click To Share (Formerly Better Click To Tweet)
  * Description: Add styled boxes to posts and pages so that readers can share your content on X. Increase engagement by asking for it. All the features of a premium plugin, for FREE!
  * Version: 5.15.1
  * Author: Ben Meredith
- * Author URI: https://www.betterclicktotweet.com
+ * Author URI: https://www.betterclicktoshare.com
  * Plugin URI: https://wordpress.org/plugins/better-click-to-tweet/
  * License: GPL2
  * Text Domain: better-click-to-tweet

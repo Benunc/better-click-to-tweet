@@ -8,7 +8,7 @@ include_once plugin_dir_path(__FILE__) . 'admin-clarifier.php';
  *
  * This is an enhanced version of get_plugins() that returns the status
  * (`active` or `inactive`) of all plugins, type of plugin (`add-on` or `other`
- * and license validation for Better Click To Tweet add-ons (`true` or `false`). Does not include
+ * and license validation for Better Click To Share add-ons (`true` or `false`). Does not include
  * MU plugins. This function is borrowed from the Give Plugin.
  *
  * @since 5.6
@@ -39,13 +39,13 @@ function bctt_get_active_addons() {
 
 		$dirname = strtolower( dirname( $plugin_path ) );
 
-		// Is plugin a Better Click To Tweet add-on by Better Click To Tweet?
-		if ( strstr( $dirname, 'better-click' ) && strstr( $plugin_data['AuthorURI'], 'betterclicktotweet.com' ) ) {
-			// Plugin is a Better Click To Tweet add-on.
+		// Is plugin a Better Click To Share add-on?
+		if ( strstr( $dirname, 'better-click' ) && strstr( $plugin_data['AuthorURI'], 'betterclicktoshare.com' ) ) {
+			// Plugin is a Better Click To Share add-on.
 			$plugins[ $plugin_path ]['Type'] = 'add-on';
 
 		} else {
-			// Plugin is not a Better Click To Tweet add-on.
+			// Plugin is not a Better Click To Share add-on.
 			$plugins[ $plugin_path ]['Type'] = 'other';
 		}
 
@@ -55,7 +55,7 @@ function bctt_get_active_addons() {
 		if ( 'active' != $plugin_data['Status'] || 'add-on' != $plugin_data['Type'] ) {
 			unset( $plugins[ $key ] );
 		}
-		if ( 'Better Click To Tweet' === $plugin_data['Name'] ) {
+		if ( 'Better Click To Share (Formerly Better Click To Tweet)' === $plugin_data['Name'] ) {
 			unset( $plugins[ $key ] );
 		}
 
@@ -66,7 +66,7 @@ function bctt_get_active_addons() {
 
 if ( ! function_exists( 'bctt_addon_shortname' ) ) {
 	function bctt_addon_shortname( $addonname ) {
-		return trim( str_replace( 'Better Click To Tweet ', '', $addonname ) );
+		return trim( str_replace( array( 'Better Click To Tweet ', 'Better Click To Share ' ), '', $addonname ) );
 	}
 }
 

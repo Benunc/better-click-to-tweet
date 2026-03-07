@@ -2,10 +2,10 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "bctt/clicktotweet",
-  "title": "Better Click to Tweet",
+  "title": "Better Click To Share (Formerly Better Click to Tweet)",
   "category": "formatting",
   "icon": "twitter",
-  "description": "Add text for your readers to tweet, calling them to action on your behalf.",
+  "description": "Add a shareable quote box so readers can share on X.",
   "keywords": ["Twitter", "Tweet"],
   "supports": {
     "align": false,

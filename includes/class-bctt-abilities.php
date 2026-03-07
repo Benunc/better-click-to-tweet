@@ -1,6 +1,6 @@
 <?php
 /**
- * Better Click To Tweet — WordPress Abilities API integration (WP 6.9+).
+ * Better Click To Share — WordPress Abilities API integration (WP 6.9+).
  *
  * Registers two abilities for AI agents, MCP, and automation tools:
  * - bctt/insert-click-to-tweet: Append a BCTT block to a post.

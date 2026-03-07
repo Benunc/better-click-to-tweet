@@ -5,12 +5,12 @@
 		editor.addButton( 'bctt', {
 
 			text: '',
-			tooltip: editor.getLang( 'bctt.toolTip', 'Better Click To Tweet Shortcode Generator' ),
+			tooltip: editor.getLang( 'bctt.toolTip', 'Better Click To Share Shortcode Generator' ),
 			icon: 'bctt-tweet',
 			onclick: function() {
 				// Open window
 				editor.windowManager.open( {
-					title: editor.getLang( 'bctt.windowTitle', 'Better Click To Tweet Shortcode Generator' ),
+					title: editor.getLang( 'bctt.windowTitle', 'Better Click To Share Shortcode Generator' ),
 					body: [
 						{
 							type: 'textbox',

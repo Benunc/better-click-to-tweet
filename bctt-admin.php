@@ -13,7 +13,7 @@ $bctt_i18n = new bctt_i18n(
 	array(
 		'textdomain'     => 'better-click-to-tweet',
 		'project_slug'   => '/wp-plugins/better-click-to-tweet/stable',
-		'plugin_name'    => 'Better Click To Tweet',
+		'plugin_name'    => 'Better Click To Share (Formerly Better Click To Tweet)',
 		'hook'           => 'bctt_settings_top',
 		'glotpress_url'  => 'https://translate.wordpress.org/',
 		'glotpress_name' => 'Translating WordPress',
@@ -31,8 +31,8 @@ function bctt_admin_menu() {
     
 	add_submenu_page(
         'options-general.php', 
-        __( 'Better Click To Tweet Main Settings', 'better-click-to-tweet' ), 
-        __( 'Better Click To Tweet', 'better-click-to-tweet' ), 
+        __( 'Better Click To Share Main Settings', 'better-click-to-tweet' ), 
+        __( 'Better Click To Share (Formerly Better Click To Tweet)', 'better-click-to-tweet' ), 
         'manage_options', 
         'better-click-to-tweet', 
         'bctt_settings' 
@@ -44,7 +44,7 @@ function bctt_settings() {
     ?>
     <div class="wrap">
         <h2 class="bctt_settings_header"> 
-            <?php _e( 'Better Click To Tweet Settings', 'better-click-to-tweet' ); ?>
+            <?php _e( 'Better Click To Share (Formerly Better Click To Tweet) Settings', 'better-click-to-tweet' ); ?>
         </h2>
          
         <?php

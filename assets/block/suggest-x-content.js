@@ -229,7 +229,7 @@
 								},
 								createInterpolateElement(
 									__(
-										'Better Click To Tweet can leverage that with "Bill" (the cheeky name we\'ve given our AI assistant) as a Senior Social Media Marketer. Once you connect your provider on the <link>Connectors</link> page, Bill will read your post, suggest an engaging post for X using your connected AI model, and insert it into the post for your readers to click!',
+										'Better Click To Share can leverage that with "Bill" (the cheeky name we\'ve given our AI assistant) as a Senior Social Media Marketer. Once you connect your provider on the <link>Connectors</link> page, Bill will read your post, suggest an engaging post for X using your connected AI model, and insert it into the post for your readers to click!',
 										'better-click-to-tweet'
 									),
 									{
