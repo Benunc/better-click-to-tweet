@@ -8,13 +8,11 @@
 (function () {
 	'use strict';
 
-	// Prefer wp.editor (WP 6.6+); fallback to wp.editPost for older WP.
+	// Use wp.editor (WP 6.6+). We do not load wp.editPost to avoid deprecation notices.
 	var PluginDocumentSettingPanel =
 		typeof wp !== 'undefined' && wp.editor && wp.editor.PluginDocumentSettingPanel
 			? wp.editor.PluginDocumentSettingPanel
-			: typeof wp !== 'undefined' && wp.editPost && wp.editPost.PluginDocumentSettingPanel
-				? wp.editPost.PluginDocumentSettingPanel
-				: null;
+			: null;
 
 	if (typeof wp === 'undefined' || !wp.plugins || !PluginDocumentSettingPanel) {
 		return;

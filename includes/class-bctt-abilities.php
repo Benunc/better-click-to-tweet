@@ -7,7 +7,7 @@
  * - bctt/suggest-tweetables: Return tweet-length quote suggestions from post or raw content.
  *
  * This file is only loaded when wp_register_ability() exists (WordPress 6.9+).
- * See plan-ability-insert-bctt.md and plan-ability-suggest-tweetables.md in bctt-brainstorm/.
+ * See plan-ability-insert-bctt.md and plan-ability-suggest-tweetables.md in workroom/reference/.
  *
  * @package Better_Click_To_Tweet
  * @since 6.0.0 (Abilities API support)

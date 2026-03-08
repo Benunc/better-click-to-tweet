@@ -19,7 +19,7 @@ function bctt_block_editor_assets() {
 	$bctt_data = array(
 		'username' => get_option( 'bctt-twitter-handle' ),
 	);
-	wp_localize_script( 'bctt-block-js', 'bctt_options_js', $bctt_data );
+	wp_localize_script( 'bctt-clicktotweet-editor-script', 'bctt_options_js', $bctt_data );
 
 	// Post sidebar: "Suggest X Content" panel — only when Abilities API exists (WP 6.9+).
 	if ( function_exists( 'wp_register_ability' ) ) {
@@ -30,7 +30,6 @@ function bctt_block_editor_assets() {
 			array(
 				'wp-plugins',
 				'wp-editor',
-				'wp-edit-post',
 				'wp-element',
 				'wp-data',
 				'wp-components',
