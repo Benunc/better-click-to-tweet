@@ -1,23 +1,381 @@
-#post-box-container-1 {
-    float:right;
-    margin-right: -300px;
+/**
+ * Better Click To Share – Settings page styles
+ * Visual refresh: card layout, logo header, Kadence-inspired clarity and spacing.
+ */
+
+/* ==========================================================================
+   Settings wrap (tab container from bctt-admin.php)
+   ========================================================================== */
+
+.bctt-settings-wrap {
+	margin: 0 0 0 -20px;
+	padding: 0 20px 24px;
+	background: #f0f0f1;
+	min-height: 100vh;
 }
-.bctt-signup {
-    font-size:unset;
+
+/* Header: logo + title (above tabs) */
+.bctt-settings-header {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	padding: 24px 0 20px;
+	margin-bottom: 0;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-bottom: none;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	padding-left: 24px;
+	padding-right: 24px;
 }
+
+.bctt-settings-logo {
+	height: 40px;
+	width: auto;
+	max-width: 220px;
+	display: block;
+	flex-shrink: 0;
+}
+
+.bctt-settings-header-text {
+	flex: 1;
+	min-width: 0;
+}
+
+.bctt-settings-title {
+	margin: 0 0 4px;
+	font-size: 23px;
+	font-weight: 400;
+	line-height: 1.3;
+	color: #1d2327;
+}
+
+.bctt-settings-subtitle {
+	margin: 0;
+	font-size: 13px;
+	color: #646970;
+}
+
+/* Tabs: Kadence-style nav below header */
+.bctt-settings-wrap .bctt-nav-tabs {
+	margin: 0;
+	padding: 0 24px;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-top: none;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.bctt-settings-wrap .bctt-nav-tabs .nav-tab {
+	margin: 0;
+	padding: 12px 16px;
+	border: none;
+	border-bottom: 3px solid transparent;
+	background: transparent;
+	border-radius: 0;
+}
+
+.bctt-settings-wrap .bctt-nav-tabs .nav-tab:hover {
+	background: #f6f7f7;
+	color: #1d2327;
+}
+
+.bctt-settings-wrap .bctt-nav-tabs .nav-tab.nav-tab-active {
+	border-bottom-color: #2271b1;
+	background: transparent;
+	color: #1d2327;
+}
+
+/* ==========================================================================
+   Settings page content (bctt_options.php)
+   ========================================================================== */
+
+.bctt-settings-page {
+	padding-top: 20px;
+}
+
+.bctt-settings-grid {
+	display: grid;
+	grid-template-columns: 1fr 320px;
+	gap: 24px;
+	max-width: 1400px;
+}
+
+.bctt-settings-main {
+	min-width: 0;
+}
+
+/* Cards: white panel, subtle border, spacing */
+.bctt-card {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	border-radius: 4px;
+	margin-bottom: 24px;
+	overflow: hidden;
+}
+
+.bctt-card:last-child {
+	margin-bottom: 0;
+}
+
+.bctt-card-title {
+	margin: 0;
+	padding: 16px 24px;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.4;
+	color: #1d2327;
+	border-bottom: 1px solid #f0f0f1;
+	background: #fafafa;
+}
+
+.bctt-card-content {
+	padding: 20px 24px 24px;
+}
+
+.bctt-card-content p:first-child {
+	margin-top: 0;
+}
+
+.bctt-card-content p:last-child {
+	margin-bottom: 0;
+}
+
+.bctt-card-content p {
+	margin: 0 0 12px;
+	line-height: 1.6;
+	color: #2c3338;
+}
+
+/* Clarifier card: soft blue tint */
+.bctt-card-clarifier {
+	border-left: 4px solid #2271b1;
+	background: #f6f7f7;
+}
+
+.bctt-card-clarifier .bctt-card-title {
+	background: #f0f6fc;
+	border-bottom-color: #c5d9ed;
+}
+
+.bctt-card-clarifier .bctt-card-content a {
+	color: #2271b1;
+}
+
+/* Instructions: setup alert + code block */
 .bctt-setup-alert {
-    width: 50%; 
-	margin:0 auto; 
-    background-color: #ffd589; 
-	text-align: center; 
-	line-height: 2.5em;
-	font-size:1.3em; 
-	border: 3px solid grey;
+	width: 100%;
+	max-width: 480px;
+	margin: 0 auto 16px !important;
+	padding: 10px 16px;
+	background: #fcf3cf;
+	border: 1px solid #d4a84b;
+	border-radius: 4px;
+	text-align: center;
+	line-height: 1.5;
+	font-size: 14px;
 }
 
-@media only screen and (max-width: 850px) {
-    #post-box-container-1 {
+.bctt-code {
+	display: block;
+	margin: 12px 0;
+	padding: 12px 16px;
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	font-size: 13px;
+	line-height: 1.5;
+	overflow-x: auto;
+}
 
-        margin-right: 0;
-    }
+/* Settings form: stacked rows, clear labels */
+.bctt-settings-intro {
+	margin-bottom: 16px !important;
+	color: #646970;
+	font-size: 14px;
+}
+
+.bctt-settings-form {
+	margin-top: 8px;
+}
+
+.bctt-form-table {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+
+.bctt-form-row {
+	display: grid;
+	grid-template-columns: 200px 1fr;
+	gap: 20px;
+	align-items: flex-start;
+	padding: 14px 0;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.bctt-form-row:last-of-type {
+	border-bottom: none;
+}
+
+.bctt-form-label {
+	padding-top: 2px;
+}
+
+.bctt-form-label label {
+	font-weight: 600;
+	font-size: 14px;
+	color: #1d2327;
+}
+
+.bctt-form-field input[type="text"] {
+	width: 100%;
+	max-width: 320px;
+}
+
+.bctt-form-field input[type="checkbox"] {
+	margin: 2px 0 0;
+}
+
+.bctt-form-field .description {
+	margin: 6px 0 0;
+	font-size: 13px;
+	color: #646970;
+	line-height: 1.5;
+}
+
+.bctt-form-field .description a {
+	color: #2271b1;
+}
+
+.bctt-form-actions {
+	margin: 20px 0 12px !important;
+	padding-top: 16px;
+	border-top: 1px solid #f0f0f1;
+}
+
+.bctt-settings-footer {
+	margin: 0 !important;
+	font-size: 13px;
+	color: #646970;
+}
+
+.bctt-settings-footer a {
+	color: #2271b1;
+}
+
+/* Sidebar cards */
+.bctt-settings-sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.bctt-card-sidebar .bctt-card-title {
+	font-size: 14px;
+	padding: 14px 20px;
+}
+
+.bctt-card-sidebar .bctt-card-content {
+	padding: 16px 20px 20px;
+}
+
+.bctt-card-sidebar .bctt-card-content p {
+	margin-bottom: 10px;
+	font-size: 13px;
+}
+
+.bctt-card-sidebar .button {
+	display: inline-block;
+	margin-top: 4px;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media screen and (max-width: 1024px) {
+	.bctt-settings-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.bctt-settings-sidebar {
+		order: -1;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	.bctt-settings-sidebar .bctt-card {
+		flex: 1;
+		min-width: 280px;
+		margin-bottom: 0;
+	}
+}
+
+@media screen and (max-width: 782px) {
+	.bctt-settings-wrap {
+		margin-left: -10px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.bctt-settings-header {
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 20px 16px;
+	}
+
+	.bctt-settings-logo {
+		max-width: 180px;
+		height: 32px;
+	}
+
+	.bctt-settings-wrap .bctt-nav-tabs {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.bctt-settings-wrap .bctt-nav-tabs .nav-tab {
+		padding: 10px 12px;
+		font-size: 13px;
+	}
+
+	.bctt-card-title {
+		padding: 14px 16px;
+	}
+
+	.bctt-card-content {
+		padding: 16px;
+	}
+
+	.bctt-form-row {
+		grid-template-columns: 1fr;
+		gap: 6px;
+		padding: 16px 0;
+	}
+
+	.bctt-form-label {
+		padding-top: 0;
+	}
+
+	.bctt-form-field input[type="text"] {
+		max-width: none;
+	}
+
+	.bctt-settings-sidebar {
+		flex-direction: column;
+	}
+
+	.bctt-settings-sidebar .bctt-card {
+		min-width: 0;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.bctt-setup-alert {
+		font-size: 13px;
+		padding: 8px 12px;
+	}
 }

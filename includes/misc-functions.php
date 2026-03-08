@@ -37,15 +37,14 @@ function bctt_get_active_addons() {
 			$plugins[ $plugin_path ]['Status'] = 'inactive';
 		}
 
-		$dirname = strtolower( dirname( $plugin_path ) );
+		$dirname   = strtolower( dirname( $plugin_path ) );
+		$author_uri = isset( $plugin_data['AuthorURI'] ) ? $plugin_data['AuthorURI'] : '';
 
-		// Is plugin a Better Click To Share add-on?
-		if ( strstr( $dirname, 'better-click' ) && strstr( $plugin_data['AuthorURI'], 'betterclicktoshare.com' ) ) {
-			// Plugin is a Better Click To Share add-on.
+		// Is plugin a BCTT add-on? (store domain: old or new)
+		$is_bctt_store = ( strpos( $author_uri, 'betterclicktotweet.com' ) !== false || strpos( $author_uri, 'betterclicktoshare.com' ) !== false );
+		if ( strstr( $dirname, 'better-click' ) && $is_bctt_store ) {
 			$plugins[ $plugin_path ]['Type'] = 'add-on';
-
 		} else {
-			// Plugin is not a Better Click To Share add-on.
 			$plugins[ $plugin_path ]['Type'] = 'other';
 		}
 

@@ -41,43 +41,53 @@ function bctt_admin_menu() {
 
 function bctt_settings() {
     $addons = bctt_get_active_addons();
+
+    // Enqueue settings page styles for all tabs (main tab only called bctt_settings_page(), so styles were missing on Licenses / Premium Styles / UTM).
+    bctt_admin_styles();
+
+    $logo_url = plugins_url( 'assets/img/bcts-logo.svg', __FILE__ );
+    $base_url = admin_url( 'options-general.php?page=better-click-to-tweet' );
     ?>
-    <div class="wrap">
-        <h2 class="bctt_settings_header"> 
-            <?php _e( 'Better Click To Share (Formerly Better Click To Tweet) Settings', 'better-click-to-tweet' ); ?>
-        </h2>
-         
+    <div class="wrap bctt-settings-wrap">
+        <header class="bctt-settings-header">
+            <img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php esc_attr_e( 'Better Click To Share', 'better-click-to-tweet' ); ?>" class="bctt-settings-logo" />
+            <div class="bctt-settings-header-text">
+                <h1 class="bctt-settings-title"><?php _e( 'Settings', 'better-click-to-tweet' ); ?></h1>
+                <p class="bctt-settings-subtitle"><?php _e( 'Configure your share boxes and preferences.', 'better-click-to-tweet' ); ?></p>
+            </div>
+        </header>
+
         <?php
           $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'bctt-settings';
         ?>
-         
-        <h2 class="nav-tab-wrapper">
+
+        <nav class="nav-tab-wrapper bctt-nav-tabs" aria-label="<?php esc_attr_e( 'Settings tabs', 'better-click-to-tweet' ); ?>">
             <a 
-                href="<?php echo admin_url( 'admin.php?page=better-click-to-tweet&tab=bctt-settings' ) ?>" 
+                href="<?php echo esc_url( $base_url . '&tab=bctt-settings' ); ?>" 
                 class="nav-tab <?php echo $active_tab == 'bctt-settings' ? 'nav-tab-active' : ''; ?>">
                     <?php _e( 'Settings', 'better-click-to-tweet' ); ?>
             </a>
 
             <?php     if ( ! empty( $addons ) ) {  ?>
                 <a 
-                    href="<?php echo admin_url( 'admin.php?page=better-click-to-tweet&tab=bctt-licenses' ) ?>" 
+                    href="<?php echo esc_url( $base_url . '&tab=bctt-licenses' ); ?>" 
                     class="nav-tab <?php echo $active_tab == 'bctt-licenses' ? 'nav-tab-active' : ''; ?>">
                     <?php _e( 'Licenses', 'better-click-to-tweet' ); ?>
                 </a>
             <?php } ?>
            
             <a 
-                href="<?php echo admin_url( 'admin.php?page=better-click-to-tweet&tab=bctt-premium-styles' ) ?>" 
+                href="<?php echo esc_url( $base_url . '&tab=bctt-premium-styles' ); ?>" 
                 class="nav-tab <?php echo $active_tab == 'bctt-premium-styles' ? 'nav-tab-active' : ''; ?>">
                 <?php _e( 'Premium Styles', 'better-click-to-tweet' ); ?>
             </a>
            
             <a 
-                href="<?php echo admin_url( 'admin.php?page=better-click-to-tweet&tab=bctt-utm-tags' ) ?>" 
+                href="<?php echo esc_url( $base_url . '&tab=bctt-utm-tags' ); ?>" 
                 class="nav-tab <?php echo $active_tab == 'bctt-utm-tags' ? 'nav-tab-active' : ''; ?>">
                 <?php _e( 'UTM Tags', 'better-click-to-tweet' ); ?>
             </a>
-        </h2>
+        </nav>
          
         <?php
             switch ($active_tab) {

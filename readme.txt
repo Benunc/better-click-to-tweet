@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: click to social, twitter, x.com,
 Requires at least: 3.8
 Tested up to: 7.0
-Stable tag: 5.15.1
+Stable tag: 6.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,9 @@ Donations: http://benlikes.us/donate
 1. Becomes this in your blog post!
 
 == Changelog ==
+
+= 6.0.0 =
+* rebrand — Major refresh of the admin interface to emphasize "Better Click To Share" and align with the X rebrand. Settings and plugin UI have been reorganized and restyled for clarity; all existing functionality is unchanged and nothing should break. We're bumping to 6.0.0 only because the interface is being so thoroughly overhauled — same shortcodes, same block, same behavior.
 
 = 5.15.1 = 
 * fix — the updater for folks who have premium add-ons was not working. Now it is. No functionality changes to the plugin at all. 
