@@ -142,7 +142,8 @@ function bctt_settings() {
         </header>
 
         <?php
-          $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'bctt-settings';
+          $allowed_tabs = array( 'bctt-settings', 'bctt-licenses', 'bctt-premium-styles', 'bctt-utm-tags' );
+          $active_tab   = isset( $_GET['tab'] ) && in_array( $_GET['tab'], $allowed_tabs, true ) ? sanitize_key( $_GET['tab'] ) : 'bctt-settings';
         ?>
 
         <nav class="nav-tab-wrapper bctt-nav-tabs" aria-label="<?php esc_attr_e( 'Settings tabs', 'better-click-to-tweet' ); ?>">

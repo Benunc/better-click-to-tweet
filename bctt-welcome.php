@@ -7,7 +7,7 @@
  * @since 5.7.0
  *
  */
-if ( ! defined( 'ABSPATH' ) && !current_user_can('manage_options') ) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
@@ -37,9 +37,9 @@ if ( ! class_exists( 'BCTT_Welcome' ) ):
             set_current_screen();
 
             // Update twitter handle
-            if ( isset( $_POST['bctt-twitter']) && current_user_can('manage_options') 
+            if ( isset( $_POST['bctt-twitter'] ) && current_user_can( 'manage_options' )
             && wp_verify_nonce( $_POST['save-the-handle'], 'change-handle' ) ) {
-                update_option( 'bctt-twitter-handle', $_POST['bctt-twitter'] );
+                update_option( 'bctt-twitter-handle', sanitize_text_field( wp_unslash( $_POST['bctt-twitter'] ) ) );
                 wp_safe_redirect( bctt_get_step_url( 'bctt-usage' ) );
                 exit;
             }

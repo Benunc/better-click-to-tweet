@@ -484,7 +484,12 @@ class BCTT_SL_Plugin_Updater {
 			wp_die( __( 'You do not have permission to install plugin updates', 'easy-digital-downloads' ), __( 'Error', 'easy-digital-downloads' ), array( 'response' => 403 ) );
 		}
 
-		$data         = $edd_plugin_data[ $_REQUEST['slug'] ];
+		$slug = isset( $_REQUEST['slug'] ) ? sanitize_key( $_REQUEST['slug'] ) : '';
+		if ( empty( $slug ) || ! isset( $edd_plugin_data[ $slug ] ) ) {
+			return;
+		}
+
+		$data         = $edd_plugin_data[ $slug ];
 		$beta         = ! empty( $data['beta'] ) ? true : false;
 		$cache_key    = md5( 'edd_plugin_' . sanitize_key( $_REQUEST['plugin'] ) . '_' . $beta . '_version_info' );
 		$version_info = $this->get_cached_version_info( $cache_key );
@@ -495,7 +500,7 @@ class BCTT_SL_Plugin_Updater {
 				'edd_action' => 'get_version',
 				'item_name'  => isset( $data['item_name'] ) ? $data['item_name'] : false,
 				'item_id'    => isset( $data['item_id'] ) ? $data['item_id'] : false,
-				'slug'       => $_REQUEST['slug'],
+				'slug'       => $slug,
 				'author'     => $data['author'],
 				'url'        => home_url(),
 				'beta'       => ! empty( $data['beta'] )

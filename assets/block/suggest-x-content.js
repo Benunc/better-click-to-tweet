@@ -101,13 +101,13 @@
 			})
 				.then(function (suggestions) {
 					if (!Array.isArray(suggestions) || suggestions.length === 0) {
-						setNoticeMessage(__('No tweetable snippets found. Save the post as a draft first, or add more content.', 'better-click-to-tweet'));
+						setNoticeMessage(__('No shareable snippets found. Save the post as a draft first, or add more content.', 'better-click-to-tweet'));
 						return;
 					}
 					var first = suggestions[0];
 					var text = first && first.text;
 					if (!text) {
-						setNoticeMessage(__('No tweetable snippets found. Save the post as a draft first, or add more content.', 'better-click-to-tweet'));
+						setNoticeMessage(__('No shareable snippets found. Save the post as a draft first, or add more content.', 'better-click-to-tweet'));
 						return;
 					}
 
@@ -154,15 +154,31 @@
 				{ className: 'bctt-suggest-x-content-panel' },
 				noticeMessage
 					? el(
-							Notice,
-							{
-								status: 'warning',
-								isDismissible: true,
-								onRemove: function () { setNoticeMessage(''); },
-							},
-							noticeMessage
+							'div',
+							{ style: { marginTop: '4px', marginBottom: '16px' } },
+							el(
+								Notice,
+								{
+									status: 'warning',
+									isDismissible: true,
+									onRemove: function () { setNoticeMessage(''); },
+								},
+								noticeMessage
+							)
 						)
 					: null,
+				el(
+					Button,
+					{
+						variant: 'secondary',
+						className: 'is-full-width',
+						isBusy: isBusy,
+						disabled: isBusy || !postId,
+						onClick: function () { runSuggestAndInsert(false); },
+						style: { width: '100%', justifyContent: 'center', marginBottom: canUseAi ? '12px' : 0 },
+					},
+					__('Add Suggested Content (from post)', 'better-click-to-tweet')
+				),
 				canUseAi
 					? el(
 							'div',
@@ -217,22 +233,6 @@
 								: null
 						)
 					: null,
-				el(
-					Button,
-					{
-						variant: canUseAi ? 'tertiary' : 'secondary',
-						className: 'is-full-width',
-						isBusy: isBusy,
-						disabled: isBusy || !postId,
-						onClick: function () { runSuggestAndInsert(false); },
-						style: {
-							width: '100%',
-							justifyContent: 'center',
-							marginTop: canUseAi ? '8px' : 0,
-						},
-					},
-					__('Add Suggested Content (from post)', 'better-click-to-tweet')
-				),
 				// Agreement / connect block: not connected and can connect, or connected but not yet agreed
 				(!config.hasLlm && config.userCanConnect && config.connectorsUrl)
 					? el(
@@ -320,7 +320,7 @@
 										style: { marginBottom: '8px' },
 									},
 									__(
-										'A model is already connected. To use Bill\'s AI suggestions, please confirm that you accept responsibility for usage charges. Usage charges from your connected model apply all post editors on your site.',
+										'A model is already connected and ready to use on this site. To use AI suggestions, please confirm that you accept responsibility for usage charges. Usage charges from your connected model apply all users who have post editing access on your site.',
 										'better-click-to-tweet'
 									)
 								),
