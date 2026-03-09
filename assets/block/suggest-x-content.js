@@ -2,7 +2,7 @@
  * Post sidebar: "Suggest X Content" button.
  *
  * Uses the BCTT abilities: suggest-tweetables (get suggestions) then inserts
- * the first suggestion as a Better Click to Tweet block at the end of the post.
+ * the first suggestion as a Better Click To Share block at the end of the post.
  * Auth: cookie + nonce (wp.apiFetch); no Application Password in code.
  */
 (function () {
@@ -21,6 +21,7 @@
 	var registerPlugin = wp.plugins.registerPlugin;
 	var Button = wp.components.Button;
 	var CheckboxControl = wp.components.CheckboxControl;
+	var Notice = wp.components.Notice;
 	var el = wp.element.createElement;
 	var createInterpolateElement = wp.element.createInterpolateElement;
 	var __ = wp.i18n.__;
@@ -66,6 +67,9 @@
 		var agreed = agreedState[0];
 		var setAgreed = agreedState[1];
 		var canUseAi = config.hasLlm && (config.connectorUsageAgreed || agreed);
+		var noticeState = useState('');
+		var noticeMessage = noticeState[0];
+		var setNoticeMessage = noticeState[1];
 
 		var postId = useSelect(function (sel) {
 			return sel('core/editor') && sel('core/editor').getCurrentPostId();
@@ -88,6 +92,7 @@
 			if (!postId || isBusy) return;
 
 			setBusy(true);
+			setNoticeMessage('');
 
 			apiFetch({
 				method: 'POST',
@@ -96,25 +101,39 @@
 			})
 				.then(function (suggestions) {
 					if (!Array.isArray(suggestions) || suggestions.length === 0) {
-						// eslint-disable-next-line no-console
-						console.warn('BCTT: No tweetable suggestions returned.');
+						setNoticeMessage(__('No tweetable snippets found. Save the post as a draft first, or add more content.', 'better-click-to-tweet'));
 						return;
 					}
 					var first = suggestions[0];
 					var text = first && first.text;
-					if (!text) return;
+					if (!text) {
+						setNoticeMessage(__('No tweetable snippets found. Save the post as a draft first, or add more content.', 'better-click-to-tweet'));
+						return;
+					}
 
-					var blockEditor = select('core/block-editor');
-					var currentBlocks = (blockEditor && blockEditor.getBlocks && blockEditor.getBlocks()) || [];
+					var blockEditorSelect = select('core/block-editor');
+					var blockEditorDispatch = dispatch('core/block-editor');
+					var currentBlocks = (blockEditorSelect && blockEditorSelect.getBlocks && blockEditorSelect.getBlocks()) || [];
 					var newBlock = createBlock('bctt/clicktotweet', { tweet: text });
-					var allBlocks = currentBlocks.concat([newBlock]);
-					var content = serialize(allBlocks);
-					var editorDispatch = dispatch('core/editor');
-					if (editorDispatch && editorDispatch.editPost) {
-						editorDispatch.editPost({ content: content });
+
+					// Prefer insertBlocks so the block appears immediately in the editor (avoids first-click no-show in some WP/editor versions).
+					if (blockEditorDispatch && blockEditorDispatch.insertBlocks) {
+						blockEditorDispatch.insertBlocks([newBlock], currentBlocks.length);
+					} else {
+						var allBlocks = currentBlocks.concat([newBlock]);
+						var content = serialize(allBlocks);
+						var editorDispatch = dispatch('core/editor');
+						if (editorDispatch && editorDispatch.editPost) {
+							editorDispatch.editPost({ content: content });
+						}
 					}
 				})
 				.catch(function (err) {
+					var msg = (err && err.message) ? err.message : __('Something went wrong. Save the post as a draft first and try again.', 'better-click-to-tweet');
+					if (err && err.code === 'bctt_no_content') {
+						msg = err.message;
+					}
+					setNoticeMessage(msg);
 					// eslint-disable-next-line no-console
 					console.error('BCTT Suggest X Content:', err);
 				})
@@ -133,6 +152,17 @@
 			el(
 				'div',
 				{ className: 'bctt-suggest-x-content-panel' },
+				noticeMessage
+					? el(
+							Notice,
+							{
+								status: 'warning',
+								isDismissible: true,
+								onRemove: function () { setNoticeMessage(''); },
+							},
+							noticeMessage
+						)
+					: null,
 				canUseAi
 					? el(
 							'div',
@@ -156,7 +186,7 @@
 									style: { marginTop: '4px', marginBottom: 0 },
 								},
 								createInterpolateElement(
-									__('NOTE: Using the above button may incur usage charges from your <link>Connected AI model</link>. Better Click to Tweet is not responsible for any charges.', 'better-click-to-tweet'),
+									__('NOTE: Using the above button may incur usage charges from your <link>Connected AI model</link>. Better Click To Share is not responsible for any charges.', 'better-click-to-tweet'),
 									{
 										link: el('a', {
 											href: config.connectorsUrl,
@@ -298,7 +328,7 @@
 									CheckboxControl,
 									{
 										label: __(
-											'By checking this box, you agree that the decision of which AI/LLM model you connect to and any charges incurred from that model are solely your responsibility and you will not hold Better Click to Tweet responsible for any usage charges.',
+											'By checking this box, you agree that the decision of which AI/LLM model you connect to and any charges incurred from that model are solely your responsibility and you will not hold Better Click To Share responsible for any usage charges.',
 											'better-click-to-tweet'
 										),
 										checked: agreed,

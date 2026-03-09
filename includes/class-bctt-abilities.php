@@ -50,7 +50,7 @@ add_action( 'wp_abilities_api_categories_init', 'bctt_register_ability_category'
 /**
  * Registers BCTT abilities with the WordPress Abilities API.
  *
- * - bctt/insert-click-to-tweet: Inserts a Better Click to Tweet block at the end
+ * - bctt/insert-click-to-tweet: Inserts a Better Click To Share block at the end
  *   of a post's content. Used by AI/automation after choosing a quote (e.g. from
  *   suggest-tweetables).
  * - bctt/suggest-tweetables: Returns an array of tweet-length text snippets
@@ -64,7 +64,7 @@ function bctt_register_abilities(): void {
 		'bctt/insert-click-to-tweet',
 		array(
 			'label'               => __( 'Insert Click to Tweet', 'better-click-to-tweet' ),
-			'description'         => __( 'Appends a Better Click to Tweet block to the end of a post. Use this after you have the exact tweet text to show (e.g. from suggest-tweetables).', 'better-click-to-tweet' ),
+			'description'         => __( 'Appends a Better Click To Share block to the end of a post. Use this after you have the exact tweet text to show (e.g. from suggest-tweetables).', 'better-click-to-tweet' ),
 			'category'            => 'content',
 			'input_schema'        => array(
 				'type'                 => 'object',
@@ -452,7 +452,11 @@ function bctt_ability_suggest_tweetables_execute( $input ) {
 	$text = preg_replace( '/\s+/', ' ', trim( $text ) );
 
 	if ( $text === '' ) {
-		return array();
+		return new WP_Error(
+			'bctt_no_content',
+			__( 'Save the post as a draft first so we have content to suggest from.', 'better-click-to-tweet' ),
+			array( 'status' => 400 )
+		);
 	}
 
 	// --- Optional: use connected LLM (Connectors) for one engaging tweet ----

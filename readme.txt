@@ -96,6 +96,7 @@ Donations: http://benlikes.us/donate
 
 = 6.0.0 =
 * rebrand — Major refresh of the admin interface to emphasize "Better Click To Share" and align with the X rebrand. Settings and plugin UI have been reorganized and restyled for clarity; all existing functionality is unchanged and nothing should break. We're bumping to 6.0.0 only because the interface is being so thoroughly overhauled — same shortcodes, same block, same behavior.
+* enhancement — Add-on update order: when an add-on requires a newer core version than the one installed, its settings tab now shows a clear message asking you to update Better Click To Share instead of deactivating the add-on. Add-ons stay active; update core when ready and your existing settings are unchanged.
 
 = 5.15.1 = 
 * fix — the updater for folks who have premium add-ons was not working. Now it is. No functionality changes to the plugin at all. 
