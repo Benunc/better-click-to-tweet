@@ -23,7 +23,7 @@
                 </p>
                 
                 <p class="mb-4">
-                    <?php echo sprintf( __( 'That\'s why we have a <a class="text-blue-500" target="_blank" rel="noopener noreferrer" href="%s">Power User Guide</a>.', 'better-click-to-tweet'), esc_url( 'http://benlikes.us/7r') ); ?>
+                    <?php echo sprintf( __( 'That\'s why we have a <a class="text-blue-500" target="_blank" rel="noopener noreferrer" href="%s">Power User Guide</a>.', 'better-click-to-tweet'), esc_url( 'https://benlikes.us/7r' ) ); ?>
                 </p>   
             </div>
         </div>

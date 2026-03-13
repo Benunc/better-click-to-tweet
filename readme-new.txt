@@ -8,7 +8,7 @@ Stable tag: 5.15.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Get more shares on X: add one-click shareable quote boxes to any post so readers can share your best lines on X (formerly Twitter) in one click. Block and shortcode. No coding required.
+Get more shares on social: add one-click shareable quote boxes to any post so readers can share your best lines on Social Media in one click. 
 
 == Description ==
 
@@ -25,7 +25,7 @@ Most readers won’t bother to copy a quote, open X, and paste. Give them a sing
 * **Block editor + shortcode** — Use the "Better Click To Share" block (slash command `/tweet`) or the classic `[bctt]` shortcode in any post or page.
 * **Smart character count** — Stays within X’s limits and accounts for your "via @username" and link so shares never get cut off.
 * **Optional AI suggestions** — With WordPress Connectors, get draft share text suggested from your content (usage charges apply per your provider). You can turn this off in settings.
-* **Premium styles and add-ons** — [Premium Styles](https://www.betterclicktoshare.com/all-add-ons/?utm_source=readme&utm_medium=plugin-directory&utm_campaign=bcts-readme) let you pick different looks without touching CSS; [Power User Guide](http://benlikes.us/7r) and [custom CSS options](http://benlikes.us/bcttcustom) for developers.
+* **Premium styles and add-ons** — [Premium Styles](https://benlikes.us/bcts-addons-readme) let you pick different looks without touching CSS; [Power User Guide](https://benlikes.us/7r) and [custom CSS options](https://benlikes.us/bcttcustom) for developers.
 
 **Developer or designer?** We welcome PRs and feature requests: [GitHub repository](https://github.com/Benunc/better-click-to-tweet). Translations: [WordPress.org translation project](https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet).
 
@@ -71,7 +71,7 @@ Yes. There is a dedicated block: use the slash command `/tweet` to insert it. Yo
 
 = Can I customize the look of my share on X boxes? =
 
-Yes. Developers can use custom CSS (see the [Power User Guide](http://benlikes.us/7r) and [custom style options](http://benlikes.us/bcttcustom)). If you prefer not to code, the [Premium Styles add-on](https://www.betterclicktoshare.com/all-add-ons/?utm_source=readme&utm_medium=plugin-directory&utm_campaign=bcts-readme) lets you pick from several styles in the dashboard.
+Yes. Developers can use custom CSS (see the [Power User Guide](https://benlikes.us/7r) and [custom style options](https://benlikes.us/bcttcustom)). If you prefer not to code, the [Premium Styles add-on](https://www.betterclicktoshare.com/all-add-ons/?utm_source=readme&utm_medium=plugin-directory&utm_campaign=bcts-readme) lets you pick from several styles in the dashboard.
 
 = How does the X character count work for shareable quotes? =
 
@@ -83,7 +83,7 @@ We rebranded to Better Click To Share to reflect that readers are sharing on X (
 
 = Are there other style options for my share boxes? =
 
-Yes. The [Premium Styles add-on](https://www.betterclicktoshare.com/all-add-ons/?utm_source=readme&utm_medium=plugin-directory&utm_campaign=bcts-readme) offers multiple designs. Developers can style boxes with [custom CSS](http://benlikes.us/bcttcustom) or the [Power User Guide](http://benlikes.us/7r) for advanced shortcode options.
+Yes. The [Premium Styles add-on](https://www.betterclicktoshare.com/all-add-ons/?utm_source=readme&utm_medium=plugin-directory&utm_campaign=bcts-readme) offers multiple designs. Developers can style boxes with [custom CSS](https://benlikes.us/bcttcustom) or the [Power User Guide](https://benlikes.us/7r) for advanced shortcode options.
 
 = What if I need help? =
 
@@ -93,7 +93,7 @@ Support is active in the [WordPress.org support forums](https://wordpress.org/su
 
 * **Translations:** [Translate the plugin](https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet)
 * **Code & ideas:** [GitHub issues and pull requests](https://github.com/Benunc/better-click-to-tweet)
-* **Donate:** [Support the plugin](http://benlikes.us/donate)
+* **Donate:** [Support the plugin](https://benlikes.us/donate)
 
 == Screenshots ==
 
@@ -198,7 +198,7 @@ Support is active in the [WordPress.org support forums](https://wordpress.org/su
 = 5.8.1 =
 * new — created a new nag for the plugins page announcing the UTM tags add-on.
 * new — added a link to the main settings page for folks to check out the new UTM Tags addon.
-* bonus — people who read change logs should get a discount. Use the code CHANGELOG at checkout for 10% off. http://benlikes.us/bcttaddons (good on the bundle, too!)
+* bonus — people who read change logs should get a discount. Use the code CHANGELOG at checkout for 10% off. https://benlikes.us/bcttaddons (good on the bundle, too!)
 
 = 5.8.0 =
 * new — adding a filter and various other enhancements to support a new UTM tags add-on
@@ -279,7 +279,7 @@ Support is active in the [WordPress.org support forums](https://wordpress.org/su
 = 5.2 =
 * security fix — adds (more) escaping throughout the plugin. Thanks to Paul de Wouters from HumanMade for the PR!
 * enhancement — tested for compatibility with WordPress core 4.8
-* but seriously, you should check out Premium Styles. http://benlikes.us/bcttps
+* but seriously, you should check out Premium Styles. https://benlikes.us/bcttps
 
 = 5.1 =
 * enhancement — I added a highly dismissable notice to the plugins page upon update, encouraging people to purchase my Premium styles add-on. The notice only shows to folks who have not previously customized their own styles, and once dismissed will never be shown to that user again.
@@ -290,28 +290,28 @@ Support is active in the [WordPress.org support forums](https://wordpress.org/su
 
 = 5.0.1 =
 * fix — "subscribe" text on plugin settings page was not translatable.
-* New customers are enjoying Premium Styles: http://benlikes.us/bcttps
+* New customers are enjoying Premium Styles: https://benlikes.us/bcttps
 
 = 5.0 =
 * enhancement — settings page now looks good on mobile. Before it looked a bit like someone was actively hitting it with a bat.
 * enhancement — added multiple action hooks to the settings page. This provides third party developers with the ability to add things to that page without hacking the core code.
 * enhancement — made the function enqueuing the front end styles DRYer.
-* change — the previous way (version 4.9) I had filtered the function enqueuing styles was throwing PHP warnings when I used it, so I introduced an options-based method for never enqueueing it in the first first place. Updated gist for that: http://benlikes.us/bcttgist2 This method will also pave the way for the most exciting update (for me) in the history of Better Click To Tweet:
-* change — introduced the first premium add-on (Premium Styles), and made some changes to the settings page to facilitate that. The goal is threefold: (1) Don't introduce the option to folks who have already replaced the custom stylesheet using the power user guide http://benlikes.us/7r or by dequeueing the stylesheet using this gist http://benlikes.us/bcttgist1  (2) Introduce the option to purchase custom styles in a non-sleazy way. (3) Um, introduce the option to my tens of thousands of happy users to pay me for something.
+* change — the previous way (version 4.9) I had filtered the function enqueuing styles was throwing PHP warnings when I used it, so I introduced an options-based method for never enqueueing it in the first first place. Updated gist for that: https://benlikes.us/bcttgist2 This method will also pave the way for the most exciting update (for me) in the history of Better Click To Tweet:
+* change — introduced the first premium add-on (Premium Styles), and made some changes to the settings page to facilitate that. The goal is threefold: (1) Don't introduce the option to folks who have already replaced the custom stylesheet using the power user guide https://benlikes.us/7r or by dequeueing the stylesheet using this gist https://benlikes.us/bcttgist1  (2) Introduce the option to purchase custom styles in a non-sleazy way. (3) Um, introduce the option to my tens of thousands of happy users to pay me for something.
 
 
 = 4.10 =
 * enhancement — added a 'prompt' shortcode attribute, so not you can change the words "Click To Tweet" on a per-box basis. Thanks to @apearlman on the Wordpress.org support forums for the suggestion!
 * fix — changed the way the shortcode attributes are called, because my IDE kept throwing strange errors because the code wasn't clean enough.
 * fix — removed some unused local variables because I used to not know how to code things good.
-* dream — thought about ways to monetize this plugin, but ultimately decided against it for now, because I hate dashboard nags. But if you like it, donate: http://benlikes.us/donate
+* dream — thought about ways to monetize this plugin, but ultimately decided against it for now, because I hate dashboard nags. But if you like it, donate: https://benlikes.us/donate
 * change — decided to go with 4.10 instead of 5.0 in an attempt to move toward a version numbering system that makes sense, because I have learned much since 0.X --> 1.0.
-* just for kicks and totally unrelated — wrote a cool post about rolling back WordPress plugins: http://benlikes.us/fk
+* just for kicks and totally unrelated — wrote a cool post about rolling back WordPress plugins: https://benlikes.us/fk
 
 = 4.9 =
 * enhancement - Made the function that registers and enqueues the scripts filterable, so that developers who want to put all styles for Better Click To Tweet boxes in their theme files are able to do so using this snippet: https://gist.github.com/Benunc/533985231bbfde551d019620f628a921
 * two updates in a row with no love for the non developer, but MUCH love for the developer. Trust me, this one is big time for CSS developers to be able to add styles to themes.
-* changed some specifics in the FAQ, and the Readme in general. Encouraged people to donate at http://benlikes.us/donate
+* changed some specifics in the FAQ, and the Readme in general. Encouraged people to donate at https://benlikes.us/donate
 
 = 4.8 =
 * made span classes filterable, so that other developers don't hate me when they try to extend the plugin.
@@ -378,7 +378,7 @@ Support is active in the [WordPress.org support forums](https://wordpress.org/su
 * made minor change to the bcttstyle.css (sample) file that was bugging me on hover.
 
 = 4.2 =
-* added the ability to specify a custom URL as a shortcode parameter. (more info at the power user tutorial at http://benlikes.us/7r )
+* added the ability to specify a custom URL as a shortcode parameter. (more info at the power user tutorial at https://benlikes.us/7r )
 
 = 4.1.1 =
 * added Russian translation
@@ -464,7 +464,7 @@ Refinements to the Gutenberg block, and compatibility for the new Better Click T
 * added translation support, updated three languages.
 
 = 4.1 =
-* added full customizability (instructions forthcoming at http://benlikes.us/7r )
+* added full customizability (instructions forthcoming at https://benlikes.us/7r )
 * added Finnish translation.
 
 = 4.0 =

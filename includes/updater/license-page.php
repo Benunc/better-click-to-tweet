@@ -47,69 +47,72 @@ function bctt_license_menu() {
  */
 
 function bctt_license_page() {
+	$active_plugins = bctt_get_active_addons();
+	$license_url   = admin_url( 'options-general.php?page=better-click-to-tweet&tab=bctt-licenses' );
 	?>
-    <div class="wrap">
-    <h2><?php _e( 'Activate Your Add-on Licenses', 'better-click-to-tweet' ); ?></h2>
-    <p><?php _e('An active license is required for updates (including bug fixes and security updates) as well as support. Licenses don\'t affect the functionality of the add-ons in any way, but in order to receive support for installed add-ons you\'ll need an active license. Thanks again for your support!', 'better-click-to-tweet' );?></p>
+	<div class="bctt-settings-page bctt-licenses-tab">
+		<div class="bctt-settings-grid">
+			<main class="bctt-settings-main">
+				<section class="bctt-card bctt-card-instructions" id="bctt_license_instructions" aria-labelledby="bctt-license-instructions-heading">
+					<h2 id="bctt-license-instructions-heading" class="bctt-card-title"><?php esc_html_e( 'Activate Your Add-on Licenses', 'better-click-to-tweet' ); ?></h2>
+					<div class="bctt-card-content">
+						<p><?php esc_html_e( 'An active license is required for updates (including bug fixes and security updates) as well as support. Licenses don\'t affect the functionality of the add-ons in any way, but in order to receive support for installed add-ons you\'ll need an active license. Thanks again for your support!', 'better-click-to-tweet' ); ?></p>
+					</div>
+				</section>
 
-
-    <form method="post" action="<?php echo admin_url( 'admin.php?page=better-click-to-tweet&tab=bctt-licenses' ); ?>">
-	    <?php settings_errors('bctt-license');
-        if ( function_exists( 'bcttps_license_menu' ) ) {
-            echo sprintf( __( '<div style="background-color:#b22222; text-align:center; color: white; padding: 1em;"><p><strong>IMPORTANT:</strong></p><p>Your version of the Premium Styles add-on needs to be updated before you can input a functional license key.</p> <p><strong>You haven\'t done anything wrong here</strong>, but the below input for Premium Styles will not work until you address this. For more information, see <a style="color:yellow;"href="%1$s">this post</a></p></div>', 'better-click-to-tweet' ), esc_url('http://benlikes.us/premiumstylesupdate1') );
-
-        }
-		$active_plugins = bctt_get_active_addons(); ?>
-
-        <table class="form-table">
-			<?php settings_fields( 'bctt_license' );
-
-			foreach ( $active_plugins
-
-			as $addons ) {
-			$shortname   = bctt_addon_shortname( $addons['Name'] );
-			$license_key = 'bctt_' . bctt_addon_slug( $shortname ) . '_license';
-			$key         = get_option( $license_key );
-			$status      = get_option( $license_key . '_active' );
-			//var_dump( $status );
-			?>
-            <tbody>
-            <tr valign="top">
-
-                <th scope="row" valign="top">
-					<?php echo esc_html( $shortname ); ?>
-                </th>
-                <td>
-                    <input id="<?php echo esc_attr( $license_key ); ?>" name="<?php echo esc_attr( $license_key ); ?>" type="text"
-                           class="regular-text"
-                           value="<?php echo esc_attr( $key ); ?>"
-                           placeholder="<?php _e( 'Enter your license key', 'better-click-to-tweet' ); ?>"/>
-                </td>
-            </tr>
-			<?php if (  false == $status || 'valid' == $status) { ?>
-            <tr valign="top">
-                <th scope="row" valign="top">
-					<?php //empty column for spacing ?>
-                </th>
-                <td style="padding-top:0;">
-					<?php if ( $status == 'valid' ) { ?>
-                        <div style="color:green; margin-bottom:1em;"><?php _e( 'License active!' ); ?></div>
-						<?php wp_nonce_field( $license_key . '_nonce', $license_key . '_nonce' ); ?>
-                        <input type="submit" class="button-secondary" name="<?php echo esc_attr( $license_key ); ?>_deactivate"
-                               value="<?php _e( 'Deactivate License', 'better-click-to-tweet' ); ?>"/>
-					<?php } else {
-						wp_nonce_field( $license_key . '_nonce', $license_key . '_nonce' ); ?>
-                        <input type="submit" class="button-secondary" name="<?php echo esc_attr( $license_key ); ?>_activate"
-                               value="<?php _e( 'Activate License', 'better-click-to-tweet' ); ?>"/>
-					<?php }
-					} ?>
-                </td>
-            </tr>
-			<?php } ?>
-            </tbody>
-        </table>
-
-    </form>
+				<section class="bctt-card bctt-card-settings" id="bctt_license_settings" aria-labelledby="bctt-license-settings-heading">
+					<h2 id="bctt-license-settings-heading" class="bctt-card-title"><?php esc_html_e( 'Licenses', 'better-click-to-tweet' ); ?></h2>
+					<div class="bctt-card-content">
+						<form method="post" action="<?php echo esc_url( $license_url ); ?>" class="bctt-settings-form">
+							<?php
+							if ( function_exists( 'bcttps_license_menu' ) ) {
+								echo wp_kses_post( sprintf( __( '<div class="notice notice-error inline"><p><strong>IMPORTANT:</strong></p><p>Your version of the Premium Styles add-on needs to be updated before you can input a functional license key.</p><p><strong>You haven\'t done anything wrong here</strong>, but the below input for Premium Styles will not work until you address this. For more information, see <a href="%1$s">this post</a>.</p></div>', 'better-click-to-tweet' ), esc_url( 'https://benlikes.us/premiumstylesupdate1' ) ) );
+							}
+							?>
+							<?php settings_fields( 'bctt_license' ); ?>
+							<div class="bctt-form-table">
+								<?php
+								foreach ( $active_plugins as $addons ) {
+									$shortname   = bctt_addon_shortname( $addons['Name'] );
+									$license_key = 'bctt_' . bctt_addon_slug( $shortname ) . '_license';
+									$key         = get_option( $license_key );
+									$status      = get_option( $license_key . '_active' );
+									$is_active   = ( 'valid' === $status );
+									$display_val = $is_active && ! empty( $key )
+										? ( strlen( $key ) > 6 ? str_repeat( '•', strlen( $key ) - 6 ) . substr( $key, -6 ) : $key )
+										: $key;
+									?>
+									<div class="bctt-form-row">
+										<div class="bctt-form-label">
+											<label for="<?php echo esc_attr( $license_key ); ?>"><?php echo esc_html( $shortname ); ?></label>
+										</div>
+										<div class="bctt-form-field">
+											<?php if ( $is_active && ! empty( $key ) ) { ?>
+												<input type="hidden" name="<?php echo esc_attr( $license_key ); ?>" value="<?php echo esc_attr( $key ); ?>" />
+												<input id="<?php echo esc_attr( $license_key ); ?>" type="text" class="regular-text" value="<?php echo esc_attr( $display_val ); ?>" disabled="disabled" aria-label="<?php esc_attr_e( 'License key (last 6 characters shown)', 'better-click-to-tweet' ); ?>" />
+											<?php } else { ?>
+												<input id="<?php echo esc_attr( $license_key ); ?>" name="<?php echo esc_attr( $license_key ); ?>" type="text" class="regular-text" value="<?php echo esc_attr( $key ); ?>" placeholder="<?php esc_attr_e( 'Enter your license key', 'better-click-to-tweet' ); ?>"/>
+											<?php } ?>
+											<?php if ( false == $status || 'valid' == $status ) { ?>
+												<?php if ( 'valid' == $status ) { ?>
+													<p class="bctt-license-status"><?php esc_html_e( 'License active!', 'better-click-to-tweet' ); ?></p>
+													<?php wp_nonce_field( $license_key . '_nonce', $license_key . '_nonce' ); ?>
+													<button type="submit" class="button button-secondary" name="<?php echo esc_attr( $license_key ); ?>_deactivate" value="1"><?php esc_html_e( 'Deactivate License', 'better-click-to-tweet' ); ?></button>
+												<?php } else { ?>
+													<?php wp_nonce_field( $license_key . '_nonce', $license_key . '_nonce' ); ?>
+													<button type="submit" class="button button-primary" name="<?php echo esc_attr( $license_key ); ?>_activate" value="1"><?php esc_html_e( 'Activate License', 'better-click-to-tweet' ); ?></button>
+												<?php } ?>
+											<?php } ?>
+										</div>
+									</div>
+								<?php } ?>
+							</div>
+						</form>
+					</div>
+				</section>
+			</main>
+		</div>
+	</div>
 	<?php
 }
 

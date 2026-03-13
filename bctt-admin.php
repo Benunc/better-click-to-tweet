@@ -183,7 +183,7 @@ function bctt_settings() {
                 case 'bctt-premium-styles':
                         if ( ! function_exists( 'bcttps_register_settings' ) ) {
                             echo '<h2 style="text-align: center; margin-top: 20%;">';
-                            echo sprintf( __( 'Want Premium styles? Add the <a href=%s>Premium Styles add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'http://benlikes.us/bcttpsdirect' ) );
+                            echo sprintf( __( 'Want Premium styles? Add the <a href=%s>Premium Styles add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'https://benlikes.us/bcttpsdirect' ) );
                             echo '</h2>';
                         } else {
                             $req_msg = bctt_get_addon_requirement_message( 'bctt-premium-styles' );
@@ -198,7 +198,7 @@ function bctt_settings() {
                 case 'bctt-utm-tags':
                         if ( ! defined( 'BCTTUTM_VERSION' ) ) {
                             echo '<h2 style="text-align: center; margin-top: 20%;">';
-                            echo sprintf( __( 'Want to add UTM tags to the return URL to track how well BCTT boxes are performing? Add the <a href=%s>UTM tags add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'http://benlikes.us/bcttutmdirect' ) );
+                            echo sprintf( __( 'Want to add UTM tags to the return URL to track how well BCTT boxes are performing? Add the <a href=%s>UTM tags add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'https://benlikes.us/bcttutmdirect' ) );
                             echo '</h2>';
                         } else {
                             $req_msg = bctt_get_addon_requirement_message( 'bctt-utm-tags' );

@@ -78,7 +78,7 @@ function bctt_alerts() {
 				<h3
 					class="bctt-addon-nag-header"><?php esc_html_e( 'Add Premium Style to your Better Click To Share boxes!', 'better-click-to-tweet' ) ?></h3>
 
-				<a href="http://benlikes.us/bcttnag"
+				<a href="https://benlikes.us/bcttnag"
 				   target="_blank" rel="noopener noreferrer"><img class="bctt-nag-photo" src="<?php echo esc_url( plugins_url() . '/better-click-to-tweet/assets/img/premium_style.png' ); ?>"/></a>
 
 				<p class="bctt-addon-nag-copy"><?php esc_attr_e( 'Choose from multiple options when styling your Better Click To Share boxes, with no code.', 'better-click-to-tweet' ) ?></p>
@@ -88,7 +88,7 @@ function bctt_alerts() {
 					<li><?php esc_html_e( 'Support the development of Better Click To Share!', 'better-click-to-tweet' ) ?></li>
 				</ul>
 				<p class="bctt-addon-nag-copy">
-					<a class="bctt-nag-purchase-link" href="http://benlikes.us/bcttnag"
+					<a class="bctt-nag-purchase-link" href="https://benlikes.us/bcttnag"
 					   target="_blank"><?php esc_html_e( 'Purchase it today', 'better-click-to-tweet' ) ?></a> <?php esc_html_e( 'Save 8% with the code NAGSareTHEbest', 'better-click-to-tweet') ?></p>
 			</div>
 			<?php
@@ -199,7 +199,7 @@ function bctt_more_alerts() {
         <h3
                 class="bctt-more-addon-nag-header"><?php esc_html_e( 'NEW: Track how well your Better Click To Share boxes are performing!', 'better-click-to-tweet' ) ?></h3>
 
-        <a href="http://benlikes.us/bcttutmnag"
+        <a href="https://benlikes.us/bcttutmnag"
            target="_blank" rel="noopener noreferrer"><img class="bctt-nag-photo" src="<?php echo esc_url( plugins_url() . '/better-click-to-tweet/assets/img/utm-tags.jpg' ); ?>"/></a>
 
         <p class="bctt-more-addon-nag-copy"><?php esc_attr_e( 'Add UTM Codes to the URL that readers on X use to click back to your site!', 'better-click-to-tweet' ) ?></p>
@@ -209,7 +209,7 @@ function bctt_more_alerts() {
             <li><?php esc_html_e( 'Works with the block editor and with shortcodes.', 'better-click-to-tweet' ) ?></li>
         </ul>
         <p class="bctt-more-addon-nag-copy">
-            <a class="bctt-more-nag-purchase-link" href="http://benlikes.us/bcttutmnag"
+            <a class="bctt-more-nag-purchase-link" href="https://benlikes.us/bcttutmnag"
                target="_blank"><?php esc_html_e( 'Purchase it today', 'better-click-to-tweet' ) ?></a> <?php esc_html_e( 'Save 8% with the code NAGSareTHEbest', 'better-click-to-tweet') ?></p>
         </div>
 		<?php

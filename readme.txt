@@ -16,8 +16,8 @@ Better Click To Share (formerly Better Click To Tweet) is the most popular plugi
 
 Make it dead-simple for your readers to share your content on X, using a simple shortcode or block. Readers are encouraged to share a quote, and a link to your content.
 
-* [Add Premium Styles](http://benlikes.us/bcttps "Premium Styles add-on") with just a few clicks.
-* Using the shortcode method in the classic editor? See our [Power User Guide](http://benlikes.us/7r "power user guide") for all the tricks (remove or change the "via," make links nofollow, change the callback URL, and more!).
+* [Add Premium Styles](https://benlikes.us/bcttps "Premium Styles add-on") with just a few clicks.
+* Using the shortcode method in the classic editor? See our [Power User Guide](https://benlikes.us/7r "power user guide") for all the tricks (remove or change the "via," make links nofollow, change the callback URL, and more!).
 
 
 **Developer? Designer? Geek of any sort?** We're always open to feature requests and PRs. You can create issues or submit pull requests at the [GitHub repository](https://github.com/Benunc/better-click-to-tweet "Better Click To Share on GitHub") for this plugin.
@@ -49,9 +49,9 @@ Longer answer: most users over at X are still calling the act of posting there "
 I may eventually rebrand completely, but it would have to make a ton of sense from a financial perspective. This is not my day job.
 
 = Are there other style options? =
-Yes! If you are a developer or handy with CSS, there are [limitless options for styling](http://benlikes.us/bcttcustom "custom style for Better Click To Share").
+Yes! If you are a developer or handy with CSS, there are [limitless options for styling](https://benlikes.us/bcttcustom "custom style for Better Click To Share").
 
-If you are not a developer, I have released a premium add-on for selecting among several (and growing) different style options. Check out [Premium Styles](http://benlikes.us/bcttps "Premium Styles for Better Click To Share")
+If you are not a developer, I have released a premium add-on for selecting among several (and growing) different style options. Check out [Premium Styles](https://benlikes.us/bcttps "Premium Styles for Better Click To Share")
 
 = How does Better Click To Share work? =
 Better Click To Share enables you to create beautiful call-out boxes in your blog posts, asking your readers to share on X. Once you've installed and activated the plugin, click on the settings link to put in your Twitter username, and save the settings.
@@ -65,17 +65,17 @@ Better Click To Share gives you the maximum number of characters possible. Allow
 
 X automatically routes every link through its own URL shortener (you might recognize t.co as the domain they use). For their t.co links, the length is automatically truncated to 23 characters for URLs. This leaves 253 characters after the URL for you to use to compose your tweet. Even a link that is run through bit.ly or a yourls.org install is still routed through t.co in the tweet.
 
-The benefit of URL shorteners goes beyond just character length, though. Many users use bit.ly or a similar service to track numbers of clicks and other analytical data. I personally use yourls.org to power http://benlikes.us for my shortened links.
+The benefit of URL shorteners goes beyond just character length, though. Many users use bit.ly or a similar service to track numbers of clicks and other analytical data. I personally use yourls.org to power https://benlikes.us for my shortened links.
 
 Better Click To Share works alongside url shortening plugins to harness that power, if you choose to.
 
 WordPress has a feature called "shortlinks" which changes the long URL to something like example.com/?p=3435. Various plugins in the official plugin directory exist to change that shortlink to one using other outside services. Using a combination of those plugins and mine, your Better Click To Share boxes can now display a trackable link.
 
 On the settings page for Better Click To Share, simply check the box indicating you'd like to use the short URL, and save changes. If you've got a plugin that correctly hijacks the built-in WordPress shortlink functionality, you're all set!
-I've also written [a tutorial](http://benlikes.us/79 "shortlink tutorial") for how to set up the shortlinks with bit.ly and yourls.org.
+I've also written [a tutorial](https://benlikes.us/79 "shortlink tutorial") for how to set up the shortlinks with bit.ly and yourls.org.
 
 = Are there any other hidden tricks? =
-Yes! Because I want the majority of users (who aren't as concerned with options like nofollow links and getting rid of the URL in the tweet) to be happy, most options are hidden. I've written [a tutorial for using those advanced options](http://benlikes.us/7r "power user guide"). Most of those options are visible in the Gutenberg block, so that tutorial really only applies to the classic editor.
+Yes! Because I want the majority of users (who aren't as concerned with options like nofollow links and getting rid of the URL in the tweet) to be happy, most options are hidden. I've written [a tutorial for using those advanced options](https://benlikes.us/7r "power user guide"). Most of those options are visible in the Gutenberg block, so that tutorial really only applies to the classic editor.
 
 = What do I do if it's not working right? =
 I am active in [the support forums](https://wordpress.org/support/plugin/better-click-to-tweet "BCTT Support"), and in patching the plugin. Start a thread there, and I will gladly help you out. Most of the time you can expect a day or two before a response. I'm in the eastern US, and I like playing with my kids at night, so you might not hear back immediately. Don't panic.
@@ -83,7 +83,7 @@ I am active in [the support forums](https://wordpress.org/support/plugin/better-
 = How can I help? =
 Translations: https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet
 Issues, feature requests, and Pull Requests: https://github.com/Benunc/better-click-to-tweet
-Donations: http://benlikes.us/donate
+Donations: https://benlikes.us/donate
 
 == Screenshots ==
 
@@ -195,7 +195,7 @@ Donations: http://benlikes.us/donate
 = 5.8.1 =
 * new — created a new nag for the plugins page announcing the UTM tags add-on.
 * new — added a link to the main settings page for folks to check out the new UTM Tags addon.
-* bonus — people who read change logs should get a discount. Use the code CHANGELOG at checkout for 10% off. http://benlikes.us/bcttaddons (good on the bundle, too!)
+* bonus — people who read change logs should get a discount. Use the code CHANGELOG at checkout for 10% off. https://benlikes.us/bcttaddons (good on the bundle, too!)
 
 = 5.8.0 =
 * new — adding a filter and various other enhancements to support a new UTM tags add-on
@@ -276,7 +276,7 @@ Donations: http://benlikes.us/donate
 = 5.2 =
 * security fix — adds (more) escaping throughout the plugin. Thanks to Paul de Wouters from HumanMade for the PR!
 * enhancement — tested for compatibility with WordPress core 4.8
-* but seriously, you should check out Premium Styles. http://benlikes.us/bcttps
+* but seriously, you should check out Premium Styles. https://benlikes.us/bcttps
 
 = 5.1 =
 * enhancement — I added a highly dismissable notice to the plugins page upon update, encouraging people to purchase my Premium styles add-on. The notice only shows to folks who have not previously customized their own styles, and once dismissed will never be shown to that user again.
@@ -287,28 +287,28 @@ Donations: http://benlikes.us/donate
 
 = 5.0.1 =
 * fix — "subscribe" text on plugin settings page was not translatable.
-* New customers are enjoying Premium Styles: http://benlikes.us/bcttps
+* New customers are enjoying Premium Styles: https://benlikes.us/bcttps
 
 = 5.0 =
 * enhancement — settings page now looks good on mobile. Before it looked a bit like someone was actively hitting it with a bat.
 * enhancement — added multiple action hooks to the settings page. This provides third party developers with the ability to add things to that page without hacking the core code.
 * enhancement — made the function enqueuing the front end styles DRYer.
-* change — the previous way (version 4.9) I had filtered the function enqueuing styles was throwing PHP warnings when I used it, so I introduced an options-based method for never enqueueing it in the first first place. Updated gist for that: http://benlikes.us/bcttgist2 This method will also pave the way for the most exciting update (for me) in the history of Better Click To Tweet:
-* change — introduced the first premium add-on (Premium Styles), and made some changes to the settings page to facilitate that. The goal is threefold: (1) Don't introduce the option to folks who have already replaced the custom stylesheet using the power user guide http://benlikes.us/7r or by dequeueing the stylesheet using this gist http://benlikes.us/bcttgist1  (2) Introduce the option to purchase custom styles in a non-sleazy way. (3) Um, introduce the option to my tens of thousands of happy users to pay me for something.
+* change — the previous way (version 4.9) I had filtered the function enqueuing styles was throwing PHP warnings when I used it, so I introduced an options-based method for never enqueueing it in the first first place. Updated gist for that: https://benlikes.us/bcttgist2 This method will also pave the way for the most exciting update (for me) in the history of Better Click To Tweet:
+* change — introduced the first premium add-on (Premium Styles), and made some changes to the settings page to facilitate that. The goal is threefold: (1) Don't introduce the option to folks who have already replaced the custom stylesheet using the power user guide https://benlikes.us/7r or by dequeueing the stylesheet using this gist https://benlikes.us/bcttgist1  (2) Introduce the option to purchase custom styles in a non-sleazy way. (3) Um, introduce the option to my tens of thousands of happy users to pay me for something.
 
 
 = 4.10 =
 * enhancement — added a 'prompt' shortcode attribute, so not you can change the words "Click To Tweet" on a per-box basis. Thanks to @apearlman on the Wordpress.org support forums for the suggestion!
 * fix — changed the way the shortcode attributes are called, because my IDE kept throwing strange errors because the code wasn't clean enough.
 * fix — removed some unused local variables because I used to not know how to code things good.
-* dream — thought about ways to monetize this plugin, but ultimately decided against it for now, because I hate dashboard nags. But if you like it, donate: http://benlikes.us/donate
+* dream — thought about ways to monetize this plugin, but ultimately decided against it for now, because I hate dashboard nags. But if you like it, donate: https://benlikes.us/donate
 * change — decided to go with 4.10 instead of 5.0 in an attempt to move toward a version numbering system that makes sense, because I have learned much since 0.X --> 1.0.
-* just for kicks and totally unrelated — wrote a cool post about rolling back WordPress plugins: http://benlikes.us/fk
+* just for kicks and totally unrelated — wrote a cool post about rolling back WordPress plugins: https://benlikes.us/fk
 
 = 4.9 =
 * enhancement - Made the function that registers and enqueues the scripts filterable, so that developers who want to put all styles for Better Click To Tweet boxes in their theme files are able to do so using this snippet: https://gist.github.com/Benunc/533985231bbfde551d019620f628a921
 * two updates in a row with no love for the non developer, but MUCH love for the developer. Trust me, this one is big time for CSS developers to be able to add styles to themes.
-* changed some specifics in the FAQ, and the Readme in general. Encouraged people to donate at http://benlikes.us/donate
+* changed some specifics in the FAQ, and the Readme in general. Encouraged people to donate at https://benlikes.us/donate
 
 = 4.8 =
 * made span classes filterable, so that other developers don't hate me when they try to extend the plugin.
@@ -375,7 +375,7 @@ Donations: http://benlikes.us/donate
 * made minor change to the bcttstyle.css (sample) file that was bugging me on hover.
 
 = 4.2 =
-* added the ability to specify a custom URL as a shortcode parameter. (more info at the power user tutorial at http://benlikes.us/7r )
+* added the ability to specify a custom URL as a shortcode parameter. (more info at the power user tutorial at https://benlikes.us/7r )
 
 = 4.1.1 =
 * added Russian translation
@@ -461,7 +461,7 @@ Refinements to the Gutenberg block, and compatibility for the new Better Click T
 * added translation support, updated three languages.
 
 = 4.1 =
-* added full customizability (instructions forthcoming at http://benlikes.us/7r )
+* added full customizability (instructions forthcoming at https://benlikes.us/7r )
 * added Finnish translation.
 
 = 4.0 =

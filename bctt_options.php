@@ -79,7 +79,7 @@ function bctt_settings_page() {
 					<p><?php _e( 'In the Block-based editor, there is a Better Click To Share block.', 'better-click-to-tweet' ); ?></p>
 					<p><?php _e( 'If you include a link back to the post using the URL parameter (or leaving it out, the default behavior), the post length is automatically shortened to 253 characters minus the length of your x.com username, to leave room for the handle and link back to the post.', 'better-click-to-tweet' ); ?></p>
 					<p><?php _e( 'NOTE: X.com allows premium members to post longer than 280 characters. Better Click To Share is designed to allow ALL users there to be able to share your post. That\'s why we do not plan to support longer posts to X.', 'better-click-to-tweet' ); ?></p>
-					<p><?php echo sprintf( __( 'Learn more about the URL parameter as well as the other power user features in the <a href="%s">Power User Guide</a>.', 'better-click-to-tweet' ), esc_url( 'http://benlikes.us/7r' ) ); ?></p>
+					<p><?php echo sprintf( __( 'Learn more about the URL parameter as well as the other power user features in the <a href="%s">Power User Guide</a>.', 'better-click-to-tweet' ), esc_url( 'https://benlikes.us/7r' ) ); ?></p>
 				</div>
 			</section>
 			<?php do_action( 'bctt_instructions_bottom' ); ?>
@@ -118,7 +118,7 @@ function bctt_settings_page() {
 								<div class="bctt-form-field">
 									<input type="checkbox" name="bctt-custom-style" value="1" <?php echo is_plugin_active( 'better-click-to-tweet-styles/better-click-to-tweet-premium-styles.php' ) ? 'checked="checked"' : 'disabled="disabled"'; ?> />
 									<?php if ( ! is_plugin_active( 'better-click-to-tweet-styles/better-click-to-tweet-premium-styles.php' ) ) { ?>
-										<p class="description"><?php echo sprintf( __( 'Want Premium styles? Add the <a href="%s">Premium Styles add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'http://benlikes.us/bcttpsdirect' ) ); ?></p>
+										<p class="description"><?php echo sprintf( __( 'Want Premium styles? Add the <a href="%s">Premium Styles add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'https://benlikes.us/bcttpsdirect' ) ); ?></p>
 									<?php } ?>
 								</div>
 							</div>
@@ -130,7 +130,7 @@ function bctt_settings_page() {
 								</div>
 								<div class="bctt-form-field">
 									<input type="checkbox" name="bctt-utm-tags" value="1" disabled="disabled" />
-									<p class="description"><?php echo sprintf( __( 'Want to add UTM tags to the return URL to track how well BCTT boxes are performing? Add the <a href="%s">UTM tags add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'http://benlikes.us/bcttutmdirect' ) ); ?></p>
+									<p class="description"><?php echo sprintf( __( 'Want to add UTM tags to the return URL to track how well BCTT boxes are performing? Add the <a href="%s">UTM tags add-on</a> today!', 'better-click-to-tweet' ), esc_url( 'https://benlikes.us/bcttutmdirect' ) ); ?></p>
 								</div>
 							</div>
 							<?php } ?>
