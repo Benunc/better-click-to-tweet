@@ -138,8 +138,55 @@ function bctt_get_core_min_addon_versions() {
 }
 
 /**
+ * Plugin basename for each settings tab, for reading version from header when add-on doesn't register.
+ * Used as fallback for add-ons that predate the bctt_addon_requirements filter (e.g. Premium Styles 1.8.x).
+ *
+ * @since 6.0.0
+ * @return array Tab slug => plugin basename (e.g. 'better-click-to-tweet-premium-styles/better-click-to-tweet-premium-styles.php').
+ */
+function bctt_get_addon_plugin_basenames() {
+	return array(
+		'bctt-premium-styles' => 'better-click-to-tweet-premium-styles/better-click-to-tweet-premium-styles.php',
+		'bctt-utm-tags'       => 'better-click-to-tweet-utm-tags/better-click-to-tweet-utm-tags.php',
+	);
+}
+
+/**
+ * Get add-on name and version from plugin header when the add-on does not register via bctt_addon_requirements.
+ *
+ * @since 6.0.0
+ * @param string $tab_slug Tab slug.
+ * @return array|null Array with 'name' and 'version', or null if not found.
+ */
+function bctt_get_addon_version_from_plugin_header( $tab_slug ) {
+	$basenames = bctt_get_addon_plugin_basenames();
+	if ( empty( $basenames[ $tab_slug ] ) ) {
+		return null;
+	}
+	if ( ! function_exists( 'get_plugins' ) ) {
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	}
+	$plugins = get_plugins();
+	$basename = $basenames[ $tab_slug ];
+	if ( empty( $plugins[ $basename ] ) || ! is_plugin_active( $basename ) ) {
+		return null;
+	}
+	$data = $plugins[ $basename ];
+	$version = isset( $data['Version'] ) ? $data['Version'] : '';
+	$name    = isset( $data['Name'] ) ? $data['Name'] : '';
+	if ( $version === '' || $name === '' ) {
+		return null;
+	}
+	return array(
+		'name'    => $name,
+		'version' => $version,
+	);
+}
+
+/**
  * Check if the active add-on for a tab is older than this core's minimum.
  * If so, returns message data for display; otherwise returns null.
+ * Uses bctt_addon_requirements when the add-on registers; otherwise falls back to plugin header (Version/Name).
  *
  * @since 6.0.0
  * @param string $tab_slug Tab slug (e.g. 'bctt-premium-styles', 'bctt-utm-tags').
@@ -148,22 +195,37 @@ function bctt_get_core_min_addon_versions() {
 function bctt_get_addon_too_old_message( $tab_slug ) {
 	$requirements = bctt_get_addon_requirements();
 	$min_versions = bctt_get_core_min_addon_versions();
-	if ( empty( $requirements[ $tab_slug ] ) || empty( $min_versions[ $tab_slug ] ) ) {
+	if ( empty( $min_versions[ $tab_slug ] ) ) {
 		return null;
 	}
-	$r = $requirements[ $tab_slug ];
 	$min_addon = $min_versions[ $tab_slug ];
-	if ( ! isset( $r['version'], $r['name'] ) ) {
-		return null;
+
+	// Prefer addon-registered data (add-ons that hook bctt_addon_requirements).
+	if ( ! empty( $requirements[ $tab_slug ] ) ) {
+		$r = $requirements[ $tab_slug ];
+		if ( isset( $r['version'], $r['name'] ) && version_compare( $r['version'], $min_addon, '<' ) ) {
+			return array(
+				'addon_name'         => $r['name'],
+				'addon_version'      => $r['version'],
+				'min_addon_version'  => $min_addon,
+			);
+		}
+		if ( isset( $r['version'] ) && version_compare( $r['version'], $min_addon, '>=' ) ) {
+			return null;
+		}
 	}
-	if ( version_compare( $r['version'], $min_addon, '>=' ) ) {
-		return null;
+
+	// Fallback: add-on does not register (e.g. Premium Styles 1.8.x). Read version from plugin header.
+	$header = bctt_get_addon_version_from_plugin_header( $tab_slug );
+	if ( $header && version_compare( $header['version'], $min_addon, '<' ) ) {
+		return array(
+			'addon_name'         => $header['name'],
+			'addon_version'      => $header['version'],
+			'min_addon_version'  => $min_addon,
+		);
 	}
-	return array(
-		'addon_name'         => $r['name'],
-		'addon_version'      => $r['version'],
-		'min_addon_version'  => $min_addon,
-	);
+
+	return null;
 }
 
 /**
