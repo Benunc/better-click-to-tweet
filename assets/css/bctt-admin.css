@@ -148,19 +148,24 @@
 	color: #2c3338;
 }
 
-/* Clarifier card: soft blue tint */
-.bctt-card-clarifier {
-	border-left: 4px solid #2271b1;
-	background: #f6f7f7;
-}
-
-.bctt-card-clarifier .bctt-card-title {
+/* Rebrand link: prominent above main content */
+.bctt-rebrand-link {
+	margin: 0 0 16px;
+	padding: 10px 16px;
 	background: #f0f6fc;
-	border-bottom-color: #c5d9ed;
+	border-left: 4px solid #2271b1;
+	border-radius: 0 4px 4px 0;
+	font-size: 14px;
 }
 
-.bctt-card-clarifier .bctt-card-content a {
+.bctt-rebrand-link a {
 	color: #2271b1;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.bctt-rebrand-link a:hover {
+	text-decoration: underline;
 }
 
 /* Instructions: setup alert + code block */

@@ -293,7 +293,7 @@ function bctt_shortcode( $atts ) {
 		'text'    => rawurlencode( html_entity_decode( $short ) ),
 		'via'     => $via,
 		'related' => $related,
-	), 'https://twitter.com/intent/tweet' );
+	), 'https://x.com/intent/tweet' );
 
 	if ( ! is_feed() ) {
 

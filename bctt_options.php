@@ -176,9 +176,9 @@ function bctt_settings_page() {
 
 			<div class="bctt-card bctt-card-sidebar" id="bctt-contrib">
 				<div class="bctt-card-content">
-					<p><?php echo sprintf( __( 'This plugin is developed out in the open. Make requests for features and bugfixes <a href="%s">on the public GitHub repository.</a>', 'better-click-to-tweet' ), esc_url( 'https://github.com/Benunc/better-click-to-tweet' ) ); ?></p>
+					<p><?php echo sprintf( __( 'This plugin is developed out in the open. Make requests for features and bugfixes <a href="%s">on the public GitHub repository.</a>', 'better-click-to-tweet' ), esc_url( 'https://benlikes.us/bcttgh' ) ); ?></p>
 					<p><?php echo sprintf( __( 'The best way you can support this and other plugins is to <a href="%s">donate</a>.', 'better-click-to-tweet' ), esc_url( 'https://benlikes.us/donate' ) ); ?>
-					<?php echo sprintf( __( 'The second best way is to <a href="%s">leave an honest review.</a>', 'better-click-to-tweet' ), esc_url( 'https://wordpress.org/support/view/plugin-reviews/better-click-to-tweet' ) ); ?></p>
+					<?php echo sprintf( __( 'The second best way is to <a href="%s">leave an honest review.</a>', 'better-click-to-tweet' ), esc_url( 'https://benlikes.us/bcttreview' ) ); ?></p>
 					<p><?php _e( 'Did this plugin save you enough time to be worth some money?', 'better-click-to-tweet' ); ?></p>
 					<p><a href="https://benlikes.us/donate" target="_blank" rel="noopener noreferrer" class="button button-secondary"><?php _e( 'Say thanks with a donation', 'better-click-to-tweet' ); ?></a></p>
 				</div>

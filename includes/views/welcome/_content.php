@@ -19,7 +19,7 @@
                     </svg>
                     <a 
                         class="text-sm font-bold text-blue-500" 
-                        href="https://www.wpsteward.com/2019/06/why-arent-my-posts-being-shared-on-social-media/">
+                        href=https://benlikes.us/bcts-blogpost">
                             <?php _e( 'Here\'s a splash of cold water to the face regarding your content', 'better-click-to-tweet' )?>
                     </a>
                  </div>

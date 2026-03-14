@@ -1,6 +1,6 @@
 <?php
 /**
- * This file for use with the Better Click To Share plugin. http://wordpress.org/plugins/better-click-to-tweet
+ * This file for use with the Better Click To Share plugin. https://benlikes.us/bctt
  * Huge thanks to Andrew Norcross @norcross for pretty much every bit of code you see here:
  *
  * @since 4.0
