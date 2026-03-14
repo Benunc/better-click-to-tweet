@@ -104,7 +104,7 @@ function bctt_addon_notice_ignore() {
 
 	/**
 	 * If user clicks to ignore the notice, add that to their user meta the banner then checks whether this tag exists already or not.
-	 * See here: http://codex.wordpress.org/Function_Reference/add_user_meta
+	 * See here: https://benlikes.us/bcts-codex
 	 */
 
 	if ( isset( $_GET['bctt_has_dismissed_nag'] ) && '0' == $_GET['bctt_has_dismissed_nag'] ) {
@@ -224,7 +224,7 @@ function bctt_more_addon_notice_ignore() {
 
 	/**
 	 * If user clicks to ignore the notice, add that to their user meta the banner then checks whether this tag exists already or not.
-	 * See here: http://codex.wordpress.org/Function_Reference/add_user_meta
+	 * See here: https://benlikes.us/bcts-codex
 	 */
 
 	if ( isset( $_GET['bctt_has_dismissed_utm_nag'] ) && '0' == $_GET['bctt_has_dismissed_utm_nag'] ) {

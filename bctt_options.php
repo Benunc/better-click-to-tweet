@@ -153,7 +153,7 @@ function bctt_settings_page() {
 						</p>
 						<p class="bctt-settings-footer">
 							<?php
-							$url = 'https://www.betterclicktoshare.com';
+							$url = 'https://benlikes.us/bctssite';
 							echo sprintf( __( 'An open source plugin by <a href="%s">Ben Meredith</a>', 'better-click-to-tweet' ), esc_url( $url ) );
 							?>
 						</p>
