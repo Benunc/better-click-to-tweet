@@ -148,6 +148,41 @@
 	color: #2c3338;
 }
 
+/* Add-on requirement / add-on too old: gentle orange callout (something needs attention) */
+.bctt-card-addon-requirement {
+	background: #fef6e9;
+	border-left: 4px solid #dba617;
+}
+
+.bctt-card-addon-requirement .bctt-card-title {
+	background: #c49000;
+	color: #fff;
+}
+
+.bctt-card-addon-requirement .bctt-addon-update-steps-heading {
+	margin: 16px 0 8px;
+	font-size: 1em;
+	font-weight: 600;
+	color: #2c3338;
+}
+
+.bctt-card-addon-requirement .bctt-addon-update-steps {
+	margin: 0 0 16px;
+	padding-left: 24px;
+	line-height: 1.6;
+	color: #2c3338;
+}
+
+.bctt-card-addon-requirement .bctt-addon-update-steps li {
+	margin-bottom: 6px;
+}
+
+/* Nested line under step 3: no marker, indented more than the main list content */
+.bctt-card-addon-requirement .bctt-addon-update-step-sublist {
+	margin: 6px 0 0 1.25em;
+	padding-left: 0;
+}
+
 /* Rebrand link: prominent above main content */
 .bctt-rebrand-link {
 	margin: 0 0 16px;

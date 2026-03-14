@@ -27,7 +27,7 @@
     </a>
 
     <a 
-    href="https://www.betterclicktoshare.com/all-add-ons/"
+    href="https://benlikes.us/bcttaddons"
     target="_blank"
     rel="noopener noreferrer"
     class="text-blue-500 underline w-full text-center block"

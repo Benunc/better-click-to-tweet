@@ -123,6 +123,156 @@ function bctt_addon_requirement_message_html( $msg_data ) {
 	<?php
 }
 
+/**
+ * Minimum add-on versions required by this core version.
+ * If the user has an older add-on, we show an "update add-on" message instead of the tab content to avoid a broken settings page.
+ *
+ * @since 6.0.0
+ * @return array Tab slug => minimum add-on version (e.g. 'bctt-premium-styles' => '1.9.0').
+ */
+function bctt_get_core_min_addon_versions() {
+	return array(
+		'bctt-premium-styles' => '1.9.0',  // Card layout and tab integration; older versions bork the settings page.
+		'bctt-utm-tags'       => '1.2.0',  // Versions that register with bctt_addon_requirements and work with core 6.0.
+	);
+}
+
+/**
+ * Check if the active add-on for a tab is older than this core's minimum.
+ * If so, returns message data for display; otherwise returns null.
+ *
+ * @since 6.0.0
+ * @param string $tab_slug Tab slug (e.g. 'bctt-premium-styles', 'bctt-utm-tags').
+ * @return array|null Array with 'addon_name', 'addon_version', 'min_addon_version' if add-on is too old; null if OK or unknown.
+ */
+function bctt_get_addon_too_old_message( $tab_slug ) {
+	$requirements = bctt_get_addon_requirements();
+	$min_versions = bctt_get_core_min_addon_versions();
+	if ( empty( $requirements[ $tab_slug ] ) || empty( $min_versions[ $tab_slug ] ) ) {
+		return null;
+	}
+	$r = $requirements[ $tab_slug ];
+	$min_addon = $min_versions[ $tab_slug ];
+	if ( ! isset( $r['version'], $r['name'] ) ) {
+		return null;
+	}
+	if ( version_compare( $r['version'], $min_addon, '>=' ) ) {
+		return null;
+	}
+	return array(
+		'addon_name'         => $r['name'],
+		'addon_version'      => $r['version'],
+		'min_addon_version'  => $min_addon,
+	);
+}
+
+/**
+ * Output the "update add-on to use this tab" message.
+ * Shown when core is new enough but the add-on is too old (avoids broken/incompatible tab content).
+ *
+ * @since 6.0.0
+ * @param array $msg_data Keys: addon_name, addon_version, min_addon_version.
+ */
+function bctt_addon_too_old_message_html( $msg_data ) {
+	if ( empty( $msg_data['addon_name'] ) || empty( $msg_data['addon_version'] ) || empty( $msg_data['min_addon_version'] ) ) {
+		return;
+	}
+	$addon_name        = $msg_data['addon_name'];
+	$addon_version     = $msg_data['addon_version'];
+	$min_addon_version = $msg_data['min_addon_version'];
+	$plugins_url  = admin_url( 'plugins.php' );
+	$updates_url  = admin_url( 'update-core.php' );
+	$licenses_url = admin_url( 'options-general.php?page=better-click-to-tweet&tab=bctt-licenses' );
+	?>
+	<div class="bctt-settings-page">
+		<div class="bctt-settings-grid">
+			<section class="bctt-card bctt-card-addon-requirement" aria-labelledby="bctt-addon-too-old-heading">
+				<h2 id="bctt-addon-too-old-heading" class="bctt-card-title">
+					<?php esc_html_e( 'Update your add-on', 'better-click-to-tweet' ); ?>
+				</h2>
+				<div class="bctt-card-content">
+					<p>
+						<?php
+						echo wp_kses_post(
+							sprintf(
+								/* translators: 1: add-on name, 2: installed version (e.g. 1.8.0), 3: required version (e.g. 1.9.0) */
+								__( 'You have %1$s version %2$s. This version of Better Click To Share requires %1$s version %3$s or newer to change site-wide settings for %1$s.', 'better-click-to-tweet' ),
+								esc_html( $addon_name ),
+								esc_html( $addon_version ),
+								esc_html( $min_addon_version )
+							)
+						);
+						?>
+					</p>
+					<h3 class="bctt-addon-update-steps-heading">
+						<?php
+						echo esc_html(
+							sprintf(
+								/* translators: %s: add-on name (e.g. Premium Styles) */
+								__( 'How to get access to your %s site-wide settings', 'better-click-to-tweet' ),
+								$addon_name
+							)
+						);
+						?>
+					</h3>
+					<ol class="bctt-addon-update-steps">
+						<li>
+							<?php
+							echo wp_kses_post(
+								sprintf(
+									/* translators: %s: link to Licenses tab */
+									__( 'Make sure your license is active at the <a href="%s">Licenses tab</a>.', 'better-click-to-tweet' ),
+									esc_url( $licenses_url )
+								)
+							);
+							?>
+						</li>
+						<li>
+							<?php
+							echo wp_kses_post(
+								sprintf(
+									/* translators: 1: link to Plugins page, 2: link to updates page */
+									__( 'Check for an update on the <a href="%1$s">Plugins page</a> (or <a href="%2$s">check for updates</a> if you don\'t see it).', 'better-click-to-tweet' ),
+									esc_url( $plugins_url ),
+									esc_url( $updates_url )
+								)
+							);
+							?>
+						</li>
+						<li>
+							<?php
+							echo wp_kses_post(
+								sprintf(
+									/* translators: %s: link to account login */
+									__( 'If you need to re-enter your license key, you can find it at <a href="%s" target="_blank" rel="noopener noreferrer">your Better Click To Share account</a>.', 'better-click-to-tweet' ),
+									esc_url( 'https://benlikes.us/bcttlogin' )
+								)
+							);
+							?>
+							<p class="bctt-addon-update-step-sublist"><?php esc_html_e( "If you've misplaced your credentials, use the lost password option there to reset them.", 'better-click-to-tweet' ); ?></p>
+						</li>
+					</ol>
+					<p>
+						<?php esc_html_e( 'Your add-on is still active and functional. You\'ll need the latest version only to change site-wide settings on this tab. Functionality like updating settings for particular BCTS boxes is still fully functional.', 'better-click-to-tweet' ); ?>
+					</p>
+					<p>
+						<?php
+						echo wp_kses_post(
+							sprintf(
+								/* translators: %s: link to contact form */
+								__( 'You can always reach out at our <a href="%s" target="_blank" rel="noopener noreferrer">contact form</a>.', 'better-click-to-tweet' ),
+								esc_url( 'https://benlikes.us/bctscontact' )
+							)
+						);
+						?>
+					</p>
+				</div>
+			</section>
+		</div>
+	</div>
+	<?php
+}
+
 function bctt_settings() {
     $addons = bctt_get_active_addons();
 
@@ -189,6 +339,8 @@ function bctt_settings() {
                             $req_msg = bctt_get_addon_requirement_message( 'bctt-premium-styles' );
                             if ( $req_msg ) {
                                 bctt_addon_requirement_message_html( $req_msg );
+                            } elseif ( $addon_old_msg = bctt_get_addon_too_old_message( 'bctt-premium-styles' ) ) {
+                                bctt_addon_too_old_message_html( $addon_old_msg );
                             } else {
                                 bcttps_settings_output();
                             }
@@ -204,6 +356,8 @@ function bctt_settings() {
                             $req_msg = bctt_get_addon_requirement_message( 'bctt-utm-tags' );
                             if ( $req_msg ) {
                                 bctt_addon_requirement_message_html( $req_msg );
+                            } elseif ( $addon_old_msg = bctt_get_addon_too_old_message( 'bctt-utm-tags' ) ) {
+                                bctt_addon_too_old_message_html( $addon_old_msg );
                             } else {
                                 $BCTT_Utm_tags = Bctt_Utm_Tags::get_instance();
                                 $BCTT_Utm_tags->bctt_utm_tags_settings_output();
