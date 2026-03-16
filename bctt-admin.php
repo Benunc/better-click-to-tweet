@@ -134,6 +134,7 @@ function bctt_get_core_min_addon_versions() {
 	return array(
 		'bctt-premium-styles' => '1.9.0',  // Card layout and tab integration; older versions bork the settings page.
 		'bctt-utm-tags'       => '1.2.0',  // Versions that register with bctt_addon_requirements and work with core 6.0.
+		'bctt-test-addon'     => '1.1.0',  // Test add-on tab; used to exercise add-on version checks without touching real add-ons.
 	);
 }
 
@@ -355,6 +356,9 @@ function bctt_settings() {
 
         <?php
           $allowed_tabs = array( 'bctt-settings', 'bctt-licenses', 'bctt-premium-styles', 'bctt-utm-tags' );
+          if ( defined( 'BCTT_DEVELOPMENT_MODE' ) && BCTT_DEVELOPMENT_MODE ) {
+              $allowed_tabs[] = 'bctt-test-addon';
+          }
           $active_tab   = isset( $_GET['tab'] ) && in_array( $_GET['tab'], $allowed_tabs, true ) ? sanitize_key( $_GET['tab'] ) : 'bctt-settings';
         ?>
 
@@ -384,6 +388,14 @@ function bctt_settings() {
                 class="nav-tab <?php echo $active_tab == 'bctt-utm-tags' ? 'nav-tab-active' : ''; ?>">
                 <?php _e( 'UTM Tags', 'better-click-to-tweet' ); ?>
             </a>
+           
+            <?php if ( defined( 'BCTT_DEVELOPMENT_MODE' ) && BCTT_DEVELOPMENT_MODE ) : ?>
+                <a 
+                    href="<?php echo esc_url( $base_url . '&tab=bctt-test-addon' ); ?>" 
+                    class="nav-tab <?php echo $active_tab == 'bctt-test-addon' ? 'nav-tab-active' : ''; ?>">
+                    <?php _e( 'Test Add-on', 'better-click-to-tweet' ); ?>
+                </a>
+            <?php endif; ?>
         </nav>
          
         <?php
@@ -426,7 +438,33 @@ function bctt_settings() {
                             }
                         }
                     break;
-                
+
+                case 'bctt-test-addon':
+                        if ( ! ( defined( 'BCTT_DEVELOPMENT_MODE' ) && BCTT_DEVELOPMENT_MODE ) ) {
+                            // Hard safeguard: do not show this tab unless development mode is on (addon or wp-config).
+                            bctt_settings_page();
+                            break;
+                        }
+                        if ( ! defined( 'BCTTTEST_VERSION' ) ) {
+                            echo '<h2 style="text-align: center; margin-top: 20%;">';
+                            echo sprintf( __( '<a href=%s>Activate The Test Addon</a> to populate this tab with content from the addon.', 'better-click-to-tweet' ), esc_url( '/wp-admin/plugins.php' ) );
+                            echo '</h2>';
+                        } else {
+                            $req_msg = bctt_get_addon_requirement_message( 'bctt-test-addon' );
+                            if ( $req_msg ) {
+                                bctt_addon_requirement_message_html( $req_msg );
+                            } elseif ( $addon_old_msg = bctt_get_addon_too_old_message( 'bctt-test-addon' ) ) {
+                                bctt_addon_too_old_message_html( $addon_old_msg );
+                            } else {
+                                if ( function_exists( 'bctttest_settings_tab_output' ) ) {
+                                    bctttest_settings_tab_output();
+                                } else {
+                                    echo '<p>' . esc_html__( 'The Test Add-on is active, but no tab output function is available.', 'better-click-to-tweet' ) . '</p>';
+                                }
+                            }
+                        }
+                    break;
+
                 default:
                         bctt_settings_page();
                     break;
