@@ -10,28 +10,26 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Get more shares on social: add one-click shareable quote boxes to any post so readers can share your best lines on Social Media in one click. 
 
+[What happened to Better Click To Tweet?](https://benlikes.us/insider-bcts-rebrand)
+
 == Description ==
 
 **Want more of your content shared on X?** Better Click To Share turns your best quotes into one-click share boxes so readers can post them to X (formerly Twitter) without copying, pasting, or trimming — and you get a link back to your post every time.
 
 = Why use a shareable quote plugin for X? =
 
-Most readers won’t bother to copy a quote, open X, and paste. Give them a single click: your quote plus a link to your post are pre-filled. You grow reach and engagement; they share in seconds. No coding, no design work — add a block or shortcode and you’re done.
+Most readers won’t bother to copy a quote, open a social media site, and paste. Give them a single click: your quote plus a link to your post are pre-filled. You grow reach and engagement; they share in seconds. No coding, no design work — add a block or shortcode and you’re done.
 
 = What you get with Better Click To Share =
 
 * **One-click share on X** — Readers see a styled quote box; one click opens X with your quote and your post link ready to post.
 * **More engagement** — Make your best lines easy to share so your content spreads further and drives traffic back to your site.
-* **Block editor + shortcode** — Use the "Better Click To Share" block (slash command `/tweet`) or the classic `[bctt]` shortcode in any post or page.
+* **Block editor + shortcode** — Use the "Better Click To Share" block (slash command `/tweet`) or the classic `[bctt]` shortcode in any post or page (full shortcode support keeps BCTS compatible with things like Elementor, Divi, and even WP Bakery!).
 * **Smart character count** — Stays within X’s limits and accounts for your "via @username" and link so shares never get cut off.
 * **Optional AI suggestions** — With WordPress Connectors, get draft share text suggested from your content (usage charges apply per your provider). You can turn this off in settings.
 * **Premium styles and add-ons** — [Premium Styles](https://benlikes.us/bcts-addons-readme) let you pick different looks without touching CSS; [Power User Guide](https://benlikes.us/7r) and [custom CSS options](https://benlikes.us/bcttcustom) for developers.
 
 **Developer or designer?** We welcome PRs and feature requests: [GitHub repository](https://github.com/Benunc/better-click-to-tweet). Translations: [WordPress.org translation project](https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet).
-
-= See it in action =
-
-https://www.youtube.com/watch?v=G-N9uZPq6o8
 
 == Installation ==
 
@@ -71,7 +69,7 @@ Yes. There is a dedicated block: use the slash command `/tweet` to insert it. Yo
 
 = Can I customize the look of my share on X boxes? =
 
-Yes. Developers can use custom CSS (see the [Power User Guide](https://benlikes.us/7r) and [custom style options](https://benlikes.us/bcttcustom)). If you prefer not to code, the [Premium Styles add-on](https://www.betterclicktoshare.com/all-add-ons/?utm_source=readme&utm_medium=plugin-directory&utm_campaign=bcts-readme) lets you pick from several styles in the dashboard.
+Yes. Developers can use custom CSS (see the [Power User Guide](https://benlikes.us/7r) and [custom style options](https://benlikes.us/bcttcustom)). If you prefer not to code, the [Premium Styles add-on](https://benlikes.us/bcts-addons-readme) lets you pick from several styles in the dashboard.
 
 = How does the X character count work for shareable quotes? =
 
@@ -83,16 +81,16 @@ We rebranded to Better Click To Share to reflect that readers are sharing on X (
 
 = Are there other style options for my share boxes? =
 
-Yes. The [Premium Styles add-on](https://www.betterclicktoshare.com/all-add-ons/?utm_source=readme&utm_medium=plugin-directory&utm_campaign=bcts-readme) offers multiple designs. Developers can style boxes with [custom CSS](https://benlikes.us/bcttcustom) or the [Power User Guide](https://benlikes.us/7r) for advanced shortcode options.
+Yes. The [Premium Styles add-on](https://benlikes.us/bcts-addons-readme) offers multiple designs. Developers can style boxes with [custom CSS](https://benlikes.us/bcttcustom) or the [Power User Guide](https://benlikes.us/7r) for advanced shortcode options.
 
 = What if I need help? =
 
-Support is active in the [WordPress.org support forums](https://wordpress.org/support/plugin/better-click-to-tweet/). Start a thread there; you can usually expect a response within a day or two. For bugs or feature requests, [open an issue on GitHub](https://github.com/Benunc/better-click-to-tweet).
+Support is active in the [WordPress.org support forums](https://benlikes.us/bctssupport). Start a thread there; you can usually expect a response within a day or two. For bugs or feature requests, [open an issue on GitHub](https://benlikes.us/bcttgh).
 
 = How can I help? =
 
-* **Translations:** [Translate the plugin](https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet)
-* **Code & ideas:** [GitHub issues and pull requests](https://github.com/Benunc/better-click-to-tweet)
+* **Translations:** [Translate the plugin](https://benlikes.us/bctstranslate)
+* **Code & ideas:** [GitHub issues and pull requests](https://benlikes.us/bcttgh)
 * **Donate:** [Support the plugin](https://benlikes.us/donate)
 
 == Screenshots ==
