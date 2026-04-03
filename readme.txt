@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: share on X, click to tweet, shareable quote, social share, X.com
 Requires at least: 3.8
 Tested up to: 7.0
-Stable tag: 5.15.0
+Stable tag: 6.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
