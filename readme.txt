@@ -1,96 +1,105 @@
-=== Better Click To Share (Formerly Better Click To Tweet) ===
+=== Better Click To Share – Shareable Quote Boxes for X (Twitter) ===
 Contributors: ben.meredith@gmail.com, wpsteward
 Donate link: https://www.wpsteward.com/donations/plugin-support/
-Tags: click to social, twitter, x.com,
+Tags: share on X, click to tweet, shareable quote, social share, X.com
 Requires at least: 3.8
 Tested up to: 7.0
-Stable tag: 6.0.0
+Stable tag: 5.15.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Better Click To Share (formerly Better Click To Tweet) inserts styled call-out boxes into your posts so readers can share your content on X in one simple action.
+Get more shares on social: add one-click shareable quote boxes to any post so readers can share your best lines on Social Media in one click. 
+
+[What happened to Better Click To Tweet?](https://benlikes.us/insider-bcts-rebrand)
 
 == Description ==
 
-Better Click To Share (formerly Better Click To Tweet) is the most popular plugin for allowing readers to share content on X.com (formerly Twitter).
+**Want more of your content shared on X?** Better Click To Share turns your best quotes into one-click share boxes so readers can post them to X (formerly Twitter) without copying, pasting, or trimming — and you get a link back to your post every time.
 
-Make it dead-simple for your readers to share your content on X, using a simple shortcode or block. Readers are encouraged to share a quote, and a link to your content.
+= Why use a shareable quote plugin for X? =
 
-* [Add Premium Styles](https://benlikes.us/bcttps "Premium Styles add-on") with just a few clicks.
-* Using the shortcode method in the classic editor? See our [Power User Guide](https://benlikes.us/7r "power user guide") for all the tricks (remove or change the "via," make links nofollow, change the callback URL, and more!).
+Most readers won’t bother to copy a quote, open a social media site, and paste. Give them a single click: your quote plus a link to your post are pre-filled. You grow reach and engagement; they share in seconds. No coding, no design work — add a block or shortcode and you’re done.
 
+= What you get with Better Click To Share =
 
-**Developer? Designer? Geek of any sort?** We're always open to feature requests and PRs. You can create issues or submit pull requests at the [GitHub repository](https://github.com/Benunc/better-click-to-tweet "Better Click To Share on GitHub") for this plugin.
+* **One-click share on X** — Readers see a styled quote box; one click opens X with your quote and your post link ready to post.
+* **More engagement** — Make your best lines easy to share so your content spreads further and drives traffic back to your site.
+* **Block editor + shortcode** — Use the "Better Click To Share" block (slash command `/tweet`) or the classic `[bctt]` shortcode in any post or page (full shortcode support keeps BCTS compatible with things like Elementor, Divi, and even WP Bakery!).
+* **Smart character count** — Stays within X’s limits and accounts for your "via @username" and link so shares never get cut off.
+* **Optional AI suggestions** — With WordPress Connectors, get draft share text suggested from your content (usage charges apply per your provider). You can turn this off in settings.
+* **Premium styles and add-ons** — [Premium Styles](https://benlikes.us/bcts-addons-readme) let you pick different looks without touching CSS; [Power User Guide](https://benlikes.us/7r) and [custom CSS options](https://benlikes.us/bcttcustom) for developers.
 
-Translation is managed at [the official WordPress translation page](https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet "WordPress translation").
+**Developer or designer?** We welcome PRs and feature requests: [GitHub repository](https://github.com/Benunc/better-click-to-tweet). Translations: [WordPress.org translation project](https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet).
 
 == Installation ==
 
-**To install the plugin manually in WordPress:**
+**From WordPress Admin (recommended):**
 
 1. Log in as an administrator.
-2. Navigate to the "Plugins" tab in the left menu.
-3. Select "Add New."
-4. Select "Upload" at the top of the page.
-5. Select the 'better-click-to-tweet.zip' on your computer, and upload. Activate the plugin once it is uploaded.
+2. Go to Plugins → Add New.
+3. Search for "Better Click To Share" or "shareable quote".
+4. Click Install Now, then Activate.
 
-**To install the plugin manually with FTP:**
+**Manual upload:**
 
-1. Unzip the 'better-click-to-tweet.zip' file. Upload that folder to the '/wp-content/plugins/' directory.
-2. Log in to your WordPress dashboard and activate the plugin through the "Plugins" tab in the left menu.
+1. Download the plugin zip from this page.
+2. Go to Plugins → Add New → Upload Plugin and choose the zip file.
+3. Install Now, then Activate.
+
+**Manual FTP:**
+
+1. Unzip `better-click-to-tweet.zip` and upload the folder to `/wp-content/plugins/`.
+2. In your WordPress dashboard, go to Plugins and activate "Better Click To Share".
+
+After activation, go to Settings → Better Click To Share to set your X username (for "via @you") and optional short URL. Then add the block or shortcode to any post or page.
 
 == Frequently Asked Questions ==
 
-= Why are you still calling it "Tweet," post-rebrand to X? =
-Short and most accurate answer: Because I bought a domain name at betterclicktoweet.com back in the day, and it would be a ton of (unpaid) work to migrate to a new one, not to mention coming up with a way to make it not sound... boring.
+= How do I add shareable quote boxes to my WordPress posts? =
 
-Longer answer: most users over at X are still calling the act of posting there "tweeting" at this point, and I don't see that changing. I've gone in and made all of the language that is publicly shared more inclusive of the (sadly bland) concept of "sharing on X" so that there's no confusion for anyone unaware that X used to be called Twitter.
+Use the **block editor**: type `/tweet` and select the Better Click To Share block, then enter the quote you want readers to share. Or use the **shortcode**: `[bctt tweet="Your shareable quote here."]` in the classic editor. The plugin adds a styled box; when readers click, X opens with the quote and a link to your post.
 
-I may eventually rebrand completely, but it would have to make a ton of sense from a financial perspective. This is not my day job.
+= How do I let readers share my content on X (Twitter)? =
 
-= Are there other style options? =
-Yes! If you are a developer or handy with CSS, there are [limitless options for styling](https://benlikes.us/bcttcustom "custom style for Better Click To Share").
+Better Click To Share adds "share on X" boxes to your posts. You choose the quote; readers click once to open X with that quote and your post link already filled in. Set your X username in Settings → Better Click To Share so shares include "via @yourhandle" and link back to you.
 
-If you are not a developer, I have released a premium add-on for selecting among several (and growing) different style options. Check out [Premium Styles](https://benlikes.us/bcttps "Premium Styles for Better Click To Share")
+= Does Better Click To Share work with the block editor? =
 
-= How does Better Click To Share work? =
-Better Click To Share enables you to create beautiful call-out boxes in your blog posts, asking your readers to share on X. Once you've installed and activated the plugin, click on the settings link to put in your Twitter username, and save the settings.
+Yes. There is a dedicated block: use the slash command `/tweet` to insert it. You can set the quote, optional "via" handle, and prompt text. WordPress 6.9+ also has an optional "Suggest X Content" panel to get share suggestions from your content (and optional AI drafts if you use WordPress Connectors).
 
-Then, wherever you want to insert a shareable quote, use a shortcode in the format `[bctt tweet="xxxxxxxxxxxx"]` replacing the `xxxxxxx` with your shareable quote.
+= Can I customize the look of my share on X boxes? =
 
-There's also a block for the WordPress Block Editor!
+Yes. Developers can use custom CSS (see the [Power User Guide](https://benlikes.us/7r) and [custom style options](https://benlikes.us/bcttcustom)). If you prefer not to code, the [Premium Styles add-on](https://benlikes.us/bcts-addons-readme) lets you pick from several styles in the dashboard.
 
-= How does the URL shortener functionality work? =
-Better Click To Share gives you the maximum number of characters possible. Allow me to explain:
+= How does the X character count work for shareable quotes? =
 
-X automatically routes every link through its own URL shortener (you might recognize t.co as the domain they use). For their t.co links, the length is automatically truncated to 23 characters for URLs. This leaves 253 characters after the URL for you to use to compose your tweet. Even a link that is run through bit.ly or a yourls.org install is still routed through t.co in the tweet.
+X allows 280 characters per post and shortens links (e.g. via t.co) to 23 characters. Better Click To Share reserves space for your "via @username" and the post link, so your quote is automatically shortened to fit. You get the maximum shareable length without broken posts. If you use shortlinks (e.g. with a plugin that customizes the WordPress shortlink), you can enable "Use Short URL?" in settings for trackable links.
 
-The benefit of URL shorteners goes beyond just character length, though. Many users use bit.ly or a similar service to track numbers of clicks and other analytical data. I personally use yourls.org to power https://benlikes.us for my shortened links.
+= Why is it called "Better Click To Share" and not "Tweet"? =
 
-Better Click To Share works alongside url shortening plugins to harness that power, if you choose to.
+We rebranded to Better Click To Share to reflect that readers are sharing on X (formerly Twitter). The plugin name and shortcode `[bctt]` stay familiar; all user-facing text says "share on X" where it used to say "tweet." The product is the same — one-click shareable quote boxes for X.
 
-WordPress has a feature called "shortlinks" which changes the long URL to something like example.com/?p=3435. Various plugins in the official plugin directory exist to change that shortlink to one using other outside services. Using a combination of those plugins and mine, your Better Click To Share boxes can now display a trackable link.
+= Are there other style options for my share boxes? =
 
-On the settings page for Better Click To Share, simply check the box indicating you'd like to use the short URL, and save changes. If you've got a plugin that correctly hijacks the built-in WordPress shortlink functionality, you're all set!
-I've also written [a tutorial](https://benlikes.us/79 "shortlink tutorial") for how to set up the shortlinks with bit.ly and yourls.org.
+Yes. The [Premium Styles add-on](https://benlikes.us/bcts-addons-readme) offers multiple designs. Developers can style boxes with [custom CSS](https://benlikes.us/bcttcustom) or the [Power User Guide](https://benlikes.us/7r) for advanced shortcode options.
 
-= Are there any other hidden tricks? =
-Yes! Because I want the majority of users (who aren't as concerned with options like nofollow links and getting rid of the URL in the tweet) to be happy, most options are hidden. I've written [a tutorial for using those advanced options](https://benlikes.us/7r "power user guide"). Most of those options are visible in the Gutenberg block, so that tutorial really only applies to the classic editor.
+= What if I need help? =
 
-= What do I do if it's not working right? =
-I am active in [the support forums](https://wordpress.org/support/plugin/better-click-to-tweet "BCTT Support"), and in patching the plugin. Start a thread there, and I will gladly help you out. Most of the time you can expect a day or two before a response. I'm in the eastern US, and I like playing with my kids at night, so you might not hear back immediately. Don't panic.
+Support is active in the [WordPress.org support forums](https://benlikes.us/bctssupport). Start a thread there; you can usually expect a response within a day or two. For bugs or feature requests, [open an issue on GitHub](https://benlikes.us/bcttgh).
 
 = How can I help? =
-Translations: https://translate.wordpress.org/projects/wp-plugins/better-click-to-tweet
-Issues, feature requests, and Pull Requests: https://github.com/Benunc/better-click-to-tweet
-Donations: https://benlikes.us/donate
+
+* **Translations:** [Translate the plugin](https://benlikes.us/bctstranslate)
+* **Code & ideas:** [GitHub issues and pull requests](https://benlikes.us/bcttgh)
+* **Donate:** [Support the plugin](https://benlikes.us/donate)
 
 == Screenshots ==
 
-1. Find our block with a forward slash...
-1. ...and adding sharablable content just got EASY.
-1. This in the classic editor...
-1. Becomes this in your blog post!
+1. Add a shareable quote block with the slash command in the block editor — one-click share on X for your readers.
+2. Set your quote and optional "via" handle in the block; readers see a styled share on X box.
+3. The same shareable quote in the classic editor: use the shortcode or the toolbar button for click-to-share boxes.
+4. How the shareable quote box looks on the front: readers click to open X with your quote and link.
+5. What you see on X!
 
 == Changelog ==
 
@@ -498,5 +507,3 @@ Refinements to the Gutenberg block, and compatibility for the new Better Click T
 
 = 2.0 =
 * Adds internationalization, and out of the box support for Spanish (ES) language.
-
-
