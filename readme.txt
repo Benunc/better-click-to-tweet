@@ -4,7 +4,7 @@ Donate link: https://www.wpsteward.com/donations/plugin-support/
 Tags: share on X, click to tweet, shareable quote, social share, X.com
 Requires at least: 3.8
 Tested up to: 7.0
-Stable tag: 6.0.0
+Stable tag: 6.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,6 +102,9 @@ Support is active in the [WordPress.org support forums](https://benlikes.us/bcts
 5. What you see on X!
 
 == Changelog ==
+
+= 6.0.1 =
+* fix — PHP 8.1+ deprecation when a share box is set to omit the URL (`url="no"`). We no longer pass `null` into `rawurlencode()`, and the X intent link now omits the `url` query param instead of sending an empty one. Same behavior on older PHP; no more debug.log noise.
 
 = 6.0.0 =
 * rebrand — Major refresh of the admin interface to emphasize "Better Click To Share" and align with the X rebrand. Settings and plugin UI have been reorganized and restyled for clarity; all existing functionality is unchanged and nothing should break. We're bumping to 6.0.0 only because the interface is being so thoroughly overhauled — same shortcodes, same block, same behavior.
